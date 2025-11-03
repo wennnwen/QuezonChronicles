@@ -35,8 +35,7 @@ public class Player extends Character {
   }
 
   public void showStats() {
-    System.out.println();
-  }
+    System.out.println(
  
  public void setMoves(String[] moves) {
   for (int i = 0; i < moves.length; i++) {
