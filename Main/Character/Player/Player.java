@@ -1,9 +1,9 @@
 public class Player extends Character {
   private int experience, level, currency;
   private final Item[] inventory = new Item[10];
-  public String[] attackMoves;
+  public final String[] attackMoves = new String[4];
 
-	public abstract void LevelUp();
+  public abstract void levelStats();
   public abstract void showMoves();
 
 	//getter
