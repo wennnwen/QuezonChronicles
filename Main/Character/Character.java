@@ -5,17 +5,15 @@ public abstract Class Character {
   public abstract void useMove(int moveNumber, Character target);
   
   public void takeDamage(int amount) {
-
-    }
+		hp -= amount;
+  }
 
   public void heal(int amount) {
-
-    } 
+		hp += amount;
+  } 
 
   public bool isAlive() {
-    if (hp <= 0) {
-      return false;
-    }
+    return hp > 0;
   }
 
   //getters for Stats
@@ -51,6 +49,7 @@ public abstract Class Character {
     return speed;
   }
 
+	//setters for Stats
   public void setMaxHp(int newMaxHp) {
     this.maxHp = newMaxHp;
   }
