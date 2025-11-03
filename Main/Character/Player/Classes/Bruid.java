@@ -13,16 +13,19 @@ public class Bruid extends Player {
    												"2. Front Shield (Banana tree fronds wrap around the character, reducing incoming damage by 25% for 2 turns.)", 
    												"3. Healing Grove (Restores moderate HP, using the banana tree's life force.)", 
                           "4. Puso ng Saging (The druid summons a giant banana heart that explodes, dealing heavy damage and a 20% chance to stun.)"});
-  }
+	}
  
 	public void useMoves(int moveNumber, Character target) {
     switch (moveNumber) {
       case 1:
         
-    }
-  }
+   		}
+	}
+
+	public void showMoves() {
+		for (String moves
  
- public void levelUp() {
+	public void levelStats() {
   
- }
+	}
 }
