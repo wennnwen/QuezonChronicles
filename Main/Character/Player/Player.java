@@ -170,4 +170,13 @@ public class Player extends Character {
                 break;
         }
     }
+  
+  public void removeDebuff() {
+    for (int i = 0; i < activeDebuffs.length; i++) {
+      activeDebuffs[i] = null;
+    }
+    for (int i = 0; i < debuffTurns.length; i++) {
+      debuffTurns[i] = null;
+    }
+  }
 }
