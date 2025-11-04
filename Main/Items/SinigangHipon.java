@@ -1,3 +1,7 @@
+package Main.Items;
+
+import Main.Character.Player.*;
+
 public class SinigangHipon extends Items {
 
     public SinigangHipon() {
@@ -10,7 +14,7 @@ public class SinigangHipon extends Items {
         int healBoost = 20;
         //DEBUFF REMOVAL
 
-        System.out.println(player.getName() + " has drunk the Lambanog Leche Flan!");
+        System.out.println(player.getName() + " has eaten the Sinigang na Hipon!");
 
         player.heal(healBoost);
         //DEBUFF REMOVAL

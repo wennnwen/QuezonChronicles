@@ -1,5 +1,7 @@
 package Main.Items;
 
+import Main.Character.Player.*;
+
 public class Bibingka extends Items {
 
     public Bibingka() {

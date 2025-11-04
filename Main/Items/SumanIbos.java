@@ -1,3 +1,7 @@
+package Main.Items;
+
+import Main.Character.Player.*;
+
 public class SumanIbos extends Items {
 
     public SumanIbos() {
