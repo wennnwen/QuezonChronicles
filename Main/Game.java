@@ -3,7 +3,7 @@ package Main;
 public class Game {
     private int game;
 
-    Gwme() {
+    Game() {
         menu = new GameMenu();
     }
    
