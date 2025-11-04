@@ -9,5 +9,7 @@ public class Pinagong extends Items {
     public void useItem(Player player) {
         int healBoost = 30;
         
-        System.out.println(player.getName() + " eats a Pinagong and restores +30 amount of HP!");
+        System.out.println(player.getName() + " eats a Pinagong and restores +30 HP!");
         player.heal(healBoost);
+    }
+}
