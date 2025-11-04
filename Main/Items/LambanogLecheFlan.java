@@ -2,7 +2,7 @@ public class LambanogLecheFlan extends Items {
 
     public LambanogLecheFlan() {
         setName("Lambanog Leche Flan");
-        setDescription("A creamy dessert infused with local spirit that restores +15 HP but reduces Defense by 2 due to dizziness for 2 turns.");
+        setDescription("(A creamy dessert infused with local spirit that restores +15 HP but reduces Defense by 2 due to dizziness for 2 turns.)");
     }
 
     @Override

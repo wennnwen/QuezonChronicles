@@ -2,7 +2,7 @@ public class SinigangHipon extends Items {
 
     public SinigangHipon() {
         setName("Sinigang na Hipon");
-        setDescription("A tangy shrimp soup that restores +20 HP and removes all negative effects from the player.");
+        setDescription("(A tangy shrimp soup that restores +20 HP and removes all negative effects from the player.)");
     }
 
     @Override

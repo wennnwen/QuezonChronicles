@@ -1,19 +1,20 @@
 public class Mage extends Player {
    
    Mage(String name) {
-    setMaxHp(45);
-    setHp(45);
-    setMp(35);
-    setDefense(4);
-    setAttackPower(10);
-    setSpeed(8);
+  		setMaxHp(45);
+  		setHp(45);
+  		setMp(35);
+  		setDefense(4);
+  		setAttackPower(10);
+  		setSpeed(8);
    
-  	setMoves(new String[] {"1. Fire Ball (Basic + no mana required)", 
+  		setMoves(new String[] {"1. Fire Ball (Basic + no mana required)", 
    			"2. LambaShield (Creates a barrier that reduces incoming damage by 30% for 2 turns. 10 MP)", 
             "3. Mana Surge (Regenerates 20 MP instantly.)",
             "4. Pinagong Storm (Calls down hard pinagong breads on all enemies, dealy heavy damage. 18 MP)"});
    }
 
+	@overrides 
    public void useMoves(int moveNumber, Character target) {
       switch(moveNumber) {
          case 1:
@@ -51,12 +52,7 @@ public class Mage extends Player {
       }
    }
 
-   public void showMoves() {
-      for (String moves : attackMoves) {
-         System.out.println(moves);
-      }
-   }
-
+	@overrides 
    public void showStats() {
 		System.out.println("====Stats====");
 		System.out.println("Health: " + getHp() + "/" + getMaxHp());
@@ -68,6 +64,7 @@ public class Mage extends Player {
 		System.out.println("Level: " + getLevel());
 	}
 
+	@overrides 
    public void levelStats() {
  		setMaxHp(getMaxHp() + 5);
 		setHp(getHp() + 5);

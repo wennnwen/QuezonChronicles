@@ -2,7 +2,7 @@ public class PugonCoffee extends Items {
 
     public PugonCoffee() {
         setName("Pugon Coffee");
-        setDescription("A strong brew that energizes the drinker, granting +2 Speed for the next turn.");
+        setDescription("(A strong brew that energizes the drinker, granting +2 Speed for the next turn.)");
     }
 
     @Override

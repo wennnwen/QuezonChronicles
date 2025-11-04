@@ -14,7 +14,6 @@ public class Player extends Character {
 
 	public abstract void showStats();
   public abstract void levelStats();
-  public abstract void showMoves();
 
 	//getter
   public int getLevel() {
@@ -56,7 +55,7 @@ public class Player extends Character {
   public void showInventory() {
     for (Items item : inventory) {
       int i = 1;
-      System.out.printf("{i}. {item}\n");
+      System.out.println(i + ". " + item[i].getName() + " " + item[i].getDescription());
       i++;
     }
   }
@@ -66,6 +65,12 @@ public class Player extends Character {
       attackMoves[i] = moves[i];
     }
   }
+ 
+ public void showMoves() {
+  for (String moves : attackMoves) {
+    System.out.println(moves);
+  }
+ }
 
   //Temporary Effect Boost
   public void addTemporaryAttackBoost(int amount, int duration) {

@@ -1,19 +1,20 @@
 public class TagalogMonk extends Player {
    
    TagalogMonk(String name) {
-    setMaxHp(55);
-    setHp(55);
-    setStamina(25);
-    setDefense(6);
-    setAttackPower(9);
-    setSpeed(7);
+  		setMaxHp(55);
+  		setHp(55);
+  		setStamina(25);
+  		setDefense(6);
+  		setAttackPower(9);
+  		setSpeed(7);
    
-  	setMoves(new String[] {"1. Suntok ni Apo (basic + no stamina required)", 
+  		setMoves(new String[] {"1. Suntok ni Apo (basic + no stamina required)", 
    			"2. Bugso ng Loob (The monk releases a surge of inner energy, increasing attack power by 40% and dealing strong damage to a single enemy. (Cost: 10 Stamina))", 
             "3. Karma Strike (A powerful counterattack imbued with spiritual justice. Deals heavy damage and has a small chance to stun the target. (Cost: 15 Stamina))",
             "4. Dasal ng Katahimikan (The monk prays calmly amid battle, restoring a portion of HP and stamina while reducing incoming damage by 25% for 1 turn)"});
    }
 
+	@overrides 
    public void useMoves(int moveNumber, Character target) {
       switch(moveNumber) {
          case 1:
@@ -56,12 +57,7 @@ public class TagalogMonk extends Player {
       }
    }
 
-   public void showMoves() {
-      for (String moves : attackMoves) {
-         System.out.println(moves);
-      }
-   }
-
+	@overrides 
    public void showStats() {
 		System.out.println("====Stats====");
 		System.out.println("Health: " + getHp() + "/" + getMaxHp());
@@ -73,6 +69,7 @@ public class TagalogMonk extends Player {
 		System.out.println("Level: " + getLevel());
 	}
 
+	@overrides 
    public void levelStats() {
  		setMaxHp(getMaxHp() + 6);
 		setHp(getHp() + 6);

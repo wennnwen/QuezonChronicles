@@ -2,7 +2,7 @@ public class KipingDelight extends Items {
 
     public KipingDelight() {
         setName("Kiping Delight");
-        setDescription("A flat, crunchy, and sweet bread.");
+        setDescription("(A flat, crunchy, and sweet bread.) ");
     }
 
     @Override

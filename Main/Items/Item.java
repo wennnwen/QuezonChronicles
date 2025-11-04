@@ -14,10 +14,10 @@ public class Item {
 
     //setters
     public void setName(String newName) {
-        this.name = newName;
+        name = newName;
     }
 
     public void setDescription(String newDescription) {
-        this.description = newDescription;
+        description = newDescription;
     }
 }

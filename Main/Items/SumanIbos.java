@@ -2,7 +2,7 @@ public class SumanIbos extends Items {
 
     public SumanIbos() {
         setName("Suman sa Ibos");
-        setDescription("A sticky rice treat that heals for 30 health.");
+        setDescription("(A sticky rice treat that heals for 30 health.)");
     }
 
     @Override

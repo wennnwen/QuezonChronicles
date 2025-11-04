@@ -2,7 +2,7 @@ public class Budin extends Items {
 
     public Budin() {
         setName("Budin");
-        setDescription("A sweet delicacy that boosts the player's attack power for 2 turns");
+        setDescription("(A sweet delicacy that boosts the player's attack power for 2 turns)");
     }
 
     @Override

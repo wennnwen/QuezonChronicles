@@ -15,6 +15,7 @@ public class Warrior extends Player{
                                 "4. Second Wind(Gain minor heal and stamina.)"});
     }
 
+	@overrides 
     public void useMoves(int moveNumber, Character target) {
         switch(moveNumber){
             case 1:
@@ -60,12 +61,7 @@ public class Warrior extends Player{
         }
     }
 
-    public void showMoves() {
-        for (String moves : attackMoves) {
-            System.out.println(moves);
-        }
-    }
-
+	@overrides 
     public void showStats() {
 		System.out.println("====Stats====");
 		System.out.println("Health: " + getHp() + "/" + getMaxHp());
@@ -77,6 +73,7 @@ public class Warrior extends Player{
 		System.out.println("Level: " + getLevel());
 	}
 
+	@overrides 
 	public void levelStats() {
  		setMaxHp(getMaxHp() + 8);
 		setHp(getHp() + 8);

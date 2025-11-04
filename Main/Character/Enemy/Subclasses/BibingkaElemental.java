@@ -31,6 +31,5 @@ public class BibingkaElemental extends Enemy {
 
         // Deal damage
         player.takeDamage(baseDamage);
-        System.out.println(player.getName() + " takes " + baseDamage + " fire damage!");
     }
 }

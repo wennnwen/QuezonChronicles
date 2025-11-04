@@ -2,7 +2,7 @@ public class AdobongPusit extends Items {
 
     public AdobongPusit() {
         setName("Adobong Pusit");
-        setDescription("A savory squid dish that restores +10hp and grants +3 Attack Power per turn for 2 turns.");
+        setDescription("(A savory squid dish that restores +10hp and grants +3 Attack Power per turn for 2 turns.)");
     }
 
     @Override

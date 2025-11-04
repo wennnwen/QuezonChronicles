@@ -27,12 +27,11 @@ public class HarborSentinel extends Enemy {
         // Critical hit mechanic
         double critChance = 0.15;
         if (Math.random() < critChance) {
-            baseDamage *= 2;
+            attackPower *= 2;
             System.out.println("Critical hit!");
         }
 
         // Deal damage
-        player.takeDamage(baseDamage);
-        System.out.println(player.getName() + " takes " + baseDamage + " damage!");
+        player.takeDamage(attackPower);
     }
 }

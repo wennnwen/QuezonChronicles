@@ -15,6 +15,7 @@ public class Thief extends Player{
                                 "4. Smoke Bomb (Reduce enemy hit chance for 2 turns. (Cost: 15 Stamina))"});
         }   
 
+	@overrides 
     public void useMoves(int moveNumber, Character target) {
         switch(moveNumber){
             case 1:
@@ -54,12 +55,7 @@ public class Thief extends Player{
         }
     }
 
-    public void showMoves() {
-        for (String moves : attackMoves) {
-            System.out.println(moves);
-        }
-    }
-
+	@overrides 
     public void showStats() {
 		System.out.println("====Stats====");
 		System.out.println("Health: " + getHp() + "/" + getMaxHp());
@@ -70,7 +66,8 @@ public class Thief extends Player{
 		System.out.println("Experience: " + getExp() + "/" + getNextExpLevel());
 		System.out.println("Level: " + getLevel());
 	}
-
+   
+	@overrides 
 	public void levelStats() {
  		setMaxHp(getMaxHp() + 5);
 		setHp(getHp() + 5);

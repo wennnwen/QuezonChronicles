@@ -2,7 +2,7 @@ public class Panutsa extends Items{
 
     public Panutsa() {
         setName("Panutsa");
-        setDescription("A sweet treat that boosts your defense by +5 per turn for 2 turns.");
+        setDescription("(A sweet treat that boosts your defense by +5 per turn for 2 turns.)");
     }
 
     @Override
