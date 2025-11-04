@@ -23,7 +23,7 @@ public class BakeryGremlin extends Enemy{
     // Attack Pinagong throw
     System.out.println(getName() + " throws a Pinagong at " + player.getName() + "!");
 
-    int baseDamage = getAttackPower() - player.getDefense();
+    int baseDamage = getAttackPower();
     if (baseDamage < 0) baseDamage = 0;
 
     // Critical hit mechanic
@@ -35,7 +35,4 @@ public class BakeryGremlin extends Enemy{
     }
 
     player.takeDamage(baseDamage);
-    System.out.println(player.getName() + " takes " + baseDamage + " damage!");
-}
-
 }
