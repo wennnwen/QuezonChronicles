@@ -1,3 +1,7 @@
+package Main.Character.Enemy.Subclasses;
+
+import Main.Items.*;
+
 public class HeritageWraith extends Enemy{
 
     public HeritageWraith(){

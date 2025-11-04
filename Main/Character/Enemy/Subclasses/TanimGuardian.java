@@ -1,3 +1,7 @@
+package Main.Character.Enemy.Subclasses;
+
+import Main.Items.*;
+
 public class TanimGuardian extends Enemy {
 
     public TanimGuardian() {
