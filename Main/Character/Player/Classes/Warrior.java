@@ -29,6 +29,10 @@ public class Warrior extends Player{
                     target.takeDamage((int) (getAttackPower() * 1.5));
                     break;
                 }
+                else{
+                    System.out.println("Not enough stamina!");
+                }
+                break;
 
             case 3:
                 if (getStamina() >= 3){
@@ -38,9 +42,14 @@ public class Warrior extends Player{
                     //target.stun(1);
                     break;
                 }
+                else{
+                    System.out.println("Not enough stamina!");
+                }
+                break;
 
             case 4:
                 System.out.println(getName() + " used Second Wind!");
+                System.out.println(getName() + "'s healed for +15hp and restored +10 stamina!")
                 player.heal(15);
                 player.addStamina(10);
                 break;
