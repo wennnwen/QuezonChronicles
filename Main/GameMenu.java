@@ -3,7 +3,6 @@ package Main;
 import java.util.Scanner;
 import Main.Character.Player.*;
 import Main.Items.*;
-import Main.Merchant.*;
 
 public class GameMenu {
 

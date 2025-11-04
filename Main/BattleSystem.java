@@ -13,32 +13,55 @@ public class BattleSystem {
     }
 
     public void BattleStart(Player player, Enemy enemy) {
-        while (player.isAlive() && enemy.isAlive()) {
 
-            System.out.println("Your Turn!");
-            player.showMoves();
-            System.out.println("5. Use item");
-            System.out.print("Enter your choice: ");
-            int choice = input.nextInt();
-            if (choice >= 1 && choice <= 4) {
-                player.useMoves(choice, enemy);
-            }
-            else if (choice == 5) {
-                Item[] inventory = player.getInventory();
-                System.out.print("Choose item number: ");
-                int itemIndex = input.nextInt() - 1;
-                inventory[itemIndex].useItem(player);
+        boolean playerInitiative = false;
+
+        if (player.getSpeed() > enemy.getSpeed()) {
+            playerTurn(player, enemy);
+            playerInitiative = true;
+        }
+        
+        else if (enemy.getSpeed() > player.getSpeed()) {
+            enemyTurn(player, enemy);
+        }
+
+        while (player.isAlive() && enemy.isAlive()) {
+            if (playerInitiative) {
+                enemyTurn(player, enemy);
+                playerTurn(player, enemy);
             }
             else {
-                System.out.println("Invalid input. Enemy turn!");
+                playerTurn(player, enemy);
+                enemyTurn(player, enemy);
             }
+        }
+    }
 
-            System.out.println("Enemy Turn!");
-            enemy.enemyMove(player);
+    public void playerTurn(Player player, Enemy enemy) {
+        player.showMoves();
+        System.out.println("5. Use item");
+        System.out.print("Enter your choice: ");
+        int choice = input.nextInt();
+        if (choice >= 1 && choice <= 4) {
+            player.useMoves(choice, enemy);
+        }
+        else if (choice == 5) {
+            Item[] inventory = player.getInventory();
+            System.out.print("Choose item number: ");
+            int itemIndex = input.nextInt() - 1;
+            inventory[itemIndex].useItem(player);
+        }
+        else {
+            System.out.println("Invalid input. Enemy turn!");
+        }
+    }
 
-            if (!enemy.isAlive()) {
-                player.addExp();
-            }
+    public void enemyTurn(Player player, Enemy enemy) {
+        System.out.println("Enemy Turn!");
+        enemy.enemyMove(player);
+
+        if (!enemy.isAlive()) {
+            player.addExp();
         }
     }
 }
