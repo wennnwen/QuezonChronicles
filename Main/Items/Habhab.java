@@ -2,7 +2,7 @@ public class Habhab extends Items {
 
     public Habhab() {
         setName("Habhab");
-        setDescription("A famous Lucban noodle dish that restores HP and Stamina/MP.");
+        setDescription("(A famous Lucban noodle dish that restores HP and Stamina/MP.)");
     }
 
     @Override

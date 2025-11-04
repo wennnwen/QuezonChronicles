@@ -2,7 +2,7 @@ public class CocoJam extends Items {
 
     public CocoJam() {
         setName("Coco Jam");
-        setDescription("A sweet Lucena delicacy that restores Stamina. (For Stamina users only)");
+        setDescription("(A sweet Lucena delicacy that restores Stamina. (For Stamina users only))");
     }
 
     @Override

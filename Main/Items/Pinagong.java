@@ -2,7 +2,7 @@ public class Pinagong extends Items {
 
     public Pinagong() {
         setName("Pinagong");
-        setDescription("A soft bread from Sariaya that restores a small amount of HP.");
+        setDescription("(A soft bread from Sariaya that restores a small amount of HP.)");
     }
 
     @Override

@@ -4,7 +4,7 @@ public class Bibingka extends Items {
 
     public Bibingka() {
         setName("Bibingka");
-        setDescription("A warm rice cake from Candelaria that restores HP and removes all debuffs.");
+        setDescription("(A warm rice cake from Candelaria that restores HP and removes all debuffs.)");
     }
 
     @Override

@@ -3,7 +3,7 @@ public class Tinuto extends Items {
     // Constructor
     public Tinuto() {
         setName("Tinuto");
-        setDescription("A rich delicacy from Tiaong that completely restores HP.");
+        setDescription("(A rich delicacy from Tiaong that completely restores HP.)");
     }
 
     @Override

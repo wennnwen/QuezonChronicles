@@ -3,7 +3,7 @@ public class Chami extends Items {
     // Constructor
     public Chami() {
         setName("Chami");
-        setDescription("A sweet and savory noodle dish from Lucena that restores a good amount of HP.");
+        setDescription("(A sweet and savory noodle dish from Lucena that restores a good amount of HP.)");
     }
 
     @Override

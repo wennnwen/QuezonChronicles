@@ -2,7 +2,7 @@ public class LongganisangLucban extends Items {
 
     public LongganisangLucban() {
         setName("Longganisang Lucban");
-        setDescription("A flavorful Lucban sausage that increases Attack Power for 2 turns.");
+        setDescription("(A flavorful Lucban sausage that increases Attack Power for 2 turns.)");
     }
 
     @Override
