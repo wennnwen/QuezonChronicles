@@ -31,7 +31,7 @@ public class SweetVendor extends Enemy {
         double chance = Math.random();  // gives a random number between 0.0 and 1.0
         if (chance < 0.20) { // 20% chance
             damage *= 2;
-            System.out.println("💥 Critical Hit! The candy explodes with extra force!");
+            System.out.println("Critical Hit! The candy explodes with extra force!");
         }
 
 
