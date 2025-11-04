@@ -24,8 +24,23 @@ public class Bruid extends Player {
 
 	public void showMoves() {
 		for (String moves : attackMoves)
- 
+	}
+
+	public void showStats() {
+		System.out.println("====Stats====");
+		System.out.println("Health: " + getHp() + "/" + getMaxHp());
+		System.out.println("Stamina: " + getStamina());
+		System.out.println("Defense: " + getDefense());
+		System.out.println("Attack Power: " + getAttackPower());
+		System.out.println("Speed: " + getSpeed());
+	}
+
 	public void levelStats() {
-  
+ 		setMaxHp(getMaxHp() + 8);
+		setHp(getHp() + 8);
+		setStamina(getStamina() + 8);
+		setDefense(getDefense() + 2);
+		setAttackPower(getAttackPower() + 2);
+		setSpeed(getSpeed() + 1);
 	}
 }
