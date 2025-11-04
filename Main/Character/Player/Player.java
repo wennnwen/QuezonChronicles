@@ -1,3 +1,7 @@
+package Main.Character.Player;
+
+import Main.Items.*;
+
 public class Player extends Character {
   private int experience, level = 1, nextExpLevel = 100, currency;
 

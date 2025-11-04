@@ -1,3 +1,5 @@
+package Main.Character.Player.Classes;
+
 public class Thief extends Player{
 
     Thief(String name){

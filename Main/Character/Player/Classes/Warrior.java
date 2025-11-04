@@ -1,3 +1,5 @@
+package Main.Character.Player.Classes;
+
 public class Warrior extends Player{
 
     Warrior(String name){

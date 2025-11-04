@@ -1,3 +1,5 @@
+package Main.Items;
+
 public class BananaChips extends Items {
 
     public BananaChips() {

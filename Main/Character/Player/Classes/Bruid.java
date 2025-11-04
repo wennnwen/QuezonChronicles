@@ -1,3 +1,5 @@
+package Main.Character.Player.Classes;
+
 public class Bruid extends Player {
   
 	Bruid(String name) {

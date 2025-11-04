@@ -1,3 +1,5 @@
+package Main.Character.Player.Classes;
+
 public class Mage extends Player {
    
    Mage(String name) {

@@ -1,3 +1,8 @@
+package Main.Character.Enemy;
+
+import Main.Character.Player.*;
+import Main.Items.*;
+
 public class Enemy extends Character {
 
     private int expReward;
