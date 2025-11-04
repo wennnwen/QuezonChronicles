@@ -4,20 +4,20 @@ public class Item {
     public abstract void useItem(Player player);
 
     //getters
-    public void getName() {
+    public String getName() {
         return name;
     }
 
-    public void getDescription() {
+    public String getDescription() {
         return description;
     }
 
     //setters
-    public String setName(String newName) {
+    public void setName(String newName) {
         this.name = newName;
     }
 
-    public String setDescription(String newDescription) {
+    public void setDescription(String newDescription) {
         this.description = newDescription;
     }
 }
