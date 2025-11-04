@@ -2,10 +2,10 @@ package Main.Character.Enemy.Subclasses;
 
 import Main.Items.*;
 
-public class SweetVendor extends Enemy {
+public class PugonPhantom extends Enemy {
 
-    public SweetVendor() {
-        setName("Sweet Vendor Spirit");
+    public PugonPhantom() {
+        setName("Pugon Phantom");
         setMaxHp(120);
         setHp(120);
         setAttackPower(16);
