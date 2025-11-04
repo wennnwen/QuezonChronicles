@@ -3,7 +3,7 @@ package Main.Character.Player;
 import Main.Items.*;
 
 public class Player extends Character {
-  private int experience, level = 1, nextExpLevel = 100, currency;
+  private int experience, level = 1, nextExpLevel = 100;
 
   //Debuffs
   private String[] activeDebuffs = new String[3];
@@ -32,6 +32,10 @@ public class Player extends Character {
     return nextExpLevel;
   }
 
+  public Item[] getInventory() {
+    return inventory;
+  }
+
 	//setter
   public void addExp(int amount) {
     this.experience += amount;
@@ -40,16 +44,16 @@ public class Player extends Character {
     }
   }
  
-  public static void levelUp() {
+  public void levelUp() {
     level++;
     System.out.println("You have leveled up to: " + level);
     nextExpLevel += 50;
     levelStats();
   }
 
-  public void addItem(Items item) {
-      for (int i = 0; i > item.length; i++) {
-        if (inventory[i] = null) {
+  public void addItem(Item item) {
+      for (int i = 0; i < item.length; i++) {
+        if (inventory[i] == null) {
           inventory[i] = item;
           break;
         }
@@ -57,10 +61,11 @@ public class Player extends Character {
   }
 
   public void showInventory() {
-    for (Items item : inventory) {
-      int i = 1;
-      System.out.println(i + ". " + item[i].getName() + " " + item[i].getDescription());
-      i++;
+    for (int i = 0; i < inventory.length; i++) {
+      Item item = inventory[i];
+      if (item != null) {
+        System.out.print((i + 1) + ". " + item.getName() + " - " + item.getDescription());
+      }
     }
   }
   
