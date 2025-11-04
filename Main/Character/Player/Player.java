@@ -103,7 +103,7 @@ public class Player extends Character {
         defenseBoostAmount = 0;
       }
     }
-
+  }
   //Debuff Methods
   public void applyDebuff(String type, int turns) {
     for (int i = 0; i < activeDebuffs.length; i++) {
@@ -161,3 +161,4 @@ public class Player extends Character {
                 break;
         }
     }
+}
