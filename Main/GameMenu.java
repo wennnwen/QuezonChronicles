@@ -16,7 +16,7 @@ public class GameMenu {
     public static void showMainMenu() {
 
  		do {
-            System.out.println("Choose")
+            System.out.println("Choose");
             System.out.println("1. Create a character");
             System.out.println("2. Show Stats");
             System.out.println("3. Show Inventory");
@@ -92,7 +92,7 @@ public class GameMenu {
                     System.out.println("Exiting the Game...");
                     break;
             }
-        } (choice != 5);
+        } while (choice != 5);
     }
    
 	public static void inputMessager() {

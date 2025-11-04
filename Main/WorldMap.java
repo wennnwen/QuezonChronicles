@@ -12,7 +12,7 @@ public class WorldMap {
                 new Enemy[]{new PortRat(), new LucenaPirate()}, new HarborSentinel());
 
         Town sariaya = new Town("Sariaya", "A prosperous heritage town under siege by a fearsome foe.",
-                new Enemy[]{new BakeryGremlin(), new HeritageWraith()}, null());
+                new Enemy[]{new BakeryGremlin(), new HeritageWraith()}, null);
 
         Town candelaria = new Town("Candelaria", "A peaceful town where traders rest.",
                 new Enemy[]{new BibingkaElemental(), new SweetVendorSpirit()}, null);
