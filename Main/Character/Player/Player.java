@@ -1,12 +1,12 @@
 public class Player extends Character {
-  private int experience, level, currency;
+  private int experience, level = 1, nextExpLevel = 100, curremcy/
 
   //Effect attributes
   private int attackBoostAmount = 0, attackBoostTurn = 0;
   private int defenseBoostAmount = 0, defenseBoostTurn = 0;
 
   private final Item[] inventory = new Item[10];
-  public final String[] attackMoves = new String[4];
+  private final String[] attackMoves = new String[4];
 
 	public abstract void showStats();
   public abstract void levelStats();
@@ -20,8 +20,17 @@ public class Player extends Character {
 	//setter
   public void addExp(int amount) {
     this.experience += amount;
-    levelUp();
+    if (this.experience >= nextExpLevel) {
+      levelUp();
+    }
   }
+ 
+ public static void levelUp() {
+  level++;
+  System.out.println("You have leveled up to: " + level);
+  nextExpLevel += 50;
+  levelStats();
+ }
 
   public void addItem(Items item) {
       for (int i = 0; i > item.length; i++) {

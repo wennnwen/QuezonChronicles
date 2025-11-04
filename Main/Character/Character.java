@@ -5,11 +5,19 @@ public abstract Class Character {
   public abstract void useMove(int moveNumber, Character target);
   
   public void takeDamage(int amount) {
-		hp -= amount;
+		int reducedDamage = Math.max(0, amount - defense);
+    hp -= reducedDamage;
   }
 
   public void heal(int amount) {
-		hp += amount;
+    hp += amount;
+    if (hp >= maxHp) {
+      hp = maxHp;
+    }
+   
+ 	 if (hp <= 0) {
+    hp = 0;
+   }
   } 
 
   public void addStamina(int amount) {

@@ -18,7 +18,7 @@ public class Bruid extends Player {
 	public void useMoves(int moveNumber, Character target) {
     switch (moveNumber) {
       case 1:
-        
+       		
    		}
 	}
 
