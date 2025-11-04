@@ -13,7 +13,7 @@ public class TanimGuardian extends Enemy {
         setSpeed(7);
 
         // Experience reward
-        expReward = 25;
+        expReward = 45;
 
         // Possible loot
         possibleLoot = new Item[2];
@@ -27,7 +27,7 @@ public class TanimGuardian extends Enemy {
 
     int baseDamage = getAttackPower();
     if (baseDamage < 0) baseDamage = 0;
-
+    
     // Critical hit mechanic
     double critChance = 0.2;
     double critRoll = Math.random();
