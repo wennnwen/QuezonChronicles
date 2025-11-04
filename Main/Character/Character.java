@@ -1,4 +1,4 @@
-public abstract Class Character {
+public abstract class Character {
   private String name;
   private int maxHp, hp, stamina, mp, attackPower, defense, speed;
 

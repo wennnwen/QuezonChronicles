@@ -5,7 +5,7 @@ public class BakeryGremlin extends Enemy{
         setMaxHp(50);
         setHp(50);
         setAttackPower(12);
-        setDefense(8);
+        setDefense(7);
         setSpeed(10);
 
         // Experience reward
@@ -18,9 +18,7 @@ public class BakeryGremlin extends Enemy{
     }
 
     @Override
-
     public void enemyMove(Player player) {
-    // Attack Pinagong throw
     System.out.println(getName() + " throws a Pinagong at " + player.getName() + "!");
 
     int baseDamage = getAttackPower();
@@ -34,5 +32,6 @@ public class BakeryGremlin extends Enemy{
         System.out.println("Critical hit!");
     }
 
-    player.takeDamage(baseDamage);
+        player.takeDamage(baseDamage);
+    }
 }
