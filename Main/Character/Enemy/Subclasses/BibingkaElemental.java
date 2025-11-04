@@ -25,11 +25,11 @@ public class BibingkaElemental extends Enemy {
         // Critical hit mechanic
         double critChance = 0.2; // 20% chance
         if (Math.random() < critChance) {
-            baseDamage *= 2;
+            attackPower *= 2;
             System.out.println("Critical hit!");
         }
 
         // Deal damage
-        player.takeDamage(baseDamage);
+        player.takeDamage(attackPower);
     }
 }
