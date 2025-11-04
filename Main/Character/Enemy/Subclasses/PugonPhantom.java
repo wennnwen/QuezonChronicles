@@ -18,7 +18,7 @@ public class SweetVendor extends Enemy {
         // Possible loot
         possibleLoot = new Item[2];
         possibleLoot[0] = new Tinuto();
-        possibleLoot[1] = new Pugon Coffee();
+        possibleLoot[1] = new PugonCoffee();
     }
     @Override
     public void enemyMove(Player player) {
