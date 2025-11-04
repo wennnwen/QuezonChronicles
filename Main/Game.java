@@ -3,7 +3,7 @@ package Main;
 import Main.*;
 
 public class Game {
-    private int menu;
+    private GameMenu menu;
 
     Game() {
         menu = new GameMenu();
