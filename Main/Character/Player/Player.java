@@ -1,10 +1,13 @@
 public class Player extends Character {
-  private int experience, level = 1, nextExpLevel = 100, curremcy/
+  private int experience, level = 1, nextExpLevel = 100, currency;
+
+  //Debuffs
+  private String[] activeDebuffs = new String[3];
+  private int[] debuffTurns = new int[5];
 
   //Effect attributes
   private int attackBoostAmount = 0, attackBoostTurn = 0;
   private int defenseBoostAmount = 0, defenseBoostTurn = 0;
-  private int defenseDebuffAmount = 0, defenseDebuffTurn = 0;
 
   private final Item[] inventory = new Item[10];
   private final String[] attackMoves = new String[4];
@@ -18,6 +21,14 @@ public class Player extends Character {
    return level;
   }
 
+  public int getExp() {
+    return experience;
+  }
+
+  public int getNextExpLevel() {
+    return nextExpLevel;
+  }
+
 	//setter
   public void addExp(int amount) {
     this.experience += amount;
@@ -26,12 +37,12 @@ public class Player extends Character {
     }
   }
  
- public static void levelUp() {
-  level++;
-  System.out.println("You have leveled up to: " + level);
-  nextExpLevel += 50;
-  levelStats();
- }
+  public static void levelUp() {
+    level++;
+    System.out.println("You have leveled up to: " + level);
+    nextExpLevel += 50;
+    levelStats();
+  }
 
   public void addItem(Items item) {
       for (int i = 0; i > item.length; i++) {
@@ -50,32 +61,26 @@ public class Player extends Character {
     }
   }
   
- public void setMoves(String[] moves) {
-  for (int i = 0; i < moves.length; i++) {
-    attackMoves[i] = moves[i];
+  public void setMoves(String[] moves) {
+    for (int i = 0; i < moves.length; i++) {
+      attackMoves[i] = moves[i];
+    }
   }
- }
 
- //Temporary Effect Boost
- public void addTemporaryAttackBoost(int amount, int duration) {
-  setAttackPower(getAttackPower() + amount);
-  attackBoostAmount = amount;
-  attackBoostTurn = duration;
-  System.out.println(getName() + "'s Attack Power increased by " + amount + " for " + duration);
- }
+  //Temporary Effect Boost
+  public void addTemporaryAttackBoost(int amount, int duration) {
+    setAttackPower(getAttackPower() + amount);
+    attackBoostAmount = amount;
+    attackBoostTurn = duration;
+    System.out.println(getName() + "'s Attack Power increased by " + amount + " for " + duration);
+  }
 
- public void addTemporaryDefenseBoost(int amount, int duration) {
-  setDefense(getDefense() + amount);
-  defenseBoostAmount = amount;
-  defenseBoostTurn = duration;
-  System.out.println(getName() + "'s Defense increased by " + amount + " for " + duration);
-}
- public void addTemporaryDefenseDebuff(int amount, int duration) {
-  setDefense(getDefense() - amount);
-  defenseDebuffAmount = amount;
-  defenseDebuffTurn = duration;
-  System.out.println(getName() + "'s Defense decreased by " + amount + " for " + duration);
-}
+  public void addTemporaryDefenseBoost(int amount, int duration) {
+    setDefense(getDefense() + amount);
+    defenseBoostAmount = amount;
+    defenseBoostTurn = duration;
+    System.out.println(getName() + "'s Defense increased by " + amount + " for " + duration);
+  }
 
   public void updateTurnEffects() {
 
@@ -99,14 +104,60 @@ public class Player extends Character {
       }
     }
 
-    // Defense Debuff
-    if (defenseDebuffTurn > 0) {
-      defenseDebuffTurn--;
-      if (defenseDebuffTurn == 0) {
-        setDefense(getDefense() + defenseDebuffAmount); // restore defense
-        System.out.println("Defense debuff expired for " + getName() + "!");
-        defenseDebuffAmount = 0;
+  //Debuff Methods
+  public void applyDebuff(String type, int turns) {
+    for (int i = 0; i < activeDebuffs.length; i++) {
+        if (activeDebuffs[i] == null) {
+            activeDebuffs[i] = type;
+            debuffTurns[i] = turns;
+            System.out.println(getName() + " is afflicted with " + type + " for " + turns + " turns!");
+            return;
+        }
     }
-}
-
+    System.out.println("Too many debuffs active!");
   }
+
+  public void updateDebuffs() {
+    for (int i = 0; i < activeDebuffs.length; i++) {
+        if (activeDebuffs[i] != null) {
+            debuffTurns[i]--;
+            applyDebuffEffect(activeDebuffs[i]);
+
+            if (debuffTurns[i] <= 0) {
+                System.out.println(activeDebuffs[i] + " wore off!");
+                activeDebuffs[i] = null;
+            }
+        }
+    }
+  }
+
+  private void applyDebuffEffect(String debuff) {
+        switch (debuff.toLowerCase()) {
+            case "poison":
+                System.out.println(getName() + " takes 2 poison damage!");
+                takeDamage(2);
+                break;
+            case "burn":
+                System.out.println(getName() + " takes 2 burn damage!");
+                takeDamage(2);
+                break;
+            case "absorb":
+                System.out.println(getName() + " feels weaker! Health had been absored by 2");
+                takeDamage(2);
+                break;
+            case "defense down":
+                System.out.println(getName() + " feels weaker! Defense temporarily reduced.");
+                setDefense(getDefense() - 1);
+                break;
+            case "attack down":
+                System.out.println(getName() + " feels their strength fade!");
+                setAttackPower(getAttackPower() - 2);
+                break;
+            case "stun":
+                System.out.println(getName() + " is stunned and cannot move!");
+                break;
+            case "confusion":
+                System.out.println(getName() + " is confused by the masks!");
+                break;
+        }
+    }

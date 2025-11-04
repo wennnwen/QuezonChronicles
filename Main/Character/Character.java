@@ -7,6 +7,11 @@ public abstract Class Character {
   public void takeDamage(int amount) {
 		int reducedDamage = Math.max(0, amount - defense);
     hp -= reducedDamage;
+    System.out.println(name + " took " + reduceDamage + " damage.");
+
+    if (hp <= 0) {
+      hp = 0;
+    }
   }
 
   public void heal(int amount) {
@@ -14,10 +19,6 @@ public abstract Class Character {
     if (hp >= maxHp) {
       hp = maxHp;
     }
-   
- 	 if (hp <= 0) {
-    hp = 0;
-   }
   } 
 
   public void addStamina(int amount) {
