@@ -12,13 +12,12 @@ public class LambanogLecheFlan extends Items {
     @Override
     public void useItem(Player player) {
         int healBoost = 15;
-        int defenseReduce = 2;
         int duration = 2;
 
         System.out.println(player.getName() + " has drunk the Lambanog Leche Flan!");
 
         player.heal(healBoost);
-        player.addDefenseDebuff(defenseReduce, duration);
+        player.applyDebuff("defense down", duration)
 
     }
 }
