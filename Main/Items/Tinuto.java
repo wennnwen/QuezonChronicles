@@ -12,9 +12,9 @@ public class Tinuto extends Items {
 
     @Override
     public void useItem(Player player) {
-    int maxHp = player.getMaxHp();
+        int maxHp = player.getMaxHp();
 
-    System.out.print(player.getName() + " eats a Tinuto and restores full HP!");
-    player.setHp(maxHp);
+        System.out.print(player.getName() + " eats a Tinuto and restores full HP!");
+        player.setHp(maxHp);
     }
 }

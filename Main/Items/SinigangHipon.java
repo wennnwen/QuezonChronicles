@@ -17,7 +17,7 @@ public class SinigangHipon extends Items {
         System.out.println(player.getName() + " has eaten the Sinigang na Hipon!");
 
         player.heal(healBoost);
-        //DEBUFF REMOVAL
+        player.removeDebuff();
 
     }
 }
