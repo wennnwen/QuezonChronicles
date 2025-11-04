@@ -1,8 +1,0 @@
-System.out.print("Would you like to choose an Item? (Y/N)");
-                    char itemChoose = input.nextLine().charAt(0);
-                    if (itemChoose == 'Y' || itemChoose == 'y') {
-                        Item[] inventory = player.getInventory();
-                        System.out.print("Choose item number: ");
-                        int itemIndex = input.nextInt() - 1;
-                        inventory[itemIndex].useItem(player);
-                    }
