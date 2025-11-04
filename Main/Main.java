@@ -1,5 +1,6 @@
 package Main;
 
-Public class Main(String[] args){
-  
+public class Main(String[] args){
+	GameMenu Game = new Game();
+	Game.start();
 }

@@ -1,7 +1,14 @@
 package Main;
 
 public class Game {
-    public static void main(String[] args) {
-        
+    private int game;
+
+    Gwme() {
+        menu = new GameMenu();
+    }
+   
+    public void start() {
+        System.out.println("Game Starting...");
+		menu.showMainMenu();
     }
 }
