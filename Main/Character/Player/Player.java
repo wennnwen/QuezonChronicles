@@ -1,5 +1,10 @@
 public class Player extends Character {
   private int experience, level, currency;
+
+  //Effect attributes
+  private int attackBoostAmount = 0, attackBoostTurn = 0;
+  private int defenseBoostAmount = 0, defenseBoostTurn = 0;
+
   private final Item[] inventory = new Item[10];
   public final String[] attackMoves = new String[4];
 
@@ -42,4 +47,41 @@ public class Player extends Character {
     attackMoves[i] = moves[i];
   }
  }
+
+ //Temporary Effect Boost
+ public void addTemporaryAttackBoost(int amount, int duration) {
+  setAttackPower(getAttackPower() + amount);
+  attackBoostAmount = amount;
+  attackBoostTurn = duration;
+  System.out.println(getName() + "'s Attack Power increased by " + amount + " for " + duration);
+ }
+
+ public void addTemporaryDefenseBoost(int amount, int duration) {
+  setDefense(getDefense() + amount);
+  defenseBoostAmount = amount;
+  defenseBoostTurn = duration;
+  System.out.println(getName() + "'s Defense increased by " + amount + " for " + duration);
 }
+
+  public void updateTurnEffects() {
+
+    //Attack Power
+    if (attackBoostTurn > 0) {
+      attackBoostTurn--;
+      if (attackBoostTurn == 0) {
+        setAttackPower(getAttackPower() - attackBoostAmount);
+        System.out.println("Attack boost expired for " + getName() + "!");
+        attackBoostAmount = 0;
+      }
+    }
+
+    //Defense
+    if (defenseBoostTurn > 0) {
+      defenseBoostTurn--;
+      if (defenseBoostTurn == 0) {
+        setDefense(getDefense() - defenseBoostAmount);
+        System.out.println("Defense boost expired for " + getName() + "!");
+        defenseBoostAmount = 0;
+      }
+    }
+  }

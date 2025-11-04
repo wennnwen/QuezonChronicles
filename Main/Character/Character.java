@@ -12,6 +12,18 @@ public abstract Class Character {
 		hp += amount;
   } 
 
+  public void addStamina(int amount) {
+    stamina += amount;
+  }
+
+  public void addMp(int amount) {
+    mp += amount;
+  }
+
+  public void addSpeed(int amount) {
+    speed += amount;
+  }
+
   public bool isAlive() {
     return hp > 0;
   }
