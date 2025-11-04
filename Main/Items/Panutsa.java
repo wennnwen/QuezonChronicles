@@ -10,7 +10,7 @@ public class Panutsa extends Items{
         int defenseBoost = 5;
         int duration = 2;
 
-        System.out.println(player.getName() + " eats the Panutsa!")
+        System.out.println(player.getName() + " eats the Panutsa!");
         System.out.println(player.getName() + " has temporarily increased their defense by 5!");
         player.addTemporaryDefenseBoost(defenseBoost, duration);
     }
