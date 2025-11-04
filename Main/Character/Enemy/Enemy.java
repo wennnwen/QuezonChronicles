@@ -28,5 +28,4 @@ public class Enemy extends Character {
     public int getExpReward() {
         return expReward;
     }
-
 }
