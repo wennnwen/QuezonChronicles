@@ -4,7 +4,7 @@ import Main.Items.*;
 
 public class SeaWidow extends Enemy {
 
-    public Seawidow() {
+    public SeaWidow() {
         setName("Sea Widow");
         setMaxHp(60);
         setHp(60);

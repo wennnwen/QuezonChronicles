@@ -38,11 +38,11 @@ public class Thief extends Player{
 
             case 3:
                 if (getStamina() >= 15){
-                    System.out.println(getName() + " used Vanish!")
+                    System.out.println(getName() + " used Vanish!");
                     //Become invisible
                 }
                 else {
-                    System.out.println("Not enough Stamina!")
+                    System.out.println("Not enough Stamina!");
                 }
                 break;
 

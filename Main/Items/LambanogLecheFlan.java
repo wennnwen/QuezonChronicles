@@ -17,7 +17,7 @@ public class LambanogLecheFlan extends Items {
         System.out.println(player.getName() + " has drunk the Lambanog Leche Flan!");
 
         player.heal(healBoost);
-        player.applyDebuff("defense down", duration)
+        player.applyDebuff("defense down", duration);
 
     }
 }

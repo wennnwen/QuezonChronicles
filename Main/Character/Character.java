@@ -181,7 +181,7 @@ public abstract class Character {
 
   public void checkStunned() {
     for (String debuff : activeDebuffs) {
-      if (debuff == 'stun' || debuff == 'confusion') {
+      if (debuff == "stun" || debuff == "confusion") {
         isStunned = true;
         break;
       }

@@ -39,8 +39,8 @@ public class Warrior extends Player{
 
             case 3:
                 if (getStamina() >= 3){
-                    System.out.println(getName() + " used Shield Bash!")
-                    target.takeDamage((int) (getAttackPower() * 0.5))
+                    System.out.println(getName() + " used Shield Bash!");
+                    target.takeDamage((int) (getAttackPower() * 0.5));
                     //chance to stun for 1 duration
                     //target.stun(1);
                     break;
@@ -52,7 +52,7 @@ public class Warrior extends Player{
 
             case 4:
                 System.out.println(getName() + " used Second Wind!");
-                System.out.println(getName() + "'s healed for +15hp and restored +10 stamina!")
+                System.out.println(getName() + "'s healed for +15hp and restored +10 stamina!");
                 player.heal(15);
                 player.addStamina(10);
                 break;

@@ -4,7 +4,7 @@ import Main.Items.*;
 
 public class HabhabBandit extends Enemy{
     
-    public HabhabBandit{
+    public HabhabBandit() {
         setName("Habhab Bandit");
         setMaxHp(30);
         setHp(30);
