@@ -13,7 +13,7 @@ public class GameMenu {
 
     public Scanner input = new Scanner(System.in);
    
-    public static void showMainMenu() {
+    public void showMainMenu() {
 
  		do {
             System.out.println("Choose");
@@ -67,6 +67,7 @@ public class GameMenu {
                             System.out.print("Invalid input. Setting default Class (Warrior)");
                             break;
                     }
+                    break;
 
                 case 2:
                     if (!characterValidation(player)) {
@@ -95,7 +96,7 @@ public class GameMenu {
         } while (choice != 5);
     }
    
-	public static void inputMessager() {
+	public void inputMessager() {
   		System.out.print("Enter your choice: ");
     } 
 
@@ -103,7 +104,7 @@ public class GameMenu {
         return player = null;
     }
 
-    public static void choosePath() {
+    public void choosePath() {
         
         System.out.println("\nWhich path would you like to take?");
         System.out.println("1. West Side");
