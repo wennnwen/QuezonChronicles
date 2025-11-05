@@ -3,7 +3,6 @@ package Main;
 import java.util.Scanner;
 import Main.Character.Player.*;
 import Main.Items.*;
-import Main.*;
 
 public class GameMenu {
 
@@ -15,6 +14,7 @@ public class GameMenu {
    
     public void showMainMenu() {
 
+        int choice = 0;
  		do {
             System.out.println("Choose");
             System.out.println("1. Create a character");
@@ -101,7 +101,7 @@ public class GameMenu {
     } 
 
     public boolean characterValidation(Player player) {
-        return player = null;
+        return player != null;
     }
 
     public void choosePath() {

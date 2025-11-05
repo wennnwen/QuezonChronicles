@@ -17,7 +17,7 @@ public class BattleSystem {
         boolean playerInitiative = false;
 
         if (player.getSpeed() > enemy.getSpeed()) {
-            player.checkStunned()
+            player.checkStunned();
             if (!player.getIsStunned()) {
                 playerTurn(player, enemy);
                 playerInitiative = true;
@@ -25,7 +25,7 @@ public class BattleSystem {
         }
         
         else if (enemy.getSpeed() > player.getSpeed()) {
-            enemy.checkStunned()
+            enemy.checkStunned();
             if (!enemy.getIsStunned()) {
                 enemyTurn(player, enemy);
             }
