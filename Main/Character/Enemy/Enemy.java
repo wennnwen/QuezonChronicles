@@ -1,5 +1,6 @@
 package Main.Character.Enemy;
 
+import Main.Character.Character;
 import Main.Character.Player.*;
 import Main.Items.*;
 

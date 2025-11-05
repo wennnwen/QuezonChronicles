@@ -1,8 +1,9 @@
 package Main.Character.Player;
 
+import Main.Character.Character;
 import Main.Items.*;
 
-public class Player extends Character {
+public abstract class Player extends Character {
   private int experience, level = 1, nextExpLevel = 100;
 
   //Effect attributes

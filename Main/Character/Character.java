@@ -42,7 +42,7 @@ public abstract class Character {
     speed += amount;
   }
 
-  public bool isAlive() {
+  public boolean isAlive() {
     return hp > 0;
   }
 
