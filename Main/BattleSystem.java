@@ -17,22 +17,40 @@ public class BattleSystem {
         boolean playerInitiative = false;
 
         if (player.getSpeed() > enemy.getSpeed()) {
-            playerTurn(player, enemy);
-            playerInitiative = true;
+            player.checkStunned()
+            if (!player.getIsStunned()) {
+                playerTurn(player, enemy);
+                playerInitiative = true;
+            }
         }
         
         else if (enemy.getSpeed() > player.getSpeed()) {
-            enemyTurn(player, enemy);
+            enemy.checkStunned()
+            if (!enemy.getIsStunned()) {
+                enemyTurn(player, enemy);
+            }
         }
 
         while (player.isAlive() && enemy.isAlive()) {
             if (playerInitiative) {
-                enemyTurn(player, enemy);
-                playerTurn(player, enemy);
+                enemy.checkStunned();
+                if (!enemy.getIsStunned()) {
+                    enemyTurn(player, enemy);
+                    playerTurn(player, enemy);
+                }
+                else {
+                    playerTurn(player, enemy);
+                }
             }
             else {
-                playerTurn(player, enemy);
-                enemyTurn(player, enemy);
+                player.checkStunned();
+                if (!player.getIsStunned()) {
+                    playerTurn(player, enemy);
+                    enemyTurn(player, enemy);
+                }
+                else {
+                    enemyTurn(player, enemy);
+                }
             }
         }
     }

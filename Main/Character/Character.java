@@ -4,7 +4,12 @@ public abstract class Character {
   private String name;
   private int maxHp, hp, stamina, mp, attackPower, defense, speed;
 
-  public abstract void useMove(int moveNumber, Character target);
+  //Debuff Attributes
+  private String[] activeDebuffs = new String[3];
+  private int[] debuffTurns = new int[5];
+
+  //Stun Attribute
+  private boolean isStunned;
   
   public void takeDamage(int amount) {
 		int reducedDamage = Math.max(0, amount - defense);
@@ -74,32 +79,115 @@ public abstract class Character {
     return speed;
   }
 
+  public boolean getIsStunned() {
+    return isStunned;
+  }
+
 	//setters for Stats
   public void setMaxHp(int newMaxHp) {
-    this.maxHp = newMaxHp;
+    maxHp = newMaxHp;
   }
 
   public void setHp(int newHp) {
-    this.hp = newHp;
+    hp = newHp;
   }
 
   public void setStamina(int newStamina) {
-    this.stamina = newStamina;
+    stamina = newStamina;
   }
 
   public void setMp(int newMp) {
-    this.mp = newMp;
+    mp = newMp;
   }
 
   public void setAttackPower(int newAttackPower) {
-    this.attackPower = newAttackPower;
+    attackPower = newAttackPower;
   }
 
   public void setDefense(int newDefense) {
-    this.defense = newDefense;
+    defense = newDefense;
   }
 
   public void setSpeed(int newSpeed) {
-    this.speed = newSpeed;
+    speed = newSpeed;
+  }
+
+  //Debuff Methods
+  public void applyDebuff(String type, int turns) {
+    for (int i = 0; i < activeDebuffs.length; i++) {
+        if (activeDebuffs[i] == null) {
+            activeDebuffs[i] = type;
+            debuffTurns[i] = turns;
+            System.out.println(getName() + " is afflicted with " + type + " for " + turns + " turns!");
+            return;
+        }
+    }
+    System.out.println("Too many debuffs active!");
+  }
+
+  public void updateDebuffs() {
+    for (int i = 0; i < activeDebuffs.length; i++) {
+        if (activeDebuffs[i] != null) {
+            debuffTurns[i]--;
+            applyDebuffEffect(activeDebuffs[i]);
+
+            if (debuffTurns[i] <= 0) {
+                System.out.println(activeDebuffs[i] + " wore off!");
+                activeDebuffs[i] = null;
+            }
+        }
+    }
+  }
+
+  private void applyDebuffEffect(String debuff) {
+        switch (debuff.toLowerCase()) {
+            case "poison":
+                System.out.println(getName() + " takes 2 poison damage!");
+                takeDamage(2);
+                break;
+            case "burn":
+                System.out.println(getName() + " takes 2 burn damage!");
+                takeDamage(2);
+                break;
+            case "absorb":
+                System.out.println(getName() + " feels weaker! Health had been absored by 2");
+                takeDamage(2);
+                break;
+            case "defense down":
+                System.out.println(getName() + " feels weaker! Defense temporarily reduced.");
+                setDefense(getDefense() - 1);
+                break;
+            case "attack down":
+                System.out.println(getName() + " feels their strength fade!");
+                setAttackPower(getAttackPower() - 2);
+                break;
+            case "stun":
+                System.out.println(getName() + " is stunned and cannot move!");
+                break;
+            case "confusion":
+                System.out.println(getName() + " is confused by the masks!");
+                break;
+        }
+    }
+  
+  public void removeDebuff() {
+    for (int i = 0; i < activeDebuffs.length; i++) {
+      activeDebuffs[i] = null;
+    }
+    for (int i = 0; i < debuffTurns.length; i++) {
+      debuffTurns[i] = null;
+    }
+  }
+
+  public void checkStunned() {
+    for (String debuff : activeDebuffs) {
+      if (debuff == 'stun' || debuff == 'confusion') {
+        isStunned = true;
+        break;
+      }
+      else {
+        isStunned = false;
+      }
+    }
   }
 }
