@@ -14,7 +14,7 @@ public abstract class Player extends Character {
 
 	public abstract void showStats();
   public abstract void levelStats();
-  public abstract void useMove(int moveNumber, Character target);
+  public abstract void useMoves(int moveNumber, Character target);
 
 	//getter
   public int getLevel() {
