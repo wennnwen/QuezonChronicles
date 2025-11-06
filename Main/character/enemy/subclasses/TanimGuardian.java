@@ -1,6 +1,7 @@
 package Main.character.enemy.subclasses;
 
 import Main.item.*;
+import Main.character.player.Player;
 
 public class TanimGuardian extends Enemy {
 
