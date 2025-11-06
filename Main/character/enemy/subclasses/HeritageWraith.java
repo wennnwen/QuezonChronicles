@@ -14,13 +14,10 @@ public class HeritageWraith extends Enemy{
         setDefense(8);
         setSpeed(11);
 
-        // Experience reward
-        expReward = 25;
+        setExpReward(25);
 
-        //Possible Loot
-        possibleLoot = new Item[2];
-        possibleLoot[0] = new Pinagong();
-        possibleLoot[1] = new Budin();
+        // Possible loot
+        setPossibleLoot(new Item[]{new Pinagong(), new Budin()});
     }
 
     @Override
@@ -42,7 +39,7 @@ public class HeritageWraith extends Enemy{
     int defenseReduce = 1;
     int duration = 1;
 
-        player.addDefenseDebuff(defenseReduce, duration);
+        player.addDebuff(defenseReduce, duration);
         player.takeDamage(baseDamage);
     }
 }

@@ -14,12 +14,10 @@ public class FisherRogue extends Enemy {
         setDefense(8);
         setSpeed(10);
 
-        expReward = 60;
+        setExpReward(60);
 
-        // Possible Loot
-        possibleLoot = new Item[2];
-        possibleLoot[0] = new AdobongPusit();
-        possibleLoot[1] = new DriedFishSnack();
+        // Possible loot
+        setPossibleLoot(new Item[]{new AdobongPusit(), new DriedFishSnack()});
     }
 
     @Override

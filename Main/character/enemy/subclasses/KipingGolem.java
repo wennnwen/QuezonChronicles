@@ -21,8 +21,8 @@ public class KipingGolem extends Enemy {
     }
     
     @Override
-    private void enemyMove(Player player) {
-        System.out.println("\n💥 The Kiping Golem slams the ground, sending Kiping shards flying!");
+    public void enemyMove(Player player) {
+        System.out.println("\nThe Kiping Golem slams the ground, sending Kiping shards flying!");
         
         int damage = getAttackPower();
         player.takeDamage(damage);

@@ -14,12 +14,10 @@ public class BibingkaElemental extends Enemy {
         setDefense(8);
         setSpeed(10);
 
-        expReward = 60;
+        setExpReward(60);
 
-        // Possible Loot
-        possibleLoot = new Item[2];
-        possibleLoot[0] = new Bibingka();
-        possibleLoot[1] = new Panutsa();
+        // Possible loot
+        setPossibleLoot(new Item[]{new Bibingka(), new Panutsa()});
     }
 
     @Override

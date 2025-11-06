@@ -33,15 +33,14 @@ public class HoneyGuardian extends Enemy {
             System.out.println("Critical hit!");
         }
 
-        //poison tite
-        double poisonChance = 0.25; // 25% chance
-        if (Math.random() < poisonChance) {
-        player.addDebuff("Poison", 2);
-        System.out.println(player.getName() + " is poisoned for 2 turns!");
-}
-
         // Deal damage
         player.takeDamage(attackPower);
-        
+
+        //poison
+        double poisonChance = 0.3;
+        if (Math.random() < poisonChance) {
+            System.out.println(player.getName() + " is poisoned for 2 turns!");
+            player.applyDebuff("Poison", 2);
+        }
     }
 }

@@ -9,6 +9,7 @@ public abstract class Player extends Character {
   //Effect attributes
   private int attackBoostAmount = 0, attackBoostTurn = 0;
   private int defenseBoostAmount = 0, defenseBoostTurn = 0;
+  private int defenseDebuffAmount = 0, defenseDebuffTurn = 0;
 
   private final Item[] inventory = new Item[10];
   private final String[] attackMoves = new String[4];
@@ -96,6 +97,13 @@ public abstract class Player extends Character {
     System.out.println(getName() + "'s Defense increased by " + amount + " for " + duration);
   }
 
+  public void addDebuff(int amount, int duration) {
+    setDefense(getDefense() - amount);
+    defenseDebuffAmount = amount;
+    defenseDebuffTurn = duration;
+    System.out.println(getName() + "'s Defense decreased by " + amount + " for " + duration);
+  }
+
   public void updateTurnEffects() {
 
     //Attack Power
@@ -117,5 +125,13 @@ public abstract class Player extends Character {
         defenseBoostAmount = 0;
       }
     }
+
+    //Defense Debuff
+    if (defenseDebuffTurn > 0) {
+      defenseDebuffTurn--;
+      if (defenseDebuffTurn == 0) {
+        setDefense(getDefense() + defenseDebuffAmount);
+        System.out.println("Defense debuff expired for " + getName() + "!");
+        defenseDebuffAmount = 0;
   }
 }

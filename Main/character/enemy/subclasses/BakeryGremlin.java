@@ -14,13 +14,10 @@ public class BakeryGremlin extends Enemy{
         setDefense(7);
         setSpeed(10);
 
-        // Experience reward
-        expReward = 25;
+        setExpReward(25);
 
-        //Possible Loot
-        possibleLoot = new Item[2];
-        possibleLoot[0] = new Pinagong();
-        possibleLoot[1] = new Budin();
+        // Possible loot
+        setPossibleLoot(new Item[]{new Pinagong(), new Budin()});
     }
 
     @Override

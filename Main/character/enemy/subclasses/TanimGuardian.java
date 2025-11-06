@@ -35,6 +35,6 @@ public class TanimGuardian extends Enemy {
         System.out.println("Critical hit!");
     }
 
-    player.takeDamage(damage);
+    player.takeDamage(baseDamage);
     }
 }

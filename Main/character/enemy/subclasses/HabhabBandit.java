@@ -14,13 +14,10 @@ public class HabhabBandit extends Enemy{
         setDefense(8);
         setSpeed(6);
 
-        // Experience reward
-        expReward = 25;
+        setExpReward(25);
 
-        //Possible loot
-        possibleLoot = new Item[2];
-        possibleLoot[0] = new Habhab();
-        possibleLoot[1] = new LongganisangLucban();
+        // Possible loot
+        setPossibleLoot(new Item[]{new Habhab(), new LongganisangLucban()});
     }
 
     @Override

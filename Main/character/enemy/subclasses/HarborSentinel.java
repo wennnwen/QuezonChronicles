@@ -14,14 +14,10 @@ public class HarborSentinel extends Enemy {
         setDefense(12);     
         setSpeed(6);        
 
-        // Experience reward
-        expReward = 120;
+        setExpReward(120);
 
-        // Possible Loot
-        possibleLoot = new Item[2];
-        possibleLoot[0] = new Chami();
-        possibleLoot[1] = new CocoJam();
-
+        // Possible loot
+        setPossibleLoot(new Item[]{new Chami(), new CocoJam()});
     }
 
     @Override
