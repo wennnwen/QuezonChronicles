@@ -1,6 +1,6 @@
 package Main.Items;
 
-Import Main.Character.Player.Player;
+import Main.character.player.Player;
 
 public class Item {
     private String name, description;

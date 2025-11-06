@@ -1,8 +1,8 @@
-package Main.Items;
+package Main.item;
 
-import Main.Character.Player.*;
+import Main.character.player.Player;
 
-public class MountainHoney extends Items {
+public class MountainHoney extends Item {
 
     public MountainHoney() {
         setName("Mountain Honey");
