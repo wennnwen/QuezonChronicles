@@ -3,6 +3,7 @@ package Main;
 import java.util.Scanner;
 import Main.character.enemy.Enemy;
 import Main.character.player.Player;
+import Main.battle.BattleSystem;
 
 public class Town {
     private String name;

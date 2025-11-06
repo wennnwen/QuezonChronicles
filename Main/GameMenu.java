@@ -3,7 +3,11 @@ package Main;
 import java.util.Scanner;
 import Main.character.enemy.Enemy;
 import Main.character.player.Player;
+import Main.character.player.classes.*;
 import Main.item.*;
+import Main.battle.BattleSystem;
+import Main.world.WorldBuilder;
+import Main.Town;
 
 public class GameMenu {
 
@@ -24,7 +28,7 @@ public class GameMenu {
             System.out.println("4. Start Battle");
             System.out.println("5. Exit");
             inputMessager();
-            int choice = input.nextInt();
+            choice = input.nextInt();
             input.nextLine();
 
             switch (choice) {

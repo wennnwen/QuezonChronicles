@@ -8,7 +8,7 @@ public class Thief extends Player{
     Thief(String name){
         setName(name);
         setMaxHp(65);
-        setHP(65);
+        setHp(65);
         setStamina(40);
         setDefense(12);
         setAttackPower(18);
@@ -31,7 +31,7 @@ public class Thief extends Player{
             case 2:
                 if (getStamina() >= 10){
                     System.out.println(getName() + " used Critical Edge!");
-                    setStamina(getStamina - 10);
+                    setStamina(getStamina() - 10);
                     target.takeDamage(getAttackPower() * 2);
                 }
                 else {

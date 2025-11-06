@@ -26,6 +26,6 @@ public class ForestNymph extends Enemy {
 
         //healherself
         heal(18);
-        player.takeDamage(attackPower);
+        player.takeDamage(getAttackPower());
     }
 }

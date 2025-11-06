@@ -1,5 +1,6 @@
 package Main;
 
+import Main.character.enemy.Enemy;
 import Main.character.enemy.subclasses.*;
 
 public class WorldMap {

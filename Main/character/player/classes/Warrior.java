@@ -8,7 +8,7 @@ public class Warrior extends Player{
     Warrior(String name){
         setName(name);
         setMaxHp(65);
-        setHP(65);
+        setHp(65);
         setStamina(22);
         setDefense(8);
         setAttackPower(11);
@@ -31,7 +31,7 @@ public class Warrior extends Player{
             case 2:
                 if (getStamina() >= 5){
                     System.out.println(getName() + " used Cleave!");
-                    setStamina(getStamina - 5);
+                    setStamina(getStamina() - 5);
                     target.takeDamage((int) (getAttackPower() * 1.5));
                     break;
                 }
@@ -56,8 +56,8 @@ public class Warrior extends Player{
             case 4:
                 System.out.println(getName() + " used Second Wind!");
                 System.out.println(getName() + "'s healed for +15hp and restored +10 stamina!");
-                player.heal(15);
-                player.addStamina(10);
+                heal(15);
+                addStamina(10);
                 break;
 
             default:
