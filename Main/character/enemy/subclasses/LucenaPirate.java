@@ -14,13 +14,10 @@ public class LucenaPirate extends Enemy{
         setDefense(6);
         setSpeed(10);
 
-        // Experience reward
-        expReward = 40;
+        setExpReward(40);
 
-        //Possible Loot
-        possibleLoot = new Item[2];
-        possibleLoot[0] = new Chami();
-        possibleLoot[1] = new CocoJam();
+        // Possible loot
+        setPossibleLoot(new Item[]{new Chami(), new CocoJam()});
     }
 
     @Override

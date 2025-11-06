@@ -2,7 +2,7 @@ package Main.item;
 
 import Main.character.player.Player;
 
-public class Item {
+public abstract class Item {
     private String name, description;
 
     public abstract void useItem(Player player);

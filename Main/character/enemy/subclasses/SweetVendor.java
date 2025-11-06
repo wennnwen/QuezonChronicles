@@ -15,13 +15,12 @@ public class SweetVendor extends Enemy {
         setSpeed(6);
 
         // Experience reward
-        expReward = 45;
+        setExpReward(45);
 
         // Possible loot
-        possibleLoot = new Item[2];
-        possibleLoot[0] = new Bibingka();
-        possibleLoot[1] = new Panutsa();
+        setPossibleLoot(new Item[]{new Bibingka(), new Panutsa()});
     }
+    
     @Override
     public void enemyMove(Player player) {
         System.out.println("\n👻 The Sweet Vendor Spirit attacks!");

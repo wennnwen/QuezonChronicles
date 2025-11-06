@@ -75,7 +75,7 @@ public abstract class Player extends Character {
  
  public void showMoves() {
   for (String moves : attackMoves) {
-    if (move != null) {
+    if (moves != null) {
       System.out.println(moves);
     }
   }

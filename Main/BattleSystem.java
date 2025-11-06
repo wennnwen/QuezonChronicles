@@ -80,7 +80,7 @@ public class BattleSystem {
         enemy.enemyMove(player);
 
         if (!enemy.isAlive()) {
-            player.addExp();
+            player.addExp(enemy.getExpReward());
         }
     }
 }

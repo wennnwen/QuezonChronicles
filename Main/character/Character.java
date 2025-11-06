@@ -84,6 +84,10 @@ public abstract class Character {
   }
 
 	//setters for Stats
+  public void setName(String newName) {
+    name = newName;
+  }
+  
   public void setMaxHp(int newMaxHp) {
     maxHp = newMaxHp;
   }

@@ -14,13 +14,10 @@ public class TanimGuardian extends Enemy {
         setDefense(5);
         setSpeed(7);
 
-        // Experience reward
-        expReward = 45;
+        setExpReward(45);
 
         // Possible loot
-        possibleLoot = new Item[2];
-        possibleLoot[0] = new Habhab();
-        possibleLoot[1] = new LongganisangLucban();
+        setPossibleLoot(new Item[]{new Habhab(), new LongganisangLucban()});
     }
 
     @Override

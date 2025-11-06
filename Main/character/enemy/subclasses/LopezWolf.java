@@ -14,13 +14,10 @@ public class LopezWolf extends Enemy{
         setDefense(5);
         setSpeed(12);
 
-        // Experience reward
-        expReward = 40;
+        setExpReward(40);
 
-        //Possible Loot
-        possibleLoot = new Item[2];
-        possibleLoot[0] = new Tinuto();
-        possibleLoot[1] = new PugonCoffee();
+        // Possible loot
+        setPossibleLoot(new Item[]{new Tinuto(), new PugonCoffee()});
     }
 
     @Override

@@ -11,11 +11,9 @@ public class BananaChips extends Item {
 
     @Override
     public void useItem(Player player) {
-        int speedBoost = 2;
-        int duration = 2;
 
         System.out.println(player.getName() + " ate the Banana Chips!");
         System.out.println(player.getName() + " increased their speed by 2!");
-        player.addTemporaryAttackBoos(2, 2);
+        player.addSpeed(2);
     }
 }

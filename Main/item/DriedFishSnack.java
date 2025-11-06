@@ -5,7 +5,7 @@ import Main.character.player.Player;
 public class DriedFishSnack extends Item {
 
     public DriedFishSnack() {
-        setName("Drie Fish Snack");
+        setName("Dried Fish Snack");
         setDescription("(Dried Fish Snack gives you additional damages for 2 turns.)");
     }
 
@@ -15,6 +15,6 @@ public class DriedFishSnack extends Item {
 
         System.out.println(player.getName() + " ate the Dried Fish Snack!");
         System.out.println(player.getName() + " increased their speed by 2!");
-        player.add(speedBoost);
+        player.addTemporaryAttackBoost(attackBoostAmount, 2);
     }
 }

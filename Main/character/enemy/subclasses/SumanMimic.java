@@ -14,13 +14,10 @@ public class SumanMimic extends Enemy {
         setDefense(10);
         setSpeed(5);
 
-        // Experience reward
-        expReward = 80;
+        setExpReward(80);
 
         // Possible loot
-        possibleLoot = new Item[2];
-        possibleLoot[0] = new Tinuto();
-        possibleLoot[1] = new PugonCoffee();
+        setPossibleLoot(new Item[]{new Tinuto(), new PugonCoffee()});
     }
 
     @Override

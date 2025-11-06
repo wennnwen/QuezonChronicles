@@ -7,7 +7,7 @@ import Main.item.*;
 public abstract class Enemy extends Character {
 
     private int expReward;
-    private Item[] possibleLoot;
+    private Item[] possibleLoot = new Item[2];
 
     public abstract void enemyMove(Player player);
 
