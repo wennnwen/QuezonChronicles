@@ -17,7 +17,7 @@ public class Thief extends Player{
                                 "4. Smoke Bomb (Reduce enemy hit chance for 2 turns. (Cost: 15 Stamina))"});
         }   
 
-	@overrides 
+	@Overrides 
     public void useMoves(int moveNumber, Character target) {
         switch(moveNumber){
             case 1:

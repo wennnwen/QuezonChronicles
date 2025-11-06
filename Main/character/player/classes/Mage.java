@@ -16,7 +16,7 @@ public class Mage extends Player {
             "4. Pinagong Storm (Calls down hard pinagong breads on all enemies, dealy heavy damage. 18 MP)"});
    }
 
-	@overrides 
+	@Overrides 
    public void useMoves(int moveNumber, Character target) {
       switch(moveNumber) {
          case 1:

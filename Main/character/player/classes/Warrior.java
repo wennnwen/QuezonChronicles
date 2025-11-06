@@ -17,7 +17,7 @@ public class Warrior extends Player{
                                 "4. Second Wind(Gain minor heal and stamina.)"});
     }
 
-	@overrides 
+	@Overrides 
     public void useMoves(int moveNumber, Character target) {
         switch(moveNumber){
             case 1:

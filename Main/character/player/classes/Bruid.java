@@ -17,7 +17,7 @@ public class Bruid extends Player {
    							"4. Puso ng Saging (The druid summons a giant banana heart that explodes, dealing heavy damage and a 20% chance to stun. 15 MP)"});
 	}
 	
-	@overrides 
+	@Overrides 
 	public void useMoves(int moveNumber, Character target) {
     switch (moveNumber) {
       	case 1:

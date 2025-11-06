@@ -16,7 +16,7 @@ public class TagalogMonk extends Player {
             "4. Dasal ng Katahimikan (The monk prays calmly amid battle, restoring a portion of HP and stamina while reducing incoming damage by 25% for 1 turn)"});
    }
 
-	@overrides 
+	@Overrides 
    public void useMoves(int moveNumber, Character target) {
       switch(moveNumber) {
          case 1:
