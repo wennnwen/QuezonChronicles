@@ -1,8 +1,7 @@
 package Main.character.enemy;
 
-import Main.Character.Character;
-import Main.Character.Player.*;
-import Main.Items.*;
+import Main.character.player.Player;
+import Main.item.*;
 
 public class Enemy extends Character {
 

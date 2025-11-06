@@ -1,7 +1,6 @@
 package Main.character.player;
 
-import Main.Character.Character;
-import Main.Items.*;
+import Main.item.*;
 
 public abstract class Player extends Character {
   private int experience, level = 1, nextExpLevel = 100;
