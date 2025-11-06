@@ -16,7 +16,7 @@ public class WorldMap {
                 new Enemy[]{new BakeryGremlin(), new HeritageWraith()}, null);
 
         Town candelaria = new Town("Candelaria", "A peaceful town where traders rest.",
-                new Enemy[]{new BibingkaElemental(), new SweetVendorSpirit()}, null);
+                new Enemy[]{new BibingkaElemental(), new SweetVendor()}, null);
 
         Town tiaong = new Town("Tiaong", "A green, fertile area full of mystery.",
                 new Enemy[]{new PugonPhantom(), new TiaongKnight()}, new DonMariano());
@@ -38,7 +38,7 @@ public class WorldMap {
                 new Enemy[]{new SumanMimic(), new LopezWolf()}, new OldTrainSpirit());
 
         Town calauag = new Town("Calauag", "A historic town ruled by a fierce warlord.",
-                new Enemy[]{new FisherRouge(), new SeaWidow()}, null);
+                new Enemy[]{new FisherRogue(), new SeaWidow()}, null);
 
         Town infanta = new Town("Infanta", "A coastal area battered by storms.",
                 new Enemy[]{new ForestNymph(), new HoneyGuardian()}, null);

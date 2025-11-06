@@ -5,8 +5,8 @@ import Main.character.enemy.Enemy;
 import Main.character.player.Player;
 import Main.character.player.classes.*;
 import Main.item.*;
-import Main.battle.BattleSystem;
-import Main.world.WorldBuilder;
+import Main.BattleSystem;
+import Main.WorldMap;
 import Main.Town;
 
 public class GameMenu {
@@ -122,13 +122,13 @@ public class GameMenu {
 
         if (choice == 1) {
             System.out.println("You chose the West Side path!");
-            startingTown = WorldBuilder.buildWestPath();
+            startingTown = WorldMap.buildWestPath();
         } else if (choice == 2) {
             System.out.println("You chose the East Side path!");
-            startingTown = WorldBuilder.buildEastPath();
+            startingTown = WorldMap.buildEastPath();
         } else {
             System.out.println("Invalid choice. Defaulting to West Side.");
-            startingTown = WorldBuilder.buildWestPath();
+            startingTown = WorldMap.buildWestPath();
         }
 
         startingTown.enterTown(player);

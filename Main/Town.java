@@ -3,7 +3,7 @@ package Main;
 import java.util.Scanner;
 import Main.character.enemy.Enemy;
 import Main.character.player.Player;
-import Main.battle.BattleSystem;
+import Main.BattleSystem;
 
 public class Town {
     private String name;
@@ -44,16 +44,17 @@ public class Town {
                     if (boss == null && enemiesDefeated < 2) {
                         Enemy randomEnemy = enemies[(int)(Math.random() * enemies.length)];
                         System.out.println("A wild " + randomEnemy.getName() + " appeared!");
-                        new BattleSystem().startBattle(player, randomEnemy);
+                        new BattleSystem().BattleStart(player, randomEnemy);
                         enemiesDefeated++;
                     } else if (boss != null && enemiesDefeated < 2) {
                         Enemy randomEnemy = enemies[(int)(Math.random() * enemies.length)];
                         System.out.println("A wild " + randomEnemy.getName() + " appeared!");
-                        new BattleSystem().startBattle(player, randomEnemy);
+                        new BattleSystem().BattleStart(player, randomEnemy);
                         enemiesDefeated++;
                     } else if (boss != null && enemiesDefeated == 2) {
+                        Enemy enemy = boss;
                         System.out.println("\n The boss of " + name + " appears: " + boss.getName() + "!");
-                        new BattleSystem().startBattle(player, randomEnemy);
+                        new BattleSystem().BattleStart(player, enemy);
                         enemiesDefeated++;
                         System.out.println(" You’ve cleared " + name + "!");
                     } else {
