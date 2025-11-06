@@ -1,7 +1,8 @@
 package Main;
 
 import java.util.Scanner;
-import Main.Character.Enemy.*;
+import Main.character.enemy.Enemy;
+import Main.character.player.Player;
 
 public class Town {
     private String name;

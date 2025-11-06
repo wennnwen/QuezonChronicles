@@ -2,6 +2,7 @@ package Main.character.enemy.subclasses;
 
 import Main.item.*;
 import Main.character.player.Player;
+import Main.character.enemy.Enemy;
 
 public class BibingkaElemental extends Enemy {
 

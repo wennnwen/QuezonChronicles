@@ -1,6 +1,6 @@
 package Main;
 
-import Main.Character.Enemy.Subclasses.*;
+import Main.character.enemy.subclasses.*;
 
 public class WorldMap {
 

@@ -6,7 +6,7 @@ public abstract class Character {
 
   //Debuff Attributes
   private String[] activeDebuffs = new String[3];
-  private int[] debuffTurns = new int[5];
+  private int[] debuffTurns = new int[3];
 
   //Stun Attribute
   private boolean isStunned;
@@ -14,7 +14,7 @@ public abstract class Character {
   public void takeDamage(int amount) {
 		int reducedDamage = Math.max(0, amount - defense);
     hp -= reducedDamage;
-    System.out.println(name + " took " + reduceDamage + " damage.");
+    System.out.println(name + " took " + reducedDamage + " damage.");
 
     if (hp <= 0) {
       hp = 0;
@@ -175,18 +175,16 @@ public abstract class Character {
       activeDebuffs[i] = null;
     }
     for (int i = 0; i < debuffTurns.length; i++) {
-      debuffTurns[i] = null;
+      debuffTurns[i] = 0;
     }
   }
 
   public void checkStunned() {
+    isStunned = false;
     for (String debuff : activeDebuffs) {
-      if (debuff == "stun" || debuff == "confusion") {
+      if (debuff != null && (debuff.equalsIgnoreCase("stun") || debuff.equalsIgnoreCase("confusion"))) {
         isStunned = true;
         break;
-      }
-      else {
-        isStunned = false;
       }
     }
   }

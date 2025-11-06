@@ -1,5 +1,7 @@
 package Main.character.player.classes;
 
+import Main.character.player.Player;
+
 public class Mage extends Player {
    
    Mage(String name) {

@@ -1,5 +1,7 @@
 package Main.character.player.classes;
 
+import Main.character.player.Player;
+
 public class Thief extends Player{
 
     Thief(String name){

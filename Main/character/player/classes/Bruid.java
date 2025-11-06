@@ -1,5 +1,7 @@
 package Main.character.player.classes;
 
+import Main.character.player.Player;
+
 public class Bruid extends Player {
   
 	Bruid(String name) {

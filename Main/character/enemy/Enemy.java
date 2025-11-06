@@ -1,9 +1,10 @@
 package Main.character.enemy;
 
+import Main.character.Character;
 import Main.character.player.Player;
 import Main.item.*;
 
-public class Enemy extends Character {
+public abstract class Enemy extends Character {
 
     private int expReward;
     private Item[] possibleLoot;
@@ -32,5 +33,17 @@ public class Enemy extends Character {
 
     public int getExpReward() {
         return expReward;
+    }
+
+    public void setExpReward(int expReward) {
+        expReward = expReward;
+    }
+
+    public Item[] getPossibleLoot() {
+        return possibleLoot;
+    }
+
+    public void setPossibleLoot(Item[] possibleLoot) {
+        possibleLoot = possibleLoot;
     }
 }

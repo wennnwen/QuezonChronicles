@@ -1,6 +1,7 @@
 package Main.character.player;
 
 import Main.item.*;
+import Main.character.Character;
 
 public abstract class Player extends Character {
   private int experience, level = 1, nextExpLevel = 100;
@@ -49,7 +50,7 @@ public abstract class Player extends Character {
   }
 
   public void addItem(Item item) {
-      for (int i = 0; i < item.length; i++) {
+      for (int i = 0; i < inventory.length; i++) {
         if (inventory[i] == null) {
           inventory[i] = item;
           break;
@@ -67,14 +68,16 @@ public abstract class Player extends Character {
   }
   
   public void setMoves(String[] moves) {
-    for (int i = 0; i < moves.length; i++) {
+    for (int i = 0; i < moves.length & i < attackMoves.length; i++) {
       attackMoves[i] = moves[i];
     }
   }
  
  public void showMoves() {
   for (String moves : attackMoves) {
-    System.out.println(moves);
+    if (move != null) {
+      System.out.println(moves);
+    }
   }
  }
 
