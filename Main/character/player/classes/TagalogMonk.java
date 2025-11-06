@@ -1,4 +1,4 @@
-package Main.Character.Player.Classes;
+package Main.character.player.classes;
 
 public class TagalogMonk extends Player {
    

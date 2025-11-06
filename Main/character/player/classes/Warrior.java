@@ -1,4 +1,4 @@
-package Main.Character.Player.Classes;
+package Main.character.player.classes;
 
 public class Warrior extends Player{
 

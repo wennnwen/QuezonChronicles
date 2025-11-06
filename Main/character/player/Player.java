@@ -1,4 +1,4 @@
-package Main.Character.Player;
+package Main.character.player;
 
 import Main.Character.Character;
 import Main.Items.*;

@@ -1,4 +1,4 @@
-package Main.Character.Enemy.Subclasses;
+package Main.character.enemy.subclasses;
 
 import Main.Items.*;
 
