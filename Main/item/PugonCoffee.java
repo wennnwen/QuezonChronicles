@@ -1,8 +1,8 @@
-package Main.Items;
+package Main.item;
 
-import Main.Character.Player.*;
+import Main.character.player.Player;
 
-public class PugonCoffee extends Items {
+public class PugonCoffee extends Item {
 
     public PugonCoffee() {
         setName("Pugon Coffee");

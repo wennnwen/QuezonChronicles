@@ -1,9 +1,8 @@
+package Main.item;
 
-package Main.Items;
+import Main.character.player.Player;
 
-import Main.Character.Player.*;
-
-public class TropicalBreezeJuice extends Items {
+public class TropicalBreezeJuice extends Item {
 
     public TropicalBreezeJuice() {
         setName("Tropical Breeze Juice");

@@ -1,8 +1,8 @@
-package Main.Items;
+package Main.item;
 
-import Main.Character.Player.*;
+import Main.character.player.Player;
 
-public class BananaChips extends Items {
+public class BananaChips extends Item {
 
     public BananaChips() {
         setName("Banana Chips");

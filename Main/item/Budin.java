@@ -1,8 +1,8 @@
-package Main.Items;
+package Main.item;
 
-import Main.Character.Player.*;
+import Main.character.player.Player;
 
-public class Budin extends Items {
+public class Budin extends Item {
 
     public Budin() {
         setName("Budin");

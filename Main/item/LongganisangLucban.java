@@ -1,8 +1,8 @@
-package Main.Items;
+package Main.item;
 
-import Main.Character.Player.*;
+import Main.character.player.Player;
 
-public class LongganisangLucban extends Items {
+public class LongganisangLucban extends Item {
 
     public LongganisangLucban() {
         setName("Longganisang Lucban");

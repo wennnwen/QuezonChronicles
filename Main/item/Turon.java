@@ -1,8 +1,8 @@
-package Main.Items;
+package Main.item;
 
-import Main.Character.Player.*;
+import Main.character.player.Player;
 
-public class Turon extends Items {
+public class Turon extends Item {
 
     public Turon() {
         setName("Turon");

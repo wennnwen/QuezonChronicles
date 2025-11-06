@@ -1,8 +1,8 @@
-package Main.Items;
+package Main.item;
 
-import Main.Character.Player.*;
+import Main.character.player.Player;
 
-public class DriedFishSnack extends Items {
+public class DriedFishSnack extends Item {
 
     public DriedFishSnack() {
         setName("Drie Fish Snack");

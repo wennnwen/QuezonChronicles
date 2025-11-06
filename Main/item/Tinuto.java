@@ -1,8 +1,8 @@
-package Main.Items;
+package Main.item;
 
-import Main.Character.Player.*;
+import Main.character.player.Player;
 
-public class Tinuto extends Items {
+public class Tinuto extends Item {
 
     // Constructor
     public Tinuto() {

@@ -1,8 +1,8 @@
-package Main.Items;
+package Main.item;
 
-import Main.Character.Player.*;
+import Main.character.player.Player;
 
-public class AdobongPusit extends Items {
+public class AdobongPusit extends Item {
 
     public AdobongPusit() {
         setName("Adobong Pusit");

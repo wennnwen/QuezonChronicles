@@ -1,8 +1,8 @@
-package Main.Items;
+package Main.item;
 
-import Main.Character.Player.*;
+import Main.character.player.Player;
 
-public class Pinagong extends Items {
+public class Pinagong extends Item {
 
     public Pinagong() {
         setName("Pinagong");

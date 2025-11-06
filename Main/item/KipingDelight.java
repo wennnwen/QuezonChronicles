@@ -1,8 +1,8 @@
-package Main.Items;
+package Main.item;
 
-import Main.Character.Player.*;
+import Main.character.player.Player;
 
-public class KipingDelight extends Items {
+public class KipingDelight extends Item {
 
     public KipingDelight() {
         setName("Kiping Delight");

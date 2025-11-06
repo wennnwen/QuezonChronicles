@@ -1,8 +1,8 @@
-package Main.Items;
+package Main.item;
 
-import Main.Character.Player.*;
+import Main.character.player.Player;
 
-public class CocoJam extends Items {
+public class CocoJam extends Item {
 
     public CocoJam() {
         setName("Coco Jam");

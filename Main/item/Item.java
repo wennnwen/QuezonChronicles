@@ -1,4 +1,4 @@
-package Main.Items;
+package Main.item;
 
 import Main.character.player.Player;
 

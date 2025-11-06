@@ -1,8 +1,8 @@
-package Main.Items;
+package Main.item;
 
-import Main.Character.Player.*;
+import Main.character.player.Player;
 
-public class LopezCocoaDrink extends Items {
+public class LopezCocoaDrink extends Item {
 
     public LopezCocoaDrink() {
         setName("LopezCocoaDrink");

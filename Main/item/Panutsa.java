@@ -1,8 +1,8 @@
-package Main.Items;
+package Main.item;
 
-import Main.Character.Player.*;
+import Main.character.player.Player;
 
-public class Panutsa extends Items{
+public class Panutsa extends Item{
 
     public Panutsa() {
         setName("Panutsa");

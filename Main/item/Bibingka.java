@@ -1,8 +1,8 @@
-package Main.Items;
+package Main.item;
 
-import Main.Character.Player.*;
+import Main.character.player.Player;
 
-public class Bibingka extends Items {
+public class Bibingka extends Item {
 
     public Bibingka() {
         setName("Bibingka");

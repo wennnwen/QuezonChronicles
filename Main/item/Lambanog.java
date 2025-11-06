@@ -1,8 +1,8 @@
-package Main.Items;
+package Main.item;
 
-import Main.Character.Player.*;
+import Main.character.player.Player;
 
-public class Lambanog extends Items {
+public class Lambanog extends Item {
 
     public Lambanog() {
         setName("Lambanog");

@@ -1,8 +1,8 @@
-package Main.Items;
+package Main.item;
 
-import Main.Character.Player.*;
+import Main.character.player.Player;
 
-public class LambanogLecheFlan extends Items {
+public class LambanogLecheFlan extends Item {
 
     public LambanogLecheFlan() {
         setName("Lambanog Leche Flan");

@@ -1,8 +1,8 @@
-package Main.Items;
+package Main.item;
 
-import Main.Character.Player.*;
+import Main.character.player.Player;
 
-public class Chami extends Items {
+public class Chami extends Item {
 
     // Constructor
     public Chami() {
