@@ -1,9 +1,11 @@
 package Main;
 
+import Main.GameMenu;
+
 public class Game {
     private GameMenu menu;
 
-    Game() {
+    public Game() {
         menu = new GameMenu();
     }
    
