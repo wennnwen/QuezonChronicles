@@ -1,6 +1,6 @@
 package Main.character.enemy.subclasses;
 
-import Main.Items.*;
+import Main.item.*;
 
 public class TiaongKnight extends Enemy {
 
