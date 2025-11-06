@@ -133,5 +133,6 @@ public abstract class Player extends Character {
         setDefense(getDefense() + defenseDebuffAmount);
         System.out.println("Defense debuff expired for " + getName() + "!");
         defenseDebuffAmount = 0;
+      }
+    }
   }
-}
