@@ -1,6 +1,7 @@
 package Main.character.player.classes;
 
 import Main.character.player.Player;
+import Main.character.Character;
 
 public class Mage extends Player {
    
@@ -18,7 +19,7 @@ public class Mage extends Player {
             "4. Pinagong Storm (Calls down hard pinagong breads on all enemies, dealy heavy damage. 18 MP)"});
    }
 
-	@Overrides 
+	@Override
    public void useMoves(int moveNumber, Character target) {
       switch(moveNumber) {
          case 1:

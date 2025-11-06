@@ -1,6 +1,7 @@
 package Main.character.player.classes;
 
 import Main.character.player.Player;
+import Main.character.Character;
 
 public class Warrior extends Player{
 
@@ -19,7 +20,7 @@ public class Warrior extends Player{
                                 "4. Second Wind(Gain minor heal and stamina.)"});
     }
 
-	@Overrides 
+	@Override
     public void useMoves(int moveNumber, Character target) {
         switch(moveNumber){
             case 1:

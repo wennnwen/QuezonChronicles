@@ -1,6 +1,7 @@
 package Main.character.player.classes;
 
 import Main.character.player.Player;
+import Main.character.Character;
 
 public class Thief extends Player{
 
@@ -19,7 +20,7 @@ public class Thief extends Player{
                                 "4. Smoke Bomb (Reduce enemy hit chance for 2 turns. (Cost: 15 Stamina))"});
         }   
 
-	@Overrides 
+	@Override
     public void useMoves(int moveNumber, Character target) {
         switch(moveNumber){
             case 1:
