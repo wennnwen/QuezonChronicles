@@ -60,7 +60,7 @@ public class Thief extends Player{
         }
     }
 
-	@overrides 
+	@Override
     public void showStats() {
 		System.out.println("====Stats====");
 		System.out.println("Health: " + getHp() + "/" + getMaxHp());
@@ -72,7 +72,7 @@ public class Thief extends Player{
 		System.out.println("Level: " + getLevel());
 	}
    
-	@overrides 
+	@Override 
 	public void levelStats() {
  		setMaxHp(getMaxHp() + 5);
 		setHp(getHp() + 5);

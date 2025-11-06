@@ -66,7 +66,7 @@ public class Warrior extends Player{
         }
     }
 
-	@overrides 
+	@Override
     public void showStats() {
 		System.out.println("====Stats====");
 		System.out.println("Health: " + getHp() + "/" + getMaxHp());
@@ -78,7 +78,7 @@ public class Warrior extends Player{
 		System.out.println("Level: " + getLevel());
 	}
 
-	@overrides 
+	@Override 
 	public void levelStats() {
  		setMaxHp(getMaxHp() + 8);
 		setHp(getHp() + 8);
