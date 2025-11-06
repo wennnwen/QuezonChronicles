@@ -1,7 +1,6 @@
 package Main.item;
 
 import Main.character.player.Player;
-import Main.character.Character;
 
 public class AdobongPusit extends Item {
 
