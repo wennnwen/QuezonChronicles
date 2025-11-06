@@ -5,7 +5,7 @@ import Main.character.Character;
 
 public class Bruid extends Player {
   
-	Bruid(String name) {
+	public Bruid(String name) {
 		setName(name);
    		setMaxHp(60);
    		setHp(60);

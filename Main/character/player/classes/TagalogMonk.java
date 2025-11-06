@@ -5,7 +5,7 @@ import Main.character.Character;
 
 public class TagalogMonk extends Player {
    
-   TagalogMonk(String name) {
+   public TagalogMonk(String name) {
   		setMaxHp(55);
   		setHp(55);
   		setStamina(25);
@@ -41,15 +41,15 @@ public class TagalogMonk extends Player {
 
          case 3:
             if (getStamina() >= 15) {
-                System.out.println(getName() + " used a Karma Strike!");
-                setStamina(getStamina() - 15);
-			    int boostDamage = getAttackPower() + (int)(getAttackPower() * 0.2);
-                target.takeDamage(boostDamage);
-                int stunChance = Math.random();
-                    if (stunChance < 0.15) {
-                        System.out.println(target.getName() + " is stunned!");
-                        target.applyDebuff("stun", 1);
-                    }
+               System.out.println(getName() + " used a Karma Strike!");
+               setStamina(getStamina() - 15);
+			      int boostDamage = getAttackPower() + (int)(getAttackPower() * 0.2);
+               target.takeDamage(boostDamage);
+               double stunChance = Math.random();
+                  if (stunChance < 0.15) {
+                     System.out.println(target.getName() + " is stunned!");
+                     target.applyDebuff("stun", 1);
+                  }
             }
             else {
                 System.out.println("Not enough Stamina!");
@@ -58,9 +58,9 @@ public class TagalogMonk extends Player {
             
          case 4:
             System.out.println(getName() + " used Dasal ng Katahimikan");
-            heal((int)getHp() * 0.3);
+            heal((int)(getHp() * 0.3));
             addStamina(1);
-			addTemporaryDefenseBoost((int)(getDefense() * 0.25), 2);
+			   addTemporaryDefenseBoost((int)(getDefense() * 0.25), 2);
             break;
       }
    }

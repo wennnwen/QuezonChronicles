@@ -5,7 +5,7 @@ import Main.character.Character;
 
 public class Mage extends Player {
    
-   Mage(String name) {
+   public Mage(String name) {
   		setMaxHp(45);
   		setHp(45);
   		setMp(35);

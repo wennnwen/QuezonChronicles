@@ -5,7 +5,7 @@ import Main.character.Character;
 
 public class Warrior extends Player{
 
-    Warrior(String name){
+    public Warrior(String name){
         setName(name);
         setMaxHp(65);
         setHp(65);

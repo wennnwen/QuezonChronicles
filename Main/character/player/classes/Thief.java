@@ -5,7 +5,7 @@ import Main.character.Character;
 
 public class Thief extends Player{
 
-    Thief(String name){
+    public Thief(String name){
         setName(name);
         setMaxHp(65);
         setHp(65);
