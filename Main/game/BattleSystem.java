@@ -1,4 +1,4 @@
-package Main;
+package Main.game;
 
 import java.util.Scanner;
 import Main.character.enemy.Enemy;

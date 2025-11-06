@@ -1,6 +1,6 @@
-package Main;
+package Main.game;
 
-import Main.GameMenu;
+import Main.game.GameMenu;
 
 public class Game {
     private GameMenu menu;

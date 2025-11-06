@@ -1,4 +1,4 @@
-package Main;
+package Main.worldBuilder;
 
 import Main.character.enemy.Enemy;
 import Main.character.enemy.subclasses.*;

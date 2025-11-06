@@ -1,9 +1,9 @@
-package Main;
+package Main.worldBuilder;
 
 import java.util.Scanner;
 import Main.character.enemy.Enemy;
 import Main.character.player.Player;
-import Main.BattleSystem;
+import Main.game.BattleSystem;
 
 public class Town {
     private String name;

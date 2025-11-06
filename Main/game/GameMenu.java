@@ -1,13 +1,13 @@
-package Main;
+package Main.game;
 
 import java.util.Scanner;
 import Main.character.enemy.Enemy;
 import Main.character.player.Player;
 import Main.character.player.classes.*;
 import Main.item.*;
-import Main.BattleSystem;
-import Main.WorldMap;
-import Main.Town;
+import Main.game.BattleSystem;
+import Main.worldBuilder.WorldMap;
+import Main.worldBuilder.Town;
 
 public class GameMenu {
 
