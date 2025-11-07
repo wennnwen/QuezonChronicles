@@ -64,7 +64,7 @@ public class Thief extends Player{
     public void showStats() {
 		System.out.println("====Stats====");
 		System.out.println("Health: " + getHp() + "/" + getMaxHp());
-		System.out.println("Stamina: " + getMp());
+		System.out.println("Stamina: " + getStamina());
 		System.out.println("Defense: " + getDefense());
 		System.out.println("Attack Power: " + getAttackPower());
 		System.out.println("Speed: " + getSpeed());

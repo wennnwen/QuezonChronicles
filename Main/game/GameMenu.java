@@ -21,7 +21,7 @@ public class GameMenu {
 
         int choice = 0;
  		do {
-            System.out.println("Choose");
+            System.out.println("Choose: ");
             System.out.println("1. Create a character");
             System.out.println("2. Show Stats");
             System.out.println("3. Show Inventory");
@@ -33,6 +33,11 @@ public class GameMenu {
 
             switch (choice) {
                 case 1:
+                    if (player != null5) {
+                        System.out.println("You already have a character.");
+                        break;
+                        continue;
+                    }
                     System.out.print("Enter your name: ");
                     String name = input.nextLine();
 
@@ -68,8 +73,7 @@ public class GameMenu {
                             break;
                         
                         default:
-                            player = new Warrior(name);
-                            System.out.print("Invalid input. Setting default Class (Warrior)");
+                            System.out.print("Invalid input. Try again.");
                             break;
                     }
                     break;
