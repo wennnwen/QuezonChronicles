@@ -91,9 +91,25 @@ public class BattleSystem {
         }
         else if (choice == 5) {
             Item[] inventory = player.getInventory();
-            System.out.print("Choose item number: ");
-            int itemIndex = input.nextInt() - 1;
-            inventory[itemIndex].useItem(player);
+            boolean isEmpty = true;
+            if (inventory == null || inventory.length == 0) {
+                for (Item item : inventory) {
+                    if (item != null) {
+                        isEmpty = false;
+                        break;
+                    }
+                }
+            }
+            if (inventory == null || isEmpty) {
+                System.out.println("Your inventory is empty!");
+                return;
+            }
+            else {
+                player.showInventory();
+                System.out.print("Choose item number: ");
+                int itemIndex = input.nextInt() - 1;
+                inventory[itemIndex].useItem(player);
+            }
         }
         else {
             System.out.println("Invalid input. Enemy turn!");

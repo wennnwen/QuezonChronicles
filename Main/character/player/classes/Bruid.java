@@ -82,6 +82,7 @@ public class Bruid extends Player {
 		setHp(getHp() + 8);
 		setMp(getMp() + 8);
 		setMaxMp(getMaxMp() + 8);
+		setMaxStamina(getMaxStamina() + 8);
 		setDefense(getDefense() + 2);
 		setAttackPower(getAttackPower() + 2);
 		setSpeed(getSpeed() + 1);
