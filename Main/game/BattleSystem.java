@@ -102,7 +102,7 @@ public class BattleSystem {
             }
             if (inventory == null || isEmpty) {
                 System.out.println("Your inventory is empty!");
-                break;
+                return;
             }
             else {
                 player.showInventory();
