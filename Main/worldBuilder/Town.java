@@ -47,21 +47,15 @@ public class Town {
 
             switch (choice) {
                 case 1:
-                    if (boss == null && enemiesDefeated < 2) {
-                        Enemy randomEnemy = enemies[(int)(Math.random() * enemies.length)];
-                        System.out.println("A wild " + randomEnemy.getName() + " appeared!");
-                        new BattleSystem().BattleStart(player, randomEnemy);
+                    if (enemies != null && enemiesDefeated < enemies.length) {
+                        Enemy enemy = enemies[enemiesDefeated];
+                        System.out.println("A wild " + enemy.getName() + " appeared!");
+                        new BattleSystem().BattleStart(player, enemy);
                         enemiesDefeated++;
-                    } else if (boss != null && enemiesDefeated < 2) {
-                        Enemy randomEnemy = enemies[(int)(Math.random() * enemies.length)];
-                        System.out.println("A wild " + randomEnemy.getName() + " appeared!");
-                        new BattleSystem().BattleStart(player, randomEnemy);
-                        enemiesDefeated++;
-                    } else if (boss != null && enemiesDefeated == 2) {
-                        Enemy enemy = boss;
+                    } else if (boss != null && enemiesDefeated == (enemies != null ? enemies.length : 0)) {
                         System.out.println("\nYou've reached the boss battle!");
                         System.out.println("\nThe boss of " + name + " appears: " + boss.getName() + "!");
-                        new BattleSystem().BattleStart(player, enemy);
+                        new BattleSystem().BattleStart(player, boss);
                         enemiesDefeated++;
                         System.out.println("You’ve cleared " + name + "!");
                     } else {
