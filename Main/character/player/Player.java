@@ -60,14 +60,14 @@ public abstract class Player extends Character {
   }
 
   public void showInventory() {
-    System.out.println("============Inventory============");
+    System.out.println("========================Inventory========================");
     for (int i = 0; i < inventory.length; i++) {
       Item item = inventory[i];
       if (item != null) {
         System.out.print((i + 1) + ". " + item.getName() + " - " + item.getDescription());
       }
     }
-    System.out.println("=================================");
+    System.out.println("\n=========================================================");
   }
   
   public void setMoves(String[] moves) {
