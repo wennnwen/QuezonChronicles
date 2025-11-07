@@ -40,6 +40,7 @@ public abstract class Player extends Character {
     this.experience += amount;
     if (this.experience >= nextExpLevel) {
       levelUp();
+      experience -= nextExpLevel;
     }
   }
  
@@ -57,6 +58,12 @@ public abstract class Player extends Character {
           break;
         }
       }
+  }
+
+  public void removeItem(int index) {
+    if (index >= 0 && index < inventory.length) {
+      inventory[index] = null;
+    }
   }
 
   public void showInventory() {
