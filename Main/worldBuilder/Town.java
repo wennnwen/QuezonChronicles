@@ -103,7 +103,7 @@ public class Town {
                     else {
                         player.showInventory();
                     }
-                    `break;
+                    break;
 
                 case 5:
                     System.out.println("Returning to main menu...");
