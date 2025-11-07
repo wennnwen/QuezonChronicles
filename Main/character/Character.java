@@ -64,8 +64,20 @@ public abstract class Character {
     return stamina;
   }
 
+  public int getMaxStamina() {
+    return maxStamina;
+  }
+
   public int getMp() {
     return mp;
+  }
+
+  public int getMaxMp() {
+    return maxMp;
+  }
+
+  public int restoreStamina(){
+    return getMaxStamina;
   }
 
   public int getAttackPower() {
@@ -101,8 +113,16 @@ public abstract class Character {
     stamina = newStamina;
   }
 
+  public void setMaxStamina(int newMaxStamina) {
+    maxStamina = newMaxStamina;
+  }
+
   public void setMp(int newMp) {
     mp = newMp;
+  }
+
+  public void setMaxMp(int newMaxMp) {
+    maxMp = newMaxMp;
   }
 
   public void setAttackPower(int newAttackPower) {

@@ -1,6 +1,8 @@
 package Main.worldBuilder;
 
 import Main.character.enemy.Enemy;
+import Main.character.player.Player;
+import Main.character.Character;
 import Main.character.enemy.subclasses.*;
 
 public class WorldMap {
@@ -11,15 +13,19 @@ public class WorldMap {
 
         Town lucena = new Town("Lucena", "Bustling trade center by the coast.",
                 new Enemy[]{new PortRat(), new LucenaPirate()}, new HarborSentinel());
+                player.setMp(player.getMaxMp());
 
         Town sariaya = new Town("Sariaya", "A prosperous heritage town under siege by a fearsome foe.",
                 new Enemy[]{new BakeryGremlin(), new HeritageWraith()}, null);
+                player.setMp(player.getMaxMp());
 
         Town candelaria = new Town("Candelaria", "A peaceful town where traders rest.",
                 new Enemy[]{new BibingkaElemental(), new SweetVendor()}, null);
+                player.setMp(player.getMaxMp());
 
         Town tiaong = new Town("Tiaong", "A green, fertile area full of mystery.",
                 new Enemy[]{new PugonPhantom(), new TiaongKnight()}, new DonMariano());
+                player.setMp(player.getMaxMp());
 
         // Link sequence
         lucban.setNextTown(lucena);

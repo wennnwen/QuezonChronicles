@@ -9,6 +9,7 @@ public class Mage extends Player {
   		setMaxHp(45);
   		setHp(45);
   		setMp(35);
+      setMaxMp(35);
   		setDefense(4);
   		setAttackPower(10);
   		setSpeed(8);
@@ -62,7 +63,7 @@ public class Mage extends Player {
    public void showStats() {
 		System.out.println("====Stats====");
 		System.out.println("Health: " + getHp() + "/" + getMaxHp());
-		System.out.println("Mana: " + getMp());
+		System.out.println("Mana: " + getMp() + "/" + getMaxMp());
 		System.out.println("Defense: " + getDefense());
 		System.out.println("Attack Power: " + getAttackPower());
 		System.out.println("Speed: " + getSpeed());
@@ -75,6 +76,7 @@ public class Mage extends Player {
  		setMaxHp(getMaxHp() + 5);
 		setHp(getHp() + 5);
 		setMp(getMp() + 5);
+      setMaxMp(getMaxMp() + 5); 
 		setDefense(getDefense() + 1);
 		setAttackPower(getAttackPower() + 2);
 		setSpeed(getSpeed() + 1);
