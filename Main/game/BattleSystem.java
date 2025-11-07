@@ -45,7 +45,7 @@ public class BattleSystem {
                     if (player.isAlive() && enemy.isAlive()) {
                         System.out.println("==============================\nPlayer Stats:\t\t\tEnemy Stats:");
                         System.out.println("Hp: " + player.getHp() + "/" + player.getMaxHp() + "\t\t\tHp: " + enemy.getHp() + "/" + enemy.getMaxHp());
-                        System.out.println("Stamina: " + player.getStamina() + " | Mp: " + player.getMp() + "\n");
+                        System.out.println("Stamina: " + player.getStamina() + "/" + player.getMaxStamina() + " | Mp: " + player.getMp() + "/" + player.getMaxMp() + "\n");
                         playerTurn(player, enemy);
                     }
                 }
@@ -81,12 +81,12 @@ public class BattleSystem {
     }
 
     public void playerTurn(Player player, Enemy enemy) {
+        System.out.println("\nYour moves:");
         player.showMoves();
         System.out.println("5. Use item");
         System.out.print("Enter your choice: ");
         int choice = input.nextInt();
         if (choice >= 1 && choice <= 4) {
-            System.out.println("\nYour moves:");
             player.useMoves(choice, enemy);
         }
         else if (choice == 5) {

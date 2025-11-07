@@ -97,9 +97,9 @@ public class Town {
                 case 4: 
                     Item[] inventory = player.getInventory();
                     boolean isEmpty = true;
-                    if (inventory == null || inventory.length == 0) {
-                        for (Item item : inventory) {
-                            if (item != null) {
+                    if (inventory != null && inventory.length > 0) {
+                        for (int i = 0; i < inventory.length; i++) {
+                            if (inventory[i] != null) {
                                 isEmpty = false;
                                 break;
                             }
