@@ -10,6 +10,7 @@ public class Thief extends Player{
         setMaxHp(65);
         setHp(65);
         setStamina(40);
+        setMaxStamina(40);
         setDefense(12);
         setAttackPower(18);
         setSpeed(15);
@@ -64,7 +65,7 @@ public class Thief extends Player{
     public void showStats() {
 		System.out.println("====Stats====");
 		System.out.println("Health: " + getHp() + "/" + getMaxHp());
-		System.out.println("Stamina: " + getStamina());
+		System.out.println("Stamina: " + getStamina() + "/" + getMaxStamina());
 		System.out.println("Defense: " + getDefense());
 		System.out.println("Attack Power: " + getAttackPower());
 		System.out.println("Speed: " + getSpeed());
@@ -77,6 +78,7 @@ public class Thief extends Player{
  		setMaxHp(getMaxHp() + 5);
 		setHp(getHp() + 5);
 		setStamina(getStamina() + 2);
+        setMaxStamina(getMaxStamina() + 2);
 		setDefense(getDefense() + 1);
 		setAttackPower(getAttackPower() + 1);
 		setSpeed(getSpeed() + 1);

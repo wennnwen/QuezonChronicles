@@ -10,6 +10,7 @@ public class Warrior extends Player{
         setMaxHp(65);
         setHp(65);
         setStamina(22);
+        setMaxStamina(22);
         setDefense(8);
         setAttackPower(11);
         setSpeed(6);
@@ -70,7 +71,7 @@ public class Warrior extends Player{
     public void showStats() {
 		System.out.println("====Stats====");
 		System.out.println("Health: " + getHp() + "/" + getMaxHp());
-		System.out.println("Stamina: " + getStamina());
+		System.out.println("Stamina: " + getStamina() + "/" + getMaxStamina());
 		System.out.println("Defense: " + getDefense());
 		System.out.println("Attack Power: " + getAttackPower());
 		System.out.println("Speed: " + getSpeed());
@@ -83,6 +84,7 @@ public class Warrior extends Player{
  		setMaxHp(getMaxHp() + 8);
 		setHp(getHp() + 8);
 		setStamina(getStamina() + 4);
+        setMaxStamina(getMaxStamina() + 4);
 		setDefense(getDefense() + 2);
 		setAttackPower(getAttackPower() + 2);
 		setSpeed(getSpeed() + 1);

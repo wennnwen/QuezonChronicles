@@ -10,6 +10,7 @@ public class Bruid extends Player {
    		setMaxHp(60);
    		setHp(60);
    		setMp(40);
+		setMaxMp(40);
    		setDefense(6);
    		setAttackPower(10);
    		setSpeed(7);
@@ -67,7 +68,7 @@ public class Bruid extends Player {
 	public void showStats() {
 		System.out.println("====Stats====");
 		System.out.println("Health: " + getHp() + "/" + getMaxHp());
-		System.out.println("Mana: " + getMp());
+		System.out.println("Mana: " + getMp() + "/" + getMaxMp());
 		System.out.println("Defense: " + getDefense());
 		System.out.println("Attack Power: " + getAttackPower());
 		System.out.println("Speed: " + getSpeed());
@@ -80,6 +81,7 @@ public class Bruid extends Player {
  		setMaxHp(getMaxHp() + 8);
 		setHp(getHp() + 8);
 		setMp(getMp() + 8);
+		set(getMaxMp() + 8)
 		setDefense(getDefense() + 2);
 		setAttackPower(getAttackPower() + 2);
 		setSpeed(getSpeed() + 1);
