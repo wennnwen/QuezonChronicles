@@ -53,10 +53,10 @@ public class Town {
                         enemiesDefeated++;
                     } else if (boss != null && enemiesDefeated == 2) {
                         Enemy enemy = boss;
-                        System.out.println("\n The boss of " + name + " appears: " + boss.getName() + "!");
+                        System.out.println("\nThe boss of " + name + " appears: " + boss.getName() + "!");
                         new BattleSystem().BattleStart(player, enemy);
                         enemiesDefeated++;
-                        System.out.println(" You’ve cleared " + name + "!");
+                        System.out.println("You’ve cleared " + name + "!");
                     } else {
                         System.out.println("You’ve already cleared all enemies here!");
                     }
