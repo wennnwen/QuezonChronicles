@@ -20,6 +20,7 @@ public class BattleSystem {
 
 
         if (player.getSpeed() > enemy.getSpeed()) {
+            System.out.println("\nPlayer goes first!");
             player.checkStunned();
             if (!player.getIsStunned()) {
                 playerTurn(player, enemy);
@@ -28,6 +29,7 @@ public class BattleSystem {
         }
        
         else if (enemy.getSpeed() > player.getSpeed()) {
+            System.out.println("\nEnemy goes first!");
             enemy.checkStunned();
             if (!enemy.getIsStunned()) {
                 enemyTurn(player, enemy);
@@ -43,7 +45,7 @@ public class BattleSystem {
                     // dead before the player's turn, skip the player's turn.
                     enemyTurn(player, enemy);
                     if (player.isAlive() && enemy.isAlive()) {
-                        System.out.println("==============================\nPlayer Stats:\t\t\tEnemy Stats:");
+                        System.out.println("========================================================================\nPlayer Stats:\t\t\tEnemy Stats:");
                         System.out.println("Hp: " + player.getHp() + "/" + player.getMaxHp() + "\t\t\tHp: " + enemy.getHp() + "/" + enemy.getMaxHp());
                         System.out.println("Stamina: " + player.getStamina() + " | Mp: " + player.getMp() + "\n");
                         playerTurn(player, enemy);
