@@ -60,6 +60,12 @@ public abstract class Player extends Character {
       }
   }
 
+  public void removeItem(int index) {
+    if (index >= 0 && index < inventory.length) {
+      inventory[index] = null;
+    }
+  }
+
   public void showInventory() {
     System.out.println("|============================================== Inventory ==============================================|\n");
     for (int i = 0; i < inventory.length; i++) {

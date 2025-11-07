@@ -116,6 +116,7 @@ public class BattleSystem {
                     return;
                 }
                 inventory[itemIndex].useItem(player);
+                player.removeItem(itemIndex);
             }
         }
         else {
