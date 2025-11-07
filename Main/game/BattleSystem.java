@@ -79,8 +79,8 @@ public class BattleSystem {
         System.out.println("Enemy Turn!");
         enemy.enemyMove(player);
 
-        if (!enemy.isAlive()) {
+        if (!(enemy.isAlive())) {
             player.addExp(enemy.getExpReward());
         }
     }
-}
+}   

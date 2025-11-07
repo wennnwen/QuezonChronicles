@@ -35,8 +35,8 @@ public abstract class Enemy extends Character {
         return expReward;
     }
 
-    public void setExpReward(int expReward) {
-        expReward = expReward;
+    public void setExpReward(int amount) {
+        expReward = amount;
     }
 
     public Item[] getPossibleLoot() {
