@@ -36,7 +36,6 @@ public class GameMenu {
                     if (player != null) {
                         System.out.println("You already have a character.");
                         break;
-                        continue;
                     }
                     System.out.print("Enter your name: ");
                     String name = input.nextLine();

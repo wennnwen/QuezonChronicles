@@ -36,8 +36,13 @@ public class BattleSystem {
             if (playerInitiative) {
                 enemy.checkStunned();
                 if (!enemy.getIsStunned()) {
+                    // Enemy goes first this round. If their action kills the player,
+                    // we should not run the player's turn. Likewise, if enemy is
+                    // dead before the player's turn, skip the player's turn.
                     enemyTurn(player, enemy);
-                    playerTurn(player, enemy);
+                    if (player.isAlive() && enemy.isAlive()) {
+                        playerTurn(player, enemy);
+                    }
                 }
                 else {
                     playerTurn(player, enemy);
@@ -46,14 +51,19 @@ public class BattleSystem {
             else {
                 player.checkStunned();
                 if (!player.getIsStunned()) {
+                    // Player acts first. If the player kills the enemy, don't let
+                    // the (now dead) enemy take a turn.
                     playerTurn(player, enemy);
-                    enemyTurn(player, enemy);
+                    if (player.isAlive() && enemy.isAlive()) {
+                        enemyTurn(player, enemy);
+                    }
                 }
                 else {
                     enemyTurn(player, enemy);
                 }
             }
         }
+
         handleVictory(player, enemy);
 
         if (!player.isAlive()) {
