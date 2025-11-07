@@ -67,9 +67,7 @@ public class BattleSystem {
             }
         }
 
-
         handleVictory(player, enemy);
-
 
         if (!player.isAlive()) {
             System.out.println("Game over! You have been slained!");
@@ -99,10 +97,6 @@ public class BattleSystem {
     public void enemyTurn(Player player, Enemy enemy) {
         System.out.println("Enemy Turn!");
         enemy.enemyMove(player);
-
-        if (!(enemy.isAlive())) {
-            player.addExp(enemy.getExpReward());
-        }
     }
 
     public void handleVictory(Player player, Enemy enemy) {

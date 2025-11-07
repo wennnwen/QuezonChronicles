@@ -43,7 +43,7 @@ public abstract class Enemy extends Character {
         return possibleLoot;
     }
 
-    public void setPossibleLoot(Item[] possibleLoot) {
-        possibleLoot = possibleLoot;
+    public void setPossibleLoot(Item[] newPossibleLoot) {
+        possibleLoot = newPossibleLoot;
     }
 }
