@@ -45,7 +45,7 @@ public class BattleSystem {
                     if (player.isAlive() && enemy.isAlive()) {
                         System.out.println("==============================\nPlayer Stats:\t\t\tEnemy Stats:");
                         System.out.println("Hp: " + player.getHp() + "/" + player.getMaxHp() + "\t\t\tHp: " + enemy.getHp() + "/" + enemy.getMaxHp());
-                        System.out.println("Stamina: " + player.getStamina() + " | Mp: " + player.getMp() + "\n");
+                        System.out.println("Stamina: " + player.getStamina() + "/" + player.getMaxStamina() + " | Mp: " + player.getMp() + "/" + player.getMaxMp() + "\n");
                         playerTurn(player, enemy);
                     }
                 }
