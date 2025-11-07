@@ -39,7 +39,8 @@ public class Town {
             System.out.println("1. Explore / Battle");
             System.out.println("2. Move to next town");
             System.out.println("3. Check player stats");
-            System.out.println("4. Exit to main menu");
+            System.out.println("4. Inventory");
+            System.out.println("5. Exit to main menu");
             System.out.print("Choice: ");
             int choice = sc.nextInt();
 
@@ -85,7 +86,26 @@ public class Town {
                     player.showStats();
                     break;
 
-                case 4:
+                case 4: 
+                    Item[] inventory = player.getInventory();
+                    boolean isEmpty = true;
+                    if (inventory == null || inventory.length == 0) {
+                        for (Item item : inventory) {
+                            if (item != null) {
+                                isEmpty = false;
+                                break;
+                            }
+                        }
+                    }
+                    if (inventory == null || isEmpty) {
+                        System.out.println("Your inventory is empty!");
+                    }
+                    else {
+                        player.showInventory();
+                    }
+                    `break;
+
+                case 5:
                     System.out.println("Returning to main menu...");
                     return;
 
