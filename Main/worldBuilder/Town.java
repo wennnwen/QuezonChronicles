@@ -40,7 +40,8 @@ public class Town {
             System.out.println("1. Explore / Battle");
             System.out.println("2. Move to next town");
             System.out.println("3. Check player stats");
-            System.out.println("4. Exit to main menu");
+            System.out.println("4. Inventory");
+            System.out.println("5. Exit to main menu");
             System.out.print("Choice: ");
             int choice = sc.nextInt();
 
@@ -71,7 +72,14 @@ public class Town {
                     if ((boss == null && enemiesDefeated >= 2) || (boss != null && enemiesDefeated >= 3)) {
                         if (nextTown != null) {
                             System.out.println("Travelling to " + nextTown.name + "...");
-                            nextTown.enterTown(player);
+                            if (player.getStamina() < player.getMaxStamina()) {
+                                player.setStamina(player.getMaxStamina());
+                                System.out.println("\nYour stamina has been fully restored.");
+                            } else {
+                                player.setMp(player.getMaxMp());
+                                System.out.println("\nYour MP has been fully restored.");
+                            }
+                                nextTown.enterTown(player);
                             return;
                         } else {
                             System.out.println("You’ve reached the end of your journey!");
@@ -86,7 +94,26 @@ public class Town {
                     player.showStats();
                     break;
 
-                case 4:
+                case 4: 
+                    Item[] inventory = player.getInventory();
+                    boolean isEmpty = true;
+                    if (inventory == null || inventory.length == 0) {
+                        for (Item item : inventory) {
+                            if (item != null) {
+                                isEmpty = false;
+                                break;
+                            }
+                        }
+                    }
+                    if (inventory == null || isEmpty) {
+                        System.out.println("Your inventory is empty!");
+                    }
+                    else {
+                        player.showInventory();
+                    }
+                    break;
+
+                case 5:
                     System.out.println("Returning to main menu...");
                     return;
 
