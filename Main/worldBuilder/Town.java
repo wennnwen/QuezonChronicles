@@ -70,7 +70,14 @@ public class Town {
                     if ((boss == null && enemiesDefeated >= 2) || (boss != null && enemiesDefeated >= 3)) {
                         if (nextTown != null) {
                             System.out.println("Travelling to " + nextTown.name + "...");
-                            nextTown.enterTown(player);
+                            if (player.getStamina() < player.getMaxStamina()) {
+                                player.setStamina(player.getMaxStamina());
+                                System.out.println("\nYour stamina has been fully restored.");
+                            } else {
+                                player.setMp(player.getMaxMp());
+                                System.out.println("\nYour MP has been fully restored.");
+                            }
+                                nextTown.enterTown(player);
                             return;
                         } else {
                             System.out.println("You’ve reached the end of your journey!");
