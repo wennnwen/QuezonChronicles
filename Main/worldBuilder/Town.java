@@ -31,6 +31,9 @@ public class Town {
         Scanner sc = new Scanner(System.in);
 
         while (true) {
+            if (player.getHp() == 0) {
+                break;
+            }
             System.out.println("\nOptions:");
             System.out.println("1. Explore / Battle");
             System.out.println("2. Move to next town");
