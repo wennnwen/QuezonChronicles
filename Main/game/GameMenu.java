@@ -33,7 +33,7 @@ public class GameMenu {
 
             switch (choice) {
                 case 1:
-                    if (player != null5) {
+                    if (player != null) {
                         System.out.println("You already have a character.");
                         break;
                         continue;
