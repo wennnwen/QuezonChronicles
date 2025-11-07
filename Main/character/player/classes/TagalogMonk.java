@@ -6,6 +6,7 @@ import Main.character.Character;
 public class TagalogMonk extends Player {
    
    public TagalogMonk(String name) {
+      setName(name);
   		setMaxHp(55);
   		setHp(55);
   		setStamina(25);
@@ -58,6 +59,7 @@ public class TagalogMonk extends Player {
             
          case 4:
             System.out.println(getName() + " used Dasal ng Katahimikan");
+            System.out.println(getName() + "'s has healed and gained stamina!");
             heal((int)(getHp() * 0.3));
             addStamina(1);
 			   addTemporaryDefenseBoost((int)(getDefense() * 0.25), 2);
