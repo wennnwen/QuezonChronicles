@@ -37,7 +37,7 @@ public class BattleSystem {
         while (player.isAlive() && enemy.isAlive()) {
             System.out.println("Player Stats:\t\t\tEnemy Stats:");
             System.out.println("Hp: " + player.getHp() + "/" + player.getMaxHp() + "\t\t\tHp: " + enemy.getHp() + "/" + enemy.getMaxHp());
-            System.out.println("Stamina/Mp: " + player.getStamina() + "/" + player.getMp());
+            System.out.println("Stamina: " + player.getStamina() + " Mp: " + player.getMp() + "\n");
             if (playerInitiative) {
                 enemy.checkStunned();
                 if (!enemy.getIsStunned()) {
