@@ -40,6 +40,7 @@ public abstract class Player extends Character {
     this.experience += amount;
     if (this.experience >= nextExpLevel) {
       levelUp();
+      experience -= nextExpLevel;
     }
   }
  
