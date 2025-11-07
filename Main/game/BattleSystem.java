@@ -35,9 +35,6 @@ public class BattleSystem {
         }
 
         while (player.isAlive() && enemy.isAlive()) {
-            System.out.println("Player Stats:\t\t\tEnemy Stats:");
-            System.out.println("Hp: " + player.getHp() + "/" + player.getMaxHp() + "\t\t\tHp: " + enemy.getHp() + "/" + enemy.getMaxHp());
-            System.out.println("Stamina: " + player.getStamina() + " Mp: " + player.getMp() + "\n");
             if (playerInitiative) {
                 enemy.checkStunned();
                 if (!enemy.getIsStunned()) {
@@ -46,6 +43,9 @@ public class BattleSystem {
                     // dead before the player's turn, skip the player's turn.
                     enemyTurn(player, enemy);
                     if (player.isAlive() && enemy.isAlive()) {
+                        System.out.println("==============================\nPlayer Stats:\t\t\tEnemy Stats:");
+                        System.out.println("Hp: " + player.getHp() + "/" + player.getMaxHp() + "\t\t\tHp: " + enemy.getHp() + "/" + enemy.getMaxHp());
+                        System.out.println("Stamina: " + player.getStamina() + " | Mp: " + player.getMp() + "\n");
                         playerTurn(player, enemy);
                     }
                 }
@@ -54,6 +54,9 @@ public class BattleSystem {
                 }
             }
             else {
+                System.out.println("========================================================================\nPlayer Stats:\t\t\tEnemy Stats:");
+                System.out.println("Hp: " + player.getHp() + "/" + player.getMaxHp() + "\t\t\tHp: " + enemy.getHp() + "/" + enemy.getMaxHp());
+                System.out.println("Stamina: " + player.getStamina() + " | Mp: " + player.getMp() + "\n");
                 player.checkStunned();
                 if (!player.getIsStunned()) {
                     // Player acts first. If the player kills the enemy, don't let
@@ -83,6 +86,7 @@ public class BattleSystem {
         System.out.print("Enter your choice: ");
         int choice = input.nextInt();
         if (choice >= 1 && choice <= 4) {
+            System.out.println();
             player.useMoves(choice, enemy);
         }
         else if (choice == 5) {
