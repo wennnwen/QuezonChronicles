@@ -86,15 +86,16 @@ public class BattleSystem {
         System.out.print("Enter your choice: ");
         int choice = input.nextInt();
         if (choice >= 1 && choice <= 4) {
-            System.out.println();
+            System.out.println("\nYour moves:");
             player.useMoves(choice, enemy);
         }
         else if (choice == 5) {
             Item[] inventory = player.getInventory();
             boolean isEmpty = true;
-            if (inventory == null || inventory.length == 0) {
-                for (Item item : inventory) {
-                    if (item != null) {
+            // Only iterate when inventory is non-null and has slots
+            if (inventory != null && inventory.length > 0) {
+                for (int i = 0; i < inventory.length; i++) {
+                    if (inventory[i] != null) {
                         isEmpty = false;
                         break;
                     }
@@ -103,11 +104,15 @@ public class BattleSystem {
             if (inventory == null || isEmpty) {
                 System.out.println("Your inventory is empty!");
                 return;
-            }
-            else {
+            } else {
                 player.showInventory();
                 System.out.print("Choose item number: ");
                 int itemIndex = input.nextInt() - 1;
+                // Validate index and presence of item
+                if (itemIndex < 0 || itemIndex >= inventory.length || inventory[itemIndex] == null) {
+                    System.out.println("Invalid item choice.");
+                    return;
+                }
                 inventory[itemIndex].useItem(player);
             }
         }

@@ -4,6 +4,7 @@ import java.util.Scanner;
 import Main.character.enemy.Enemy;
 import Main.character.player.Player;
 import Main.game.BattleSystem;
+import Main.item.*;
 
 public class Town {
     private String name;

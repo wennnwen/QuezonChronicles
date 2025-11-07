@@ -92,9 +92,9 @@ public class GameMenu {
                     }
                     Item[] inventory = player.getInventory();
                     boolean isEmpty = true;
-                    if (inventory == null || inventory.length == 0) {
-                        for (Item item : inventory) {
-                            if (item != null) {
+                    if (inventory != null && inventory.length > 0) {
+                        for (int i = 0; i < inventory.length; i++) {
+                            if (inventory[i] != null) {
                                 isEmpty = false;
                                 break;
                             }
@@ -102,8 +102,7 @@ public class GameMenu {
                     }
                     if (inventory == null || isEmpty) {
                         System.out.println("Your inventory is empty!");
-                    }
-                    else {
+                    } else {
                         player.showInventory();
                     }
                     break;
