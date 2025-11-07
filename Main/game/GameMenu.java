@@ -21,9 +21,6 @@ public class GameMenu {
 
         int choice = 0;
  		do {
-            if (player.getHp() == 0) {
-                break;
-            }
             System.out.println("Choose: ");
             System.out.println("1. Create a character");
             System.out.println("2. Show Stats");
