@@ -2,7 +2,7 @@
 
 public abstract class Character {
   private String name;
-  private int maxHp, hp, stamina, mp, attackPower, defense, speed;
+  private int maxHp, hp, stamina, mp, attackPower, defense, speed, maxStamina, maxMp;
 
   //Debuff Attributes
   private String[] activeDebuffs = new String[3];
@@ -22,6 +22,7 @@ public abstract class Character {
   }
 
   public void heal(int amount) {
+    System.out.println(name + " healed " + amount + " HP.");
     hp += amount;
     if (hp >= maxHp) {
       hp = maxHp;
@@ -63,8 +64,16 @@ public abstract class Character {
     return stamina;
   }
 
+  public int getMaxStamina() {
+    return maxStamina;
+  }
+
   public int getMp() {
     return mp;
+  }
+
+  public int getMaxMp() {
+    return maxMp;
   }
 
   public int getAttackPower() {
@@ -100,8 +109,16 @@ public abstract class Character {
     stamina = newStamina;
   }
 
+  public void setMaxStamina(int newMaxStamina) {
+    maxStamina = newMaxStamina;
+  }
+
   public void setMp(int newMp) {
     mp = newMp;
+  }
+
+  public void setMaxMp(int newMaxMp) {
+    maxMp = newMaxMp;
   }
 
   public void setAttackPower(int newAttackPower) {

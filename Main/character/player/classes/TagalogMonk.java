@@ -10,6 +10,7 @@ public class TagalogMonk extends Player {
   		setMaxHp(55);
   		setHp(55);
   		setStamina(25);
+      setMaxStamina(25);
   		setDefense(6);
   		setAttackPower(9);
   		setSpeed(7);
@@ -71,7 +72,7 @@ public class TagalogMonk extends Player {
    public void showStats() {
 		System.out.println("====Stats====");
 		System.out.println("Health: " + getHp() + "/" + getMaxHp());
-		System.out.println("Stamina: " + getStamina());
+		System.out.println("Stamina: " + getStamina() + "/" + getMaxStamina());
 		System.out.println("Defense: " + getDefense());
 		System.out.println("Attack Power: " + getAttackPower());
 		System.out.println("Speed: " + getSpeed());
@@ -84,6 +85,7 @@ public class TagalogMonk extends Player {
  		setMaxHp(getMaxHp() + 6);
 		setHp(getHp() + 6);
 		setStamina(getStamina() + 2);
+      setMaxStamina(getMaxStamina() + 2);
 		setDefense(getDefense() + 2);
 		setAttackPower(getAttackPower() + 2);
 		setSpeed(getSpeed() + 1);
