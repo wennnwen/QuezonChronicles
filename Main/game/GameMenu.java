@@ -21,7 +21,7 @@ public class GameMenu {
 
         int choice = 0;
  		do {
-            System.out.println("Choose: ");
+            System.out.println("\nChoose: ");
             System.out.println("1. Create a character");
             System.out.println("2. Show Stats");
             System.out.println("3. Show Inventory");

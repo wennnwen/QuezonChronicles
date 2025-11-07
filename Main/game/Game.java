@@ -11,7 +11,6 @@ public class Game {
    
     public void start() {
         System.out.println("Game Starting...");
-        System.out.println();
 		menu.showMainMenu();
     }
 }
