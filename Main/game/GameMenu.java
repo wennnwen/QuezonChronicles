@@ -21,7 +21,7 @@ public class GameMenu {
 
         int choice = 0;
  		do {
-            System.out.println("Choose: ");
+            System.out.println("\nChoose: ");
             System.out.println("1. Create a character");
             System.out.println("2. Show Stats");
             System.out.println("3. Show Inventory");
@@ -40,7 +40,7 @@ public class GameMenu {
                     System.out.print("Enter your name: ");
                     String name = input.nextLine();
 
-                    System.out.println("Choose a class you want: ");
+                    System.out.println("\nChoose a class you want: ");
                     System.out.println("1 - Warrior");
                     System.out.println("2 - Mage");
                     System.out.println("3 - Thief");
