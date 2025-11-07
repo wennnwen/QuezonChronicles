@@ -59,6 +59,7 @@ public class Town {
                         enemiesDefeated++;
                     } else if (boss != null && enemiesDefeated == 2) {
                         Enemy enemy = boss;
+                        System.out.println("\nYou've reached the boss battle!");
                         System.out.println("\nThe boss of " + name + " appears: " + boss.getName() + "!");
                         new BattleSystem().BattleStart(player, enemy);
                         enemiesDefeated++;
