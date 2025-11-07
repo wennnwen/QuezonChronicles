@@ -9,7 +9,7 @@ public class BattleSystem {
 
     public Scanner input = new Scanner(System.in);
 
-    BattleSystem() {
+    public BattleSystem() {
         System.out.println("The battle has been initialized!");
     }
 
@@ -54,6 +54,12 @@ public class BattleSystem {
                 }
             }
         }
+        handleVictory(player, enemy);
+
+        if (!player.isAlive()) {
+            System.out.println("Game over! You have been slained!");
+            return;
+        }
     }
 
     public void playerTurn(Player player, Enemy enemy) {
@@ -81,6 +87,35 @@ public class BattleSystem {
 
         if (!(enemy.isAlive())) {
             player.addExp(enemy.getExpReward());
+        }
+    }
+
+    public void handleVictory(Player player, Enemy enemy) {
+        // If enemy is dead and player is alive -> normal victory
+        if (!enemy.isAlive() && player.isAlive()) {
+            System.out.println("You defeated " + enemy.getName() + "!");
+            player.addExp(enemy.getExpReward());
+            System.out.println("You gained " + enemy.getExpReward() + " Exp from the battle!");
+            Item loot = enemy.dropLoot();
+            if (loot != null) {
+                player.addItem(loot);
+                // Print the item's name (Item has getName()) instead of the raw object
+                System.out.println("You gained " + loot.getName() + " from the " + enemy.getName() + "!");
+            } else {
+                System.out.println("No loot dropped from " + enemy.getName() + ".");
+            }
+            return;
+        }
+
+
+        // If both have fallen in the same round
+        if (!enemy.isAlive() && !player.isAlive()) {
+            System.out.println("Both you and " + enemy.getName() + " have fallen!");
+            Item loot = enemy.dropLoot();
+            if (loot != null) {
+                System.out.println("The " + enemy.getName() + " dropped " + loot.getName() + ", but you couldn't pick it up.");
+            }
+            return;
         }
     }
 }   
