@@ -2,7 +2,7 @@ package Main.character;
 
 public abstract class Character {
   private String name;
-  private int maxHp, hp, stamina, mp, attackPower, defense, speed;
+  private int maxHp, hp, stamina, mp, attackPower, defense, speed, maxStamina, maxMp;
 
   //Debuff Attributes
   private String[] activeDebuffs = new String[3];
@@ -73,10 +73,6 @@ public abstract class Character {
 
   public int getMaxMp() {
     return maxMp;
-  }
-
-  public int restoreStamina(){
-    return getMaxStamina;
   }
 
   public int getAttackPower() {
