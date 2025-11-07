@@ -81,12 +81,12 @@ public class BattleSystem {
     }
 
     public void playerTurn(Player player, Enemy enemy) {
+        System.out.println("\nYour moves:");
         player.showMoves();
         System.out.println("5. Use item");
         System.out.print("Enter your choice: ");
         int choice = input.nextInt();
         if (choice >= 1 && choice <= 4) {
-            System.out.println("\nYour moves:");
             player.useMoves(choice, enemy);
         }
         else if (choice == 5) {
