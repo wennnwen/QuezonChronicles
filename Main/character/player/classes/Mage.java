@@ -46,6 +46,7 @@ public class Mage extends Player {
 
          case 4:
             if (getMp() >= 18) {
+               setMp(getMp() - 18);
                System.out.println(getName() + " cast a Pinagong Storm!");
                int damage = getAttackPower() + (int)(getAttackPower() * 0.5);
 				   target.takeDamage(damage);

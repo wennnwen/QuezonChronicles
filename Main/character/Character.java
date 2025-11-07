@@ -22,6 +22,7 @@ public abstract class Character {
   }
 
   public void heal(int amount) {
+    System.out.println(name + " healed " + amount + " HP.");
     hp += amount;
     if (hp >= maxHp) {
       hp = maxHp;
