@@ -90,7 +90,13 @@ public class GameMenu {
                         System.out.println("Please create character first.");
                         break;
                     }
-                    player.showInventory();
+                    Item[] inventory = player.getInventory();
+                    if (inventory == null || inventory.length == 0) {
+                        System.out.println("Your inventory is empty!");
+                    }
+                    else {
+                        player.showInventory();
+                    }
                     break;
 
                 case 4:
