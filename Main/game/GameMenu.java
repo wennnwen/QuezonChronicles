@@ -33,7 +33,7 @@ public class GameMenu {
 
             switch (choice) {
                 case 1:
-                    if (player != null) {
+                    if (!canCreateCharacter()) {
                         System.out.println("You already have a character.");
                         break;
                     }
@@ -94,6 +94,10 @@ public class GameMenu {
                     break;
 
                 case 4:
+                    if(!characterValidation(player)) {
+                        System.out.println("Please create character first.");
+                        break;
+                    }
                     choosePath();
                     break;
                 
@@ -110,6 +114,12 @@ public class GameMenu {
 
     public boolean characterValidation(Player player) {
         return player != null;
+    }
+    private boolean canCreateCharacter() {
+    if (this.player != null) {
+        return false;
+        }
+    return true;
     }
 
     public void choosePath() {

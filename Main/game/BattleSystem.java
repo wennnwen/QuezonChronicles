@@ -15,7 +15,9 @@ public class BattleSystem {
 
     public void BattleStart(Player player, Enemy enemy) {
 
+
         boolean playerInitiative = false;
+
 
         if (player.getSpeed() > enemy.getSpeed()) {
             player.checkStunned();
@@ -24,13 +26,14 @@ public class BattleSystem {
                 playerInitiative = true;
             }
         }
-        
+       
         else if (enemy.getSpeed() > player.getSpeed()) {
             enemy.checkStunned();
             if (!enemy.getIsStunned()) {
                 enemyTurn(player, enemy);
             }
         }
+
 
         while (player.isAlive() && enemy.isAlive()) {
             if (playerInitiative) {
@@ -64,7 +67,9 @@ public class BattleSystem {
             }
         }
 
+
         handleVictory(player, enemy);
+
 
         if (!player.isAlive()) {
             System.out.println("Game over! You have been slained!");
