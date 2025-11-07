@@ -113,12 +113,12 @@ public class BattleSystem {
                 System.out.print("Choose item number (Choose 0 to cancel): ");
                 int itemIndex = input.nextInt() - 1;
                 // Validate index and presence of item
-                if (itemIndex < 0 || itemIndex >= inventory.length || inventory[itemIndex] == null) {
-                    System.out.println("Invalid item choice.");
+                if (itemIndex == 0) {
+                    System.out.println("Item use cancelled.");
                     return;
                 }
-                else if (itemIndex == 0) {
-                    System.out.println("Item use cancelled.");
+                else if (itemIndex < 0 || itemIndex >= inventory.length || inventory[itemIndex] == null) {
+                    System.out.println("Invalid item choice.");
                     return;
                 }
                 inventory[itemIndex].useItem(player);
