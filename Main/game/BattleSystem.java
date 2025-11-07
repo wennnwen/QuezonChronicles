@@ -97,9 +97,13 @@ public class BattleSystem {
     public void enemyTurn(Player player, Enemy enemy) {
         System.out.println("Enemy Turn!");
         enemy.enemyMove(player);
+
+        if (!(enemy.isAlive())) {
+            player.addExp(enemy.getExpReward());
+        }
     }
 
-    public void handleVictory(Player player, Enemy enemy) {
+    public static void handleVictory(Player player, Enemy enemy) {
         // If enemy is dead and player is alive -> normal victory
         if (!enemy.isAlive() && player.isAlive()) {
             System.out.println("You defeated " + enemy.getName() + "!");
