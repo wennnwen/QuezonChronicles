@@ -8,14 +8,14 @@ public class SweetVendor extends Enemy {
 
     public SweetVendor() {
         setName("Sweet Vendor Spirit");
-        setMaxHp(80);
-        setHp(80);
+        setMaxHp(150);
+        setHp(150);
         setAttackPower(18);
-        setDefense(8);
+        setDefense(10);
         setSpeed(6);
 
         // Experience reward
-        setExpReward(45);
+        setExpReward(120);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Bibingka(), new Panutsa()});

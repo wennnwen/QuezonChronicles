@@ -8,13 +8,13 @@ public class LopezWolf extends Enemy{
 
     public LopezWolf(){
         setName("Lopez Wolf");
-        setMaxHp(30);
-        setHp(30);
-        setAttackPower(6);
-        setDefense(5);
-        setSpeed(12);
+        setMaxHp(125);
+        setHp(125);
+        setAttackPower(12);
+        setDefense(8);
+        setSpeed(16);
 
-        setExpReward(40);
+        setExpReward(90);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Tinuto(), new PugonCoffee()});

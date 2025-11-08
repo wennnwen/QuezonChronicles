@@ -8,13 +8,13 @@ public class HoneyGuardian extends Enemy {
 
     public HoneyGuardian() {
         setName("Honey Guardian");
-        setMaxHp(60);
-        setHp(60);
-        setAttackPower(12); 
-        setDefense(8);
-        setSpeed(10);
+        setMaxHp(170);
+        setHp(170);
+        setAttackPower(16); 
+        setDefense(12);
+        setSpeed(11);
 
-        setExpReward(60);
+        setExpReward(160);
 
         // Possible loot
         setPossibleLoot(new Item[]{new LambanogLecheFlan(), new MountainHoney()});

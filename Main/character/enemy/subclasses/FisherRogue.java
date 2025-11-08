@@ -8,13 +8,13 @@ public class FisherRogue extends Enemy {
 
     public FisherRogue() {
         setName("Fisher Rogue");
-        setMaxHp(60);
-        setHp(60);
-        setAttackPower(12); 
-        setDefense(8);
-        setSpeed(10);
+        setMaxHp(115);
+        setHp(115);
+        setAttackPower(13); 
+        setDefense(7);
+        setSpeed(14);
 
-        setExpReward(60);
+        setExpReward(85);
 
         // Possible loot
         setPossibleLoot(new Item[]{new AdobongPusit(), new DriedFishSnack()});

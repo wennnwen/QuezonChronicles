@@ -8,13 +8,13 @@ public class SeaWidow extends Enemy {
 
     public SeaWidow() {
         setName("Sea Widow");
-        setMaxHp(60);
-        setHp(60);
+        setMaxHp(140);
+        setHp(140);
         setAttackPower(12); 
-        setDefense(8);
-        setSpeed(10);
+        setDefense(9);
+        setSpeed(9);
 
-        setExpReward(60);
+        setExpReward(110);
 
         // Possible loot
         setPossibleLoot(new Item[]{new AdobongPusit(), new DriedFishSnack()});

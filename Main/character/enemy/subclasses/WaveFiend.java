@@ -8,13 +8,13 @@ public class WaveFiend extends Enemy {
 
     public WaveFiend() {
         setName("Wave Fiend");
-        setMaxHp(60);
-        setHp(60);
-        setAttackPower(12); 
-        setDefense(8);
+        setMaxHp(480);
+        setHp(480);
+        setAttackPower(25); 
+        setDefense(16);
         setSpeed(10);
 
-        setExpReward(60);
+        setExpReward(650);
 
         // Possible loot
         setPossibleLoot(new Item[]{new SinigangHipon(), new TropicalBreezeJuice()});

@@ -8,13 +8,13 @@ public class PugonPhantom extends Enemy {
 
     public PugonPhantom() {
         setName("Pugon Phantom");
-        setMaxHp(120);
-        setHp(120);
-        setAttackPower(16);
-        setDefense(10);
-        setSpeed(5);
+        setMaxHp(420);
+        setHp(420);
+        setAttackPower(22);
+        setDefense(14);
+        setSpeed(11);
         
-        setExpReward(80);
+        setExpReward(600);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Tinuto(), new PugonCoffee()});

@@ -8,13 +8,13 @@ public class QueenAmihan extends Enemy {
 
     public QueenAmihan() {
         setName("Queen Amihan");
-        setMaxHp(60);
-        setHp(60);
-        setAttackPower(12); 
-        setDefense(8);
-        setSpeed(10);
+        setMaxHp(700);
+        setHp(700);
+        setAttackPower(20); 
+        setDefense(20);
+        setSpeed(25);
 
-        setExpReward(60);
+        setExpReward(1500);
 
         // Possible loot
         setPossibleLoot(new Item[]{new SinigangHipon(), new TropicalBreezeJuice()});

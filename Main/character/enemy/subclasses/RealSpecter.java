@@ -8,13 +8,13 @@ public class RealSpecter extends Enemy {
 
     public RealSpecter() {
         setName("Real Specter");
-        setMaxHp(100);
-        setHp(100);
-        setAttackPower(15); 
+        setMaxHp(200);
+        setHp(200);
+        setAttackPower(18); 
         setDefense(12);
-        setSpeed(20);
+        setSpeed(14);
 
-        setExpReward(60);
+        setExpReward(350);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Tinuto(), new PugonCoffee()});

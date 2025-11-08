@@ -8,13 +8,13 @@ public class BibingkaElemental extends Enemy {
 
     public BibingkaElemental() {
         setName("Bibingka Elemental");
-        setMaxHp(60);
-        setHp(60);
-        setAttackPower(12); 
-        setDefense(8);
-        setSpeed(10);
+        setMaxHp(120);
+        setHp(120);
+        setAttackPower(14); 
+        setDefense(7);
+        setSpeed(8);
 
-        setExpReward(60);
+        setExpReward(95);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Bibingka(), new Panutsa()});

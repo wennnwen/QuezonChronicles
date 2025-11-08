@@ -8,11 +8,11 @@ public class HabhabBandit extends Enemy{
     
     public HabhabBandit() {
         setName("Habhab Bandit");
-        setMaxHp(30);
-        setHp(30);
-        setAttackPower(7);
-        setDefense(8);
-        setSpeed(6);
+        setMaxHp(60);
+        setHp(60);
+        setAttackPower(8);
+        setDefense(2);
+        setSpeed(14);
 
         setExpReward(25);
 

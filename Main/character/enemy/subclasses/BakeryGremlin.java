@@ -8,13 +8,13 @@ public class BakeryGremlin extends Enemy{
 
     public BakeryGremlin(){
         setName("Bakery Gremlin");
-        setMaxHp(50);
-        setHp(50);
-        setAttackPower(12);
-        setDefense(7);
-        setSpeed(10);
+        setMaxHp(95);
+        setHp(95);
+        setAttackPower(10);
+        setDefense(6);
+        setSpeed(8);
 
-        setExpReward(25);
+        setExpReward(55);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Pinagong(), new Budin()});

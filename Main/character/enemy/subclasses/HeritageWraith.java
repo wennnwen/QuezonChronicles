@@ -8,13 +8,13 @@ public class HeritageWraith extends Enemy{
 
     public HeritageWraith(){
         setName("Heritage Wraith");
-        setMaxHp(50);
-        setHp(50);
-        setAttackPower(10);
-        setDefense(8);
-        setSpeed(11);
+        setMaxHp(90);
+        setHp(90);
+        setAttackPower(12);
+        setDefense(5);
+        setSpeed(9);
 
-        setExpReward(25);
+        setExpReward(75);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Pinagong(), new Budin()});

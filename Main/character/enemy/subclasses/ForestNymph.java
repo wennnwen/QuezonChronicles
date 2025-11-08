@@ -8,13 +8,13 @@ public class ForestNymph extends Enemy {
 
     public ForestNymph() {
         setName("Forest Nymph");
-        setMaxHp(60);
-        setHp(60);
-        setAttackPower(12); 
+        setMaxHp(150);
+        setHp(150);
+        setAttackPower(10); 
         setDefense(8);
         setSpeed(10);
 
-        setExpReward(60);
+        setExpReward(125);
 
         // Possible loot
         setPossibleLoot(new Item[]{new LambanogLecheFlan(), new MountainHoney()});

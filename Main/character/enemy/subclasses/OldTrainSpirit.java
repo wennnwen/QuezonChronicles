@@ -8,13 +8,13 @@ public class OldTrainSpirit extends Enemy {
 
     public OldTrainSpirit() {
         setName("Old Train Spirit");
-        setMaxHp(120);
-        setHp(120);
-        setAttackPower(16);
-        setDefense(10);
-        setSpeed(5);
+        setMaxHp(220);
+        setHp(220);
+        setAttackPower(18);
+        setDefense(16);
+        setSpeed(15);
 
-        setExpReward(80);
+        setExpReward(240);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Tinuto(), new PugonCoffee()});

@@ -8,13 +8,13 @@ public class LucenaPirate extends Enemy{
 
     public LucenaPirate(){
         setName("Lucena Pirate");
-        setMaxHp(30);
-        setHp(30);
-        setAttackPower(6);
-        setDefense(6);
-        setSpeed(10);
+        setMaxHp(160);
+        setHp(160);
+        setAttackPower(17);
+        setDefense(10);
+        setSpeed(12);
 
-        setExpReward(40);
+        setExpReward(180);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Chami(), new CocoJam()});

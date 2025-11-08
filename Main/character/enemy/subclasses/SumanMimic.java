@@ -8,13 +8,13 @@ public class SumanMimic extends Enemy {
 
     public SumanMimic() {
         setName("Suman Mimic");
-        setMaxHp(120);
-        setHp(120);
-        setAttackPower(16);
-        setDefense(10);
-        setSpeed(5);
+        setMaxHp(100);
+        setHp(100);
+        setAttackPower(6);
+        setDefense(7);
+        setSpeed(7);
 
-        setExpReward(80);
+        setExpReward(60);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Tinuto(), new PugonCoffee()});

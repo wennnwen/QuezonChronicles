@@ -8,13 +8,13 @@ public class DonMariano extends Enemy {
 
     public DonMariano() {
         setName("Don Mariano the Collector");
-        setMaxHp(120);
-        setHp(120);
-        setAttackPower(16);
-        setDefense(10);
-        setSpeed(5);
+        setMaxHp(700);
+        setHp(700);
+        setAttackPower(28);
+        setDefense(22);
+        setSpeed(6);
 
-        setExpReward(80);
+        setExpReward(1200);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Tinuto(), new PugonCoffee()});

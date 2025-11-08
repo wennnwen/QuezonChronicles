@@ -8,10 +8,10 @@ public class KipingGolem extends Enemy {
 
     public KipingGolem() {
         setName("Kipping Golem");
-        setMaxHp(120);
-        setHp(120);
-        setAttackPower(16);
-        setDefense(10);
+        setMaxHp(190);
+        setHp(190);
+        setAttackPower(12);
+        setDefense(12);
         setSpeed(5);
 
         setExpReward(80);
