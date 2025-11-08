@@ -22,7 +22,7 @@ public class HabhabBandit extends Enemy{
 
     @Override
     public void enemyMove(Player player) {
-        System.out.println(getName() + "stabs with speed!");
+        System.out.println(getName() + " stabs with speed!");
 
     int baseDamage = getAttackPower();
     if (baseDamage < 0) baseDamage = 0;
