@@ -7,16 +7,16 @@ public class Thief extends Player{
 
     public Thief(String name){
         setName(name);
-        setMaxHp(65);
-        setHp(65);
-        setStamina(40);
-        setMaxStamina(40);
-        setDefense(12);
-        setAttackPower(18);
-        setSpeed(15);
+        setMaxHp(80);
+        setHp(80);
+        setStamina(60);
+        setMaxStamina(60);
+        setDefense(5);
+        setAttackPower(11);
+        setSpeed(12);
 
         // Capture base stats for proper reset behavior
-        setBaseStats(65, 40, 40, 0, 0, 12, 18, 15);
+        setBaseStats(80, 80, 60, 0, 0, 5, 11, 12);
 
         setMoves(new String[] {"1. Stab (Basic + no stamina required)",
                                 "2. Critical Edge (One strong hit that always lands critical damage (Cost: 10 Stamina))",

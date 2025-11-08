@@ -6,16 +6,16 @@ import Main.character.Character;
 public class Mage extends Player {
    
    public Mage(String name) {
-  		setMaxHp(45);
-  		setHp(45);
-  		setMp(35);
-      setMaxMp(35);
+  		setMaxHp(70);
+  		setHp(70);
+  		setMp(120);
+      setMaxMp(120);
   		setDefense(4);
-  		setAttackPower(10);
-  		setSpeed(8);
+  		setAttackPower(12);
+  		setSpeed(7);
 
       // Capture base stats for proper reset behavior
-      setBaseStats(45, 0, 0, 35, 35, 4, 10, 8);
+      setBaseStats(70, 0, 0, 120, 120, 4, 12, 7);
    
   		setMoves(new String[] {"1. Fire Ball (Basic + no mana required)", 
    			"2. LambaShield (Creates a barrier that reduces incoming damage by 30% for 2 turns. 10 MP)", 

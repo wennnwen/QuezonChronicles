@@ -7,16 +7,16 @@ public class TagalogMonk extends Player {
    
    public TagalogMonk(String name) {
       setName(name);
-  		setMaxHp(55);
-  		setHp(55);
-  		setStamina(25);
-      setMaxStamina(25);
-  		setDefense(6);
-  		setAttackPower(9);
-  		setSpeed(7);
+  		setMaxHp(100);
+  		setHp(100);
+  		setStamina(45);
+      setMaxStamina(45);
+  		setDefense(7);
+  		setAttackPower(10);
+  		setSpeed(8);
 
       // Capture base stats for proper reset behavior
-      setBaseStats(55, 25, 25, 0, 0, 6, 9, 7);
+      setBaseStats(100, 45, 45, 0, 0, 7, 10, 8);
    
   		setMoves(new String[] {"1. Suntok ni Apo (basic + no stamina required)", 
    			"2. Bugso ng Loob (The monk releases a surge of inner energy, increasing attack power by 40% and dealing strong damage to a single enemy. (Cost: 10 Stamina))", 

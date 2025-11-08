@@ -7,16 +7,16 @@ public class Warrior extends Player{
 
     public Warrior(String name){
         setName(name);
-        setMaxHp(65);
-        setHp(65);
-        setStamina(22);
-        setMaxStamina(22);
-        setDefense(8);
-        setAttackPower(11);
-        setSpeed(6);
+        setMaxHp(130);
+        setHp(130);
+        setStamina(30);
+        setMaxStamina(30);
+        setDefense(10);
+        setAttackPower(10);
+        setSpeed(5);
 
         // Capture base stats for proper reset behavior
-        setBaseStats(65, 22, 22, 0, 0, 8, 11, 6);
+        setBaseStats(130, 30, 30, 0, 0, 10, 10, 5);
 
         setMoves(new String[] {"1. Slash(Basic + no stamina required.)",
                                 "2. Cleave(Swings the weapon with all your might which deals 150% of normal damage.",

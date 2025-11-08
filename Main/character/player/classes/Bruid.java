@@ -7,16 +7,16 @@ public class Bruid extends Player {
   
 	public Bruid(String name) {
 		setName(name);
-   		setMaxHp(60);
-   		setHp(60);
-   		setMp(40);
-		setMaxMp(40);
+   		setMaxHp(90);
+   		setHp(90);
+   		setMp(60);
+		setMaxMp(60);
    		setDefense(6);
-   		setAttackPower(10);
-   		setSpeed(7);
+   		setAttackPower(8);
+   		setSpeed(6);
 
       // Capture base stats for proper reset behavior
-      setBaseStats(60, 0, 0, 40, 40, 6, 10, 7);
+      setBaseStats(90, 0, 0, 60, 60, 6, 8, 6);
    
   		setMoves(new String[] {"1. Banana Strike (Basic + no mana required)", 
    							"2. Front Shield (Banana tree fronds wrap around the character, reducing incoming damage by 25% for 2 turns. 10 MP)", 
