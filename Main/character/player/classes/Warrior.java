@@ -15,6 +15,9 @@ public class Warrior extends Player{
         setAttackPower(11);
         setSpeed(6);
 
+        // Capture base stats for proper reset behavior
+        setBaseStats(65, 22, 22, 0, 0, 8, 11, 6);
+
         setMoves(new String[] {"1. Slash(Basic + no stamina required.)",
                                 "2. Cleave(Swings the weapon with all your might which deals 150% of normal damage.",
                                 "3. Shield Bash(Deals minor damage and has a chance to stun.)",
@@ -25,13 +28,13 @@ public class Warrior extends Player{
     public void useMoves(int moveNumber, Character target) {
         switch(moveNumber){
             case 1:
-                System.out.println(getName() + " used Slash!");
+                System.out.println("\n" + getName() + " used Slash!");
                 target.takeDamage(getAttackPower());
                 break;
 
             case 2:
                 if (getStamina() >= 5){
-                    System.out.println(getName() + " used Cleave!");
+                    System.out.println("\n" + getName() + " used Cleave!");
                     setStamina(getStamina() - 5);
                     target.takeDamage((int) (getAttackPower() * 1.5));
                     break;
@@ -43,7 +46,7 @@ public class Warrior extends Player{
 
             case 3:
                 if (getStamina() >= 3){
-                    System.out.println(getName() + " used Shield Bash!");
+                    System.out.println("\n" + getName() + " used Shield Bash!");
                     target.takeDamage((int) (getAttackPower() * 0.5));
                     //chance to stun for 1 duration
                     //target.stun(1);
@@ -55,7 +58,7 @@ public class Warrior extends Player{
                 break;
 
             case 4:
-                System.out.println(getName() + " used Second Wind!");
+                System.out.println("\n" + getName() + " used Second Wind!");
                 System.out.println(getName() + "'s healed for +15hp and restored +10 stamina!");
                 heal(15);
                 addStamina(10);

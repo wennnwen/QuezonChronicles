@@ -14,6 +14,9 @@ public class TagalogMonk extends Player {
   		setDefense(6);
   		setAttackPower(9);
   		setSpeed(7);
+
+      // Capture base stats for proper reset behavior
+      setBaseStats(55, 25, 25, 0, 0, 6, 9, 7);
    
   		setMoves(new String[] {"1. Suntok ni Apo (basic + no stamina required)", 
    			"2. Bugso ng Loob (The monk releases a surge of inner energy, increasing attack power by 40% and dealing strong damage to a single enemy. (Cost: 10 Stamina))", 
@@ -25,13 +28,13 @@ public class TagalogMonk extends Player {
    public void useMoves(int moveNumber, Character target) {
       switch(moveNumber) {
          case 1:
-            System.out.println(getName() + " used Suntok ni Apo!");
+            System.out.println("\n" + getName() + " used Suntok ni Apo!");
             target.takeDamage(getAttackPower());
             break;
 
          case 2:
             if (getStamina() >= 18) {
-               System.out.println(getName() + " used Bugso ng Loob!");
+               System.out.println("\n" + getName() + " used Bugso ng Loob!");
                setStamina(getStamina() - 18);
                int boostDamage = getAttackPower() + (int)(getAttackPower() * 0.4);
                target.takeDamage(boostDamage);
@@ -43,7 +46,7 @@ public class TagalogMonk extends Player {
 
          case 3:
             if (getStamina() >= 15) {
-               System.out.println(getName() + " used a Karma Strike!");
+               System.out.println("\n" + getName() + " used a Karma Strike!");
                setStamina(getStamina() - 15);
 			      int boostDamage = getAttackPower() + (int)(getAttackPower() * 0.2);
                target.takeDamage(boostDamage);
@@ -59,7 +62,7 @@ public class TagalogMonk extends Player {
             break;
             
          case 4:
-            System.out.println(getName() + " used Dasal ng Katahimikan");
+            System.out.println("\n" + getName() + " used Dasal ng Katahimikan");
             System.out.println(getName() + "'s has healed and gained stamina!");
             heal((int)(getHp() * 0.3));
             addStamina(1);

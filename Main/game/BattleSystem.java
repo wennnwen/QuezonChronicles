@@ -17,9 +17,9 @@ public class BattleSystem {
 
         boolean playerInitiative = false;
 
-        System.out.println("========================================================================\nPlayer Stats:\t\t\tEnemy Stats:");
+        System.out.println("=========================================================================================================\nPlayer Stats:\t\t\tEnemy Stats:");
         System.out.println("Hp: " + player.getHp() + "/" + player.getMaxHp() + "\t\t\tHp: " + enemy.getHp() + "/" + enemy.getMaxHp());
-        System.out.println("Stamina: " + player.getStamina() + " | Mp: " + player.getMp() + "\n");
+        System.out.println("Stamina: " + player.getStamina() + " | Mp: " + player.getMp());
 
         if (player.getSpeed() > enemy.getSpeed()) {
             System.out.println("\nPlayer goes first!");
@@ -47,7 +47,7 @@ public class BattleSystem {
                     // dead before the player's turn, skip the player's turn.
                     enemyTurn(player, enemy);
                     if (player.isAlive() && enemy.isAlive()) {
-                        System.out.println("========================================================================\nPlayer Stats:\t\t\tEnemy Stats:");
+                        System.out.println("=========================================================================================================\nPlayer Stats:\t\t\tEnemy Stats:");
                         System.out.println("Hp: " + player.getHp() + "/" + player.getMaxHp() + "\t\t\tHp: " + enemy.getHp() + "/" + enemy.getMaxHp());
                         System.out.println("Stamina: " + player.getStamina() + "/" + player.getMaxStamina() + " | Mp: " + player.getMp() + "/" + player.getMaxMp());
                         playerTurn(player, enemy);
@@ -58,7 +58,7 @@ public class BattleSystem {
                 }
             }
             else {
-                System.out.println("========================================================================\nPlayer Stats:\t\t\tEnemy Stats:");
+                System.out.println("=========================================================================================================\nPlayer Stats:\t\t\tEnemy Stats:");
                 System.out.println("Hp: " + player.getHp() + "/" + player.getMaxHp() + "\t\t\tHp: " + enemy.getHp() + "/" + enemy.getMaxHp());
                 System.out.println("Stamina: " + player.getStamina() + " | Mp: " + player.getMp() + "\n");
                 player.checkStunned();
@@ -113,11 +113,11 @@ public class BattleSystem {
                 System.out.print("Choose item number (Choose 0 to cancel): ");
                 int itemIndex = input.nextInt() - 1;
                 // Validate index and presence of item
-                if (itemIndex == 0) {
+                if (itemIndex == -1) {
                     System.out.println("Item use cancelled.");
                     return;
                 }
-                else if (itemIndex < 0 || itemIndex >= inventory.length || inventory[itemIndex] == null) {
+                else if (itemIndex < -1 || itemIndex >= inventory.length || inventory[itemIndex] == null) {
                     System.out.println("Invalid item choice.");
                     return;
                 }

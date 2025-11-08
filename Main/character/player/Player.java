@@ -6,6 +6,15 @@ import Main.character.Character;
 public abstract class Player extends Character {
   private int experience, level = 1, nextExpLevel = 100;
 
+  // Base stats (captured at character creation) to allow proper reset
+  private int baseMaxHp = 0;
+  private int baseStamina = 0;
+  private int baseMaxStamina = 0;
+  private int baseMp = 0;
+  private int baseMaxMp = 0;
+  private int baseDefense = 0;
+  private int baseAttackPower = 0;
+  private int baseSpeed = 0;
   //Effect attributes
   private int attackBoostAmount = 0, attackBoostTurn = 0;
   private int defenseBoostAmount = 0, defenseBoostTurn = 0;
@@ -39,8 +48,8 @@ public abstract class Player extends Character {
   public void addExp(int amount) {
     this.experience += amount;
     if (this.experience >= nextExpLevel) {
-      levelUp();
       experience -= nextExpLevel;
+      levelUp();
     }
   }
  
@@ -144,5 +153,56 @@ public abstract class Player extends Character {
         defenseDebuffAmount = 0;
       }
     }
+  }
+
+  public void setBaseStats(int baseMaxHp, int baseStamina, int baseMaxStamina, int baseMp, int baseMaxMp, int baseDefense, int baseAttackPower, int baseSpeed) {
+    this.baseMaxHp = baseMaxHp;
+    this.baseStamina = baseStamina;
+    this.baseMaxStamina = baseMaxStamina;
+    this.baseMp = baseMp;
+    this.baseMaxMp = baseMaxMp;
+    this.baseDefense = baseDefense;
+    this.baseAttackPower = baseAttackPower;
+    this.baseSpeed = baseSpeed;
+  }
+
+  // Reset player progress (called when player dies)
+  public void resetProgress() {
+    // Reset experience and level
+    this.experience = 0;
+    this.level = 1;
+    this.nextExpLevel = 100;
+
+    // Clear inventory
+    for (int i = 0; i < inventory.length; i++) {
+      inventory[i] = null;
+    }
+
+    // Reset temporary effect trackers
+    attackBoostAmount = 0;
+    attackBoostTurn = 0;
+    defenseBoostAmount = 0;
+    defenseBoostTurn = 0;
+    defenseDebuffAmount = 0;
+    defenseDebuffTurn = 0;
+
+    // Remove debuffs from Character (inherited)
+    removeDebuff();
+
+    // Restore stats back to base (level 1) values captured at creation
+    setMaxHp(baseMaxHp);
+    setHp(baseMaxHp);
+
+    setStamina(baseStamina);
+    setMaxStamina(baseMaxStamina);
+
+    setMp(baseMp);
+    setMaxMp(baseMaxMp);
+
+    setDefense(baseDefense);
+    setAttackPower(baseAttackPower);
+    setSpeed(baseSpeed);
+
+    System.out.println(getName() + "'s progress has been reset to level 1 base stats due to death.");
   }
 }

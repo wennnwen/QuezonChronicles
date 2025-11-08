@@ -13,6 +13,9 @@ public class Mage extends Player {
   		setDefense(4);
   		setAttackPower(10);
   		setSpeed(8);
+
+      // Capture base stats for proper reset behavior
+      setBaseStats(45, 0, 0, 35, 35, 4, 10, 8);
    
   		setMoves(new String[] {"1. Fire Ball (Basic + no mana required)", 
    			"2. LambaShield (Creates a barrier that reduces incoming damage by 30% for 2 turns. 10 MP)", 
@@ -24,13 +27,13 @@ public class Mage extends Player {
    public void useMoves(int moveNumber, Character target) {
       switch(moveNumber) {
          case 1:
-            System.out.println(getName() + " cast a Fire Ball!");
+            System.out.println("\n" + getName() + " cast a Fire Ball!");
             target.takeDamage(getAttackPower());
             break;
 
          case 2:
             if (getMp() >= 10) {
-               System.out.println(getName() + " cast a LambaShield!");
+               System.out.println("\n" + getName() + " cast a LambaShield!");
                setMp(getMp() - 10);
                addTemporaryDefenseBoost((int)(getDefense() * 0.30), 2);
             }
@@ -40,7 +43,7 @@ public class Mage extends Player {
             break;
 
          case 3:
-            System.out.println(getName() + " cast a Mana Surge!");
+            System.out.println("\n" + getName() + " cast a Mana Surge!");
             setMp(getMp() + 20);
 			   System.out.println("Mana Restored by 20 points!");
             break;
@@ -48,7 +51,7 @@ public class Mage extends Player {
          case 4:
             if (getMp() >= 18) {
                setMp(getMp() - 18);
-               System.out.println(getName() + " cast a Pinagong Storm!");
+               System.out.println("\n" + getName() + " cast a Pinagong Storm!");
                int damage = getAttackPower() + (int)(getAttackPower() * 0.5);
 				   target.takeDamage(damage);
             }

@@ -15,6 +15,9 @@ public class Thief extends Player{
         setAttackPower(18);
         setSpeed(15);
 
+        // Capture base stats for proper reset behavior
+        setBaseStats(65, 40, 40, 0, 0, 12, 18, 15);
+
         setMoves(new String[] {"1. Stab (Basic + no stamina required)",
                                 "2. Critical Edge (One strong hit that always lands critical damage (Cost: 10 Stamina))",
                                 "3. Vanish (Become invisible for one turn. Avoid all attacks (Cost: 15 Stamina))",
@@ -25,13 +28,13 @@ public class Thief extends Player{
     public void useMoves(int moveNumber, Character target) {
         switch(moveNumber){
             case 1:
-                System.out.println(getName() + " used Stab!");
+                System.out.println("\n" + getName() + " used Stab!");
                 target.takeDamage(getAttackPower());
                 break;
 
             case 2:
                 if (getStamina() >= 10){
-                    System.out.println(getName() + " used Critical Edge!");
+                    System.out.println("\n" + getName() + " used Critical Edge!");
                     setStamina(getStamina() - 10);
                     target.takeDamage(getAttackPower() * 2);
                 }
@@ -42,7 +45,7 @@ public class Thief extends Player{
 
             case 3:
                 if (getStamina() >= 15){
-                    System.out.println(getName() + " used Vanish!");
+                    System.out.println("\n" + getName() + " used Vanish!");
                     //Become invisible
                 }
                 else {
@@ -51,7 +54,7 @@ public class Thief extends Player{
                 break;
 
             case 4:
-                System.out.println(getName() + " used SmokeBomb!");
+                System.out.println("\n" + getName() + " used SmokeBomb!");
                 //Reduce enemy hit chance.
                 break;
 

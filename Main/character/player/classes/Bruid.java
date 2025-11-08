@@ -14,6 +14,9 @@ public class Bruid extends Player {
    		setDefense(6);
    		setAttackPower(10);
    		setSpeed(7);
+
+      // Capture base stats for proper reset behavior
+      setBaseStats(60, 0, 0, 40, 40, 6, 10, 7);
    
   		setMoves(new String[] {"1. Banana Strike (Basic + no mana required)", 
    							"2. Front Shield (Banana tree fronds wrap around the character, reducing incoming damage by 25% for 2 turns. 10 MP)", 
@@ -25,13 +28,13 @@ public class Bruid extends Player {
 	public void useMoves(int moveNumber, Character target) {
     switch (moveNumber) {
       	case 1:
-			System.out.println(getName() + " used Banana Strike!");
+			System.out.println("\n" + getName() + " used Banana Strike!");
 			target.takeDamage(getAttackPower());
 			break;
 
 		case 2:
 			if (getMp() >= 10) {
-				System.out.println(getName() + " used Front Shield!");
+				System.out.println("\n" + getName() + " used Front Shield!");
 				setMp(getMp() - 10);
 				addTemporaryDefenseBoost((int)(getDefense() * 0.25), 2);
 			}
@@ -41,14 +44,14 @@ public class Bruid extends Player {
 			break;
 
 		case 3:
-			System.out.println(getName() + " used Healing Grove!");
+			System.out.println("\n" + getName() + " used Healing Grove!");
 			setMp(getMp() + 25);
 			System.out.println("Mana Restored by 25 points!");
 			break;
 
 		case 4:
 			if (getMp() >= 15) {
-				System.out.println(getName() + " used Puso ng Saging!");
+				System.out.println("\n" + getName() + " used Puso ng Saging!");
 				setMp(getMp() - 15);
 				int damage = getAttackPower() + (int)(getAttackPower() * 0.5);
 				target.takeDamage(damage);
