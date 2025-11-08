@@ -8,8 +8,8 @@ public class PugonPhantom extends Enemy {
 
     public PugonPhantom() {
         setName("Pugon Phantom");
-        setMaxHp(420);
-        setHp(420);
+        setMaxHp(120);
+        setHp(50);
         setAttackPower(22);
         setDefense(14);
         setSpeed(11);

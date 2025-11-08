@@ -8,8 +8,8 @@ public class WaveFiend extends Enemy {
 
     public WaveFiend() {
         setName("Wave Fiend");
-        setMaxHp(480);
-        setHp(480);
+        setMaxHp(100);
+        setHp(100);
         setAttackPower(25); 
         setDefense(16);
         setSpeed(10);

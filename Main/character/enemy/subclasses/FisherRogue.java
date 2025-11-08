@@ -8,8 +8,8 @@ public class FisherRogue extends Enemy {
 
     public FisherRogue() {
         setName("Fisher Rogue");
-        setMaxHp(115);
-        setHp(115);
+        setMaxHp(100);
+        setHp(100);
         setAttackPower(13); 
         setDefense(7);
         setSpeed(14);

@@ -8,10 +8,10 @@ public class DonMariano extends Enemy {
 
     public DonMariano() {
         setName("Don Mariano the Collector");
-        setMaxHp(700);
-        setHp(700);
+        setMaxHp(200);
+        setHp(200);
         setAttackPower(28);
-        setDefense(22);
+        setDefense(12);
         setSpeed(6);
 
         setExpReward(1200);

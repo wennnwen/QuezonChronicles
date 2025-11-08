@@ -8,8 +8,8 @@ public class SeaWidow extends Enemy {
 
     public SeaWidow() {
         setName("Sea Widow");
-        setMaxHp(140);
-        setHp(140);
+        setMaxHp(110);
+        setHp(110);
         setAttackPower(12); 
         setDefense(9);
         setSpeed(9);

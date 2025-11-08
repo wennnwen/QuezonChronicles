@@ -8,8 +8,8 @@ public class SweetVendor extends Enemy {
 
     public SweetVendor() {
         setName("Sweet Vendor Spirit");
-        setMaxHp(150);
-        setHp(150);
+        setMaxHp(110);
+        setHp(110);
         setAttackPower(18);
         setDefense(10);
         setSpeed(6);
