@@ -19,7 +19,7 @@ public class BattleSystem {
 
         System.out.println("=========================================================================================================\nPlayer Stats:\t\t\tEnemy Stats:");
         System.out.println("Hp: " + player.getHp() + "/" + player.getMaxHp() + "\t\t\tHp: " + enemy.getHp() + "/" + enemy.getMaxHp());
-        System.out.println("Stamina: " + player.getStamina() + " | Mp: " + player.getMp());
+        System.out.println("Stamina: " + player.getStamina() + "/" + player.getMaxStamina() + " | Mp: " + player.getMp() + "/" + player.getMaxMp());
 
         if (player.getSpeed() > enemy.getSpeed()) {
             System.out.println("\nPlayer goes first!");
