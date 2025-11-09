@@ -17,7 +17,7 @@ public class LanggonisaLord extends Enemy {
         setExpReward(50);
 
         // Possible loot — themed after Lucban’s specialties
-        setPossibleLoot(new Item[]{new Kiping(), new PancitHabhab()});
+        setPossibleLoot(new Item[]{new KipingDelight(), new Habhab()});
     }
 
     @Override
