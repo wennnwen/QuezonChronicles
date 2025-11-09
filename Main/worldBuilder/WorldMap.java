@@ -13,10 +13,10 @@ public class WorldMap {
                 new Enemy[]{new PortRat(), new LucenaPirate()}, new HarborSentinel());
 
         Town sariaya = new Town("Sariaya", "A prosperous heritage town under siege by a fearsome foe.",
-                new Enemy[]{new BakeryGremlin(), new HeritageWraith()}, CoconutBrigade());
+                new Enemy[]{new BakeryGremlin(), new HeritageWraith()}, new CoconutBrigade());
 
         Town candelaria = new Town("Candelaria", "A peaceful town where traders rest.",
-                new Enemy[]{new BibingkaElemental(), new SweetVendor()}, FlamingCandelarian());
+                new Enemy[]{new BibingkaElemental(), new SweetVendor()}, new FlamingCandelarian());
 
         Town tiaong = new Town("Tiaong", "A green, fertile area full of mystery.",
                 new Enemy[]{new PugonPhantom(), new TiaongKnight()}, new DonMariano());
