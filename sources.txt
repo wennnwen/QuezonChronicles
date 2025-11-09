@@ -40,12 +40,15 @@ Main/character/enemy/subclasses/LopezWolf.java
 Main/character/enemy/subclasses/PugonPhantom.java
 Main/character/enemy/subclasses/WaveFiend.java
 Main/character/enemy/subclasses/BibingkaElemental.java
+Main/character/enemy/subclasses/FlamingCandelarian.java
 Main/character/enemy/subclasses/ForestNymph.java
 Main/character/enemy/subclasses/HoneyGuardian.java
 Main/character/enemy/subclasses/HarborSentinel.java
+Main/character/enemy/subclasses/CoconutBrigade.java
 Main/character/enemy/subclasses/HabhabBandit.java
 Main/character/enemy/subclasses/FestivalMask.java
 Main/character/enemy/subclasses/LucenaPirate.java
+Main/character/enemy/subclasses/LanggonisaLord.java
 Main/character/enemy/subclasses/SeaWidow.java
 Main/character/enemy/subclasses/QueenAmihan.java
 Main/character/enemy/subclasses/FisherRogue.java
