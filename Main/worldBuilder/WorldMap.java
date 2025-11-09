@@ -7,16 +7,16 @@ public class WorldMap {
 
     public static Town buildWestPath() {
         Town lucban = new Town("Lucban", "A vibrant town famous for the Pahiyas Festival.",
-                new Enemy[]{new TanimGuardian(), new HabhabBandit()}, null);
+                new Enemy[]{new TanimGuardian(), new HabhabBandit()}, new LanggonisaLord());
 
         Town lucena = new Town("Lucena", "Bustling trade center by the coast.",
                 new Enemy[]{new PortRat(), new LucenaPirate()}, new HarborSentinel());
 
         Town sariaya = new Town("Sariaya", "A prosperous heritage town under siege by a fearsome foe.",
-                new Enemy[]{new BakeryGremlin(), new HeritageWraith()}, null);
+                new Enemy[]{new BakeryGremlin(), new HeritageWraith()}, CoconutBrigade());
 
         Town candelaria = new Town("Candelaria", "A peaceful town where traders rest.",
-                new Enemy[]{new BibingkaElemental(), new SweetVendor()}, null);
+                new Enemy[]{new BibingkaElemental(), new SweetVendor()}, FlamingCandelarian());
 
         Town tiaong = new Town("Tiaong", "A green, fertile area full of mystery.",
                 new Enemy[]{new PugonPhantom(), new TiaongKnight()}, new DonMariano());
