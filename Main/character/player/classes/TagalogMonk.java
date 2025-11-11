@@ -33,9 +33,9 @@ public class TagalogMonk extends Player {
             break;
 
          case 2:
-            if (getStamina() >= 18) {
+            if (getStamina() >= 10) {
                System.out.println("\n" + getName() + " used Bugso ng Loob!");
-               setStamina(getStamina() - 18);
+               setStamina(getStamina() - 10);
                int boostDamage = getAttackPower() + (int)(getAttackPower() * 0.4);
                target.takeDamage(boostDamage);
             }

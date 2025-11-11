@@ -9,7 +9,7 @@ public class TanimGuardian extends Enemy {
     public TanimGuardian() {
         setName("Tanim Guardian");
         setMaxHp(110);
-        setHp(100);
+        setHp(110);
         setAttackPower(9);
         setDefense(8);
         setSpeed(6);

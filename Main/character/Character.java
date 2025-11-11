@@ -32,6 +32,9 @@ public abstract class Character {
   //Add constraint
   public void addStamina(int amount) {
     stamina += amount;
+    if (stamina >= maxStamina) {
+      stamina = maxStamina;
+    }
   }
 
   //Add constraint
