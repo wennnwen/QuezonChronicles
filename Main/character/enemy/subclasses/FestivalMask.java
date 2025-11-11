@@ -13,6 +13,7 @@ public class FestivalMask extends Enemy {
         setAttackPower(10);
         setDefense(4);
         setSpeed(10);
+        setSkillUsedTurn(2);
 
         setExpReward(50);
 
@@ -21,15 +22,18 @@ public class FestivalMask extends Enemy {
     }
     @Override
     public void enemyMove(Player player) {
-        System.out.println("\nThe Festival Mask floats toward " + player.getName() + "!");
+        System.out.println("The Festival Mask floats toward " + player.getName() + "!");
         System.out.println("It releases a dazzling light that confuses its target!");
 
         // Base damage
         int damage = getAttackPower();
         player.takeDamage(damage);
-
-        // Apply confusion debuff (lasts 2 turns)
-        player.applyDebuff("confusion", 2);
+        if (getSkillUsedTurn() <= 0) {
+            player.applyDebuff("confusion", 2);
+            setSkillUsedTurn(2); // reset cooldown after using the skill
+        } else {
+            updateSkillUsedTurn(); // count down until the skill can be used
+        }
 
         // Optional chance flavor (adds variety)
         double chance = Math.random();
@@ -37,7 +41,5 @@ public class FestivalMask extends Enemy {
             System.out.println(player.getName() + " hits themselves in confusion!");
             player.takeDamage(5);
         }
-        
-        
     }
 }

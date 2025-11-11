@@ -35,6 +35,26 @@ public class BattleSystem {
             enemy.checkStunned();
             if (!enemy.getIsStunned()) {
                 enemyTurn(player, enemy);
+                enemy.updateSkillUsedTurn();
+            }
+        }
+        else {
+            double chances = Math.random();
+            if (chances < 0.5) {
+                System.out.println("\nPlayer goes first!");
+                player.checkStunned();
+                if (!player.getIsStunned()) {
+                    playerTurn(player, enemy);
+                    playerInitiative = true;
+                }
+            }
+            else {
+                System.out.println("\nEnemy goes first!");
+                enemy.checkStunned();
+                if (!enemy.getIsStunned()) {
+                    enemyTurn(player, enemy);
+                    enemy.updateSkillUsedTurn();
+                }
             }
         }
 
@@ -85,6 +105,7 @@ public class BattleSystem {
                 }
                 else {
                     enemyTurn(player, enemy);
+                    enemy.updateSkillUsedTurn();
                     enemy.updateDebuffs();
                     player.updateDebuffs();
                     player.updateTurnEffects();
@@ -147,7 +168,7 @@ public class BattleSystem {
     }
 
     public void enemyTurn(Player player, Enemy enemy) {
-        System.out.println("Enemy Turn!");
+        System.out.println("\nEnemy Turn!");
         enemy.enemyMove(player);
 
         if (!(enemy.isAlive())) {
