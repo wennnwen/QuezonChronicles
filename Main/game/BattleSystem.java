@@ -73,8 +73,15 @@ public class BattleSystem {
                     playerTurn(player, enemy);
                     player.updateDebuffs();
                     if (player.isAlive() && enemy.isAlive()) {
+<<<<<<< HEAD
                         enemyTurn(player, enemy);
                         enemy.updateDebuffs();
+=======
+                        enemy.checkStunned();
+                        if (!enemy.getIsStunned()) {
+                            enemyTurn(player, enemy);
+                        }
+>>>>>>> 52d970a88ee9c5bcfff99eae3c463bc8f3dc2389
                     }
                 }
                 else {

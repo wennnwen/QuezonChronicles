@@ -48,8 +48,10 @@ public class Warrior extends Player{
                 if (getStamina() >= 3){
                     System.out.println("\n" + getName() + " used Shield Bash!");
                     target.takeDamage((int) (getAttackPower() * 0.5));
-                    //chance to stun for 1 duration
-                    //target.stun(1);
+                    double stunChance = 1.00;
+                    if(Math.random() <= stunChance){
+                        target.applyDebuff("stun", 3);
+                    }
                     break;
                 }
                 else{
