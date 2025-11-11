@@ -32,16 +32,16 @@ public class WorldMap {
 
     public static Town buildEastPath() {
         Town gumaca = new Town("Gumaca", "A riverside town known for its fishing guild.",
-                new Enemy[]{new FestivalMask(), new KipingGolem()}, null);
+                new Enemy[]{new FestivalMask(), new KipingGolem(), new Sirena()}, null);
 
         Town lopez = new Town("Lopez", "A quiet farming town with lush fields.",
                 new Enemy[]{new SumanMimic(), new LopezWolf()}, new OldTrainSpirit());
 
         Town calauag = new Town("Calauag", "A historic town ruled by a fierce warlord.",
-                new Enemy[]{new FisherRogue(), new SeaWidow()}, null);
+                new Enemy[]{new FisherRogue(), new SeaWidow(), new CalauagBandit()}, null);
 
         Town infanta = new Town("Infanta", "A coastal area battered by storms.",
-                new Enemy[]{new ForestNymph(), new HoneyGuardian()}, null);
+                new Enemy[]{new ForestNymph(), new HoneyGuardian(), new InfantaShade()}, null);
 
         Town real = new Town("Real", "The edge of the eastern world. Few return from here.",
                 new Enemy[]{new WaveFiend(), new RealSpecter()}, new QueenAmihan());

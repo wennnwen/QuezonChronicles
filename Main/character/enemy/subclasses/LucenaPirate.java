@@ -28,9 +28,8 @@ public class LucenaPirate extends Enemy{
     if (baseDamage < 0) baseDamage = 0;
 
     // Critical hit mechanic
-    double critChance = 0.2;
-    double critRoll = Math.random();
-    if (critRoll < critChance) {
+    double critChance = 0.1;
+    if (Math.random() < critChance) {
         baseDamage *= 2;
         System.out.println("Critical hit!");
     }

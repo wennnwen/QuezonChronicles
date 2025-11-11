@@ -11,7 +11,7 @@ public class KipingGolem extends Enemy {
         setMaxHp(120);
         setHp(120);
         setAttackPower(12);
-        setDefense(12);
+        setDefense(6);
         setSpeed(5);
 
         setExpReward(80);

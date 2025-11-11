@@ -28,9 +28,8 @@ public class SumanMimic extends Enemy {
         // Attack the player
         player.takeDamage(damage);
 
-        // After attacking, it heals itself slightly
-        int healAmount = 8; // flat heal, or you can scale with attackPower (e.g. getAttackPower()/2)
-        setHp(getHp() + healAmount);
+        int healAmount = 2;
+        heal(healAmount);
 
         System.out.println(getName() + " absorbs energy from the hit and heals " + healAmount + " HP!");
 
