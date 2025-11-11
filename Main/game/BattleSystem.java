@@ -38,6 +38,25 @@ public class BattleSystem {
                 enemy.updateSkillUsedTurn();
             }
         }
+        else {
+            int chances = math.random();
+            if (chances < 0.5) {
+                System.out.println("\nPlayer goes first!");
+                player.checkStunned();
+                if (!player.getIsStunned()) {
+                    playerTurn(player, enemy);
+                    playerInitiative = true;
+                }
+            }
+            else {
+                System.out.println("\nEnemy goes first!");
+                enemy.checkStunned();
+                if (!enemy.getIsStunned()) {
+                    enemyTurn(player, enemy);
+                    enemy.updateSkillUsedTurn();
+                }
+            }
+        }
 
         while (player.isAlive() && enemy.isAlive()) {
             if (playerInitiative) {
