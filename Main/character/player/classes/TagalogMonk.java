@@ -14,7 +14,7 @@ public class TagalogMonk extends Player {
   		setStamina(45);
       setMaxStamina(45);
   		setDefense(7);
-  		setAttackPower(10);
+  		setAttackPower(15);
   		setSpeed(8);
 
       // Capture base stats for proper reset behavior

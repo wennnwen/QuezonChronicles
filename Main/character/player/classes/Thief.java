@@ -12,7 +12,7 @@ public class Thief extends Player{
         setStamina(60);
         setMaxStamina(60);
         setDefense(5);
-        setAttackPower(11);
+        setAttackPower(25);
         setSpeed(12);
 
         // Capture base stats for proper reset behavior

@@ -12,7 +12,7 @@ public class Warrior extends Player{
         setStamina(30);
         setMaxStamina(30);
         setDefense(9);
-        setAttackPower(10);
+        setAttackPower(16);
         setSpeed(5);
 
         // Capture base stats for proper reset behavior

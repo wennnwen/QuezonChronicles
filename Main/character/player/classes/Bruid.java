@@ -12,7 +12,7 @@ public class Bruid extends Player {
    		setMp(60);
 		setMaxMp(60);
    		setDefense(6);
-   		setAttackPower(8);
+   		setAttackPower(12);
    		setSpeed(6);
 
       // Capture base stats for proper reset behavior
