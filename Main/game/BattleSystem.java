@@ -39,7 +39,7 @@ public class BattleSystem {
             }
         }
         else {
-            int chances = math.random();
+            double chances = Math.random();
             if (chances < 0.5) {
                 System.out.println("\nPlayer goes first!");
                 player.checkStunned();
