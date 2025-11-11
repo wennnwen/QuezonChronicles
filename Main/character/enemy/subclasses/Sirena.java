@@ -10,7 +10,7 @@ public class Sirena extends Enemy {
         setName("Gumacan Sirena");
         setMaxHp(100);
         setHp(100);
-        setAttackPower(12);
+        setAttackPower(5);
         setDefense(3);
         setSpeed(8);
         setSkillUsedTurn(3);

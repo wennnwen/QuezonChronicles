@@ -11,7 +11,7 @@ public class SumanMimic extends Enemy {
         setMaxHp(80);
         setHp(80);
         setAttackPower(6);
-        setDefense(6);
+        setDefense(1);
         setSpeed(7);
 
         setExpReward(60);

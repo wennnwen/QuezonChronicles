@@ -10,7 +10,7 @@ public class RealSpecter extends Enemy {
         setName("Real Specter");
         setMaxHp(50);
         setHp(50);
-        setAttackPower(18); 
+        setAttackPower(5); 
         setDefense(10);
         setSpeed(14);
 
