@@ -21,7 +21,7 @@ public class FestivalMask extends Enemy {
     }
     @Override
     public void enemyMove(Player player) {
-         System.out.println("\n🎭 The Festival Mask floats toward " + player.getName() + "!");
+        System.out.println("\nThe Festival Mask floats toward " + player.getName() + "!");
         System.out.println("It releases a dazzling light that confuses its target!");
 
         // Base damage

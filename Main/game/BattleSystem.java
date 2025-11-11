@@ -27,7 +27,6 @@ public class BattleSystem {
             if (!player.getIsStunned()) {
                 playerTurn(player, enemy);
                 playerInitiative = true;
-                player.updateDebuffs()
             }
         }
        
@@ -36,7 +35,6 @@ public class BattleSystem {
             enemy.checkStunned();
             if (!enemy.getIsStunned()) {
                 enemyTurn(player, enemy);
-                enemy.updateDebuffs();
             }
         }
 
@@ -49,17 +47,20 @@ public class BattleSystem {
                     // dead before the player's turn, skip the player's turn.
                     enemyTurn(player, enemy);
                     enemy.updateDebuffs();
+                    player.updateDebuffs();
+                    player.updateTurnEffects();
                     if (player.isAlive() && enemy.isAlive()) {
                         System.out.println("=========================================================================================================\nPlayer Stats:\t\t\tEnemy Stats:");
                         System.out.println("Hp: " + player.getHp() + "/" + player.getMaxHp() + "\t\t\tHp: " + enemy.getHp() + "/" + enemy.getMaxHp());
                         System.out.println("Stamina: " + player.getStamina() + "/" + player.getMaxStamina() + " | Mp: " + player.getMp() + "/" + player.getMaxMp());
                         playerTurn(player, enemy);
-                        player.updateDebuffs();
                     }
                 }
                 else {
                     playerTurn(player, enemy);
                     player.updateDebuffs();
+                    enemy.updateDebuffs();
+                    player.updateTurnEffects();
                 }
             }
             else {
@@ -71,18 +72,22 @@ public class BattleSystem {
                     // Player acts first. If the player kills the enemy, don't let
                     // the (now dead) enemy take a turn.
                     playerTurn(player, enemy);
-                    player.updateDebuffs();
                     if (player.isAlive() && enemy.isAlive()) {
                         enemy.checkStunned();
                         if (!enemy.getIsStunned()) {
                             enemyTurn(player, enemy);
-                            enemy.updateDebuffs();
                         }
+                        enemy.updateDebuffs();
+                        player.updateDebuffs();
+                        player.updateTurnEffects();
+                        
                     }
                 }
                 else {
                     enemyTurn(player, enemy);
                     enemy.updateDebuffs();
+                    player.updateDebuffs();
+                    player.updateTurnEffects();
                 }
             }
         }

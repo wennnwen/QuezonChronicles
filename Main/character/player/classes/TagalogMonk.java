@@ -4,6 +4,8 @@ import Main.character.player.Player;
 import Main.character.Character;
 
 public class TagalogMonk extends Player {
+
+   public static int skillUsedTurn;
    
    public TagalogMonk(String name) {
       setName(name);
@@ -30,6 +32,7 @@ public class TagalogMonk extends Player {
          case 1:
             System.out.println("\n" + getName() + " used Suntok ni Apo!");
             target.takeDamage(getAttackPower());
+            skillUsedTurn();
             break;
 
          case 2:
@@ -42,6 +45,7 @@ public class TagalogMonk extends Player {
             else {
                System.out.println("Not enough Stamina!");
             }
+            skillUsedTurn();
             break;
 
          case 3:
@@ -57,16 +61,24 @@ public class TagalogMonk extends Player {
                   }
             }
             else {
-                System.out.println("Not enough Stamina!");
+               System.out.println("Not enough Stamina!");
             }
+            skillUsedTurn();
             break;
             
          case 4:
-            System.out.println("\n" + getName() + " used Dasal ng Katahimikan");
-            System.out.println(getName() + "'s has healed and gained stamina!");
-            heal((int)(getHp() * 0.3));
-            addStamina(1);
-			   addTemporaryDefenseBoost((int)(getDefense() * 0.25), 2);
+            if (skillUsedTurn == 0) {
+               System.out.println("\n" + getName() + " used Dasal ng Katahimikan");
+               System.out.println(getName() + "'s has healed and gained stamina!");
+               heal((int)(getHp() * 0.3));
+               addStamina(1);
+               addTemporaryDefenseBoost((int)(getDefense() * 0.25), 2);
+               skillUsedTurn = 2;
+            }
+            else {
+               System.out.println("You just used Dasal ng Katahimikan. Cannot use for 2 turns!");
+               skillUsedTurn();
+            }
             break;
       }
    }
@@ -93,5 +105,14 @@ public class TagalogMonk extends Player {
 		setAttackPower(getAttackPower() + 2);
 		setSpeed(getSpeed() + 1);
 	}
+
+   public static void skillUsedTurn() {
+      if (skillUsedTurn <= 0) {
+         skillUsedTurn = 0;
+      }
+      else {
+         skillUsedTurn--;
+      }
+   }
 }
 
