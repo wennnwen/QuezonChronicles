@@ -11,7 +11,7 @@ public class Warrior extends Player{
         setHp(130);
         setStamina(30);
         setMaxStamina(30);
-        setDefense(10);
+        setDefense(9);
         setAttackPower(10);
         setSpeed(5);
 

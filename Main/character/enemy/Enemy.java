@@ -8,6 +8,7 @@ public abstract class Enemy extends Character {
 
     private int expReward;
     private Item[] possibleLoot = new Item[2];
+    private int skillUsedTurn;
 
     public abstract void enemyMove(Player player);
 
@@ -42,5 +43,17 @@ public abstract class Enemy extends Character {
 
     public void setPossibleLoot(Item[] newPossibleLoot) {
         possibleLoot = newPossibleLoot;
+    }
+
+    public int getSkillUsedTurn() {
+        return skillUsedTurn;
+    }
+
+    public void setSkillUsedTurn(int turns) {
+        skillUsedTurn = turns;
+    }
+
+    public void updateSkillUsedTurn() {
+        skillUsedTurn--;
     }
 }
