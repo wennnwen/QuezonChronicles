@@ -17,6 +17,7 @@ public class Thief extends Player{
 
         // Capture base stats for proper reset behavior
         setBaseStats(80, 60, 60, 0, 0, 5, 11, 12);
+        setUsesMp(false);
 
         setMoves(new String[] {"1. Stab (Basic + no stamina required)",
                                 "2. Critical Edge (One strong hit that always lands critical damage (Cost: 10 Stamina))",

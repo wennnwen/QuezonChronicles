@@ -15,6 +15,7 @@ public abstract class Player extends Character {
   private int baseDefense = 0;
   private int baseAttackPower = 0;
   private int baseSpeed = 0;
+  private boolean usesMp = true;
   //Effect attributes
   private int attackBoostAmount = 0, attackBoostTurn = 0;
   private int defenseBoostAmount = 0, defenseBoostTurn = 0;
@@ -28,6 +29,14 @@ public abstract class Player extends Character {
   public abstract void useMoves(int moveNumber, Character target);
 
 	//getter
+  public boolean getUsesMp() {
+    return usesMp;
+  }
+
+  public boolean getUsesStamina() {
+    return !usesMp;
+  }
+
   public int getLevel() {
    return level;
   }
@@ -45,6 +54,10 @@ public abstract class Player extends Character {
   }
 
 	//setter
+  public void setUsesMp(boolean usesMp) {
+    this.usesMp = usesMp;
+  }
+
   public void addExp(int amount) {
     this.experience += amount;
     if (this.experience >= nextExpLevel) {

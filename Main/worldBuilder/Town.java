@@ -2,6 +2,7 @@ package Main.worldBuilder;
 
 import java.util.Scanner;
 import Main.character.enemy.Enemy;
+import Main.character.Character;
 import Main.character.player.Player;
 import Main.game.BattleSystem;
 import Main.item.*;
@@ -73,7 +74,7 @@ public class Town {
                     if ((boss == null && enemiesDefeated >= 2) || (boss != null && enemiesDefeated >= 3)) {
                         if (nextTown != null) {
                             System.out.println("Travelling to " + nextTown.name + "...");
-                            if (player.getStamina() < player.getMaxStamina()) {
+                            if (!player.getUsesMp()) {
                                 player.setStamina(player.getMaxStamina());
                                 System.out.println("\nYour stamina has been fully restored.");
                             } else {

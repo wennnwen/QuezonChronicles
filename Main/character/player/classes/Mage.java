@@ -16,6 +16,7 @@ public class Mage extends Player {
 
       // Capture base stats for proper reset behavior
       setBaseStats(70, 0, 0, 120, 120, 4, 12, 7);
+      setUsesMp(true);
    
   		setMoves(new String[] {"1. Fire Ball (Basic + no mana required)", 
    			"2. LambaShield (Creates a barrier that reduces incoming damage by 30% for 2 turns. 10 MP)", 

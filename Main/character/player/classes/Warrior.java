@@ -17,6 +17,7 @@ public class Warrior extends Player{
 
         // Capture base stats for proper reset behavior
         setBaseStats(130, 30, 30, 0, 0, 10, 10, 5);
+        setUsesMp(false);
 
         setMoves(new String[] {"1. Slash(Basic + no stamina required.)",
                                 "2. Cleave(Swings the weapon with all your might which deals 150% of normal damage.",

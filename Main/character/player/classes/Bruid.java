@@ -17,6 +17,7 @@ public class Bruid extends Player {
 
       // Capture base stats for proper reset behavior
       setBaseStats(90, 0, 0, 60, 60, 6, 8, 6);
+	  setUsesMp(true);
    
   		setMoves(new String[] {"1. Banana Strike (Basic + no mana required)", 
    							"2. Front Shield (Banana tree fronds wrap around the character, reducing incoming damage by 25% for 2 turns. 10 MP)", 

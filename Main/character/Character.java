@@ -29,7 +29,6 @@ public abstract class Character {
     }
   } 
 
-  //Add constraint
   public void addStamina(int amount) {
     stamina += amount;
     if (stamina >= maxStamina) {
@@ -37,9 +36,11 @@ public abstract class Character {
     }
   }
 
-  //Add constraint
   public void addMp(int amount) {
     mp += amount;
+    if (mp >= maxMp) {
+      mp = maxMp;
+    }
   }
 
   public void addSpeed(int amount) {
