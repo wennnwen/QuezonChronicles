@@ -39,7 +39,9 @@ public class Town {
                 player.resetProgress();
                 break;
             }
-            System.out.println("\nEnemies defeated: " + enemiesDefeated);
+            int totalCount = (enemies != null ? enemies.length : 0) + (boss != null ? 1 : 0);
+            int remaining = Math.max(0, totalCount - enemiesDefeated);
+            System.out.println("\nEnemies left: " + remaining);
             System.out.println("\nOptions:");
             System.out.println("1. Explore / Battle");
             System.out.println("2. Move to next town");
