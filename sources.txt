@@ -30,6 +30,7 @@ Main/item/Budin.java
 Main/character/enemy/subclasses/SweetVendor.java
 Main/character/enemy/subclasses/OldTrainSpirit.java
 Main/character/enemy/subclasses/TanimGuardian.java
+Main/character/enemy/subclasses/InfantaShade.java
 Main/character/enemy/subclasses/SumanMimic.java
 Main/character/enemy/subclasses/TiaongKnight.java
 Main/character/enemy/subclasses/KipingGolem.java
@@ -49,7 +50,9 @@ Main/character/enemy/subclasses/HabhabBandit.java
 Main/character/enemy/subclasses/FestivalMask.java
 Main/character/enemy/subclasses/LucenaPirate.java
 Main/character/enemy/subclasses/LanggonisaLord.java
+Main/character/enemy/subclasses/Sirena.java
 Main/character/enemy/subclasses/SeaWidow.java
+Main/character/enemy/subclasses/CalauagBandit.java
 Main/character/enemy/subclasses/QueenAmihan.java
 Main/character/enemy/subclasses/FisherRogue.java
 Main/character/enemy/subclasses/RealSpecter.java

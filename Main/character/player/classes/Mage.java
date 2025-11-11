@@ -10,9 +10,9 @@ public class Mage extends Player {
   		setHp(70);
   		setMp(120);
       setMaxMp(120);
-  		setDefense(4);
-  		setAttackPower(12);
-  		setSpeed(7);
+  		setDefense(10);
+  		setAttackPower(100);
+  		setSpeed(20);
 
       // Capture base stats for proper reset behavior
       setBaseStats(70, 0, 0, 120, 120, 4, 12, 7);
