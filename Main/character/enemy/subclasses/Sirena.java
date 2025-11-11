@@ -11,7 +11,7 @@ public class Sirena extends Enemy {
         setMaxHp(100);
         setHp(100);
         setAttackPower(12);
-        setDefense(5);
+        setDefense(3);
         setSpeed(8);
         setSkillUsedTurn(3);
 

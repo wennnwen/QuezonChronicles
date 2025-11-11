@@ -11,7 +11,7 @@ public class SeaWidow extends Enemy {
         setMaxHp(110);
         setHp(110);
         setAttackPower(12); 
-        setDefense(9);
+        setDefense(3);
         setSpeed(9);
 
         setExpReward(110);

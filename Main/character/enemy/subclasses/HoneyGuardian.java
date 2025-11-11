@@ -8,10 +8,10 @@ public class HoneyGuardian extends Enemy {
 
     public HoneyGuardian() {
         setName("Honey Guardian");
-        setMaxHp(100);
-        setHp(100);
+        setMaxHp(80);
+        setHp(80);
         setAttackPower(16); 
-        setDefense(12);
+        setDefense(7);
         setSpeed(11);
 
         setExpReward(160);

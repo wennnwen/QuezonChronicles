@@ -8,10 +8,10 @@ public class BibingkaElemental extends Enemy {
 
     public BibingkaElemental() {
         setName("Bibingka Elemental");
-        setMaxHp(100);
-        setHp(100);
-        setAttackPower(14); 
-        setDefense(7);
+        setMaxHp(80);
+        setHp(80);
+        setAttackPower(10); 
+        setDefense(5);
         setSpeed(8);
 
         setExpReward(95);

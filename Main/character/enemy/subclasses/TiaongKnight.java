@@ -11,7 +11,7 @@ public class TiaongKnight extends Enemy {
         setMaxHp(150);
         setHp(150);
         setAttackPower(20); 
-        setDefense(18);
+        setDefense(2);
         setSpeed(9);
 
         setExpReward(60);

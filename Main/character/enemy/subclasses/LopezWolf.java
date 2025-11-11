@@ -8,10 +8,10 @@ public class LopezWolf extends Enemy{
 
     public LopezWolf(){
         setName("Lopez Wolf");
-        setMaxHp(105);
-        setHp(105);
+        setMaxHp(50);
+        setHp(80);
         setAttackPower(12);
-        setDefense(8);
+        setDefense(5);
         setSpeed(16);
 
         setExpReward(90);

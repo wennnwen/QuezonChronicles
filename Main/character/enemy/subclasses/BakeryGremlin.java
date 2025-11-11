@@ -8,8 +8,8 @@ public class BakeryGremlin extends Enemy{
 
     public BakeryGremlin(){
         setName("Bakery Gremlin");
-        setMaxHp(95);
-        setHp(95);
+        setMaxHp(80);
+        setHp(80);
         setAttackPower(10);
         setDefense(6);
         setSpeed(8);

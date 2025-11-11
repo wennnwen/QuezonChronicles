@@ -8,8 +8,8 @@ public class CalauagBandit extends Enemy {
 
     public CalauagBandit() {
         setName("Calauag Bandit");
-        setMaxHp(100);
-        setHp(100);
+        setMaxHp(80);
+        setHp(80);
         setAttackPower(13); 
         setDefense(7);
         setSpeed(14);

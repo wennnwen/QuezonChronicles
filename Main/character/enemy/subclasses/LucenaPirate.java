@@ -8,10 +8,10 @@ public class LucenaPirate extends Enemy{
 
     public LucenaPirate(){
         setName("Lucena Pirate");
-        setMaxHp(100);
-        setHp(100);
-        setAttackPower(17);
-        setDefense(10);
+        setMaxHp(80);
+        setHp(80);
+        setAttackPower(10);
+        setDefense(5);
         setSpeed(12);
 
         setExpReward(180);

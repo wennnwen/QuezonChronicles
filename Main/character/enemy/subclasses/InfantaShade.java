@@ -8,10 +8,10 @@ public class InfantaShade extends Enemy {
 
     public InfantaShade() {
         setName("Infanta Shade");
-        setMaxHp(100);
-        setHp(100);
+        setMaxHp(80);
+        setHp(80);
         setAttackPower(10); 
-        setDefense(8);
+        setDefense(7);
         setSpeed(10);
 
         setExpReward(125);

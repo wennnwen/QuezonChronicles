@@ -8,10 +8,10 @@ public class QueenAmihan extends Enemy {
 
     public QueenAmihan() {
         setName("Queen Amihan");
-        setMaxHp(200);
-        setHp(200);
-        setAttackPower(20); 
-        setDefense(20);
+        setMaxHp(100);
+        setHp(100);
+        setAttackPower(10); 
+        setDefense(6);
         setSpeed(25);
 
         setExpReward(1500);

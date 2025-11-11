@@ -8,8 +8,8 @@ public class ForestNymph extends Enemy {
 
     public ForestNymph() {
         setName("Forest Nymph");
-        setMaxHp(100);
-        setHp(100);
+        setMaxHp(80);
+        setHp(80);
         setAttackPower(10); 
         setDefense(8);
         setSpeed(10);

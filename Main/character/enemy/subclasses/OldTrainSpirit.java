@@ -8,11 +8,11 @@ public class OldTrainSpirit extends Enemy {
 
     public OldTrainSpirit() {
         setName("Old Train Spirit");
-        setMaxHp(110);
-        setHp(110);
-        setAttackPower(18);
-        setDefense(16);
-        setSpeed(15);
+        setMaxHp(80);
+        setHp(80);
+        setAttackPower(8);
+        setDefense(6);
+        setSpeed(5);
 
         setExpReward(240);
 

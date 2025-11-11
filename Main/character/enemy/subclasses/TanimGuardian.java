@@ -11,7 +11,7 @@ public class TanimGuardian extends Enemy {
         setMaxHp(110);
         setHp(110);
         setAttackPower(9);
-        setDefense(8);
+        setDefense(2);
         setSpeed(6);
 
         setExpReward(45);

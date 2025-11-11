@@ -8,8 +8,8 @@ public class HarborSentinel extends Enemy {
 
     public HarborSentinel() {
         setName("Harbor Sentinel");
-        setMaxHp(100);
-        setHp(100);
+        setMaxHp(80);
+        setHp(80);
         setAttackPower(16); 
         setDefense(20);     
         setSpeed(2);        

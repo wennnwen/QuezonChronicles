@@ -10,8 +10,8 @@ public class SweetVendor extends Enemy {
         setName("Sweet Vendor Spirit");
         setMaxHp(110);
         setHp(110);
-        setAttackPower(18);
-        setDefense(10);
+        setAttackPower(8);
+        setDefense(5);
         setSpeed(6);
 
         // Experience reward

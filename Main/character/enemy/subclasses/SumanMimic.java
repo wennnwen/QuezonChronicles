@@ -8,10 +8,10 @@ public class SumanMimic extends Enemy {
 
     public SumanMimic() {
         setName("Suman Mimic");
-        setMaxHp(100);
-        setHp(100);
+        setMaxHp(80);
+        setHp(80);
         setAttackPower(6);
-        setDefense(7);
+        setDefense(6);
         setSpeed(7);
 
         setExpReward(60);
