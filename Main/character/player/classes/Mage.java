@@ -6,16 +6,17 @@ import Main.character.Character;
 public class Mage extends Player {
    
    public Mage(String name) {
+      setName(name);
   		setMaxHp(70);
   		setHp(70);
   		setMp(120);
       setMaxMp(120);
   		setDefense(10);
-  		setAttackPower(100);
+  		setAttackPower(10);
   		setSpeed(20);
 
       // Capture base stats for proper reset behavior
-      setBaseStats(70, 0, 0, 120, 120, 10, 100, 20);
+      setBaseStats(70, 0, 0, 120, 120, 10, 10, 20);
       setUsesMp(true);
    
   		setMoves(new String[] {"1. Fire Ball (Basic + no mana required)", 

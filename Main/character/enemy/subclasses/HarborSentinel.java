@@ -11,7 +11,7 @@ public class HarborSentinel extends Enemy {
         setMaxHp(80);
         setHp(80);
         setAttackPower(16); 
-        setDefense(20);     
+        setDefense(12);     
         setSpeed(2);        
 
         setExpReward(220);
