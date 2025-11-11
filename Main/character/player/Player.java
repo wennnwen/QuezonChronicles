@@ -21,7 +21,7 @@ public abstract class Player extends Character {
   private int defenseBoostAmount = 0, defenseBoostTurn = 0;
   private int defenseDebuffAmount = 0, defenseDebuffTurn = 0;
 
-  private final Item[] inventory = new Item[10];
+  private static Item[] inventory = new Item[10];
   private final String[] attackMoves = new String[4];
 
 	public abstract void showStats();
@@ -84,12 +84,18 @@ public abstract class Player extends Character {
 
   public void removeItem(int index) {
     if (index >= 0 && index < inventory.length) {
-      inventory[index] = null;
+      // Shift all subsequent items left so there are no gaps.
+      for (int i = index; i < inventory.length - 1; i++) {
+        inventory[i] = inventory[i + 1];
+      }
+      // Clear last slot
+      inventory[inventory.length - 1] = null;
     }
   }
 
   public void showInventory() {
     System.out.println("\n|============================================== Inventory ==============================================|\n");
+    inventorySorter();
     for (int i = 0; i < inventory.length; i++) {
       Item item = inventory[i];
       if (item != null) {
@@ -97,6 +103,18 @@ public abstract class Player extends Character {
       }
     }
     System.out.println("\n|=======================================================================================================|");
+  }
+
+  public static void inventorySorter() {
+    int count = 0;
+    for (int i = 0; i < inventory.length; i++) {
+      if (inventory[i] != null) {
+        inventory[count++] = inventory[i];
+      }
+    }
+    for (int i = count; i < inventory.length; i++) {
+      inventory[i] = null;
+    }
   }
   
   public void setMoves(String[] moves) {

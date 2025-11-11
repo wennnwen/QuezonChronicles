@@ -21,8 +21,8 @@ public class Thief extends Player{
 
         setMoves(new String[] {"1. Stab (Basic + no stamina required)",
                                 "2. Critical Edge (One strong hit that always lands critical damage (Cost: 10 Stamina))",
-                                "3. Vanish (Become invisible for one turn. Avoid all attacks (Cost: 15 Stamina))",
-                                "4. Smoke Bomb (Reduce enemy hit chance for 2 turns. (Cost: 15 Stamina))"});
+                                "3. Vanish (Become invisible for 2 turns. Avoid all attacks (Cost: 15 Stamina))",
+                                "4. Looter's Instinct (regains small HP/stamina on successful steals)"});
         }   
 
 	@Override
@@ -47,7 +47,8 @@ public class Thief extends Player{
             case 3:
                 if (getStamina() >= 15){
                     System.out.println("\n" + getName() + " used Vanish!");
-                    //Become invisible
+                    addTemporaryDefenseBoost(100, 2);
+                    setStamina(getStamina() - 15);
                 }
                 else {
                     System.out.println("Not enough Stamina!");
@@ -55,8 +56,9 @@ public class Thief extends Player{
                 break;
 
             case 4:
-                System.out.println("\n" + getName() + " used SmokeBomb!");
-                //Reduce enemy hit chance.
+                System.out.println("\n" + getName() + " used Looter's Instinct!");
+                heal(7);
+                addStamina(7);
                 break;
 
             default:

@@ -122,48 +122,53 @@ public class BattleSystem {
     }
 
     public void playerTurn(Player player, Enemy enemy) {
-        System.out.println("\nYour moves:");
-        player.showMoves();
-        System.out.println("5. Use item");
-        System.out.print("Enter your choice: ");
-        int choice = input.nextInt();
-        if (choice >= 1 && choice <= 4) {
-            player.useMoves(choice, enemy);
-        }
-        else if (choice == 5) {
-            Item[] inventory = player.getInventory();
-            boolean isEmpty = true;
-            // Only iterate when inventory is non-null and has slots
-            if (inventory != null && inventory.length > 0) {
-                for (int i = 0; i < inventory.length; i++) {
-                    if (inventory[i] != null) {
-                        isEmpty = false;
-                        break;
+        System.out.println("\nPlayer Turn!");
+        boolean validInput = false;
+        while (!validInput) {
+            System.out.println("\nYour moves:");
+            player.showMoves();
+            System.out.println("5. Use item");
+            System.out.print("Enter your choice: ");
+            int choice = input.nextInt();
+            if (choice >= 1 && choice <= 4) {
+                player.useMoves(choice, enemy);
+                validInput = true;
+            }
+            else if (choice == 5) {
+                Item[] inventory = player.getInventory();
+                boolean isEmpty = true;
+                // Only iterate when inventory is non-null and has slots
+                if (inventory != null && inventory.length > 0) {
+                    for (int i = 0; i < inventory.length; i++) {
+                        if (inventory[i] != null) {
+                            isEmpty = false;
+                            break;
+                        }
+                    }
+                }
+                if (inventory == null || isEmpty) {
+                    System.out.println("Your inventory is empty!");
+                } else {
+                    player.showInventory();
+                    System.out.print("Choose item number (Choose 0 to cancel): ");
+                    int itemIndex = input.nextInt() - 1;
+                    // Validate index and presence of item
+                    if (itemIndex == -1) {
+                        System.out.println("Item use cancelled.");
+                    }
+                    else if (itemIndex < -1 || itemIndex >= inventory.length || inventory[itemIndex] == null) {
+                        System.out.println("Invalid item choice.");
+                    }
+                    else {
+                        inventory[itemIndex].useItem(player);
+                        player.removeItem(itemIndex);
+                        validInput = true;
                     }
                 }
             }
-            if (inventory == null || isEmpty) {
-                System.out.println("Your inventory is empty!");
-                return;
-            } else {
-                player.showInventory();
-                System.out.print("Choose item number (Choose 0 to cancel): ");
-                int itemIndex = input.nextInt() - 1;
-                // Validate index and presence of item
-                if (itemIndex == -1) {
-                    System.out.println("Item use cancelled.");
-                    return;
-                }
-                else if (itemIndex < -1 || itemIndex >= inventory.length || inventory[itemIndex] == null) {
-                    System.out.println("Invalid item choice.");
-                    return;
-                }
-                inventory[itemIndex].useItem(player);
-                player.removeItem(itemIndex);
+            else {
+                System.out.println("Invalid input. Please try again!");
             }
-        }
-        else {
-            System.out.println("Invalid input. Enemy turn!");
         }
     }
 

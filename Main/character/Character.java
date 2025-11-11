@@ -30,6 +30,7 @@ public abstract class Character {
   } 
 
   public void addStamina(int amount) {
+    System.out.println(name + " regained " + amount + " Stamina.");
     stamina += amount;
     if (stamina >= maxStamina) {
       stamina = maxStamina;
@@ -191,7 +192,7 @@ public abstract class Character {
                 break;
             case "confusion":
                 System.out.println(getName() + " is confused by the masks!");
-                break;
+                break;             
         }
     }
   
