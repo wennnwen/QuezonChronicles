@@ -15,7 +15,7 @@ public class Mage extends Player {
   		setSpeed(20);
 
       // Capture base stats for proper reset behavior
-      setBaseStats(70, 0, 0, 120, 120, 4, 12, 7);
+      setBaseStats(70, 0, 0, 120, 120, 10, 100, 20);
       setUsesMp(true);
    
   		setMoves(new String[] {"1. Fire Ball (Basic + no mana required)", 

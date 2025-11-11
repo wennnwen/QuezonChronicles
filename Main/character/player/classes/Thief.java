@@ -16,7 +16,7 @@ public class Thief extends Player{
         setSpeed(12);
 
         // Capture base stats for proper reset behavior
-        setBaseStats(80, 60, 60, 0, 0, 5, 11, 12);
+        setBaseStats(80, 60, 60, 0, 0, 5, 25, 12);
         setUsesMp(false);
 
         setMoves(new String[] {"1. Stab (Basic + no stamina required)",

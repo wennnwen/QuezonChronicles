@@ -11,12 +11,12 @@ public class Warrior extends Player{
         setHp(130);
         setStamina(30);
         setMaxStamina(30);
-        setDefense(9);
+        setDefense(10);
         setAttackPower(16);
         setSpeed(5);
 
         // Capture base stats for proper reset behavior
-        setBaseStats(130, 30, 30, 0, 0, 10, 10, 5);
+        setBaseStats(130, 50, 50, 0, 0, 10, 16, 5);
         setUsesMp(false);
 
         setMoves(new String[] {"1. Slash(Basic + no stamina required.)",
