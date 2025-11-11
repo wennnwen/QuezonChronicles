@@ -67,7 +67,10 @@ public class BattleSystem {
                     // the (now dead) enemy take a turn.
                     playerTurn(player, enemy);
                     if (player.isAlive() && enemy.isAlive()) {
-                        enemyTurn(player, enemy);
+                        enemy.checkStunned();
+                        if (!enemy.getIsStunned()) {
+                            enemyTurn(player, enemy);
+                        }
                     }
                 }
                 else {
