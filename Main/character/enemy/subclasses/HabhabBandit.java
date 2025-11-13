@@ -3,9 +3,10 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
+import Main.printAlignmentHub.CenterHub;
 
 public class HabhabBandit extends Enemy{
-    
+
     public HabhabBandit() {
         setName("Habhab Bandit");
         setMaxHp(60);
@@ -22,7 +23,8 @@ public class HabhabBandit extends Enemy{
 
     @Override
     public void enemyMove(Player player) {
-        System.out.println(getName() + " stabs with speed!");
+        String text = getName() + " stabs with speed!";
+        centerHub.printRightText(text);
 
     int baseDamage = getAttackPower();
     if (baseDamage < 0) baseDamage = 0;
@@ -32,7 +34,7 @@ public class HabhabBandit extends Enemy{
     double critRoll = Math.random();
     if (critRoll < critChance) {
         baseDamage *= 2; // Critical hit doubles damage
-        System.out.println("Critical hit!");
+        centerHub.printRightText("Critical hit!");
     }
 
         player.takeDamage(baseDamage);

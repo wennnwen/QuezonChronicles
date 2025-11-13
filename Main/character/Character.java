@@ -10,16 +10,8 @@ public abstract class Character {
 
   //Stun Attribute
   private boolean isStunned;
-  
-  public void takeDamage(int amount) {
-		int reducedDamage = Math.max(0, amount - defense);
-    hp -= reducedDamage;
-    System.out.println(name + " took " + reducedDamage + " damage.");
 
-    if (hp <= 0) {
-      hp = 0;
-    }
-  }
+  public abstract void takeDamage(int amount);
 
   public void heal(int amount) {
     System.out.println(name + " healed " + amount + " HP.");

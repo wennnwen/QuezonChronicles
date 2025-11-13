@@ -3,6 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
+import Main.printAlignmentHub.CenterHub;
 
 public class DonMariano extends Enemy {
 
@@ -23,7 +24,8 @@ public class DonMariano extends Enemy {
     @Override
     public void enemyMove(Player player) {
         
-        System.out.println("\n" + getName() + " uses 'Greed's Flame'!");
+        String text = "\n" + getName() + " uses 'Greed's Flame'!";
+        centerHub.printRightText(text);
 
         // Base damage
         int damage = getAttackPower();
@@ -46,7 +48,7 @@ public class DonMariano extends Enemy {
         if (Math.random() <= healChance) {
             int healAmount = (int) (player.getAttackPower() * 0.5);
             heal(healAmount);
-            System.out.println("Don Mariano absorbs " + healAmount + " damage from " + player.getName() + "!");
+            centerHub.printRightText("Don Mariano absorbs " + String.valueOf(healAmount) + " damage from " + player.getName() + "!");
         }
 
         if (getSkillUsedTurn() > 0) {

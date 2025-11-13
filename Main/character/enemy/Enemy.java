@@ -3,8 +3,11 @@ package Main.character.enemy;
 import Main.character.Character;
 import Main.character.player.Player;
 import Main.item.*;
+import Main.printAlignmentHub.CenterHub;
 
 public abstract class Enemy extends Character {
+
+    protected CenterHub centerHub = new CenterHub();
 
     private int expReward;
     private Item[] possibleLoot = new Item[2];
@@ -55,5 +58,14 @@ public abstract class Enemy extends Character {
 
     public void updateSkillUsedTurn() {
         skillUsedTurn--;
+    }
+
+    public void takeDamage(int amount) {
+        int reducedDamage = Math.max(0, amount - getDefense());
+        setHp(getHp() - reducedDamage);
+        System.out.println(getName() + " took " + String.valueOf(reducedDamage) + " damage.");
+        if (getHp() <= 0) {
+            setHp(0);
+        }
     }
 }

@@ -3,6 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
+import Main.printAlignmentHub.CenterHub;
 
 public class SeaWidow extends Enemy {
 
@@ -22,7 +23,8 @@ public class SeaWidow extends Enemy {
 
     @Override
     public void enemyMove(Player player) {
-        System.out.println(getName() + " casts the Gleaming Deadly Hook at " + player.getName() + "!");
+        String text = getName() + " casts the Gleaming Deadly Hook at " + player.getName() + "!";
+        centerHub.printRightText(text);
 
         int attackPower = getAttackPower();
 

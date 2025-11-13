@@ -3,6 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
+import Main.printAlignmentHub.CenterHub;
 
 public class LanggonisaLord extends Enemy {
 
@@ -22,7 +23,8 @@ public class LanggonisaLord extends Enemy {
 
     @Override
     public void enemyMove(Player player) {
-        System.out.println(getName() + " splashes burning oil! Greasy Splash!");
+        String text = getName() + " splashes burning oil! Greasy Splash!";
+        centerHub.printRightText(text);
 
         int baseDamage = getAttackPower();
         if (baseDamage < 0) baseDamage = 0;

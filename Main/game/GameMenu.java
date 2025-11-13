@@ -8,20 +8,27 @@ import Main.item.*;
 import Main.game.BattleSystem;
 import Main.worldBuilder.WorldMap;
 import Main.worldBuilder.Town;
+import Main.printAlignmentHub.CenterHub;
 
 public class GameMenu {
 
     private Player player;
     private Enemy enemy;
     private BattleSystem battleSystem = new BattleSystem();
+    private CenterHub centerHub = new CenterHub();
 
     public Scanner input = new Scanner(System.in);
+    private String name;
    
     public void showMainMenu() {
-        System.out.println("==============================================================================================================");
-        System.out.println("Create Character");
-        System.out.print("Enter your name: ");
-        String name = input.nextLine();
+        String text;
+        if (player == null) {
+            System.out.println("=====================================================================================================================================================");
+            text = "Create Character";
+            centerHub.printCenteredText(text);
+            System.out.print("Enter your name: ");
+            name = input.nextLine();
+        }
         while (player == null) {
             showClasses();
             inputMessager();
@@ -30,123 +37,156 @@ public class GameMenu {
 
             switch (classChoice) {
                 case 1:
-                    confirmationMessager();
-                    int confirmChoice1 = input.nextInt();
-                    input.nextLine();
-                    if (confirmChoice1 == 1) {
-                        player = new Bruid(name);
-                        break;
-                    } 
-                    else if (confirmChoice1 == 2) {
-                        player = new Bruid(name);
-                        System.out.println("=============================Skills=============================");
-                        for (String move : player.getMoves()) {
-                            System.out.println(move);
+                    int confirmChoice1;
+                    do {
+                        confirmationMessager();
+                        confirmChoice1 = input.nextInt();
+                        input.nextLine();
+                        if (confirmChoice1 == 1) {
+                            player = new Bruid(name);
+                            System.out.println("You have selected the Bruid class.");
+                            break;
+                        } 
+                        else if (confirmChoice1 == 2) {
+                            player = new Bruid(name);
+                            System.out.println("=========================================================================Skills======================================================================");
+                            for (int i = 0; i < player.getAttackMoves().length; i++) {
+                                String move = player.getAttackMoves()[i];
+                                centerHub.printCenteredText(move);
+                            }
+                            player = null;
+                            System.out.println("=====================================================================================================================================================");
+                        } 
+                        else if (confirmChoice1 == 3) {
+                            player = null;
+                            continue;
+                        } else {
+                            System.out.println("Invalid input. Try again.");
                         }
-                        System.out.println("================================================================");
-                    } 
-                    else if (confirmChoice1 == 3) {
-                        player = null;
-                        continue;
-                    } else {
-                        System.out.println("Invalid input. Try again.");
-                    }
+                    } while (confirmChoice1 != 3 && player == null);
                     break;
                 
                 case 2:
-                    confirmationMessager();
-                    int confirmChoice2 = input.nextInt();
-                    input.nextLine();
-                    if (confirmChoice2 == 1) {
-                        player = new Mage(name);
-                        break;
-                    }
-                    else if (confirmChoice2 == 2) {
-                        player = new Mage(name);
-                        System.out.println("=============================Skills=============================");
-                        for (String move : player.getMoves()) {
-                            System.out.println(move);
+                    int confirmChoice2;
+                    do {
+                        confirmationMessager();
+                        confirmChoice2 = input.nextInt();
+                        input.nextLine();
+                        if (confirmChoice2 == 1) {
+                            player = new Mage(name);
+                            System.out.println("You have selected the Mage class.");
+                            break;
                         }
-                        System.out.println("================================================================");
-                    } 
-                    else if (confirmChoice2 == 3) {
-                        player = null;
-                        continue;
-                    } else {
-                        System.out.println("Invalid input. Try again.");
-                    }
+                        else if (confirmChoice2 == 2) {
+                            player = new Mage(name);
+                            System.out.println("=========================================================================Skills======================================================================");
+                            for (int i = 0; i < player.getAttackMoves().length; i++) {
+                                String move = player.getAttackMoves()[i];
+                                centerHub.printCenteredText(move);
+                            }
+                            player = null;
+                            System.out.println("=====================================================================================================================================================");
+                        } 
+                        else if (confirmChoice2 == 3) {
+                            player = null;
+                            continue;
+                        } else {
+                            System.out.println("Invalid input. Try again.");
+                        }
+                    } while (confirmChoice2 != 3 && player == null);
                     break;
                 
                 case 3:
-                    confirmationMessager();
-                    int confirmChoice3 = input.nextInt();
-                    input.nextLine();
-                    if (confirmChoice3 == 1) {
-                        player = new Thief(name);
+                    int confirmChoice3;
+                    do {
+                        confirmationMessager();
+                        confirmChoice3 = input.nextInt();
+                        input.nextLine();
+                        if (confirmChoice3 == 1) {
+                            player = new TagalogMonk(name);
+                            System.out.println("You have selected the Tagalog Monk class.");
                         break;
-                    }
-                    else if (confirmChoice3 == 2) {
-                        player = new Thief(name);
-                        System.out.println("=============================Skills=============================");
-                        for (String move : player.getMoves()) {
-                            System.out.println(move);
                         }
-                        System.out.println("================================================================");
-                    } 
-                    else if (confirmChoice3 == 3) {
-                        player = null;
-                        continue;
-                    } else {
-                        System.out.println("Invalid input. Try again.");
-                    }
+                        else if (confirmChoice3 == 2) {
+                            player = new TagalogMonk(name);
+                            System.out.println("=========================================================================Skills======================================================================");
+                            for (int i = 0; i < player.getAttackMoves().length; i++) {
+                                String move = player.getAttackMoves()[i];
+                                centerHub.printCenteredText(move);
+                            }
+                            player = null;
+                            System.out.println("=====================================================================================================================================================");
+                        } 
+                        else if (confirmChoice3 == 3) {
+                            player = null;
+                            continue;
+                        } 
+                        else {
+                            System.out.println("Invalid input. Try again.");
+                        }
+                    } while (confirmChoice3 != 3 && player == null);
                     break;
                 
                 case 4:
-                    confirmationMessager();
-                    int confirmChoice4 = input.nextInt();
-                    input.nextLine();
-                    if (confirmChoice4 == 1) {
-                        player = new Warrior(name);
-                        break;
-                    }
-                    else if (confirmChoice4 == 2) {
-                        player = new Warrior(name);
-                        System.out.println("=============================Skills=============================");
-                        for (String move : player.getMoves()) {
-                            System.out.println(move);
+                    int confirmChoice4;
+                    do {
+                        confirmationMessager();
+                        confirmChoice4 = input.nextInt();
+                        input.nextLine();
+                        if (confirmChoice4 == 1) {
+                            player = new Thief(name);
+                            System.out.println("You have selected the Thief class.");
+                            break;
                         }
-                        System.out.println("================================================================");
-                    } 
-                    else if (confirmChoice4 == 3) {
-                        player = null;
-                        continue;
-                    } else {
-                        System.out.println("Invalid input. Try again.");
-                    }
+                        else if (confirmChoice4 == 2) {
+                            player = new Thief(name);
+                            System.out.println("=========================================================================Skills======================================================================");
+                            for (int i = 0; i < player.getAttackMoves().length; i++) {
+                                String move = player.getAttackMoves()[i];
+                                centerHub.printCenteredText(move);
+                            }
+                            player = null;
+                            System.out.println("=====================================================================================================================================================");
+                        } 
+                        else if (confirmChoice4 == 3) {
+                            player = null;
+                            continue;
+                        } 
+                        else {
+                            System.out.println("Invalid input. Try again.");
+                        }
+                    } while (confirmChoice4 != 3 && player == null);
                     break;
                 
                 case 5:
-                    confirmationMessager();
-                    int confirmChoice5 = input.nextInt();
-                    input.nextLine();
-                    if (confirmChoice5 == 1) {
-                        player = new TagalogMonk(name);
-                        break;
-                    }
-                    else if (confirmChoice5 == 2) {
-                        player = new TagalogMonk(name);
-                        System.out.println("=============================Skills=============================");
-                        for (String move : player.getMoves()) {
-                            System.out.println(move);
+                    int confirmChoice5;
+                    do {
+                        confirmationMessager();
+                        confirmChoice5 = input.nextInt();
+                        input.nextLine();
+                        if (confirmChoice5 == 1) {
+                            player = new Warrior(name);
+                            System.out.println("You have selected the Warrior class.");
+                            break;
                         }
-                        System.out.println("================================================================");
-                    } 
-                    else if (confirmChoice5 == 3) {
-                        player = null;
-                        continue;
-                    } else {
-                        System.out.println("Invalid input. Try again.");
-                    }
+                        else if (confirmChoice5 == 2) {
+                            player = new Warrior(name);
+                            System.out.println("=========================================================================Skills======================================================================");
+                            for (int i = 0; i < player.getAttackMoves().length; i++) {
+                                String move = player.getAttackMoves()[i];
+                                centerHub.printCenteredText(move);
+                            }
+                            player = null;
+                            System.out.println("=====================================================================================================================================================");
+                        } 
+                        else if (confirmChoice5 == 3) {
+                            player = null;
+                            continue;
+                        } 
+                        else {
+                            System.out.println("Invalid input. Try again.");
+                        }
+                    } while (confirmChoice5 != 3 && player == null);
                     break;
 
                 default:
@@ -157,11 +197,16 @@ public class GameMenu {
         
         int choice = 0;
  		do {
-            System.out.println("|============================================================================================================|");
-            System.out.println("1. Start Battle");
-            System.out.println("2. Show Stats");
-            System.out.println("3. Show Inventory");
-            System.out.println("4. Exit");
+            System.out.println("=====================================================================================================================================================");
+            text = "( 1 ) Start Battle";
+            centerHub.printCenteredText(text);
+            text = "( 2 ) Show Stats";
+            centerHub.printCenteredText(text);
+            text = "( 3 ) Show Inventory";
+            centerHub.printCenteredText(text);
+            text = "( 4 ) Exit";
+            centerHub.printCenteredText(text);
+            System.out.println("=====================================================================================================================================================");
             inputMessager();
             choice = input.nextInt();
             input.nextLine();
@@ -214,29 +259,37 @@ public class GameMenu {
         Player thief = new Thief("Temp");
         Player bruid = new Bruid("Temp");
         Player tagalogMonk = new TagalogMonk("Temp");
+        String text;
 
-        System.out.println("============================================================Select Class=================================================");
-        System.out.println("( 1 ) Bruid - The Banana Druid");
-        bruid.description();
+        System.out.println("======================================================================Select Class===================================================================\n");
+        text = "( 1 ) Bruid - The Banana Druid";
+        centerHub.printCenteredText(text);
+        centerHub.printCenteredText(bruid.description);
         System.out.println();
-        System.out.println("( 2 ) Mage - The Arcane Panadero");
-        mage.description();
+        text = "( 2 ) Mage - The Arcane Panadero";
+        centerHub.printCenteredText(text);
+        centerHub.printCenteredText(mage.description);
         System.out.println();
-        System.out.println("( 3 ) Tagalog Monk - The Disciple of Katahimikan");
-        tagalogMonk.description();
+        text = "( 3 ) Tagalog Monk - The Disciple of Katahimikan";
+        centerHub.printCenteredText(text);
+        centerHub.printCenteredText(tagalogMonk.description);
         System.out.println();
-        System.out.println("( 4 ) Thief - The Shadow of the Kanto");
-        thief.description();
+        text = "( 4 ) Thief - The Shadow of the Kanto";
+        centerHub.printCenteredText(text);
+        centerHub.printCenteredText(thief.description);
         System.out.println();
-        System.out.println("( 5 ) Warrior - The Honor-bound Mandirigma");
-        warrior.description();
-        System.out.println("==========================================================================================================================");
+        text = "( 5 ) Warrior - The Honor-bound Mandirigma";
+        centerHub.printCenteredText(text);
+        centerHub.printCenteredText(warrior.description);
+        System.out.println("=====================================================================================================================================================");
     }
 
     public void confirmationMessager() {
+        System.out.println("=====================================================================================================================================================");
         System.out.println("( 1 ) Confirm Character");
         System.out.println("( 2 ) View Skills");
         System.out.println("( 3 ) Re-select Class");
+        System.out.println("=====================================================================================================================================================");
         inputMessager();
     }
 

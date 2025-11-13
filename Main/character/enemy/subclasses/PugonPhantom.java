@@ -3,6 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
+import Main.printAlignmentHub.CenterHub;
 
 public class PugonPhantom extends Enemy {
 
@@ -21,8 +22,8 @@ public class PugonPhantom extends Enemy {
     }
     @Override
     public void enemyMove(Player player) {
-        System.out.println("\n👻 The Sweet Vendor Spirit attacks!");
-        System.out.println("The spirit hurls enchanted sweets that explode on impact!");
+        centerHub.printRightText("\nThe Sweet Vendor Spirit attacks!");
+        centerHub.printRightText("The spirit hurls enchanted sweets that explode on impact!");
 
         // Basic single move
         int damage = getAttackPower();
@@ -37,7 +38,8 @@ public class PugonPhantom extends Enemy {
             int newStamina = player.getStamina() - drain;
             if (newStamina < 0) newStamina = 0;
             player.setStamina(newStamina);
-            System.out.println(player.getName() + "'s stamina is drained by " + drain + "!");
+            String text = player.getName() + "'s stamina is drained by " + drain + "!";
+            centerHub.printRightText(text);
         }
         
         

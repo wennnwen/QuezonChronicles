@@ -3,6 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
+import Main.printAlignmentHub.CenterHub;
 
 public class SumanMimic extends Enemy {
 
@@ -22,7 +23,7 @@ public class SumanMimic extends Enemy {
 
     @Override
     public void enemyMove(Player player) {
-        System.out.println("\n🍡 The Suman Mimic wriggles its rice wrap and attacks!");
+        centerHub.printRightText("\nThe Suman Mimic wriggles its rice wrap and attacks!");
         int damage = getAttackPower();
 
         // Attack the player
@@ -31,7 +32,7 @@ public class SumanMimic extends Enemy {
         int healAmount = 2;
         heal(healAmount);
 
-        System.out.println(getName() + " absorbs energy from the hit and heals " + healAmount + " HP!");
-
+        String text = getName() + " absorbs energy from the hit and heals " + healAmount + " HP!";
+        centerHub.printRightText(text);
     }
 }

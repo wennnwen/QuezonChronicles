@@ -3,6 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
+import Main.printAlignmentHub.CenterHub;
 
 public class BakeryGremlin extends Enemy{
 
@@ -22,7 +23,8 @@ public class BakeryGremlin extends Enemy{
 
     @Override
     public void enemyMove(Player player) {
-    System.out.println(getName() + " throws a Pinagong at " + player.getName() + "!");
+    String text = getName() + " throws a Pinagong at " + player.getName() + "!";
+    centerHub.printRightText(text);
 
     int baseDamage = getAttackPower();
     if (baseDamage < 0) baseDamage = 0;
@@ -32,7 +34,7 @@ public class BakeryGremlin extends Enemy{
     double critRoll = Math.random();
     if (critRoll < critChance) {
         baseDamage *= 2; // Critical hit doubles damage
-        System.out.println("Critical hit!");
+        centerHub.printRightText("Critical hit!");
     }
 
         player.takeDamage(baseDamage);

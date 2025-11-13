@@ -3,6 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
+import Main.printAlignmentHub.CenterHub;
 
 public class FestivalMask extends Enemy {
 
@@ -22,8 +23,9 @@ public class FestivalMask extends Enemy {
     }
     @Override
     public void enemyMove(Player player) {
-        System.out.println("The Festival Mask floats toward " + player.getName() + "!");
-        System.out.println("It releases a dazzling light that confuses its target!");
+        String text = "The Festival Mask floats toward " + player.getName() + "!";
+        centerHub.printRightText(text);
+        centerHub.printRightText("It releases a dazzling light that confuses its target!");
 
         // Base damage
         int damage = getAttackPower();
@@ -43,7 +45,8 @@ public class FestivalMask extends Enemy {
         // Optional chance flavor (adds variety)
         double chance = Math.random();
         if (chance < 0.15) { // 15% chance for extra confusion feedback
-            System.out.println(player.getName() + " hits themselves in confusion!");
+            text = player.getName() + " hits themselves in confusion!";
+            centerHub.printRightText(text);
             player.takeDamage(3);
         }
     }

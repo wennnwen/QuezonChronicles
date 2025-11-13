@@ -2,8 +2,11 @@ package Main.character.player.classes;
 
 import Main.character.player.Player;
 import Main.character.Character;
+import Main.printAlignmentHub.CenterHub;
 
 public class Bruid extends Player {
+
+	private CenterHub centerHub = new CenterHub();
   
 	public Bruid(String name) {
 		setName(name);
@@ -14,6 +17,10 @@ public class Bruid extends Player {
    		setDefense(6);
    		setAttackPower(12);
    		setSpeed(6);
+		description = 
+				"Half forest guardian, half Bisakol wonder, the Bruid is a nature-touched warrior who draws strength from the sacred punò ng saging (banana tree).\n" +
+				"Unlike typical druids who revere oaks or vines, the Bruid channels the resilience, flexibility, and masabaw na energy of the banana.\n" +
+				"They are both protectors and pranksters of the wild, often seen communing with their leafy kin while humming folk tunes from the provinces.";
 
       // Capture base stats for proper reset behavior
       setBaseStats(90, 0, 0, 60, 60, 6, 8, 6);
@@ -77,14 +84,23 @@ public class Bruid extends Player {
 
 	@Override
 	public void showStats() {
-		System.out.println("====Stats====");
-		System.out.println("Health: " + getHp() + "/" + getMaxHp());
-		System.out.println("Mana: " + getMp() + "/" + getMaxMp());
-		System.out.println("Defense: " + getDefense());
-		System.out.println("Attack Power: " + getAttackPower());
-		System.out.println("Speed: " + getSpeed());
-		System.out.println("Experience: " + getExp() + "/" + getNextExpLevel());
-		System.out.println("Level: " + getLevel());
+		String text;
+		System.out.println("======================================================================Bruid Stats===================================================================");
+		text = "Health: " + String.valueOf(getHp()) + "/" + String.valueOf(getMaxHp());
+    	centerHub.printCenteredText(text);
+		text = "Mana: " + String.valueOf(getMp()) + "/" + String.valueOf(getMaxMp());
+    	centerHub.printCenteredText(text);
+		text = "Defense: " + String.valueOf(getDefense());
+    	centerHub.printCenteredText(text);
+		text = "Attack Power: " + String.valueOf(getAttackPower());
+    	centerHub.printCenteredText(text);
+		text = "Speed: " + String.valueOf(getSpeed());
+    	centerHub.printCenteredText(text);
+		text = "Experience: " + String.valueOf(getExp()) + "/" + String.valueOf(getNextExpLevel());
+    	centerHub.printCenteredText(text);
+		text = "Level: " + String.valueOf(getLevel());
+    	centerHub.printCenteredText(text);
+    	System.out.println("=====================================================================================================================================================");
 	}
 
 	@Override 
@@ -96,12 +112,5 @@ public class Bruid extends Player {
 		setDefense(getDefense() + 2);
 		setAttackPower(getAttackPower() + 2);
 		setSpeed(getSpeed() + 1);
-	}
-
-	@Override
-	public void description() {
-		System.out.println("Half forest guardian, half Bisakol wonder, the Bruid is a nature-touched warrior who draws strength from the sacred punò sang saging (banana tree).
-							\nUnlike typical druids who revere oaks or vines, the Bruid channels the resilience, flexibility, and masabaw na energy of the banana.
-							\nThey are both protectors and pranksters of the wild, often seen communing with their leafy kin while humming folk tunes from the provinces.");
 	}
 }

@@ -2,8 +2,11 @@ package Main.character.player.classes;
 
 import Main.character.player.Player;
 import Main.character.Character;
+import Main.printAlignmentHub.CenterHub;
 
 public class Thief extends Player{
+
+    private CenterHub centerHub = new CenterHub();
 
     public Thief(String name){
         setName(name);
@@ -14,6 +17,12 @@ public class Thief extends Player{
         setDefense(5);
         setAttackPower(25);
         setSpeed(12);
+        description =
+                "Swift, sly, and sharp as a blade hidden beneath a cloak, the Thief dances between the lines of law and survival.\n" +
+                "Born from the bustling streets, back alleys, and midnight markets, Thieves are experts in deception, timing, and taking what the world refuses to give.\n\n" +
+                "Where others see danger, the Thief sees opportunity. Every fight is a gamble, every strike a trick of the hand.\n" +
+                "Armed with quick reflexes and a sharper wit, they slip through shadows, strike where it hurts, and vanish before justice can catch up.\n" +
+                "In a world ruled by power, the Thief survives through diskarte.";
 
         // Capture base stats for proper reset behavior
         setBaseStats(80, 60, 60, 0, 0, 5, 25, 12);
@@ -76,14 +85,23 @@ public class Thief extends Player{
 
 	@Override
     public void showStats() {
-		System.out.println("====Stats====");
-		System.out.println("Health: " + getHp() + "/" + getMaxHp());
-		System.out.println("Stamina: " + getStamina() + "/" + getMaxStamina());
-		System.out.println("Defense: " + getDefense());
-		System.out.println("Attack Power: " + getAttackPower());
-		System.out.println("Speed: " + getSpeed());
-		System.out.println("Experience: " + getExp() + "/" + getNextExpLevel());
-		System.out.println("Level: " + getLevel());
+        String text;
+		System.out.println("======================================================================Thief Stats===================================================================");
+		text = "Health: " + String.valueOf(getHp()) + "/" + String.valueOf(getMaxHp());
+        centerHub.printCenteredText(text);
+        text = "Stamina: " + String.valueOf(getStamina()) + "/" + String.valueOf(getMaxStamina());
+        centerHub.printCenteredText(text);
+        text = "Defense: " + String.valueOf(getDefense());
+        centerHub.printCenteredText(text);
+        text = "Attack Power: " + String.valueOf(getAttackPower());
+        centerHub.printCenteredText(text);
+        text = "Speed: " + String.valueOf(getSpeed());
+        centerHub.printCenteredText(text);
+        text = "Experience: " + String.valueOf(getExp()) + "/" + String.valueOf(getNextExpLevel());
+        centerHub.printCenteredText(text);
+        text = "Level: " + String.valueOf(getLevel());
+        centerHub.printCenteredText(text);
+		System.out.println("=====================================================================================================================================================");
 	}
    
 	@Override 
@@ -96,14 +114,5 @@ public class Thief extends Player{
 		setAttackPower(getAttackPower() + 1);
 		setSpeed(getSpeed() + 1);
 	}
-
-    @Override
-    public void description() {
-        System.out.println("Swift, sly, and sharp as a blade hidden beneath a cloak, the Thief dances between the lines of law and survival.
-        \nBorn from the bustling streets, back alleys, and midnight markets, Thieves are experts in deception, timing, and taking what the world refuses to give.\n
-        \nWhere others see danger, the Thief sees opportunity. Every fight is a gamble, every strike a trick of the hand.
-        \nArmed with quick reflexes and a sharper wit, they slip through shadows, strike where it hurts, and vanish before justice can catch up.
-        \nIn a world ruled by power, the Thief survives through diskarte.");
-    }
 }
 

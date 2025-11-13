@@ -2,9 +2,11 @@ package Main.character.player;
 
 import Main.item.*;
 import Main.character.Character;
+import Main.printAlignmentHub.CenterHub;
 
 public abstract class Player extends Character {
   private int experience, level = 1, nextExpLevel = 100;
+  public String description;
 
   // Base stats (captured at character creation) to allow proper reset
   private int baseMaxHp = 0;
@@ -26,7 +28,8 @@ public abstract class Player extends Character {
   private final String[] attackMoves = new String[4];
   private boolean lastActionSucceeded = false;
 
-  public abstract void description();
+  private CenterHub centerHub = new CenterHub();
+
 	public abstract void showStats();
   public abstract void levelStats();
   public abstract void useMoves(int moveNumber, Character target);
@@ -54,6 +57,10 @@ public abstract class Player extends Character {
 
   public Item[] getInventory() {
     return inventory;
+  }
+
+  public String[] getAttackMoves() {
+    return attackMoves;
   }
 
 	//setter
@@ -85,6 +92,16 @@ public abstract class Player extends Character {
     levelStats();
   }
 
+  public void takeDamage(int amount) {
+    int reducedDamage = Math.max(0, amount - getDefense());
+    setHp(getHp() - reducedDamage);
+    String text = getName() + " took " + String.valueOf(reducedDamage) + " damage.";
+    centerHub.printRightText(text);
+    if (getHp() <= 0) {
+      setHp(0);
+    }
+}
+
   public void addItem(Item item) {
       for (int i = 0; i < inventory.length; i++) {
         if (inventory[i] == null) {
@@ -106,15 +123,16 @@ public abstract class Player extends Character {
   }
 
   public void showInventory() {
-    System.out.println("\n|============================================== Inventory ==============================================|\n");
+    String text;
+    System.out.println("\n=========================================================================Inventory======================================================================\n");
     inventorySorter();
     for (int i = 0; i < inventory.length; i++) {
       Item item = inventory[i];
       if (item != null) {
-        System.out.println("  " + (i + 1) + ". " + item.getName() + " - " + item.getDescription());
+        text = "  " + (i + 1) + ". " + item.getName() + " - " + item.getDescription();
+        centerHub.printCenteredText(text);
       }
     }
-    System.out.println("\n|=======================================================================================================|");
   }
 
   public static void inventorySorter() {
@@ -155,7 +173,7 @@ public abstract class Player extends Character {
     setDefense(getDefense() + amount);
     defenseBoostAmount = amount;
     defenseBoostTurn = duration;
-    System.out.println(getName() + "'s Defense increased by " + amount + " for " + duration);
+    System.out.println(getName() + "'s Defense increased by " + amount + " for " + duration + " turns.");
   }
 
   public void addDebuff(int amount, int duration) {

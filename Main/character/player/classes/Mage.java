@@ -2,9 +2,12 @@ package Main.character.player.classes;
 
 import Main.character.player.Player;
 import Main.character.Character;
+import Main.printAlignmentHub.CenterHub;
 
 public class Mage extends Player {
    
+   private CenterHub centerHub = new CenterHub();
+
    public Mage(String name) {
       setName(name);
   		setMaxHp(70);
@@ -14,6 +17,10 @@ public class Mage extends Player {
   		setDefense(10);
   		setAttackPower(10);
   		setSpeed(20);
+      description =
+            "Masters of the mystical arts and occasional bakery enthusiasts, Mages command the elements with pure intellect — and sometimes pure chaos.\n" +
+            "These spellcasters channel the raw forces of fire, mana, and… baked goods? Yes, through years of study (and late-night merienda),\n" +
+            "Mages have discovered the secret arcane energy within pastries and pastries alone.";
 
       // Capture base stats for proper reset behavior
       setBaseStats(70, 0, 0, 120, 120, 10, 10, 20);
@@ -72,14 +79,23 @@ public class Mage extends Player {
 
 	@Override
    public void showStats() {
-		System.out.println("====Stats====");
-		System.out.println("Health: " + getHp() + "/" + getMaxHp());
-		System.out.println("Mana: " + getMp() + "/" + getMaxMp());
-		System.out.println("Defense: " + getDefense());
-		System.out.println("Attack Power: " + getAttackPower());
-		System.out.println("Speed: " + getSpeed());
-		System.out.println("Experience: " + getExp() + "/" + getNextExpLevel());
-		System.out.println("Level: " + getLevel());
+		String text;
+      System.out.println("======================================================================Mage Stats====================================================================");
+		text = "Health: " + String.valueOf(getHp()) + "/" + String.valueOf(getMaxHp());
+      centerHub.printCenteredText(text);
+		text = "Mana: " + String.valueOf(getMp()) + "/" + String.valueOf(getMaxMp());
+      centerHub.printCenteredText(text);
+		text = "Defense: " + String.valueOf(getDefense());
+      centerHub.printCenteredText(text);
+		text = "Attack Power: " + String.valueOf(getAttackPower());
+      centerHub.printCenteredText(text);
+		text = "Speed: " + String.valueOf(getSpeed());
+      centerHub.printCenteredText(text);
+		text = "Experience: " + String.valueOf(getExp()) + "/" + String.valueOf(getNextExpLevel());
+      centerHub.printCenteredText(text);
+		text = "Level: " + String.valueOf(getLevel());
+      centerHub.printCenteredText(text);
+      System.out.println("=====================================================================================================================================================");
 	}
 
 	@Override
@@ -92,11 +108,4 @@ public class Mage extends Player {
 		setAttackPower(getAttackPower() + 2);
 		setSpeed(getSpeed() + 1);
 	}
-
-   @Override
-   public void description() {
-      System.out.println("Masters of the mystical arts and occasional bakery enthusiasts, Mages command the elements with pure intellect — and sometimes pure chaos.
-                        \nThese spellcasters channel the raw forces of fire, mana, and… baked goods? Yes, through years of study (and late-night merienda),
-                        \nMages have discovered the secret arcane energy within pastries and pastries alone.");
-   }
 }

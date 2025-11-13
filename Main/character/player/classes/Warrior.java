@@ -2,8 +2,11 @@ package Main.character.player.classes;
 
 import Main.character.player.Player;
 import Main.character.Character;
+import Main.printAlignmentHub.CenterHub;
 
 public class Warrior extends Player{
+
+    private CenterHub centerHub = new CenterHub();
 
     public static int skillUsedTurn;
 
@@ -16,6 +19,9 @@ public class Warrior extends Player{
         setDefense(10);
         setAttackPower(16);
         setSpeed(5);
+        description =
+                "Forged in battle and tempered by hardship, the Warrior stands as the steadfast heart of every fight. Born from the rugged hills and wide plains,\n" +
+                "Warriors embody the courage of those who fight not for glory, but for karangalan (honor) and kapwa (others).";
 
         // Capture base stats for proper reset behavior
         setBaseStats(130, 50, 50, 0, 0, 10, 16, 5);
@@ -96,15 +102,23 @@ public class Warrior extends Player{
 
 	@Override
     public void showStats() {
-		System.out.println("====Stats====");
-		System.out.println("Health: " + getHp() + "/" + getMaxHp());
-		System.out.println("Stamina: " + getStamina() + "/" + getMaxStamina());
-		System.out.println("Defense: " + getDefense());
-		System.out.println("Attack Power: " + getAttackPower());
-		System.out.println("Speed: " + getSpeed());
-		System.out.println("Experience: " + getExp() + "/" + getNextExpLevel());
-		System.out.println("Level: " + getLevel());
-
+        String text;
+		System.out.println("=====================================================================Warrior Stats==================================================================");
+		text = "Health: " + String.valueOf(getHp()) + "/" + String.valueOf(getMaxHp());
+        centerHub.printCenteredText(text);
+		text = "Stamina: " + String.valueOf(getStamina()) + "/" + String.valueOf(getMaxStamina());
+        centerHub.printCenteredText(text);
+		text = "Defense: " + String.valueOf(getDefense());
+        centerHub.printCenteredText(text);
+		text = "Attack Power: " + String.valueOf(getAttackPower());
+        centerHub.printCenteredText(text);
+		text = "Speed: " + String.valueOf(getSpeed());
+        centerHub.printCenteredText(text);
+		text = "Experience: " + String.valueOf(getExp()) + "/" + String.valueOf(getNextExpLevel());
+        centerHub.printCenteredText(text);
+		text = "Level: " + String.valueOf(getLevel());
+        centerHub.printCenteredText(text);
+		System.out.println("=====================================================================================================================================================");
 	}
 
 	@Override 
@@ -130,10 +144,4 @@ public class Warrior extends Player{
          }
       }
    }
-
-    @Override
-    public void description() { 
-        System.out.println("Forged in battle and tempered by hardship, the Warrior stands as the steadfast heart of every fight. Born from the rugged hills and wide plains,
-                            \nWarriors embody the courage of those who fight not for glory, but for karangalan (honor) and kapwa (others).");
-    }
 }

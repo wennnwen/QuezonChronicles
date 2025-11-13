@@ -3,6 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
+import Main.printAlignmentHub.CenterHub;
 
 public class InfantaShade extends Enemy {
 
@@ -22,7 +23,8 @@ public class InfantaShade extends Enemy {
 
     @Override
     public void enemyMove(Player player) {
-        System.out.println(getName() + " lashes out with shadowy energy at " + player.getName() + "!");
+        String text = getName() + " lashes out with shadowy energy at " + player.getName() + "!";
+        centerHub.printRightText(text);
 
         // Deal damage instead of healing
         player.takeDamage(getAttackPower());
