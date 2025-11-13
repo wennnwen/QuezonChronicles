@@ -70,9 +70,10 @@ public abstract class Player extends Character {
   }
 
   public void addExp(int amount) {
+    if (amount <= 0) return;
     this.experience += amount;
-    if (this.experience >= nextExpLevel) {
-      experience -= nextExpLevel;
+    while (this.experience >= nextExpLevel) {
+      this.experience -= nextExpLevel;
       levelUp();
     }
   }

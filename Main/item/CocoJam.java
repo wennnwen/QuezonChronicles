@@ -11,6 +11,7 @@ public class CocoJam extends Item {
 
     @Override
     public void useItem(Player player) {
+
         int staminaBoost = 15;
         
         //check if the class uses stamina or mp
@@ -18,6 +19,11 @@ public class CocoJam extends Item {
         System.out.println(player.getName() + " eats a Coco Jam!");
         System.out.println(player.getName() + "restores 15 amount of stamina!");
 
-        player.addStamina(staminaBoost);
+        if (!player.getUsesMp()) {
+            player.addStamina(staminaBoost);
+        }
+        else {
+        player.addMp(staminaBoost);
+        }
     }
 }

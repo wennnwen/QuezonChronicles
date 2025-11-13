@@ -26,15 +26,11 @@ public class SeaWidow extends Enemy {
 
         int attackPower = getAttackPower();
 
-    // weakens the player
-        double weakenChance = 0.2; // 20% chance
+        double weakenChance = 0.3; // 30% chance
         if (Math.random() < weakenChance) {
-        attackPower -= 5; // or any value you want to decrease
-        System.out.println("You feel weaker! Attack power reduced.");
-}
+        player.applyDebuff("attack down", 2); // or any value you want to decrease
+        }
 
-
-        // Deal damage
         player.takeDamage(attackPower);
     }
 }
