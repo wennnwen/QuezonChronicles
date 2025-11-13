@@ -18,78 +18,164 @@ public class GameMenu {
     public Scanner input = new Scanner(System.in);
    
     public void showMainMenu() {
+        System.out.println("==============================================================================================================");
+        System.out.println("Create Character");
+        System.out.print("Enter your name: ");
+        String name = input.nextLine();
+        while (player == null) {
+            showClasses();
+            inputMessager();
+            int classChoice = input.nextInt();
+            input.nextLine();
 
+            switch (classChoice) {
+                case 1:
+                    confirmationMessager();
+                    int confirmChoice1 = input.nextInt();
+                    input.nextLine();
+                    if (confirmChoice1 == 1) {
+                        player = new Bruid(name);
+                        break;
+                    } 
+                    else if (confirmChoice1 == 2) {
+                        player = new Bruid(name);
+                        System.out.println("=============================Skills=============================");
+                        for (String move : player.getMoves()) {
+                            System.out.println(move);
+                        }
+                        System.out.println("================================================================");
+                    } 
+                    else if (confirmChoice1 == 3) {
+                        player = null;
+                        continue;
+                    } else {
+                        System.out.println("Invalid input. Try again.");
+                    }
+                    break;
+                
+                case 2:
+                    confirmationMessager();
+                    int confirmChoice2 = input.nextInt();
+                    input.nextLine();
+                    if (confirmChoice2 == 1) {
+                        player = new Mage(name);
+                        break;
+                    }
+                    else if (confirmChoice2 == 2) {
+                        player = new Mage(name);
+                        System.out.println("=============================Skills=============================");
+                        for (String move : player.getMoves()) {
+                            System.out.println(move);
+                        }
+                        System.out.println("================================================================");
+                    } 
+                    else if (confirmChoice2 == 3) {
+                        player = null;
+                        continue;
+                    } else {
+                        System.out.println("Invalid input. Try again.");
+                    }
+                    break;
+                
+                case 3:
+                    confirmationMessager();
+                    int confirmChoice3 = input.nextInt();
+                    input.nextLine();
+                    if (confirmChoice3 == 1) {
+                        player = new Thief(name);
+                        break;
+                    }
+                    else if (confirmChoice3 == 2) {
+                        player = new Thief(name);
+                        System.out.println("=============================Skills=============================");
+                        for (String move : player.getMoves()) {
+                            System.out.println(move);
+                        }
+                        System.out.println("================================================================");
+                    } 
+                    else if (confirmChoice3 == 3) {
+                        player = null;
+                        continue;
+                    } else {
+                        System.out.println("Invalid input. Try again.");
+                    }
+                    break;
+                
+                case 4:
+                    confirmationMessager();
+                    int confirmChoice4 = input.nextInt();
+                    input.nextLine();
+                    if (confirmChoice4 == 1) {
+                        player = new Warrior(name);
+                        break;
+                    }
+                    else if (confirmChoice4 == 2) {
+                        player = new Warrior(name);
+                        System.out.println("=============================Skills=============================");
+                        for (String move : player.getMoves()) {
+                            System.out.println(move);
+                        }
+                        System.out.println("================================================================");
+                    } 
+                    else if (confirmChoice4 == 3) {
+                        player = null;
+                        continue;
+                    } else {
+                        System.out.println("Invalid input. Try again.");
+                    }
+                    break;
+                
+                case 5:
+                    confirmationMessager();
+                    int confirmChoice5 = input.nextInt();
+                    input.nextLine();
+                    if (confirmChoice5 == 1) {
+                        player = new TagalogMonk(name);
+                        break;
+                    }
+                    else if (confirmChoice5 == 2) {
+                        player = new TagalogMonk(name);
+                        System.out.println("=============================Skills=============================");
+                        for (String move : player.getMoves()) {
+                            System.out.println(move);
+                        }
+                        System.out.println("================================================================");
+                    } 
+                    else if (confirmChoice5 == 3) {
+                        player = null;
+                        continue;
+                    } else {
+                        System.out.println("Invalid input. Try again.");
+                    }
+                    break;
+
+                default:
+                    System.out.print("Invalid input. Try again.");
+                    break;
+            }
+        }
+        
         int choice = 0;
  		do {
-            System.out.println("\nChoose: ");
-            System.out.println("1. Create a character");
+            System.out.println("|============================================================================================================|");
+            System.out.println("1. Start Battle");
             System.out.println("2. Show Stats");
             System.out.println("3. Show Inventory");
-            System.out.println("4. Start Battle");
-            System.out.println("5. Exit");
+            System.out.println("4. Exit");
             inputMessager();
             choice = input.nextInt();
             input.nextLine();
 
             switch (choice) {
                 case 1:
-                    if (!canCreateCharacter()) {
-                        System.out.println("You already have a character.");
-                        break;
-                    }
-                    System.out.print("Enter your name: ");
-                    String name = input.nextLine();
-
-                    System.out.println("\nChoose a class you want: ");
-                    System.out.println("1 - Warrior");
-                    System.out.println("2 - Mage");
-                    System.out.println("3 - Thief");
-                    System.out.println("4 - Bruid");
-                    System.out.println("5 - TagalogMonk");
-                    inputMessager();
-                    int classChoice = input.nextInt();
-                    input.nextLine();
-
-                    switch (classChoice) {
-                        case 1:
-                            player = new Warrior(name);
-                            break;
-
-                        case 2:
-                            player = new Mage(name);
-                            break;
-
-                        case 3:
-                            player = new Thief(name);
-                            break;
-                        
-                        case 4:
-                            player = new Bruid(name);
-                            break;
-                        
-                        case 5:
-                            player = new TagalogMonk(name);
-                            break;
-                        
-                        default:
-                            System.out.print("Invalid input. Try again.");
-                            break;
-                    }
+                    choosePath();
                     break;
 
                 case 2:
-                    if (!characterValidation(player)) {
-                        System.out.println("Please create character first.");
-                        break;
-                    }
                     player.showStats();
                     break;
 
                 case 3:
-                    if (!characterValidation(player)) {
-                        System.out.println("Please create character first.");
-                        break;
-                    }
                     Item[] inventory = player.getInventory();
                     boolean isEmpty = true;
                     if (inventory != null && inventory.length > 0) {
@@ -108,32 +194,50 @@ public class GameMenu {
                     break;
 
                 case 4:
-                    if(!characterValidation(player)) {
-                        System.out.println("Please create character first.");
-                        break;
-                    }
-                    choosePath();
-                    break;
-                
-                case 5:
                     System.out.println("Exiting the Game...");
                     break;
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+                    break;     
             }
-        } while (choice != 5);
+        } while (choice != 4);
     }
    
 	public void inputMessager() {
   		System.out.print("Enter your choice: ");
     } 
 
-    public boolean characterValidation(Player player) {
-        return player != null;
+    public void showClasses() {
+        Player warrior = new Warrior("Temp");
+        Player mage = new Mage("Temp");
+        Player thief = new Thief("Temp");
+        Player bruid = new Bruid("Temp");
+        Player tagalogMonk = new TagalogMonk("Temp");
+
+        System.out.println("============================================================Select Class=================================================");
+        System.out.println("( 1 ) Bruid - The Banana Druid");
+        bruid.description();
+        System.out.println();
+        System.out.println("( 2 ) Mage - The Arcane Panadero");
+        mage.description();
+        System.out.println();
+        System.out.println("( 3 ) Tagalog Monk - The Disciple of Katahimikan");
+        tagalogMonk.description();
+        System.out.println();
+        System.out.println("( 4 ) Thief - The Shadow of the Kanto");
+        thief.description();
+        System.out.println();
+        System.out.println("( 5 ) Warrior - The Honor-bound Mandirigma");
+        warrior.description();
+        System.out.println("==========================================================================================================================");
     }
-    private boolean canCreateCharacter() {
-    if (this.player != null) {
-        return false;
-        }
-    return true;
+
+    public void confirmationMessager() {
+        System.out.println("( 1 ) Confirm Character");
+        System.out.println("( 2 ) View Skills");
+        System.out.println("( 3 ) Re-select Class");
+        inputMessager();
     }
 
     public void choosePath() {

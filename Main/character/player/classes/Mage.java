@@ -92,4 +92,11 @@ public class Mage extends Player {
 		setAttackPower(getAttackPower() + 2);
 		setSpeed(getSpeed() + 1);
 	}
+
+   @Override
+   public void description() {
+      System.out.println("Masters of the mystical arts and occasional bakery enthusiasts, Mages command the elements with pure intellect — and sometimes pure chaos.
+                        \nThese spellcasters channel the raw forces of fire, mana, and… baked goods? Yes, through years of study (and late-night merienda),
+                        \nMages have discovered the secret arcane energy within pastries and pastries alone.");
+   }
 }

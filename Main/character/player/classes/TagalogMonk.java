@@ -129,5 +129,12 @@ public class TagalogMonk extends Player {
          }
       }
    }
+
+   @Override
+   public void description() {
+      System.out.println("Steeped in the ancient traditions of the Tagalog highlands and lowlands, the Tagalog Monk embodies harmony between body, spirit, and the land.
+                        \nGuided by pananampalataya (faith) and disiplina (discipline), these warriors channel the strength of their ancestors
+                        \nfrom the mountains of the North to the plains of the heart of Luzon.");
+   }
 }
 

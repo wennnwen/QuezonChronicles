@@ -96,5 +96,14 @@ public class Thief extends Player{
 		setAttackPower(getAttackPower() + 1);
 		setSpeed(getSpeed() + 1);
 	}
+
+    @Override
+    public void description() {
+        System.out.println("Swift, sly, and sharp as a blade hidden beneath a cloak, the Thief dances between the lines of law and survival.
+        \nBorn from the bustling streets, back alleys, and midnight markets, Thieves are experts in deception, timing, and taking what the world refuses to give.\n
+        \nWhere others see danger, the Thief sees opportunity. Every fight is a gamble, every strike a trick of the hand.
+        \nArmed with quick reflexes and a sharper wit, they slip through shadows, strike where it hurts, and vanish before justice can catch up.
+        \nIn a world ruled by power, the Thief survives through diskarte.");
+    }
 }
 

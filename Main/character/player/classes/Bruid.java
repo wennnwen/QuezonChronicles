@@ -98,4 +98,11 @@ public class Bruid extends Player {
 		setAttackPower(getAttackPower() + 2);
 		setSpeed(getSpeed() + 1);
 	}
+
+	@Override
+	public void description() {
+		System.out.println("Half forest guardian, half Bisakol wonder, the Bruid is a nature-touched warrior who draws strength from the sacred punò sang saging (banana tree).
+							\nUnlike typical druids who revere oaks or vines, the Bruid channels the resilience, flexibility, and masabaw na energy of the banana.
+							\nThey are both protectors and pranksters of the wild, often seen communing with their leafy kin while humming folk tunes from the provinces.");
+	}
 }

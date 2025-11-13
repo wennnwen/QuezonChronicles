@@ -130,4 +130,10 @@ public class Warrior extends Player{
          }
       }
    }
+
+    @Override
+    public void description() { 
+        System.out.println("Forged in battle and tempered by hardship, the Warrior stands as the steadfast heart of every fight. Born from the rugged hills and wide plains,
+                            \nWarriors embody the courage of those who fight not for glory, but for karangalan (honor) and kapwa (others).");
+    }
 }

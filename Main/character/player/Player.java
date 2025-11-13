@@ -26,6 +26,7 @@ public abstract class Player extends Character {
   private final String[] attackMoves = new String[4];
   private boolean lastActionSucceeded = false;
 
+  public abstract void description();
 	public abstract void showStats();
   public abstract void levelStats();
   public abstract void useMoves(int moveNumber, Character target);
