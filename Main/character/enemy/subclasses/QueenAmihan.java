@@ -28,9 +28,7 @@ public class QueenAmihan extends Enemy {
     
     // Deal damage after applying effects
     player.takeDamage(attackPower);
-    heal(getHp() + 1);
-
-}
-
-
+    heal(getAttackPower() / 2);
+    System.out.println(getName() + " heals for " + (getAttackPower() / 2) + " HP!");
+    }
 }

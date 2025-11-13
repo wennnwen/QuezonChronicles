@@ -12,7 +12,7 @@ public class Budin extends Item {
     @Override
     public void useItem(Player player) {
         int attackPowerBoost = 2;
-        int duration = 1;
+        int duration = 2;
 
         System.out.println(player.getName() + " drinks the Pugon Coffee!");
         System.out.println(player.getName() + " has temporarily increased their Attack Power by 2");

@@ -16,8 +16,13 @@ public class MountainHoney extends Item{
         //check if the class uses stamina or mp
 
         System.out.println(player.getName() + "ate the Mountain Honey!");
-        System.out.println(player.getName() + "restores 15 amount of stamina!");
-
-        player.addStamina(staminaBoost);
+        if (!player.getUsesMp()) {
+            player.addStamina(staminaBoost);
+            System.out.println(player.getName() + "restored 15 amount of stamina!");
+        }
+        else {
+        player.addMp(staminaBoost);
+        System.out.println(player.getName() + "restored 15 amount of mp!");
+        }
     }
 }
