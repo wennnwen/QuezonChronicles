@@ -71,7 +71,7 @@ public class Town {
                     break;
 
                 case 2:
-                    if ((boss == null && enemiesDefeated >= 2) || (boss != null && enemiesDefeated >= 3)) {
+                    if ((boss == null && enemiesDefeated >= 3) || (boss != null && enemiesDefeated >= 3)) {
                         if (nextTown != null) {
                             System.out.println("Travelling to " + nextTown.name + "...");
                             if (!player.getUsesMp()) {

@@ -131,8 +131,11 @@ public class BattleSystem {
             System.out.print("Enter your choice: ");
             int choice = input.nextInt();
             if (choice >= 1 && choice <= 4) {
+                // Reset the last-action flag, attempt the move, and only end input loop
+                // if the move actually succeeded (had enough stamina/mp and wasn't on cooldown).
+                player.setLastActionSucceeded(false);
                 player.useMoves(choice, enemy);
-                validInput = true;
+                validInput = player.getLastActionSucceeded();
             }
             else if (choice == 5) {
                 Item[] inventory = player.getInventory();

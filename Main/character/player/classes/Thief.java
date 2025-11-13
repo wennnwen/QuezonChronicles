@@ -31,6 +31,7 @@ public class Thief extends Player{
             case 1:
                 System.out.println("\n" + getName() + " used Stab!");
                 target.takeDamage(getAttackPower());
+                setLastActionSucceeded(true);
                 break;
 
             case 2:
@@ -38,9 +39,11 @@ public class Thief extends Player{
                     System.out.println("\n" + getName() + " used Critical Edge!");
                     setStamina(getStamina() - 10);
                     target.takeDamage(getAttackPower() * 2);
+                    setLastActionSucceeded(true);
                 }
                 else {
                     System.out.println("Not enough Stamina!");
+                    setLastActionSucceeded(false);
                 }
                 break;
 
@@ -49,9 +52,11 @@ public class Thief extends Player{
                     System.out.println("\n" + getName() + " used Vanish!");
                     addTemporaryDefenseBoost(100, 2);
                     setStamina(getStamina() - 15);
+                    setLastActionSucceeded(true);
                 }
                 else {
                     System.out.println("Not enough Stamina!");
+                    setLastActionSucceeded(false);
                 }
                 break;
 
@@ -59,10 +64,12 @@ public class Thief extends Player{
                 System.out.println("\n" + getName() + " used Looter's Instinct!");
                 heal(7);
                 addStamina(7);
+                setLastActionSucceeded(true);
                 break;
 
             default:
                 System.out.println("Invalid move number!");
+                setLastActionSucceeded(false);
                 break;
         }
     }

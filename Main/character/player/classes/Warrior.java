@@ -5,6 +5,8 @@ import Main.character.Character;
 
 public class Warrior extends Player{
 
+    public static int skillUsedTurn;
+
     public Warrior(String name){
         setName(name);
         setMaxHp(130);
@@ -31,6 +33,8 @@ public class Warrior extends Player{
             case 1:
                 System.out.println("\n" + getName() + " used Slash!");
                 target.takeDamage(getAttackPower());
+                setLastActionSucceeded(true);
+                skillUsedTurn();
                 break;
 
             case 2:
@@ -38,34 +42,51 @@ public class Warrior extends Player{
                     System.out.println("\n" + getName() + " used Cleave!");
                     setStamina(getStamina() - 5);
                     target.takeDamage((int) (getAttackPower() * 1.5));
+                    skillUsedTurn();
+                    setLastActionSucceeded(true);
                     break;
                 }
                 else{
                     System.out.println("Not enough stamina!");
+                    setLastActionSucceeded(false);
                 }
+                skillUsedTurn();
                 break;
 
             case 3:
                 if (getStamina() >= 3){
                     System.out.println("\n" + getName() + " used Shield Bash!");
                     target.takeDamage((int) (getAttackPower() * 0.5));
-                    double stunChance = 1.00;
+                    double stunChance = 0.25;
                     if(Math.random() <= stunChance){
                         target.applyDebuff("stun", 3);
                     }
+                    setStamina(getStamina() - 3);
+                    setLastActionSucceeded(true);
+                    skillUsedTurn();
                     break;
                 }
                 else{
                     System.out.println("Not enough stamina!");
+                    setLastActionSucceeded(false);
                 }
+                skillUsedTurn();
                 break;
 
             case 4:
-                System.out.println("\n" + getName() + " used Second Wind!");
-                System.out.println(getName() + "'s healed for +15hp and restored +10 stamina!");
-                heal(15);
-                addStamina(10);
-                break;
+                if (skillUsedTurn > 0) {
+                    System.out.println("\nSecond Wind is on cooldown for " + skillUsedTurn + " more turn(s).");
+                    setLastActionSucceeded(false);
+                    break;
+                }
+                else{
+                    System.out.println("\n" + getName() + " used Second Wind!");
+                    heal(15);
+                    addStamina(10);
+                    skillUsedTurn = 3;
+                    setLastActionSucceeded(true);
+                    break;
+                }
 
             default:
                 System.out.println("Invalid move number!");
@@ -83,6 +104,7 @@ public class Warrior extends Player{
 		System.out.println("Speed: " + getSpeed());
 		System.out.println("Experience: " + getExp() + "/" + getNextExpLevel());
 		System.out.println("Level: " + getLevel());
+
 	}
 
 	@Override 
@@ -96,4 +118,16 @@ public class Warrior extends Player{
 		setSpeed(getSpeed() + 1);
 	}
 
+
+    public static void skillUsedTurn() {
+      if (skillUsedTurn <= 0) {
+         skillUsedTurn = 0;
+      }
+      else {
+         skillUsedTurn--;
+         if (skillUsedTurn == 0) {
+            System.out.println("Second Wind is ready!");
+         }
+      }
+   }
 }

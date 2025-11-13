@@ -33,19 +33,22 @@ public class TagalogMonk extends Player {
          case 1:
             System.out.println("\n" + getName() + " used Suntok ni Apo!");
             target.takeDamage(getAttackPower());
+            setLastActionSucceeded(true);
             skillUsedTurn();
             break;
 
          case 2:
-            if (getStamina() >= 10) {
-               System.out.println("\n" + getName() + " used Bugso ng Loob!");
-               setStamina(getStamina() - 10);
-               int boostDamage = getAttackPower() + (int)(getAttackPower() * 0.4);
-               target.takeDamage(boostDamage);
-            }
-            else {
-               System.out.println("Not enough Stamina!");
-            }
+               if (getStamina() >= 10) {
+                  System.out.println("\n" + getName() + " used Bugso ng Loob!");
+                  setStamina(getStamina() - 10);
+                  int boostDamage = getAttackPower() + (int)(getAttackPower() * 0.4);
+                  target.takeDamage(boostDamage);
+                  setLastActionSucceeded(true);
+               }
+               else {
+                  System.out.println("Not enough Stamina!");
+                  setLastActionSucceeded(false);
+               }
             skillUsedTurn();
             break;
 
@@ -60,27 +63,35 @@ public class TagalogMonk extends Player {
                      System.out.println(target.getName() + " is stunned!");
                      target.applyDebuff("stun", 1);
                   }
+               setLastActionSucceeded(true);
             }
             else {
                System.out.println("Not enough Stamina!");
+               setLastActionSucceeded(false);
             }
             skillUsedTurn();
             break;
             
          case 4:
-            if (skillUsedTurn == 0) {
+            if (skillUsedTurn > 0) {
+               System.out.println("You just used Dasal ng Katahimikan. Cannot use for 2 turns!");
+               setLastActionSucceeded(false);
+               break;
+            }
+            else {
                System.out.println("\n" + getName() + " used Dasal ng Katahimikan");
                System.out.println(getName() + "'s has healed and gained stamina!");
                heal((int)(getHp() * 0.3));
                addStamina(1);
                addTemporaryDefenseBoost((int)(getDefense() * 0.25), 2);
                skillUsedTurn = 2;
+               setLastActionSucceeded(true);
+               break;
             }
-            else {
-               System.out.println("You just used Dasal ng Katahimikan. Cannot use for 2 turns!");
-               skillUsedTurn();
-            }
-            break;
+
+         default:
+                System.out.println("Invalid move number!");
+                break;
       }
    }
 
@@ -113,6 +124,9 @@ public class TagalogMonk extends Player {
       }
       else {
          skillUsedTurn--;
+         if (skillUsedTurn == 0) {
+            System.out.println("Dasal ng Katahimikan is ready!");
+         }
       }
    }
 }

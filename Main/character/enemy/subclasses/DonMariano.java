@@ -7,12 +7,13 @@ import Main.character.enemy.Enemy;
 public class DonMariano extends Enemy {
 
     public DonMariano() {
-        setName("Don Mariano the Collector");
+        setName("Don Mariano");
         setMaxHp(80);
         setHp(80);
         setAttackPower(28);
         setDefense(12);
         setSpeed(6);
+        setSkillUsedTurn(2);
 
         setExpReward(1200);
 
@@ -22,29 +23,34 @@ public class DonMariano extends Enemy {
     @Override
     public void enemyMove(Player player) {
         
-        System.out.println("\n Don Mariano the Collector uses 'Greed's Flame'!");
-        System.out.println("A wave of cursed fire engulfs " + player.getName() + " — their life force is drained!");
+        System.out.println("\n" + getName() + " uses 'Greed's Flame'!");
 
         // Base damage
-        int damage = getAttackPower() + 5;
-        
-        // Apply damage to player
-        int playerHpBefore = player.getHp();
-        player.takeDamage(damage);
+        int damage = getAttackPower();
+        player.takeDamage(damage);        
 
-        // Calculate actual damage dealt
-        int damageDealt = playerHpBefore - player.getHp();
+        //Roll chances for effect
+        double attackRoll = 0.5;
+        double healChance = 0.15;
 
-        // Absorb (heal) a portion of the damage dealt
-        int healAmount = (int) (damageDealt * 0.5); // absorbs 50% of the damage
-        setHp(getHp() + healAmount);
+        if (Math.random() <= attackRoll) {
+            if (getSkillUsedTurn() <= 0) {
+                player.applyDebuff("burn", 2);
+                setSkillUsedTurn(2);
+            }
+            else {
+                updateSkillUsedTurn();
+            }
+        }
 
-        // Burn effect on player (optional for extra challenge)
-        player.applyDebuff("burn", 3);
+        if (Math.random() <= healChance) {
+            int healAmount = (int) (player.getAttackPower() * 0.5);
+            heal(healAmount);
+            System.out.println("Don Mariano absorbs " + healAmount + " damage from " + player.getName() + "!");
+        }
 
-        // Battle feedback
-        System.out.println("🔥 Don Mariano absorbs " + healAmount + " HP from " + player.getName() + "!");
-        System.out.println("Current HP: " + getHp() + "/" + getMaxHp());
-
+        if (getSkillUsedTurn() > 0) {
+            updateSkillUsedTurn();
+        }
     }
 }

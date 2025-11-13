@@ -16,6 +16,7 @@ public abstract class Player extends Character {
   private int baseAttackPower = 0;
   private int baseSpeed = 0;
   private boolean usesMp = true;
+  
   //Effect attributes
   private int attackBoostAmount = 0, attackBoostTurn = 0;
   private int defenseBoostAmount = 0, defenseBoostTurn = 0;
@@ -23,6 +24,7 @@ public abstract class Player extends Character {
 
   private static Item[] inventory = new Item[10];
   private final String[] attackMoves = new String[4];
+  private boolean lastActionSucceeded = false;
 
 	public abstract void showStats();
   public abstract void levelStats();
@@ -56,6 +58,14 @@ public abstract class Player extends Character {
 	//setter
   public void setUsesMp(boolean usesMp) {
     this.usesMp = usesMp;
+  }
+
+  public void setLastActionSucceeded(boolean val) {
+    this.lastActionSucceeded = val;
+  }
+
+  public boolean getLastActionSucceeded() {
+    return this.lastActionSucceeded;
   }
 
   public void addExp(int amount) {

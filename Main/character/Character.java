@@ -38,6 +38,7 @@ public abstract class Character {
   }
 
   public void addMp(int amount) {
+    System.out.println(name + " regained " + amount + " MP.");
     mp += amount;
     if (mp >= maxMp) {
       mp = maxMp;

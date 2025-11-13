@@ -31,6 +31,7 @@ public class Bruid extends Player {
       	case 1:
 			System.out.println("\n" + getName() + " used Banana Strike!");
 			target.takeDamage(getAttackPower());
+			setLastActionSucceeded(true);
 			break;
 
 		case 2:
@@ -38,9 +39,11 @@ public class Bruid extends Player {
 				System.out.println("\n" + getName() + " used Front Shield!");
 				setMp(getMp() - 10);
 				addTemporaryDefenseBoost((int)(getDefense() * 0.25), 2);
+				setLastActionSucceeded(true);
 			}
 			else {
 				System.out.println("Not enough Mana!");
+				setLastActionSucceeded(false);
 			}
 			break;
 
@@ -48,6 +51,7 @@ public class Bruid extends Player {
 			System.out.println("\n" + getName() + " used Healing Grove!");
 			setMp(getMp() + 25);
 			System.out.println("Mana Restored by 25 points!");
+			setLastActionSucceeded(true);
 			break;
 
 		case 4:
@@ -56,14 +60,17 @@ public class Bruid extends Player {
 				setMp(getMp() - 15);
 				int damage = getAttackPower() + (int)(getAttackPower() * 0.5);
 				target.takeDamage(damage);
+				setLastActionSucceeded(true);
 			}
 			else {
 				System.out.println("Not enough Mana!");
+				setLastActionSucceeded(false);
 			}
 			break;
 
 		default:
 			System.out.println("Invalid move number!");
+			setLastActionSucceeded(false);
 			break;
 		}
 	}

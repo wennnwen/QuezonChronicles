@@ -31,6 +31,7 @@ public class Mage extends Player {
          case 1:
             System.out.println("\n" + getName() + " cast a Fire Ball!");
             target.takeDamage(getAttackPower());
+            setLastActionSucceeded(true);
             break;
 
          case 2:
@@ -38,16 +39,19 @@ public class Mage extends Player {
                System.out.println("\n" + getName() + " cast a LambaShield!");
                setMp(getMp() - 10);
                addTemporaryDefenseBoost((int)(getDefense() * 0.30), 2);
+               setLastActionSucceeded(true);
             }
             else {
                System.out.println("Not enough Mana!");
+               setLastActionSucceeded(false);
             }
             break;
 
          case 3:
             System.out.println("\n" + getName() + " cast a Mana Surge!");
-            setMp(getMp() + 20);
+            addMp(20);
 			   System.out.println("Mana Restored by 20 points!");
+            setLastActionSucceeded(true); 
             break;
 
          case 4:
@@ -56,9 +60,11 @@ public class Mage extends Player {
                System.out.println("\n" + getName() + " cast a Pinagong Storm!");
                int damage = getAttackPower() + (int)(getAttackPower() * 0.5);
 				   target.takeDamage(damage);
+                  setLastActionSucceeded(true);
             }
             else {
                System.out.println("Not enough Mana!");
+               setLastActionSucceeded(false);
             }
             break;
       }

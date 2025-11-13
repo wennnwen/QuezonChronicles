@@ -27,10 +27,15 @@ public class FestivalMask extends Enemy {
 
         // Base damage
         int damage = getAttackPower();
-        player.takeDamage(damage);
         if (getSkillUsedTurn() <= 0) {
-            player.applyDebuff("confusion", 2);
-            setSkillUsedTurn(2); // reset cooldown after using the skill
+            double confuseChance = 0.4;
+            if (Math.random() <= confuseChance){
+                player.applyDebuff("confusion", 2);
+                player.takeDamage(damage);
+                setSkillUsedTurn(2);
+            }else {
+                player.takeDamage(damage);
+            }
         } else {
             updateSkillUsedTurn(); // count down until the skill can be used
         }

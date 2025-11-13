@@ -26,14 +26,22 @@ public class LanggonisaLord extends Enemy {
 
         int baseDamage = getAttackPower();
         if (baseDamage < 0) baseDamage = 0;
+        player.takeDamage(baseDamage);
 
-        // Critical Chance
-        double critChance = 0.2;
-        if (Math.random() < critChance) {
-            System.out.println("Critical Hit!");
-            baseDamage *= 2;
+        double attackRoll = 0.5;
+
+        if (Math.random() <= attackRoll) {
+            if (getSkillUsedTurn() <= 0) {
+                player.applyDebuff("burn", 2);
+                setSkillUsedTurn(2);
+            }
+            else {
+                updateSkillUsedTurn();
+            }
         }
 
-        player.takeDamage(baseDamage);
+        if (getSkillUsedTurn() > 0) {
+            updateSkillUsedTurn();
+        }
     }
 }
