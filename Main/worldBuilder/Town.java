@@ -6,6 +6,7 @@ import Main.character.Character;
 import Main.character.player.Player;
 import Main.game.BattleSystem;
 import Main.item.*;
+import Main.printAlignmentHub.CenterHub;
 
 public class Town {
     private String name;
@@ -13,6 +14,7 @@ public class Town {
     private Enemy[] enemies;
     private Enemy boss;
     private Town nextTown;
+    private CenterHub centerHub = new CenterHub();
 
     public Town(String name, String description, Enemy[] enemies, Enemy boss) {
         this.name = name;
@@ -26,8 +28,9 @@ public class Town {
     }
 
     public void enterTown(Player player) {
-        System.out.println("\n=== " + name.toUpperCase() + " ===");
-        System.out.println(description);
+        System.out.println("\n=======================================================================" + name.toUpperCase() + "=======================================================================");
+        centerHub.printCenteredText(description);
+        System.out.println("=====================================================================================================================================================");
 
         int enemiesDefeated = 0;
         Scanner sc = new Scanner(System.in);

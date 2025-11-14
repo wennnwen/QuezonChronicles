@@ -3,6 +3,7 @@ package Main.game;
 import Main.game.GameMenu;
 import java.util.Scanner;
 import Main.printAlignmentHub.CenterHub;
+import Main.clearScreen.ClearScreen;
 
 public class Game {
     private GameMenu menu;
@@ -37,6 +38,7 @@ public class Game {
                     menu.showMainMenu();
                     break;
                 case 2:
+                    ClearScreen.clear();
                     System.out.println("=====================================================================About the Game==================================================================");
                     text = 
                         "Quezon Chronicles is an epic RPG adventure set in the Philippines.\n " +

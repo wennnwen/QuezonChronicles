@@ -56,7 +56,7 @@ public class Bruid extends Player {
 
 		case 3:
 			System.out.println("\n" + getName() + " used Healing Grove!");
-			setMp(getMp() + 25);
+			addMp(25);
 			System.out.println("Mana Restored by 25 points!");
 			setLastActionSucceeded(true);
 			break;
