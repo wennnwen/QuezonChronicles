@@ -9,6 +9,7 @@ import Main.game.BattleSystem;
 import Main.worldBuilder.WorldMap;
 import Main.worldBuilder.Town;
 import Main.printAlignmentHub.CenterHub;
+import Main.clearScreen.ClearScreen;
 
 public class GameMenu {
 
@@ -43,13 +44,15 @@ public class GameMenu {
                         confirmChoice1 = input.nextInt();
                         input.nextLine();
                         if (confirmChoice1 == 1) {
+                            ClearScreen.clear();
                             player = new Bruid(name);
                             System.out.println("You have selected the Bruid class.");
                             break;
                         } 
                         else if (confirmChoice1 == 2) {
+                            ClearScreen.clear();
                             player = new Bruid(name);
-                            System.out.println("=========================================================================Skills======================================================================");
+                            System.out.println("======================================================================== SKILLS =====================================================================");
                             for (int i = 0; i < player.getAttackMoves().length; i++) {
                                 String move = player.getAttackMoves()[i];
                                 centerHub.printCenteredText(move);
@@ -58,6 +61,7 @@ public class GameMenu {
                             System.out.println("=====================================================================================================================================================");
                         } 
                         else if (confirmChoice1 == 3) {
+                            ClearScreen.clear();
                             player = null;
                             continue;
                         } else {
@@ -73,13 +77,15 @@ public class GameMenu {
                         confirmChoice2 = input.nextInt();
                         input.nextLine();
                         if (confirmChoice2 == 1) {
+                            ClearScreen.clear();
                             player = new Mage(name);
                             System.out.println("You have selected the Mage class.");
                             break;
                         }
                         else if (confirmChoice2 == 2) {
+                            ClearScreen.clear();
                             player = new Mage(name);
-                            System.out.println("=========================================================================Skills======================================================================");
+                            System.out.println("======================================================================== SKILLS =====================================================================");
                             for (int i = 0; i < player.getAttackMoves().length; i++) {
                                 String move = player.getAttackMoves()[i];
                                 centerHub.printCenteredText(move);
@@ -88,6 +94,7 @@ public class GameMenu {
                             System.out.println("=====================================================================================================================================================");
                         } 
                         else if (confirmChoice2 == 3) {
+                            ClearScreen.clear();
                             player = null;
                             continue;
                         } else {
@@ -103,13 +110,15 @@ public class GameMenu {
                         confirmChoice3 = input.nextInt();
                         input.nextLine();
                         if (confirmChoice3 == 1) {
+                            ClearScreen.clear();
                             player = new TagalogMonk(name);
                             System.out.println("You have selected the Tagalog Monk class.");
                         break;
                         }
                         else if (confirmChoice3 == 2) {
+                            ClearScreen.clear();
                             player = new TagalogMonk(name);
-                            System.out.println("=========================================================================Skills======================================================================");
+                            System.out.println("======================================================================== SKILLS =====================================================================");
                             for (int i = 0; i < player.getAttackMoves().length; i++) {
                                 String move = player.getAttackMoves()[i];
                                 centerHub.printCenteredText(move);
@@ -118,6 +127,7 @@ public class GameMenu {
                             System.out.println("=====================================================================================================================================================");
                         } 
                         else if (confirmChoice3 == 3) {
+                            ClearScreen.clear();
                             player = null;
                             continue;
                         } 
@@ -134,13 +144,15 @@ public class GameMenu {
                         confirmChoice4 = input.nextInt();
                         input.nextLine();
                         if (confirmChoice4 == 1) {
+                            ClearScreen.clear();
                             player = new Thief(name);
                             System.out.println("You have selected the Thief class.");
                             break;
                         }
                         else if (confirmChoice4 == 2) {
+                            ClearScreen.clear();
                             player = new Thief(name);
-                            System.out.println("=========================================================================Skills======================================================================");
+                            System.out.println("======================================================================== SKILLS =====================================================================");
                             for (int i = 0; i < player.getAttackMoves().length; i++) {
                                 String move = player.getAttackMoves()[i];
                                 centerHub.printCenteredText(move);
@@ -149,6 +161,7 @@ public class GameMenu {
                             System.out.println("=====================================================================================================================================================");
                         } 
                         else if (confirmChoice4 == 3) {
+                            ClearScreen.clear();
                             player = null;
                             continue;
                         } 
@@ -165,13 +178,15 @@ public class GameMenu {
                         confirmChoice5 = input.nextInt();
                         input.nextLine();
                         if (confirmChoice5 == 1) {
+                            ClearScreen.clear();
                             player = new Warrior(name);
                             System.out.println("You have selected the Warrior class.");
                             break;
                         }
                         else if (confirmChoice5 == 2) {
+                            ClearScreen.clear();
                             player = new Warrior(name);
-                            System.out.println("=========================================================================Skills======================================================================");
+                            System.out.println("======================================================================== SKILLS =====================================================================");
                             for (int i = 0; i < player.getAttackMoves().length; i++) {
                                 String move = player.getAttackMoves()[i];
                                 centerHub.printCenteredText(move);
@@ -180,6 +195,7 @@ public class GameMenu {
                             System.out.println("=====================================================================================================================================================");
                         } 
                         else if (confirmChoice5 == 3) {
+                            ClearScreen.clear();
                             player = null;
                             continue;
                         } 
@@ -217,10 +233,12 @@ public class GameMenu {
                     break;
 
                 case 2:
+                    ClearScreen.clear();
                     player.showStats();
                     break;
 
                 case 3:
+                    ClearScreen.clear();
                     Item[] inventory = player.getInventory();
                     boolean isEmpty = true;
                     if (inventory != null && inventory.length > 0) {
@@ -261,7 +279,7 @@ public class GameMenu {
         Player tagalogMonk = new TagalogMonk("Temp");
         String text;
 
-        System.out.println("======================================================================Select Class===================================================================\n");
+        System.out.println("====================================================================== SELECT CLASS ===================================================================\n");
         text = "( 1 ) Bruid - The Banana Druid";
         centerHub.printCenteredText(text);
         centerHub.printCenteredText(bruid.description);
@@ -281,36 +299,43 @@ public class GameMenu {
         text = "( 5 ) Warrior - The Honor-bound Mandirigma";
         centerHub.printCenteredText(text);
         centerHub.printCenteredText(warrior.description);
-        System.out.println("=====================================================================================================================================================");
+        System.out.println("\n=====================================================================================================================================================");
     }
 
     public void confirmationMessager() {
         System.out.println("=====================================================================================================================================================");
-        System.out.println("( 1 ) Confirm Character");
-        System.out.println("( 2 ) View Skills");
-        System.out.println("( 3 ) Re-select Class");
+        centerHub.printCenteredText("( 1 ) Confirm Character");
+        centerHub.printCenteredText("( 2 ) View Skills");
+        centerHub.printCenteredText("( 3 ) Re-select Class");
         System.out.println("=====================================================================================================================================================");
         inputMessager();
     }
 
     public void choosePath() {
         
-        System.out.println("\nWhich path would you like to take?");
-        System.out.println("1. West Side");
-        System.out.println("   - Lucban → Lucena (Miniboss) → Sariaya → Candelaria → Tiaong (Boss)");
-        System.out.println("2. East Side");
-        System.out.println("   - Gumaca → Lopez (Miniboss) → Calauag → Infanta → Real (Boss)");
+        ClearScreen.clear();
+        System.out.println("=====================================================================================================================================================");
+        centerHub.printCenteredText("\nWhich path would you like to take?");
+        centerHub.printCenteredText("1. West Side Path");
+        centerHub.printCenteredText("Lucban → Lucena (Miniboss) → Sariaya → Candelaria → Tiaong (Boss)");
+        System.out.println();
+        centerHub.printCenteredText("2. East Side Path");
+        centerHub.printCenteredText("Gumaca → Lopez (Miniboss) → Calauag → Infanta → Real (Boss)");
+        System.out.println("\n=====================================================================================================================================================");
         inputMessager();
         int choice = input.nextInt();
         Town startingTown;
 
         if (choice == 1) {
+            ClearScreen.clear();
             System.out.println("You chose the West Side path!");
             startingTown = WorldMap.buildWestPath();
         } else if (choice == 2) {
+            ClearScreen.clear();
             System.out.println("You chose the East Side path!");
             startingTown = WorldMap.buildEastPath();
         } else {
+            ClearScreen.clear();
             System.out.println("Invalid choice. Defaulting to West Side.");
             startingTown = WorldMap.buildWestPath();
         }

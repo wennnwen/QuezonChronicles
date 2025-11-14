@@ -68,4 +68,62 @@ public abstract class Enemy extends Character {
             setHp(0);
         }
     }
+
+    //Debuff Methods
+  public void applyDebuff(String type, int turns) {
+    for (int i = 0; i < activeDebuffs.length; i++) {
+        if (activeDebuffs[i] == null) {
+            activeDebuffs[i] = type;
+            debuffTurns[i] = turns;
+            System.out.println(getName() + " is afflicted with " + type + " for " + turns + " turns!");
+            return;
+        }
+    }
+    System.out.println("Too many debuffs active!");
+  }
+
+  public void updateDebuffs() {
+    for (int i = 0; i < activeDebuffs.length; i++) {
+        if (activeDebuffs[i] != null) {
+            debuffTurns[i]--;
+            applyDebuffEffect(activeDebuffs[i]);
+
+            if (debuffTurns[i] <= 0) {
+                System.out.println(activeDebuffs[i] + " wore off!");
+                activeDebuffs[i] = null;
+            }
+        }
+    }
+  }
+
+  public void applyDebuffEffect(String debuff) {
+        switch (debuff.toLowerCase()) {
+            case "poison":
+                System.out.println(getName() + " takes 2 poison damage!");
+                takeDamage(2);
+                break;
+            case "burn":
+                System.out.println(getName() + " takes 2 burn damage!");
+                takeDamage(2);
+                break;
+            case "absorb":
+                System.out.println(getName() + " feels weaker! Health had been absored by 2");
+                takeDamage(2);
+                break;
+            case "defense down":
+                System.out.println(getName() + " feels weaker! Defense temporarily reduced.");
+                setDefense(getDefense() - 1);
+                break;
+            case "attack down":
+                System.out.println(getName() + " feels their strength fade!");
+                setAttackPower(getAttackPower() - 2);
+                break;
+            case "stun":
+                System.out.println(getName() + " is stunned and cannot move!");
+                break;
+            case "confusion":
+                System.out.println(getName() + " is confused by the masks!");
+                break;             
+        }
+    }
 }

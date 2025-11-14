@@ -272,4 +272,71 @@ public abstract class Player extends Character {
 
     System.out.println(getName() + "'s progress has been reset to level 1 base stats due to death.");
   }
+
+  //Debuff Methods
+  public void applyDebuff(String type, int turns) {
+    for (int i = 0; i < activeDebuffs.length; i++) {
+        if (activeDebuffs[i] == null) {
+            activeDebuffs[i] = type;
+            debuffTurns[i] = turns;
+            String text = getName() + " is afflicted with " + type + " for " + turns + " turns!";
+            centerHub.printRightText(text);
+            return;
+        }
+    }
+    System.out.println("Too many debuffs active!");
+  }
+
+  public void updateDebuffs() {
+    for (int i = 0; i < activeDebuffs.length; i++) {
+        if (activeDebuffs[i] != null) {
+            debuffTurns[i]--;
+            applyDebuffEffect(activeDebuffs[i]);
+
+            if (debuffTurns[i] <= 0) {
+                String text = activeDebuffs[i] + " wore off!";
+                centerHub.printRightText(text);
+                activeDebuffs[i] = null;
+            }
+        }
+    }
+  }
+
+  public void applyDebuffEffect(String debuff) {
+        switch (debuff.toLowerCase()) {
+            case "poison":
+                String text = getName() + " takes 2 poison damage!";
+                centerHub.printRightText(text);
+                takeDamage(2);
+                break;
+            case "burn":
+                text = getName() + " takes 2 burn damage!";
+                centerHub.printRightText(text);
+                takeDamage(2);
+                break;
+            case "absorb":
+                text = getName() + " feels weaker! Health had been absored by 2";
+                centerHub.printRightText(text);
+                takeDamage(2);
+                break;
+            case "defense down":
+                text = getName() + " feels weaker! Defense temporarily reduced.";
+                centerHub.printRightText(text);
+                setDefense(getDefense() - 1);
+                break;
+            case "attack down":
+                text = getName() + " feels their strength fade!";
+                centerHub.printRightText(text);
+                setAttackPower(getAttackPower() - 2);
+                break;
+            case "stun":
+                text = getName() + " is stunned and cannot move!";
+                centerHub.printRightText(text);
+                break;
+            case "confusion":
+                text = getName() + " is confused by the masks!";
+                centerHub.printRightText(text);
+                break;             
+        }
+    }
 }

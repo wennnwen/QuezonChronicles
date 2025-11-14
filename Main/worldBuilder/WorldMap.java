@@ -39,8 +39,8 @@ public class WorldMap {
                                    "that the “River Mother,” a deity of old tales, may be stirring.";
 
         static String lopezDescription = "Lopez is a peaceful farming town defined by lush, endless fields. Its people live slow, gentle lives, guided by the rhythm of planting and harvest.\n" + 
-                                         "Yet, beneath this simplicity lies a profound silence: ancient farming shrines scattered across the fields have begun to crack, and crops are growing in unusual patterns.\n" + 
-                                         "The townsfolk believe that the Harvest Spirits—beings that once protected Lopez—are leaving warnings hidden in the soil.";
+                                         "Yet, beneath this simplicity lies a profound silence: ancient farming shrines scattered across the fields have begun to crack, and crops are growing\n" + 
+                                         "in unusual patterns. The townsfolk believe that the Harvest Spirits—beings that once protected Lopez—are leaving warnings hidden in the soil.";
 
         static String calauagDescription = "Calauag is a historic town now ruled with iron discipline by a powerful warlord known as Bansagan the Steel-Tide. His fortified hall stands\n" + 
                                            "upon an old battleground said to be drenched in the spirits of fallen warriors. While Calauag remains orderly and prosperous, its peace is built\n" + 

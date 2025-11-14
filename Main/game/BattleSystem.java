@@ -5,6 +5,7 @@ import Main.character.enemy.Enemy;
 import Main.character.player.Player;
 import Main.item.*;
 import Main.printAlignmentHub.CenterHub;
+import Main.clearScreen.ClearScreen;
 
 public class BattleSystem {
 
@@ -49,8 +50,8 @@ public class BattleSystem {
                 player.checkStunned();
                 if (!player.getIsStunned()) {
                     playerTurn(player, enemy);
-                    playerInitiative = true;
                 }
+                playerInitiative = true;
             }
             else {
                 String text = "\nEnemy goes first!";
@@ -121,6 +122,7 @@ public class BattleSystem {
         handleVictory(player, enemy);
 
         if (!player.isAlive()) {
+            ClearScreen.clear();
             System.out.println("Game over! You have been slained!");
             return;
         }
@@ -214,6 +216,7 @@ public class BattleSystem {
     public static void handleVictory(Player player, Enemy enemy) {
         // If enemy is dead and player is alive -> normal victory
         if (!enemy.isAlive() && player.isAlive()) {
+            ClearScreen.clear();
             System.out.println("You defeated " + enemy.getName() + "!");
             player.addExp(enemy.getExpReward());
             System.out.println("You gained " + enemy.getExpReward() + " Exp from the battle!");

@@ -8,7 +8,7 @@ import Main.clearScreen.ClearScreen;
 public class Game {
     private GameMenu menu;
     public Scanner input = new Scanner(System.in);
-    private CenterHub centerHub = new CenterHub();
+    private static CenterHub centerHub = new CenterHub();
 
     public Game() {
         menu = new GameMenu();
@@ -17,11 +17,10 @@ public class Game {
     public void start() {
         int choice;
         String text;
-        System.out.println("Game Start!");
+        System.out.println("Game Starting in...");
         do {
+            QuezonChronicles();
             System.out.println("=====================================================================================================================================================");
-            text = "QUEZON CHRONICLES\n";
-            centerHub.printCenteredText(text);
             text = "( 1 ) Start";;
             centerHub.printCenteredText(text);
             text = "( 2 ) About the Game";
@@ -35,11 +34,12 @@ public class Game {
             
             switch (choice) {
                 case 1:
+                    ClearScreen.clear();
                     menu.showMainMenu();
                     break;
                 case 2:
                     ClearScreen.clear();
-                    System.out.println("=====================================================================About the Game==================================================================");
+                    System.out.println("==================================================================== ABOUT THE GAME =================================================================");
                     text = 
                         "Quezon Chronicles is an epic RPG adventure set in the Philippines.\n " +
                         "Embark on a journey through rich landscapes, " +
@@ -49,8 +49,12 @@ public class Game {
                         "Experience a unique blend of Filipino culture and mythology in this captivating quest for glory!";
                     centerHub.printCenteredText(text);
                     System.out.println("=====================================================================================================================================================");
+                    System.out.println("Press Enter to return to the main menu...");
+                    input.nextLine();
+                    ClearScreen.clear();
                     break;
                 case 3:
+                    ClearScreen.clear();
                     System.out.println("Exiting the game. Goodbye!");
                     System.exit(0);
                     break;
@@ -59,5 +63,32 @@ public class Game {
                     break;
             }
         } while (choice != 3);
+    }
+
+    public static void QuezonChronicles() {
+        centerHub.printCenteredText("                                                                                                ");
+        centerHub.printCenteredText("                @@@@@@    @@@  @@@  @@@@@@@@  @@@@@@@@   @@@@@@   @@@  @@@                     ");
+        centerHub.printCenteredText("               @@@@@@@@   @@@  @@@  @@@@@@@@  @@@@@@@@  @@@@@@@@  @@@@ @@@                     ");
+        centerHub.printCenteredText("               @@!  @@@   @@!  @@@  @@!            @@!  @@!  @@@  @@!@!@@@                     ");
+        centerHub.printCenteredText("               !@!  @!@   !@!  @!@  !@!           !@!   !@!  @!@  !@!!@!@!                     ");
+        centerHub.printCenteredText("               @!@  !@!   @!@  !@!  @!!!:!       @!!    @!@  !@!  @!@ !!@!                     ");
+        centerHub.printCenteredText("               !@!  !!!   !@!  !!!  !!!!!:      !!!     !@!  !!!  !@!  !!!                     ");
+        centerHub.printCenteredText("               !!:!!:!:   !!:  !!!  !!:        !!:      !!:  !!!  !!:  !!!                     ");
+        centerHub.printCenteredText("               :!: :!:    :!:  !:!  :!:       :!:       :!:  !:!  :!:  !:!                     ");
+        centerHub.printCenteredText("               ::::: :!   ::::: ::   :: ::::   :: ::::  ::::: ::   ::   ::                     ");
+        centerHub.printCenteredText("                : :  :::   : :  :   : :: ::   : :: : :   : :  :   ::    :                      ");
+        centerHub.printCenteredText("                                                                                                ");
+        centerHub.printCenteredText("                                                                                                ");
+        centerHub.printCenteredText(" @@@@@@@  @@@  @@@  @@@@@@@    @@@@@@   @@@  @@@  @@@   @@@@@@@  @@@       @@@@@@@@   @@@@@@   ");
+        centerHub.printCenteredText("@@@@@@@@  @@@  @@@  @@@@@@@@  @@@@@@@@  @@@@ @@@  @@@  @@@@@@@@  @@@       @@@@@@@@  @@@@@@@   ");
+        centerHub.printCenteredText("!@@       @@!  @@@  @@!  @@@  @@!  @@@  @@!@!@@@  @@!  !@@       @@!       @@!       !@@        ");
+        centerHub.printCenteredText("!@!       !@!  @!@  !@!  @!@  !@!  @!@  !@!!@!@!  !@!  !@!       !@!       !@!       !@!        ");
+        centerHub.printCenteredText("!@!       @!@!@!@!  @!@!!@!   @!@  !@!  @!@ !!@!  !!@  !@!       @!!       @!!!:!    !!@@!!     ");
+        centerHub.printCenteredText("!!!       !!!@!!!!  !!@!@!    !@!  !!!  !@!  !!!  !!!  !!!       !!!       !!!!!:     !!@!!!    ");
+        centerHub.printCenteredText(":!!       !!:  !!!  !!: :!!   !!:  !!!  !!:  !!!  !!:  :!!       !!:       !!:            !:!   ");
+        centerHub.printCenteredText(":!:       :!:  !:!  :!:  !:!  :!:  !:!  :!:  !:!  :!:  :!:        :!:      :!:           !:!    ");
+        centerHub.printCenteredText(" ::: :::  ::   :::  ::   :::  ::::: ::   ::   ::   ::   ::: :::   :: ::::   :: ::::  :::: ::    ");
+        centerHub.printCenteredText(" :: :: :   :   : :   :   : :   : :  :   ::    :   :     :: :: :  : :: : :  : :: ::   :: : :     ");
+        System.out.println("");
     }
 }
