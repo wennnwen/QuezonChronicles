@@ -175,7 +175,7 @@ public class BattleSystem {
                     }
                 }
                 if (inventory == null || isEmpty) {
-                    System.out.println("Your inventory is empty!");
+                    System.out.println("\nYour inventory is empty!");
                 } else {
                     player.showInventory();
                     centerHub.printCenteredText("0. Cancel / Back");
@@ -197,7 +197,7 @@ public class BattleSystem {
                 }
             }
             else {
-                System.out.println("Invalid input. Please try again!");
+                System.out.println("Invalid input. \Please try again!");
             }
         }
     }
@@ -249,7 +249,7 @@ public class BattleSystem {
             try {
                 return Integer.parseInt(line.trim());
             } catch (NumberFormatException e) {
-                System.out.print("Invalid input. Please enter a number: ");
+                System.out.print("Invalid input. \nPlease enter a number: ");
             }
         }
     }

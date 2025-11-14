@@ -8,6 +8,11 @@ public abstract class Player extends Character {
   private int experience, level = 1, nextExpLevel = 100;
   public String description;
 
+  // Path tracking
+  private String chosenPath = null; // "west" or "east"
+  private int currentTownIndex = 0; // Track progress through the path
+  private int enemiesDefeatedInTown = 0; // Track enemies defeated in current town
+
   // Base stats (captured at character creation) to allow proper reset
   private int baseMaxHp = 0;
   private int baseStamina = 0;
@@ -41,6 +46,30 @@ public abstract class Player extends Character {
 
   public boolean getUsesStamina() {
     return !usesMp;
+  }
+
+  public String getChosenPath() {
+    return chosenPath;
+  }
+
+  public void setChosenPath(String path) {
+    this.chosenPath = path;
+  }
+
+  public int getCurrentTownIndex() {
+    return currentTownIndex;
+  }
+
+  public void setCurrentTownIndex(int index) {
+    this.currentTownIndex = index;
+  }
+
+  public int getEnemiesDefeatedInTown() {
+    return enemiesDefeatedInTown;
+  }
+
+  public void setEnemiesDefeatedInTown(int count) {
+    this.enemiesDefeatedInTown = count;
   }
 
   public int getLevel() {
@@ -239,6 +268,11 @@ public abstract class Player extends Character {
     this.experience = 0;
     this.level = 1;
     this.nextExpLevel = 100;
+
+    // Reset path tracking
+    this.chosenPath = null;
+    this.currentTownIndex = 0;
+    this.enemiesDefeatedInTown = 0;
 
     // Clear inventory
     for (int i = 0; i < inventory.length; i++) {

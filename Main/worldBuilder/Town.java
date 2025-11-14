@@ -28,11 +28,18 @@ public class Town {
         this.nextTown = nextTown;
     }
 
-    public void enterTown(Player player) {
+    public Town getNextTown() {
+        return this.nextTown;
+    }
+
+    public void enterTown(Player player, int townIndex) {
         System.out.println("\n=======================================================================" + name.toUpperCase() + "========================================================================\n");
         centerHub.printCenteredText(description);
 
-        int enemiesDefeated = 0;
+        // Load progress if returning to this town
+        int enemiesDefeated = (player.getCurrentTownIndex() == townIndex) ? player.getEnemiesDefeatedInTown() : 0;
+        player.setCurrentTownIndex(townIndex);
+        
         Scanner sc = new Scanner(System.in);
 
         while (true) {
@@ -64,13 +71,15 @@ public class Town {
                         System.out.println("A wild " + enemy.getName() + " appeared!");
                         new BattleSystem().BattleStart(player, enemy);
                         enemiesDefeated++;
+                        player.setEnemiesDefeatedInTown(enemiesDefeated);
                     } else if (boss != null && enemiesDefeated == (enemies != null ? enemies.length : 0)) {
                         ClearScreen.clear();
                         System.out.println("\nYou've reached the boss battle!");
                         System.out.println("\nThe boss of " + name + " appears: " + boss.getName() + "!");
                         new BattleSystem().BattleStart(player, boss);
                         enemiesDefeated++;
-                        System.out.println("You’ve cleared " + name + "!");
+                        player.setEnemiesDefeatedInTown(enemiesDefeated);
+                        System.out.println("You've cleared " + name + "!");
                     } else {
                         System.out.println("You’ve already cleared all enemies here!");
                     }
@@ -88,10 +97,14 @@ public class Town {
                                 player.setMp(player.getMaxMp());
                                 System.out.println("\nYour MP has been fully restored.");
                             }
-                                nextTown.enterTown(player);
+                            player.setEnemiesDefeatedInTown(0); // Reset for new town
+                            nextTown.enterTown(player, townIndex + 1);
                             return;
                         } else {
-                            System.out.println("You’ve reached the end of your journey!");
+                            System.out.println("You've reached the end of your journey!");
+                            player.setChosenPath(null); // Allow new path selection after completion
+                            player.setCurrentTownIndex(0);
+                            player.setEnemiesDefeatedInTown(0);
                             return;
                         }
                     } else {
