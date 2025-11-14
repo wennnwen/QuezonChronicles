@@ -161,6 +161,12 @@ public abstract class Player extends Character {
   }
  }
 
+  // Return the display string for a move number (1-4), or null if not set
+  public String getMoveName(int moveNumber) {
+    if (moveNumber < 1 || moveNumber > attackMoves.length) return null;
+    return attackMoves[moveNumber - 1];
+  }
+
   //Temporary Effect Boost
   public void addTemporaryAttackBoost(int amount, int duration) {
     setAttackPower(getAttackPower() + amount);

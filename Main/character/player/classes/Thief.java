@@ -51,7 +51,6 @@ public class Thief extends Player{
                     setLastActionSucceeded(true);
                 }
                 else {
-                    System.out.println("Not enough Stamina!");
                     setLastActionSucceeded(false);
                 }
                 break;
@@ -64,7 +63,6 @@ public class Thief extends Player{
                     setLastActionSucceeded(true);
                 }
                 else {
-                    System.out.println("Not enough Stamina!");
                     setLastActionSucceeded(false);
                 }
                 break;

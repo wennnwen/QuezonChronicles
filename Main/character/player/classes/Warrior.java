@@ -53,7 +53,6 @@ public class Warrior extends Player{
                     break;
                 }
                 else{
-                    System.out.println("Not enough stamina!");
                     setLastActionSucceeded(false);
                 }
                 skillUsedTurn();
@@ -73,7 +72,6 @@ public class Warrior extends Player{
                     break;
                 }
                 else{
-                    System.out.println("Not enough stamina!");
                     setLastActionSucceeded(false);
                 }
                 skillUsedTurn();

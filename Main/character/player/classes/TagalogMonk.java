@@ -53,7 +53,6 @@ public class TagalogMonk extends Player {
                   setLastActionSucceeded(true);
                }
                else {
-                  System.out.println("Not enough Stamina!");
                   setLastActionSucceeded(false);
                }
             skillUsedTurn();
@@ -73,7 +72,6 @@ public class TagalogMonk extends Player {
                setLastActionSucceeded(true);
             }
             else {
-               System.out.println("Not enough Stamina!");
                setLastActionSucceeded(false);
             }
             skillUsedTurn();

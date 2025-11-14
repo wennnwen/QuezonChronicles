@@ -49,8 +49,8 @@ public class Bruid extends Player {
 				setLastActionSucceeded(true);
 			}
 			else {
-				System.out.println("Not enough Mana!");
 				setLastActionSucceeded(false);
+				
 			}
 			break;
 
@@ -70,7 +70,6 @@ public class Bruid extends Player {
 				setLastActionSucceeded(true);
 			}
 			else {
-				System.out.println("Not enough Mana!");
 				setLastActionSucceeded(false);
 			}
 			break;

@@ -12,6 +12,8 @@ public class BattleSystem {
 
     private CenterHub centerHub = new CenterHub();
 
+    // Safe integer reader: reads a line and parses an int, re-prompts on invalid input
+
     public BattleSystem() { }
 
     public void BattleStart(Player player, Enemy enemy) {
@@ -125,22 +127,38 @@ public class BattleSystem {
     }
 
     public void playerTurn(Player player, Enemy enemy) {
+        
         System.out.println("\nPlayer Turn / Your Turn:");
         boolean validInput = false;
         while (!validInput) {
-            System.out.println("=====================================================================================================================================================");
             System.out.println("Your moves:");
             player.showMoves();
             System.out.println("5. Use item");
             System.out.println("=====================================================================================================================================================");
             System.out.print("Enter your choice: ");
-            int choice = input.nextInt();
+            int choice = readInt();
             if (choice >= 1 && choice <= 4) {
                 // Reset the last-action flag, attempt the move, and only end input loop
                 // if the move actually succeeded (had enough stamina/mp and wasn't on cooldown).
                 player.setLastActionSucceeded(false);
+                String attempted = player.getMoveName(choice);
                 player.useMoves(choice, enemy);
-                validInput = player.getLastActionSucceeded();
+                if (!player.getLastActionSucceeded()) {
+                    // reprint combat status and the attempted move so user sees context again
+                    printCombatStatus(player, enemy);
+                    System.out.println();
+                    if (attempted != null) {
+                        if(player.getUsesMp()) {
+                            System.out.println("Not enough MP!");
+                        } else {
+                            System.out.println("Not enough Stamina!");
+                        }
+                        System.out.println("Try again.\n");
+                    }
+                    // keep validInput false so the menu re-displays
+                    continue;
+                }
+                validInput = true;
             }
             else if (choice == 5) {
                 Item[] inventory = player.getInventory();
@@ -161,7 +179,7 @@ public class BattleSystem {
                     centerHub.printCenteredText("0. Cancel / Back");
                     System.out.println("\n========================================================================================================================================================");
                     System.out.print("Choose: ");
-                    int itemIndex = input.nextInt() - 1;
+                    int itemIndex = readInt() - 1;
                     // Validate index and presence of item
                     if (itemIndex == -1) {
                         System.out.println("Item use cancelled.");
@@ -220,5 +238,24 @@ public class BattleSystem {
             }
             return;
         }
+    }
+
+    private int readInt() {
+        while (true) {
+            String line = input.nextLine();
+            try {
+                return Integer.parseInt(line.trim());
+            } catch (NumberFormatException e) {
+                System.out.print("Invalid input. Please enter a number: ");
+            }
+        }
+    }
+
+    // Print current combat status (player/enemy HP & stamina) in one place to avoid duplication
+    private void printCombatStatus(Player player, Enemy enemy) {
+        System.out.println("=====================================================================================================================================================");
+        System.out.println("Player Stats:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnemy Stats:");
+        System.out.println("Hp: " + player.getHp() + "/" + player.getMaxHp() + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t Hp: " + enemy.getHp() + "/" + enemy.getMaxHp());
+        System.out.println("Stamina: " + player.getStamina() + "/" + player.getMaxStamina() + " | Mp: " + player.getMp() + "/" + player.getMaxMp());
     }
 }   

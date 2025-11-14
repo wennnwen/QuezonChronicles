@@ -49,7 +49,6 @@ public class Mage extends Player {
                setLastActionSucceeded(true);
             }
             else {
-               System.out.println("Not enough Mana!");
                setLastActionSucceeded(false);
             }
             break;
@@ -70,7 +69,6 @@ public class Mage extends Player {
                   setLastActionSucceeded(true);
             }
             else {
-               System.out.println("Not enough Mana!");
                setLastActionSucceeded(false);
             }
             break;
