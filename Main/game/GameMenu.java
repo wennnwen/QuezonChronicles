@@ -65,6 +65,7 @@ public class GameMenu {
                             player = null;
                             continue;
                         } else {
+																								ClearScreen.clear();
                             System.out.println("Invalid input. Try again.");
                         }
                     } while (confirmChoice1 != 3 && player == null);
@@ -98,6 +99,7 @@ public class GameMenu {
                             player = null;
                             continue;
                         } else {
+																								ClearScreen.clear();
                             System.out.println("Invalid input. Try again.");
                         }
                     } while (confirmChoice2 != 3 && player == null);
@@ -132,6 +134,7 @@ public class GameMenu {
                             continue;
                         } 
                         else {
+																								ClearScreen.clear();
                             System.out.println("Invalid input. Try again.");
                         }
                     } while (confirmChoice3 != 3 && player == null);
@@ -166,6 +169,7 @@ public class GameMenu {
                             continue;
                         } 
                         else {
+																								ClearScreen.clear();
                             System.out.println("Invalid input. Try again.");
                         }
                     } while (confirmChoice4 != 3 && player == null);
@@ -200,6 +204,7 @@ public class GameMenu {
                             continue;
                         } 
                         else {
+																								ClearScreen.clear();
                             System.out.println("Invalid input. Try again.");
                         }
                     } while (confirmChoice5 != 3 && player == null);
@@ -262,6 +267,7 @@ public class GameMenu {
                     break;
 
                 default:
+																	ClearScreen.clear();
                     System.out.println("Invalid choice. Please try again.");
                     break;     
             }
