@@ -197,7 +197,7 @@ public class BattleSystem {
                 }
             }
             else {
-                System.out.println("Invalid input. \Please try again!");
+                System.out.println("Invalid input. \nPlease try again!");
             }
         }
     }
