@@ -21,11 +21,8 @@ public class BattleSystem {
 
         boolean playerInitiative = false;
 
-        System.out.println("=====================================================================================================================================================\nPlayer Stats:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnemy Stats:");
-        System.out.println("Hp: " + player.getHp() + "/" + player.getMaxHp() + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t Hp: " + enemy.getHp() + "/" + enemy.getMaxHp());
-        System.out.println("Stamina: " + player.getStamina() + "/" + player.getMaxStamina() + " | Mp: " + player.getMp() + "/" + player.getMaxMp());
-
         if (player.getSpeed() > enemy.getSpeed()) {
+            printCombatStatus(player, enemy);
             System.out.print("\nPlayer goes first!");
             player.checkStunned();
             if (!player.getIsStunned()) {
@@ -46,6 +43,7 @@ public class BattleSystem {
         else {
             double chances = Math.random();
             if (chances < 0.5) {
+                printCombatStatus(player, enemy);
                 System.out.println("\nPlayer goes first!");
                 player.checkStunned();
                 if (!player.getIsStunned()) {
@@ -76,9 +74,7 @@ public class BattleSystem {
                     player.updateDebuffs();
                     player.updateTurnEffects();
                     if (player.isAlive() && enemy.isAlive()) {
-                        System.out.println("=====================================================================================================================================================\nPlayer Stats:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnemy Stats:");
-                        System.out.println("Hp: " + player.getHp() + "/" + player.getMaxHp() + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t Hp: " + enemy.getHp() + "/" + enemy.getMaxHp());
-                        System.out.println("Stamina: " + player.getStamina() + "/" + player.getMaxStamina() + " | Mp: " + player.getMp() + "/" + player.getMaxMp());
+                        printCombatStatus(player, enemy);
                         playerTurn(player, enemy);
                     }
                 }
@@ -90,9 +86,7 @@ public class BattleSystem {
                 }
             }
             else {
-                System.out.println("=====================================================================================================================================================\nPlayer Stats:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnemy Stats:");
-                System.out.println("Hp: " + player.getHp() + "/" + player.getMaxHp() + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t Hp: " + enemy.getHp() + "/" + enemy.getMaxHp());
-                System.out.println("Stamina: " + player.getStamina() + "/" + player.getMaxStamina() + " | Mp: " + player.getMp() + "/" + player.getMaxMp());
+                printCombatStatus(player, enemy);
                 player.checkStunned();
                 if (!player.getIsStunned()) {
                     // Player acts first. If the player kills the enemy, don't let
@@ -139,6 +133,7 @@ public class BattleSystem {
             System.out.println("=====================================================================================================================================================");
             System.out.print("Enter your choice: ");
             int choice = readInt();
+            ClearScreen.clear();
             if (choice >= 1 && choice <= 4) {
                 // Reset the last-action flag, attempt the move, and only end input loop
                 // if the move actually succeeded (had enough stamina/mp and wasn't on cooldown).
@@ -176,7 +171,10 @@ public class BattleSystem {
                 }
                 if (inventory == null || isEmpty) {
                     System.out.println("\nYour inventory is empty!");
+                    printCombatStatus(player, enemy);
+                    System.out.println();
                 } else {
+                    printCombatStatus(player, enemy);
                     player.showInventory();
                     centerHub.printCenteredText("0. Cancel / Back");
                     System.out.println("\n========================================================================================================================================================");
@@ -184,11 +182,11 @@ public class BattleSystem {
                     int itemIndex = readInt() - 1;
                     // Validate index and presence of item
                     if (itemIndex == -1) {
-																				ClearScreen.clear();
+                        ClearScreen.clear();
                         System.out.println("Item use cancelled.");
                     }
                     else if (itemIndex < -1 || itemIndex >= inventory.length || inventory[itemIndex] == null) {
-																				ClearScreen.clear();
+                        ClearScreen.clear();
                         System.out.println("Invalid item choice.");
                     }
                     else {
@@ -199,7 +197,7 @@ public class BattleSystem {
                 }
             }
             else {
-													 ClearScreen.clear();
+                ClearScreen.clear();
                 System.out.println("Invalid input. \nPlease try again!");
             }
         }

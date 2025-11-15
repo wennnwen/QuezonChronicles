@@ -101,7 +101,7 @@ public class Warrior extends Player{
 	@Override
     public void showStats() {
         String text;
-		System.out.println("=====================================================================Warrior Stats==================================================================");
+		System.out.println("==================================================================== Warrior Stats =================================================================");
 		text = "Health: " + String.valueOf(getHp()) + "/" + String.valueOf(getMaxHp());
         centerHub.printCenteredText(text);
 		text = "Stamina: " + String.valueOf(getStamina()) + "/" + String.valueOf(getMaxStamina());

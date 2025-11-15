@@ -134,7 +134,7 @@ public class Town {
                     }
                     else {
                         player.showInventory();
-                        System.out.println("\n========================================================================================================================================================\n");
+                        System.out.println("\n========================================================================================================================================================");
                     }
                     break;
 
@@ -143,7 +143,7 @@ public class Town {
                     return;
 
                 default:
-																	ClearScreen.clear();
+                    ClearScreen.clear();
                     System.out.println("Invalid choice. Try again.");
             }
         }

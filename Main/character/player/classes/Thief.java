@@ -84,7 +84,7 @@ public class Thief extends Player{
 	@Override
     public void showStats() {
         String text;
-		System.out.println("======================================================================Thief Stats===================================================================");
+		System.out.println("===================================================================== Thief Stats ==================================================================");
 		text = "Health: " + String.valueOf(getHp()) + "/" + String.valueOf(getMaxHp());
         centerHub.printCenteredText(text);
         text = "Stamina: " + String.valueOf(getStamina()) + "/" + String.valueOf(getMaxStamina());

@@ -78,7 +78,7 @@ public class Mage extends Player {
 	@Override
    public void showStats() {
 		String text;
-      System.out.println("======================================================================Mage Stats====================================================================");
+      System.out.println("===================================================================== Mage Stats ===================================================================");
 		text = "Health: " + String.valueOf(getHp()) + "/" + String.valueOf(getMaxHp());
       centerHub.printCenteredText(text);
 		text = "Mana: " + String.valueOf(getMp()) + "/" + String.valueOf(getMaxMp());

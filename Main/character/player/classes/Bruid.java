@@ -84,7 +84,7 @@ public class Bruid extends Player {
 	@Override
 	public void showStats() {
 		String text;
-		System.out.println("======================================================================Bruid Stats===================================================================");
+		System.out.println("===================================================================== Bruid Stats ==================================================================");
 		text = "Health: " + String.valueOf(getHp()) + "/" + String.valueOf(getMaxHp());
     	centerHub.printCenteredText(text);
 		text = "Mana: " + String.valueOf(getMp()) + "/" + String.valueOf(getMaxMp());
