@@ -184,9 +184,11 @@ public class BattleSystem {
                     int itemIndex = readInt() - 1;
                     // Validate index and presence of item
                     if (itemIndex == -1) {
+																				ClearScreen.clear();
                         System.out.println("Item use cancelled.");
                     }
                     else if (itemIndex < -1 || itemIndex >= inventory.length || inventory[itemIndex] == null) {
+																				ClearScreen.clear();
                         System.out.println("Invalid item choice.");
                     }
                     else {
