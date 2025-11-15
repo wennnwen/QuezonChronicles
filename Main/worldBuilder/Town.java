@@ -143,6 +143,7 @@ public class Town {
                     return;
 
                 default:
+																	ClearScreen.clear();
                     System.out.println("Invalid choice. Try again.");
             }
         }
