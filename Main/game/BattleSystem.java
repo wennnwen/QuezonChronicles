@@ -26,7 +26,6 @@ public class BattleSystem {
         System.out.println("Stamina: " + player.getStamina() + "/" + player.getMaxStamina() + " | Mp: " + player.getMp() + "/" + player.getMaxMp());
 
         if (player.getSpeed() > enemy.getSpeed()) {
-										ClearScreen.clear();
             System.out.print("\nPlayer goes first!");
             player.checkStunned();
             if (!player.getIsStunned()) {
@@ -36,7 +35,6 @@ public class BattleSystem {
         }
        
         else if (enemy.getSpeed() > player.getSpeed()) {
-										ClearScreen.clear();
             String text = "\nEnemy goes first!";
             centerHub.printRightText(text);
             enemy.checkStunned();
@@ -46,7 +44,6 @@ public class BattleSystem {
             }
         }
         else {
-										ClearScreen.clear();
             double chances = Math.random();
             if (chances < 0.5) {
                 System.out.println("\nPlayer goes first!");
@@ -68,7 +65,6 @@ public class BattleSystem {
         }
 
         while (player.isAlive() && enemy.isAlive()) {
-										ClearScreen.clear();
             if (playerInitiative) {
                 enemy.checkStunned();
                 if (!enemy.getIsStunned()) {
