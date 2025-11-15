@@ -33,7 +33,7 @@ public class Sirena extends Enemy {
         double critChance = 0.15;
         if (Math.random() < critChance) {
             baseDamage *= 2;
-            centerHub.printRightTextWithTypeWriter("Critical hit!");
+            centerHub.printRightTextWithTypeWriter(textColor.RED + "Critical hit!" + textColor.RESET);
         }
         player.takeDamage(baseDamage);
     }

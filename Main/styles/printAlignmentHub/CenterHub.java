@@ -9,6 +9,7 @@ public class CenterHub {
 
     private static TypeWriter typeWriter = new TypeWriter();
     private static LoadingDots loadingDots = new LoadingDots();
+    private static final String ANSI_REGEX = "\u001B\\[[;\\d]*m";
 
     public static int consoleWidth = 150;
 
@@ -46,11 +47,12 @@ public class CenterHub {
 
     // Helper function to center a single line
     public static void printCentered(String text, int width) {
-        if (text.length() >= width) {
-            System.out.println(text);
+        String clean = stripAnsi(text);
+        if (clean.length() >= width) {
+            System.out.println(clean);
             return;
         }
-        int leftPadding = (width - text.length()) / 2;
+        int leftPadding = (width - clean.length()) / 2;
         String padding = " ".repeat(leftPadding);
         System.out.println(padding + text);
     }
@@ -66,11 +68,12 @@ public class CenterHub {
     }
 
     public static void printRightAlignedWithTypeWriter(String text, int width) {
-        if (text.length() >= width) {
-            System.out.println(text); // too long, just print normally
+        String clean = stripAnsi(text);
+        if (clean.length() >= width) {
+            System.out.println(clean); // too long, just print normally
             return;
         }
-        int leftPadding = width - text.length(); // spaces to push text to the right
+        int leftPadding = width - clean.length(); // spaces to push text to the right
         String padding = " ".repeat(leftPadding);
         System.out.print(padding);
         typeWriter.typeWriterFast(text);
@@ -86,4 +89,9 @@ public class CenterHub {
         System.out.print(padding);
         typeWriter.typeWriterMedium(text);
     }
+
+    public static String stripAnsi(String text) {
+        return text.replaceAll(ANSI_REGEX, "");
+}
+
 }

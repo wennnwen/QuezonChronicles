@@ -1,11 +1,12 @@
 package Main.item;
 
 import Main.character.player.Player;
+import Main.styles.textColor.TextColorHub;
 
 public class Bibingka extends Item {
 
     public Bibingka() {
-        setName("Bibingka");
+        setName(textColor.GREEN + "Bibingka" + textColor.RESET);
         setDescription("(A warm rice cake from Candelaria that restores HP and removes all debuffs.)");
     }
 

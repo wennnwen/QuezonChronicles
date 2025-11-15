@@ -1,11 +1,12 @@
 package Main.item;
 
 import Main.character.player.Player;
+import Main.styles.textColor.TextColorHub;
 
 public class AdobongPusit extends Item {
 
     public AdobongPusit() {
-        setName("Adobong Pusit");
+        setName(textColor.GREEN + "Adobong Pusit" + textColor.RESET);
         setDescription("(A savory squid dish that restores +10hp and grants +3 Attack Power per turn for 2 turns.)");
     }
 

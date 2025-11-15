@@ -1,11 +1,12 @@
 package Main.item;
 
 import Main.character.player.Player;
+import Main.styles.textColor.TextColorHub;
 
 public class KipingDelight extends Item {
 
     public KipingDelight() {
-        setName("Kiping Delight");
+        setName(textColor.GREEN + "Kiping Delight" + textColor.RESET);
         setDescription("(A flat, crunchy, and sweet bread.) ");
     }
 

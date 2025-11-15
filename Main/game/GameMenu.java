@@ -10,7 +10,8 @@ import Main.worldBuilder.WorldMap;
 import Main.worldBuilder.Town;
 import Main.styles.printAlignmentHub.CenterHub;
 import Main.styles.clearScreen.ClearScreen;
-import Main.styles.animationHub.TypeWriter;;
+import Main.styles.animationHub.TypeWriter;
+import Main.styles.textColor.TextColorHub;
 
 public class GameMenu {
 
@@ -19,6 +20,7 @@ public class GameMenu {
     private BattleSystem battleSystem = new BattleSystem();
     private CenterHub centerHub = new CenterHub();
     private TypeWriter typeWriter = new TypeWriter();
+    private TextColorHub textColor = new TextColorHub();
     private String name;
 
     public Scanner input = new Scanner(System.in);
@@ -48,7 +50,7 @@ public class GameMenu {
                         if (confirmChoice1 == 1) {
                             ClearScreen.clear();
                             player = new Bruid(name);
-                            System.out.println("You have selected the Bruid class.");
+                            System.out.println(textColor.GREEN + "You have selected the Bruid class." + textColor.RESET);
                             break;
                         } 
                         else if (confirmChoice1 == 2) {
@@ -82,7 +84,7 @@ public class GameMenu {
                         if (confirmChoice2 == 1) {
                             ClearScreen.clear();
                             player = new Mage(name);
-                            System.out.println("You have selected the Mage class.");
+                            System.out.println(textColor.BLUE + "You have selected the Mage class." + textColor.RESET);
                             break;
                         }
                         else if (confirmChoice2 == 2) {
@@ -116,7 +118,7 @@ public class GameMenu {
                         if (confirmChoice3 == 1) {
                             ClearScreen.clear();
                             player = new TagalogMonk(name);
-                            System.out.println("You have selected the Tagalog Monk class.");
+                            System.out.println(textColor.ORANGE + "You have selected the Tagalog Monk class." + textColor.RESET);
                         break;
                         }
                         else if (confirmChoice3 == 2) {
@@ -151,7 +153,7 @@ public class GameMenu {
                         if (confirmChoice4 == 1) {
                             ClearScreen.clear();
                             player = new Thief(name);
-                            System.out.println("You have selected the Thief class.");
+                            System.out.println(textColor.PURPLE + "You have selected the Thief class." + textColor.RESET);
                             break;
                         }
                         else if (confirmChoice4 == 2) {
@@ -186,7 +188,7 @@ public class GameMenu {
                         if (confirmChoice5 == 1) {
                             ClearScreen.clear();
                             player = new Warrior(name);
-                            System.out.println("You have selected the Warrior class.");
+                            System.out.println(textColor.RED + "You have selected the Warrior class." + textColor.RESET);
                             break;
                         }
                         else if (confirmChoice5 == 2) {
@@ -290,23 +292,23 @@ public class GameMenu {
 
         System.out.println("====================================================================== SELECT CLASS ===================================================================\n");
         text = "( 1 ) Bruid - The Banana Druid";
-        centerHub.printCenteredText(text);
+        centerHub.printCenteredText(textColor.GREEN + text + textColor.RESET);
         centerHub.printCenteredText(bruid.description);
         System.out.println();
         text = "( 2 ) Mage - The Arcane Panadero";
-        centerHub.printCenteredText(text);
+        centerHub.printCenteredText(textColor.BLUE + text + textColor.RESET);
         centerHub.printCenteredText(mage.description);
         System.out.println();
         text = "( 3 ) Tagalog Monk - The Disciple of Katahimikan";
-        centerHub.printCenteredText(text);
+        centerHub.printCenteredText(textColor.ORANGE + text + textColor.RESET);
         centerHub.printCenteredText(tagalogMonk.description);
         System.out.println();
         text = "( 4 ) Thief - The Shadow of the Kanto";
-        centerHub.printCenteredText(text);
+        centerHub.printCenteredText(textColor.PURPLE + text + textColor.RESET);
         centerHub.printCenteredText(thief.description);
         System.out.println();
         text = "( 5 ) Warrior - The Honor-bound Mandirigma";
-        centerHub.printCenteredText(text);
+        centerHub.printCenteredText(textColor.RED + text + textColor.RESET);
         centerHub.printCenteredText(warrior.description);
         System.out.println("\n=====================================================================================================================================================");
     }
@@ -350,14 +352,16 @@ public class GameMenu {
             return;
         }
         
+        spawnPointMessager();
+
         // First time choosing a path
         System.out.println("=====================================================================================================================================================");
         centerHub.printCenteredText("\nWhich path would you like to take?");
-        centerHub.printCenteredText("1. West Side Path");
-        centerHub.printCenteredText("Lucban → Lucena (Miniboss) → Sariaya → Candelaria → Tiaong (Boss)");
+        centerHub.printCenteredText(textColor.RED + "1. West Side Path" + textColor.RESET);
+        centerHub.printCenteredText(textColor.YELLOW + "Lucban" + textColor.RESET + " → " + textColor.BLUE + "Lucena (Miniboss)" + textColor.RESET + " → " + textColor.GREEN + "Sariaya" + textColor.RESET + " → " + textColor.ORANGE + "Candelaria" + textColor.RESET + " → " + textColor.RED + "Tiaong (Boss)" + textColor.RESET);
         System.out.println();
-        centerHub.printCenteredText("2. East Side Path");
-        centerHub.printCenteredText("Gumaca → Lopez (Miniboss) → Calauag → Infanta → Real (Boss)");
+        centerHub.printCenteredText(textColor.BLUE + "2. East Side Path" + textColor.RESET);
+        centerHub.printCenteredText(textColor.YELLOW + "Gumaca" + textColor.RESET + " → " + textColor.BLUE + "Lopez (Miniboss)" + textColor.RESET + " → " + textColor.GREEN + "Calauag" + textColor.RESET + " → " + textColor.ORANGE + "Infanta" + textColor.RESET + " → " + textColor.RED + "Real (Boss)" + textColor.RESET);
         System.out.println("\n=====================================================================================================================================================");
         inputMessager();
         int choice = input.nextInt();
@@ -365,13 +369,13 @@ public class GameMenu {
 
         if (choice == 1) {
             ClearScreen.clear();
-            typeWriter.typeWriterFast("You chose the West Side path!");
+            typeWriter.typeWriterFast(textColor.RED + "You chose the West Side path!" + textColor.RESET);
             player.setChosenPath("west");
             player.setCurrentTownIndex(0);
             startingTown = WorldMap.buildWestPath();
         } else if (choice == 2) {
             ClearScreen.clear();
-            typeWriter.typeWriterFast("You chose the East Side path!");
+            typeWriter.typeWriterFast(textColor.BLUE + "You chose the East Side path!" + textColor.RESET);
             player.setChosenPath("east");
             player.setCurrentTownIndex(0);
             startingTown = WorldMap.buildEastPath();
@@ -384,5 +388,16 @@ public class GameMenu {
         }
 
         startingTown.enterTown(player, 0);
+    }
+
+    public void spawnPointMessager() {
+        System.out.println("====================================================================== " + textColor.GREEN + "ATIMONAN" + textColor.RESET + " ===================================================================\n");
+        String text = "Atimonan rests peacefully between the rising cliffs of the Sierra mountain pass and the gentle waves of the eastern gulf, serving as a calm\n" + 
+                      "refuge for travelers beginning their journey. The town is known for its quiet coastal mornings, where fishermen cast their nets at dawn\n" + 
+                      "and the scent of fresh sea wind drifts across its humble wooden piers. Though modest in size, Atimonan holds a warm and welcoming\n" + 
+                      "spirit, a place where adventurers gather their courage before stepping into the wider world.\n\n" +
+                      "From here, your journey truly begins. You may take the western path, leading toward bustling towns and lively trade, or venture east along the coast,\n" +
+                      "where quiet beaches and forested trails await. Which way will you go?\n";
+        centerHub.printCenteredTextWithTypeWriter(text);
     }
 }

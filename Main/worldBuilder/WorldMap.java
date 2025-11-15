@@ -2,8 +2,11 @@ package Main.worldBuilder;
 
 import Main.character.enemy.Enemy;
 import Main.character.enemy.subclasses.*;
+import Main.styles.textColor.TextColorHub;
 
 public class WorldMap {
+
+        private static TextColorHub textColor = new TextColorHub();
 
         static String lucbanDescription = "Lucban is renowned across the land for its Pahiyas Festival, a vibrant celebration where homes are covered in\n" + 
                                           "woven leaves, fruits, and radiant harvest ornaments. The locals believe the festival honors the Spirit of Abundance,\n" + 
@@ -58,6 +61,7 @@ public class WorldMap {
                                         "Real is a place for the brave… or the desperate.";
 
     public static Town buildWestPath() {
+
         Town lucban = new Town("Lucban", lucbanDescription,
                 new Enemy[]{new TanimGuardian(), new HabhabBandit(), new LanggonisaLord()}, null);
 

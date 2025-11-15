@@ -6,8 +6,6 @@ import Main.styles.printAlignmentHub.CenterHub;
 import Main.styles.animationHub.TypeWriter;
 
 public class Bruid extends Player {
-
-	private CenterHub centerHub = new CenterHub();
   
 	public Bruid(String name) {
 		setName(name);
@@ -88,21 +86,21 @@ public class Bruid extends Player {
 	@Override
 	public void showStats() {
 		String text;
-		System.out.println("===================================================================== Bruid Stats ==================================================================");
+		System.out.println("===================================================================== " + textColor.GREEN + "Bruid Stats" + textColor.RESET + " ==================================================================");
 		text = "Health: " + String.valueOf(getHp()) + "/" + String.valueOf(getMaxHp());
-    	centerHub.printCenteredText(text);
+    	centerHub.printCenteredText(textColor.RED + text + textColor.RESET);
 		text = "Mana: " + String.valueOf(getMp()) + "/" + String.valueOf(getMaxMp());
-    	centerHub.printCenteredText(text);
+    	centerHub.printCenteredText(textColor.BLUE + text + textColor.RESET);
 		text = "Defense: " + String.valueOf(getDefense());
-    	centerHub.printCenteredText(text);
+    	centerHub.printCenteredText(textColor.ORANGE + text + textColor.RESET);
 		text = "Attack Power: " + String.valueOf(getAttackPower());
-    	centerHub.printCenteredText(text);
+    	centerHub.printCenteredText(textColor.RED + text + textColor.RESET);
 		text = "Speed: " + String.valueOf(getSpeed());
-    	centerHub.printCenteredText(text);
+    	centerHub.printCenteredText(textColor.YELLOW + text + textColor.RESET);
 		text = "Experience: " + String.valueOf(getExp()) + "/" + String.valueOf(getNextExpLevel());
-    	centerHub.printCenteredText(text);
+    	centerHub.printCenteredText(textColor.PURPLE + text + textColor.RESET);
 		text = "Level: " + String.valueOf(getLevel());
-    	centerHub.printCenteredText(text);
+    	centerHub.printCenteredText(textColor.YELLOW + text + textColor.RESET);
     	System.out.println("=====================================================================================================================================================");
 	}
 

@@ -4,11 +4,13 @@ import Main.game.GameMenu;
 import java.util.Scanner;
 import Main.styles.printAlignmentHub.CenterHub;
 import Main.styles.clearScreen.ClearScreen;
+import Main.styles.textColor.TextColorHub;
 
 public class Game {
     private GameMenu menu;
     public Scanner input = new Scanner(System.in);
     private static CenterHub centerHub = new CenterHub();
+    private static TextColorHub textColor = new TextColorHub();
 
     public Game() {
         menu = new GameMenu();
@@ -67,7 +69,7 @@ public class Game {
     }
 
     public static void QuezonChronicles() {
-        centerHub.printCenteredText("                                                                                                ");
+        centerHub.printCenteredText(textColor.GREEN + "                                                                                                ");
         centerHub.printCenteredText("                @@@@@@    @@@  @@@  @@@@@@@@  @@@@@@@@   @@@@@@   @@@  @@@                     ");
         centerHub.printCenteredText("               @@@@@@@@   @@@  @@@  @@@@@@@@  @@@@@@@@  @@@@@@@@  @@@@ @@@                     ");
         centerHub.printCenteredText("               @@!  @@@   @@!  @@@  @@!            @@!  @@!  @@@  @@!@!@@@                     ");
@@ -89,7 +91,7 @@ public class Game {
         centerHub.printCenteredText(":!!       !!:  !!!  !!: :!!   !!:  !!!  !!:  !!!  !!:  :!!       !!:       !!:            !:!   ");
         centerHub.printCenteredText(":!:       :!:  !:!  :!:  !:!  :!:  !:!  :!:  !:!  :!:  :!:        :!:      :!:           !:!    ");
         centerHub.printCenteredText(" ::: :::  ::   :::  ::   :::  ::::: ::   ::   ::   ::   ::: :::   :: ::::   :: ::::  :::: ::    ");
-        centerHub.printCenteredText(" :: :: :   :   : :   :   : :   : :  :   ::    :   :     :: :: :  : :: : :  : :: ::   :: : :     ");
+        centerHub.printCenteredText(" :: :: :   :   : :   :   : :   : :  :   ::    :   :     :: :: :  : :: : :  : :: ::   :: : :     " + textColor.RESET);
         System.out.println("");
     }
 }

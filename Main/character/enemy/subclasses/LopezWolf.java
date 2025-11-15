@@ -34,7 +34,7 @@ public class LopezWolf extends Enemy{
     double critRoll = Math.random();
     if (critRoll < critChance) {
         baseDamage *= 2;
-        centerHub.printRightTextWithTypeWriter("Critical hit!");
+        centerHub.printRightTextWithTypeWriter(textColor.RED + "Critical hit!" + textColor.RESET);
     }
 
         player.takeDamage(baseDamage);

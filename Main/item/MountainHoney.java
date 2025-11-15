@@ -1,11 +1,12 @@
 package Main.item;
 
 import Main.character.player.Player;
+import Main.styles.textColor.TextColorHub;
 
 public class MountainHoney extends Item{
 
     public MountainHoney() {
-        setName("Mountain Honey");
+        setName(textColor.ORANGE + "Mountain Honey" + textColor.RESET);
         setDescription("(Delicous Mountain Honey that gives you stamina)");
     }
 

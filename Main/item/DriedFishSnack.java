@@ -1,11 +1,12 @@
 package Main.item;
 
 import Main.character.player.Player;
+import Main.styles.textColor.TextColorHub;
 
 public class DriedFishSnack extends Item {
 
     public DriedFishSnack() {
-        setName("Dried Fish Snack");
+        setName(textColor.RED + "Dried Fish Snack" + textColor.RESET);
         setDescription("(Dried Fish Snack gives you additional damage for 2 turns.)");
     }
 

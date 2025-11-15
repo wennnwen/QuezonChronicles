@@ -34,7 +34,7 @@ public class PortRat extends Enemy{
     double critRoll = Math.random();
     if (critRoll < critChance) {
         baseDamage *= 2; // Critical hit doubles damage
-        centerHub.printRightTextWithTypeWriter("Critical hit!");
+        centerHub.printRightTextWithTypeWriter(textColor.RED + "Critical hit!" + textColor.RESET);
     }
 
         player.takeDamage(baseDamage);

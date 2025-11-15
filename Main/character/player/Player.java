@@ -3,7 +3,8 @@ package Main.character.player;
 import Main.item.*;
 import Main.character.Character;
 import Main.styles.printAlignmentHub.CenterHub;
-import Main.styles.animationHub.TypeWriter ;
+import Main.styles.animationHub.TypeWriter;
+import Main.styles.textColor.TextColorHub;
 
 public abstract class Player extends Character {
   private int experience, level = 1, nextExpLevel = 100;
@@ -34,7 +35,8 @@ public abstract class Player extends Character {
   private final String[] attackMoves = new String[4];
   private boolean lastActionSucceeded = false;
 
-  private CenterHub centerHub = new CenterHub();
+  protected CenterHub centerHub = new CenterHub();
+  protected TextColorHub textColor = new TextColorHub();
   protected TypeWriter typeWriter = new TypeWriter();
 
 	public abstract void showStats();
@@ -119,7 +121,7 @@ public abstract class Player extends Character {
   public void levelUp() {
     level++;
     String text = "You have leveled up to: " + level;
-    typeWriter.typeWriterFast(text);
+    typeWriter.typeWriterFast(textColor.YELLOW + text + textColor.RESET);
     nextExpLevel += 50;
     levelStats();
   }

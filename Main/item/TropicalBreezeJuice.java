@@ -1,11 +1,12 @@
 package Main.item;
 
 import Main.character.player.Player;
+import Main.styles.textColor.TextColorHub;
 
 public class TropicalBreezeJuice extends Item {
 
     public TropicalBreezeJuice() {
-        setName("Tropical Breeze Juice");
+        setName(textColor.ORANGE + "Tropical Breeze Juice" + textColor.RESET);
         setDescription("(Begin a heroic journey where every decision alters your fate. Gives you stamina and speed.)");
     }
 

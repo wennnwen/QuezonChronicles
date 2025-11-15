@@ -1,11 +1,12 @@
 package Main.item;
 
 import Main.character.player.Player;
+import Main.styles.textColor.TextColorHub;
 
 public class PugonCoffee extends Item {
 
     public PugonCoffee() {
-        setName("Pugon Coffee");
+        setName(textColor.YELLOW + "Pugon Coffee" + textColor.RESET);
         setDescription("(A strong brew that energizes the drinker, granting +1 Speed for the next turn.)");
     }
 

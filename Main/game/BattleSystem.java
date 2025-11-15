@@ -7,6 +7,7 @@ import Main.item.*;
 import Main.styles.printAlignmentHub.CenterHub;
 import Main.styles.clearScreen.ClearScreen;
 import Main.styles.animationHub.TypeWriter;
+import Main.styles.textColor.TextColorHub;
 
 public class BattleSystem {
 
@@ -14,6 +15,7 @@ public class BattleSystem {
 
     private CenterHub centerHub = new CenterHub();
     private static TypeWriter typeWriter = new TypeWriter();
+    private static TextColorHub textColor = new TextColorHub();
 
     // Safe integer reader: reads a line and parses an int, re-prompts on invalid input
 
@@ -25,7 +27,7 @@ public class BattleSystem {
 
         if (player.getSpeed() > enemy.getSpeed()) {
             printCombatStatus(player, enemy);
-            typeWriter.typeWriterFast("\nPlayer goes first!");
+            typeWriter.typeWriterFast(textColor.ORANGE + "\nPlayer goes first!" + textColor.RESET);
             player.checkStunned();
             if (!player.getIsStunned()) {
                 playerTurn(player, enemy);
@@ -35,7 +37,7 @@ public class BattleSystem {
        
         else if (enemy.getSpeed() > player.getSpeed()) {
             String text = "\nEnemy goes first!";
-            centerHub.printRightTextWithTypeWriter(text);
+            centerHub.printRightTextWithTypeWriter(textColor.RED + text + textColor.RESET);
             enemy.checkStunned();
             if (!enemy.getIsStunned()) {
                 enemyTurn(player, enemy);
@@ -46,7 +48,7 @@ public class BattleSystem {
             double chances = Math.random();
             if (chances < 0.5) {
                 printCombatStatus(player, enemy);
-                typeWriter.typeWriterFast("\nPlayer goes first!");
+                typeWriter.typeWriterFast(textColor.ORANGE + "\nPlayer goes first!" + textColor.RESET);
                 player.checkStunned();
                 if (!player.getIsStunned()) {
                     playerTurn(player, enemy);
@@ -55,7 +57,7 @@ public class BattleSystem {
             }
             else {
                 String text = "\nEnemy goes first!";
-                centerHub.printRightText(text);
+                centerHub.printRightText(textColor.RED + text + textColor.RESET);
                 enemy.checkStunned();
                 if (!enemy.getIsStunned()) {
                     enemyTurn(player, enemy);
@@ -119,14 +121,14 @@ public class BattleSystem {
 
         if (!player.isAlive()) {
             ClearScreen.clear();
-            System.out.println("Game over! You have been slained!");
+            System.out.println(textColor.RED + "Game over! You have been slained!" + textColor.RESET);
             return;
         }
     }
 
     public void playerTurn(Player player, Enemy enemy) {
         
-        System.out.println("\nPlayer Turn / Your Turn:");
+        System.out.println(textColor.ORANGE + "\nPlayer Turn / Your Turn:" + textColor.RESET);
         boolean validInput = false;
         while (!validInput) {
             System.out.println("Your moves:");
@@ -208,7 +210,7 @@ public class BattleSystem {
     public void enemyTurn(Player player, Enemy enemy) {
         String text;
         text = "Enemy Turn!";
-        centerHub.printRightTextWithTypeWriter(text);
+        centerHub.printRightTextWithTypeWriter(textColor.RED + text + textColor.RESET);
         enemy.enemyMove(player);
 
         if (!(enemy.isAlive())) {
@@ -221,19 +223,19 @@ public class BattleSystem {
         if (!enemy.isAlive() && player.isAlive()) {
             ClearScreen.clear();
             String text = "You defeated " + enemy.getName() + "!";
-            typeWriter.typeWriterFast(text); 
+            typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET); 
             player.addExp(enemy.getExpReward());
             text = "You gained " + enemy.getExpReward() + " Exp from the battle!";
-            typeWriter.typeWriterFast(text);
+            typeWriter.typeWriterFast(textColor.PURPLE + text + textColor.RESET);
             Item loot = enemy.dropLoot();
             if (loot != null) {
                 player.addItem(loot);
                 // Print the item's name (Item has getName()) instead of the raw object
                 text = "The " + enemy.getName() + " dropped " + loot.getName() + "!";
-                typeWriter.typeWriterFast(text);
+                typeWriter.typeWriterFast(textColor.YELLOW + text + textColor.RESET);
             } else {
                 text = "No loot dropped from " + enemy.getName() + ".";
-                typeWriter.typeWriterFast(text);
+                typeWriter.typeWriterFast(textColor.YELLOW + text + textColor.RESET);
             }
             return;
         }
@@ -264,8 +266,8 @@ public class BattleSystem {
     // Print current combat status (player/enemy HP & stamina) in one place to avoid duplication
     private void printCombatStatus(Player player, Enemy enemy) {
         System.out.println("=====================================================================================================================================================");
-        System.out.println("Player Stats:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tEnemy Stats:");
-        System.out.println("Hp: " + player.getHp() + "/" + player.getMaxHp() + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t Hp: " + enemy.getHp() + "/" + enemy.getMaxHp());
-        System.out.println("Stamina: " + player.getStamina() + "/" + player.getMaxStamina() + " | Mp: " + player.getMp() + "/" + player.getMaxMp());
+        System.out.println(textColor.GREEN + "Player Stats:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + textColor.RESET + textColor.RED + "Enemy Stats:" + textColor.RESET);
+        System.out.println(textColor.RED + "Hp: " + player.getHp() + "/" + player.getMaxHp() + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t Hp: " + enemy.getHp() + "/" + enemy.getMaxHp() + textColor.RESET);
+        System.out.println(textColor.ORANGE + "Stamina: " + player.getStamina() + "/" + player.getMaxStamina() + textColor.RESET + " | " + textColor.BLUE + "Mp: " +  player.getMp() + "/" + player.getMaxMp() + textColor.RESET);
     }
 }   

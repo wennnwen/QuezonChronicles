@@ -33,7 +33,7 @@ public class SweetVendor extends Enemy {
         double chance = Math.random(); 
         if (chance < 0.20) {
             damage *= 2;
-            centerHub.printRightTextWithTypeWriter("Critical Hit! The candy explodes with extra force!");
+            centerHub.printRightTextWithTypeWriter(textColor.RED + "Critical Hit! The candy explodes with extra force!" + textColor.RESET);
         }
 
 

@@ -1,11 +1,12 @@
 package Main.item;
 
 import Main.character.player.Player;
+import Main.styles.textColor.TextColorHub;
 
 public class LongganisangLucban extends Item {
 
     public LongganisangLucban() {
-        setName("Longganisang Lucban");
+        setName(textColor.RED + "Longganisang Lucban" + textColor.RESET);
         setDescription("(A flavorful Lucban sausage that increases Attack Power for 2 turns.)");
     }
 

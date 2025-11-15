@@ -32,7 +32,7 @@ public class TiaongKnight extends Enemy {
         double critChance = 0.5; //50% chance
         if (Math.random() < critChance) {
             attackPower *= 2;
-            centerHub.printRightTextWithTypeWriter("Critical Hit!");
+            centerHub.printRightTextWithTypeWriter(textColor.RED + "Critical hit!" + textColor.RESET);
         }
         // Deal damage
         player.takeDamage(attackPower);

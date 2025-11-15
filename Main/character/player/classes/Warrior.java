@@ -3,6 +3,7 @@ package Main.character.player.classes;
 import Main.character.player.Player;
 import Main.character.Character;
 import Main.styles.printAlignmentHub.CenterHub;
+import Main.styles.textColor.TextColorHub;
 
 public class Warrior extends Player{
 
@@ -106,21 +107,21 @@ public class Warrior extends Player{
 	@Override
     public void showStats() {
         String text;
-		System.out.println("==================================================================== Warrior Stats =================================================================");
+		System.out.println("==================================================================== " + textColor.RED + "Warrior Stats" + textColor.RESET + " =================================================================");
 		text = "Health: " + String.valueOf(getHp()) + "/" + String.valueOf(getMaxHp());
-        centerHub.printCenteredText(text);
+    	centerHub.printCenteredText(textColor.RED + text + textColor.RESET);
 		text = "Stamina: " + String.valueOf(getStamina()) + "/" + String.valueOf(getMaxStamina());
-        centerHub.printCenteredText(text);
+    	centerHub.printCenteredText(textColor.YELLOW + text + textColor.RESET);
 		text = "Defense: " + String.valueOf(getDefense());
-        centerHub.printCenteredText(text);
+    	centerHub.printCenteredText(textColor.ORANGE + text + textColor.RESET);
 		text = "Attack Power: " + String.valueOf(getAttackPower());
-        centerHub.printCenteredText(text);
+    	centerHub.printCenteredText(textColor.RED + text + textColor.RESET);
 		text = "Speed: " + String.valueOf(getSpeed());
-        centerHub.printCenteredText(text);
+    	centerHub.printCenteredText(textColor.YELLOW + text + textColor.RESET);
 		text = "Experience: " + String.valueOf(getExp()) + "/" + String.valueOf(getNextExpLevel());
-        centerHub.printCenteredText(text);
+    	centerHub.printCenteredText(textColor.PURPLE + text + textColor.RESET);
 		text = "Level: " + String.valueOf(getLevel());
-        centerHub.printCenteredText(text);
+    	centerHub.printCenteredText(textColor.YELLOW + text + textColor.RESET);
 		System.out.println("=====================================================================================================================================================");
 	}
 

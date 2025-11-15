@@ -1,9 +1,11 @@
 package Main.item;
 
 import Main.character.player.Player;
+import Main.styles.textColor.TextColorHub;
 
 public abstract class Item {
     private String name, description;
+    protected TextColorHub textColor = new TextColorHub();
 
     public abstract void useItem(Player player);
 

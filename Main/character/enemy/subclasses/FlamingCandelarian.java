@@ -31,7 +31,7 @@ public class FlamingCandelarian extends Enemy {
         double critChance = 0.2;
         if (Math.random() < critChance) {
             baseDamage *= 2;
-            centerHub.printRightTextWithTypeWriter("Critical hit!");
+            centerHub.printRightTextWithTypeWriter(textColor.RED + "Critical hit!" + textColor.RESET);
         }
 
         player.takeDamage(baseDamage);

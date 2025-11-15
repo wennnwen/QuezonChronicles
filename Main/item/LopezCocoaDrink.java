@@ -1,12 +1,13 @@
 package Main.item;
 
 import Main.character.player.Player;
+import Main.styles.textColor.TextColorHub;
 
 public class LopezCocoaDrink extends Item {
 
     public LopezCocoaDrink() {
-        setName("LopezCocoaDrink");
-        setDescription("(+ 2 defense for 2 turns))");
+        setName(textColor.ORANGE + "LopezCocoaDrink" + textColor.RESET);
+        setDescription("(+2 defense for 2 turns))");
     }
 
     @Override

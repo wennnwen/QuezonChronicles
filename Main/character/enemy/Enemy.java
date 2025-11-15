@@ -5,11 +5,13 @@ import Main.character.player.Player;
 import Main.item.*;
 import Main.styles.printAlignmentHub.CenterHub;
 import Main.styles.animationHub.TypeWriter;
+import Main.styles.textColor.TextColorHub;
 
 public abstract class Enemy extends Character {
 
     protected CenterHub centerHub = new CenterHub();
     protected TypeWriter typeWriter = new TypeWriter();
+    protected TextColorHub textColor = new TextColorHub();
 
     private int expReward;
     private Item[] possibleLoot = new Item[2];

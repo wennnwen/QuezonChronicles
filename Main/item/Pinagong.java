@@ -1,11 +1,12 @@
 package Main.item;
 
 import Main.character.player.Player;
+import Main.styles.textColor.TextColorHub;
 
 public class Pinagong extends Item {
 
     public Pinagong() {
-        setName("Pinagong");
+        setName(textColor.GREEN + "Pinagong" + textColor.RESET);
         setDescription("(A soft bread from Sariaya that restores a small amount of HP.)");
     }
 

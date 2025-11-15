@@ -1,11 +1,12 @@
 package Main.item;
 
 import Main.character.player.Player;
+import Main.styles.textColor.TextColorHub;
 
 public class Panutsa extends Item{
 
     public Panutsa() {
-        setName("Panutsa");
+        setName(textColor.ORANGE + "Panutsa" + textColor.RESET);
         setDescription("(A sweet treat that boosts your defense by +5 per turn for 2 turns.)");
     }
 

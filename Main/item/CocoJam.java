@@ -1,11 +1,12 @@
 package Main.item;
 
 import Main.character.player.Player;
+import Main.styles.textColor.TextColorHub;
 
 public class CocoJam extends Item {
 
     public CocoJam() {
-        setName("Coco Jam");
+        setName(textColor.ORANGE + "Coco Jam" + textColor.RESET);
         setDescription("(A sweet Lucena delicacy that restores Stamina. (For Stamina users only))");
     }
 

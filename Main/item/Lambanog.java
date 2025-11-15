@@ -1,11 +1,12 @@
 package Main.item;
 
 import Main.character.player.Player;
+import Main.styles.textColor.TextColorHub;
 
 public class Lambanog extends Item {
 
     public Lambanog() {
-        setName("Lambanog");
+        setName(textColor.BLUE + "Lambanog" + textColor.RESET);
         setDescription("(A potent coconut spirit prized in local taverns, often used in celebrations or risky gambles throughout the realm)");
     }
 
@@ -21,8 +22,8 @@ public class Lambanog extends Item {
             System.out.println(player.getName() + "restored 15 amount of stamina!");
         }
         else {
-        player.addMp(staminaBoost);
-        System.out.println(player.getName() + "restored 15 amount of mp!");
+            player.addMp(staminaBoost);
+            System.out.println(player.getName() + "restored 15 amount of mp!");
         }
     }
 }

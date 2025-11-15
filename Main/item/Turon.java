@@ -1,11 +1,12 @@
 package Main.item;
 
 import Main.character.player.Player;
+import Main.styles.textColor.TextColorHub;
 
 public class Turon extends Item {
 
     public Turon() {
-        setName("Turon");
+        setName(textColor.RED + "Turon" + textColor.RESET);
         setDescription("(Local delicacy. Gives you additional damage.)");
     }
 

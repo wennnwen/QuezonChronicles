@@ -1,11 +1,12 @@
 package Main.item;
 
 import Main.character.player.Player;
+import Main.styles.textColor.TextColorHub;
 
 public class Habhab extends Item {
 
     public Habhab() {
-        setName("Habhab");
+        setName(textColor.GREEN + "Habhab" + textColor.RESET);
         setDescription("(A famous Lucban noodle dish that restores HP and Stamina/MP.)");
     }
 

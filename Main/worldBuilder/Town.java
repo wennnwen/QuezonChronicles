@@ -10,6 +10,7 @@ import Main.styles.printAlignmentHub.CenterHub;
 import Main.styles.clearScreen.ClearScreen;
 import Main.styles.animationHub.TypeWriter;
 import Main.styles.animationHub.LoadingDots;
+import Main.styles.textColor.TextColorHub;
 
 public class Town {
     private String name;
@@ -20,6 +21,7 @@ public class Town {
     private CenterHub centerHub = new CenterHub();
     private TypeWriter typeWriter = new TypeWriter();
     private LoadingDots loadingDots = new LoadingDots();
+    private TextColorHub textColor = new TextColorHub();
 
     public Town(String name, String description, Enemy[] enemies, Enemy boss) {
         this.name = name;
@@ -37,7 +39,7 @@ public class Town {
     }
 
     public void enterTown(Player player, int townIndex) {
-        System.out.println("\n====================================================================== " + name.toUpperCase() + " =======================================================================\n");
+        System.out.println("\n====================================================================== " + textColor.GREEN + name.toUpperCase() + textColor.RESET + " =======================================================================\n");
         centerHub.printCenteredTextWithTypeWriter(description);
 
         // Load progress if returning to this town
@@ -56,13 +58,13 @@ public class Town {
             }
             int totalCount = (enemies != null ? enemies.length : 0) + (boss != null ? 1 : 0);
             int remaining = Math.max(0, totalCount - enemiesDefeated);
-            System.out.println("\n======================================================================= OPTIONS =====================================================================");
-            System.out.println("Enemies left: " + remaining);
-            centerHub.printCenteredText("( 1 ) Explore / Battle");
-            centerHub.printCenteredText("( 2 ) Move to next town");
-            centerHub.printCenteredText("( 3 ) Check player stats");
-            centerHub.printCenteredText("( 4 ) Inventory");
-            centerHub.printCenteredText("( 5 ) Exit to main menu");
+            System.out.println("\n======================================================================= " + textColor.GREEN + "OPTIONS" + textColor.RESET + " =====================================================================");
+            System.out.println(textColor.RED + "Enemies left: " + remaining + textColor.RESET);
+            centerHub.printCenteredText(textColor.RED + "( 1 ) Explore / Battle" + textColor.RESET);
+            centerHub.printCenteredText(textColor.GREEN + "( 2 ) Move to next town" + textColor.RESET);
+            centerHub.printCenteredText(textColor.BLUE + "( 3 ) Check player stats" + textColor.RESET);
+            centerHub.printCenteredText(textColor.YELLOW + "( 4 ) Inventory" + textColor.RESET);
+            centerHub.printCenteredText(textColor.PURPLE + "( 5 ) Exit to main menu" + textColor.RESET);
             System.out.println("=====================================================================================================================================================");
             System.out.print("Enter your Choice: ");
             int choice = sc.nextInt();
@@ -73,7 +75,7 @@ public class Town {
                         ClearScreen.clear();
                         Enemy enemy = enemies[enemiesDefeated];
                         String text = "A wild " + enemy.getName() + " appeared!";
-                        typeWriter.typeWriterFast(text);
+                        typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
                         new BattleSystem().BattleStart(player, enemy);
                         enemiesDefeated++;
                         player.setEnemiesDefeatedInTown(enemiesDefeated);
@@ -96,16 +98,16 @@ public class Town {
                         if (nextTown != null) {
                             ClearScreen.clear();
                             String text = "Preparing to travel to " + nextTown.name;
-                            loadingDots.loadingDotsAnimation(text);
+                            loadingDots.loadingDotsAnimation(textColor.GREEN + text + textColor.RESET);
                             ClearScreen.clear();
                             text = "You've just arrived in " + nextTown.name;
-                            typeWriter.typeWriterFast(text);
+                            typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
                             if (!player.getUsesMp()) {
                                 player.setStamina(player.getMaxStamina());
-                                typeWriter.typeWriterFast("\nYour stamina has been fully restored.");
+                                typeWriter.typeWriterFast(textColor.ORANGE + "\nYour stamina has been fully restored." + textColor.RESET);
                             } else {
                                 player.setMp(player.getMaxMp());
-                                typeWriter.typeWriterFast("\nYour MP has been fully restored.");
+                                typeWriter.typeWriterFast(textColor.BLUE + "\nYour MP has been fully restored." + textColor.RESET);
                             }
                             player.setEnemiesDefeatedInTown(0); // Reset for new town
                             nextTown.enterTown(player, townIndex + 1);
@@ -120,7 +122,7 @@ public class Town {
                         }
                     } else {
                         ClearScreen.clear();
-                        typeWriter.typeWriterFast("You must defeat all enemies before moving on!");
+                        typeWriter.typeWriterFast(textColor.RED + "You must defeat all enemies before moving on!" + textColor.RESET);
                     }
                     break;
 
@@ -152,6 +154,7 @@ public class Town {
 
                 case 5:
                     loadingDots.customLoadingDotsAnimation("Returning to main menu", 3, 500, 5000);
+                    System.out.println();
                     return;
 
                 default:

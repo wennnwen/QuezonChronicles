@@ -32,7 +32,7 @@ public class FisherRogue extends Enemy {
         double critChance = 0.2; // 20% chance
         if (Math.random() < critChance) {
             attackPower *= 2;
-            centerHub.printRightTextWithTypeWriter("Critical hit!");
+            centerHub.printRightTextWithTypeWriter(textColor.RED + "Critical hit!" + textColor.RESET);
         }
 
         // Deal damage

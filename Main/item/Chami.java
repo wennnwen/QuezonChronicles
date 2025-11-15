@@ -1,12 +1,13 @@
 package Main.item;
 
 import Main.character.player.Player;
+import Main.styles.textColor.TextColorHub;
 
 public class Chami extends Item {
 
     // Constructor
     public Chami() {
-        setName("Chami");
+        setName(textColor.GREEN + "Chami" + textColor.RESET);
         setDescription("(A sweet and savory noodle dish from Lucena that restores a good amount of HP.)");
     }
 

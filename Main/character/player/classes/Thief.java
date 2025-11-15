@@ -3,6 +3,7 @@ package Main.character.player.classes;
 import Main.character.player.Player;
 import Main.character.Character;
 import Main.styles.printAlignmentHub.CenterHub;
+import Main.styles.textColor.TextColorHub;
 
 public class Thief extends Player{
 
@@ -88,21 +89,21 @@ public class Thief extends Player{
 	@Override
     public void showStats() {
         String text;
-		System.out.println("===================================================================== Thief Stats ==================================================================");
+		System.out.println("===================================================================== " + textColor.PURPLE + "Thief Stats" + textColor.RESET + " ==================================================================");
 		text = "Health: " + String.valueOf(getHp()) + "/" + String.valueOf(getMaxHp());
-        centerHub.printCenteredText(text);
-        text = "Stamina: " + String.valueOf(getStamina()) + "/" + String.valueOf(getMaxStamina());
-        centerHub.printCenteredText(text);
-        text = "Defense: " + String.valueOf(getDefense());
-        centerHub.printCenteredText(text);
-        text = "Attack Power: " + String.valueOf(getAttackPower());
-        centerHub.printCenteredText(text);
-        text = "Speed: " + String.valueOf(getSpeed());
-        centerHub.printCenteredText(text);
-        text = "Experience: " + String.valueOf(getExp()) + "/" + String.valueOf(getNextExpLevel());
-        centerHub.printCenteredText(text);
-        text = "Level: " + String.valueOf(getLevel());
-        centerHub.printCenteredText(text);
+    	centerHub.printCenteredText(textColor.RED + text + textColor.RESET);
+		text = "Stamina: " + String.valueOf(getStamina()) + "/" + String.valueOf(getMaxStamina());
+    	centerHub.printCenteredText(textColor.YELLOW + text + textColor.RESET);
+		text = "Defense: " + String.valueOf(getDefense());
+    	centerHub.printCenteredText(textColor.ORANGE + text + textColor.RESET);
+		text = "Attack Power: " + String.valueOf(getAttackPower());
+    	centerHub.printCenteredText(textColor.RED + text + textColor.RESET);
+		text = "Speed: " + String.valueOf(getSpeed());
+    	centerHub.printCenteredText(textColor.YELLOW + text + textColor.RESET);
+		text = "Experience: " + String.valueOf(getExp()) + "/" + String.valueOf(getNextExpLevel());
+    	centerHub.printCenteredText(textColor.PURPLE + text + textColor.RESET);
+		text = "Level: " + String.valueOf(getLevel());
+    	centerHub.printCenteredText(textColor.YELLOW + text + textColor.RESET);
 		System.out.println("=====================================================================================================================================================");
 	}
    
