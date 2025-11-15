@@ -59,6 +59,7 @@ public class Game {
                     System.exit(0);
                     break;
                 default:
+																	ClearScreen.clear();
                     System.out.println("Invalid choice. Please try again.");
                     break;
             }
