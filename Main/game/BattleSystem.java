@@ -4,14 +4,16 @@ import java.util.Scanner;
 import Main.character.enemy.Enemy;
 import Main.character.player.Player;
 import Main.item.*;
-import Main.printAlignmentHub.CenterHub;
-import Main.clearScreen.ClearScreen;
+import Main.styles.printAlignmentHub.CenterHub;
+import Main.styles.clearScreen.ClearScreen;
+import Main.styles.animationHub.TypeWriter;
 
 public class BattleSystem {
 
     public Scanner input = new Scanner(System.in);
 
     private CenterHub centerHub = new CenterHub();
+    private static TypeWriter typeWriter = new TypeWriter();
 
     // Safe integer reader: reads a line and parses an int, re-prompts on invalid input
 
@@ -23,7 +25,7 @@ public class BattleSystem {
 
         if (player.getSpeed() > enemy.getSpeed()) {
             printCombatStatus(player, enemy);
-            System.out.print("\nPlayer goes first!");
+            typeWriter.typeWriterFast("\nPlayer goes first!");
             player.checkStunned();
             if (!player.getIsStunned()) {
                 playerTurn(player, enemy);
@@ -33,7 +35,7 @@ public class BattleSystem {
        
         else if (enemy.getSpeed() > player.getSpeed()) {
             String text = "\nEnemy goes first!";
-            centerHub.printRightText(text);
+            centerHub.printRightTextWithTypeWriter(text);
             enemy.checkStunned();
             if (!enemy.getIsStunned()) {
                 enemyTurn(player, enemy);
@@ -44,7 +46,7 @@ public class BattleSystem {
             double chances = Math.random();
             if (chances < 0.5) {
                 printCombatStatus(player, enemy);
-                System.out.println("\nPlayer goes first!");
+                typeWriter.typeWriterFast("\nPlayer goes first!");
                 player.checkStunned();
                 if (!player.getIsStunned()) {
                     playerTurn(player, enemy);
@@ -206,7 +208,7 @@ public class BattleSystem {
     public void enemyTurn(Player player, Enemy enemy) {
         String text;
         text = "Enemy Turn!";
-        centerHub.printRightText(text);
+        centerHub.printRightTextWithTypeWriter(text);
         enemy.enemyMove(player);
 
         if (!(enemy.isAlive())) {
@@ -218,16 +220,20 @@ public class BattleSystem {
         // If enemy is dead and player is alive -> normal victory
         if (!enemy.isAlive() && player.isAlive()) {
             ClearScreen.clear();
-            System.out.println("You defeated " + enemy.getName() + "!");
+            String text = "You defeated " + enemy.getName() + "!";
+            typeWriter.typeWriterFast(text); 
             player.addExp(enemy.getExpReward());
-            System.out.println("You gained " + enemy.getExpReward() + " Exp from the battle!");
+            text = "You gained " + enemy.getExpReward() + " Exp from the battle!";
+            typeWriter.typeWriterFast(text);
             Item loot = enemy.dropLoot();
             if (loot != null) {
                 player.addItem(loot);
                 // Print the item's name (Item has getName()) instead of the raw object
-                System.out.println("You gained " + loot.getName() + " from the " + enemy.getName() + "!");
+                text = "The " + enemy.getName() + " dropped " + loot.getName() + "!";
+                typeWriter.typeWriterFast(text);
             } else {
-                System.out.println("No loot dropped from " + enemy.getName() + ".");
+                text = "No loot dropped from " + enemy.getName() + ".";
+                typeWriter.typeWriterFast(text);
             }
             return;
         }

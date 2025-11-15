@@ -3,7 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
-import Main.printAlignmentHub.CenterHub;
+import Main.styles.printAlignmentHub.CenterHub;
 
 public class KipingGolem extends Enemy {
 
@@ -23,7 +23,7 @@ public class KipingGolem extends Enemy {
     
     @Override
     public void enemyMove(Player player) {
-        centerHub.printRightText("The Kiping Golem slams the ground, sending Kiping shards flying!");
+        centerHub.printRightTextWithTypeWriter("The Kiping Golem slams the ground, sending Kiping shards flying!");
         
         int damage = getAttackPower();
         player.takeDamage(damage);

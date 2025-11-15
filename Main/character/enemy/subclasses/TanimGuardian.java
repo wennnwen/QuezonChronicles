@@ -3,7 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
-import Main.printAlignmentHub.CenterHub;
+import Main.styles.printAlignmentHub.CenterHub;
 
 public class TanimGuardian extends Enemy {
 
@@ -26,7 +26,7 @@ public class TanimGuardian extends Enemy {
     @Override
     public void enemyMove(Player player) {
     String text = getName() + " attacks with a vine!";
-    centerHub.printRightText(text);
+    centerHub.printRightTextWithTypeWriter(text);
 
     int baseDamage = getAttackPower();
     if (baseDamage < 0) baseDamage = 0;
@@ -36,7 +36,7 @@ public class TanimGuardian extends Enemy {
     double critRoll = Math.random();
     if (critRoll < critChance) {
         baseDamage *= 2; // Critical hit doubles damage
-        centerHub.printRightText("Critical hit!");
+        centerHub.printRightTextWithTypeWriter("Critical hit!");
     }
 
     player.takeDamage(baseDamage);

@@ -6,8 +6,10 @@ import Main.character.Character;
 import Main.character.player.Player;
 import Main.game.BattleSystem;
 import Main.item.*;
-import Main.printAlignmentHub.CenterHub;
-import Main.clearScreen.ClearScreen;
+import Main.styles.printAlignmentHub.CenterHub;
+import Main.styles.clearScreen.ClearScreen;
+import Main.styles.animationHub.TypeWriter;
+import Main.styles.animationHub.LoadingDots;
 
 public class Town {
     private String name;
@@ -16,6 +18,8 @@ public class Town {
     private Enemy boss;
     private Town nextTown;
     private CenterHub centerHub = new CenterHub();
+    private TypeWriter typeWriter = new TypeWriter();
+    private LoadingDots loadingDots = new LoadingDots();
 
     public Town(String name, String description, Enemy[] enemies, Enemy boss) {
         this.name = name;
@@ -33,8 +37,8 @@ public class Town {
     }
 
     public void enterTown(Player player, int townIndex) {
-        System.out.println("\n=======================================================================" + name.toUpperCase() + "========================================================================\n");
-        centerHub.printCenteredText(description);
+        System.out.println("\n====================================================================== " + name.toUpperCase() + " =======================================================================\n");
+        centerHub.printCenteredTextWithTypeWriter(description);
 
         // Load progress if returning to this town
         int enemiesDefeated = (player.getCurrentTownIndex() == townIndex) ? player.getEnemiesDefeatedInTown() : 0;
@@ -68,20 +72,22 @@ public class Town {
                     if (enemies != null && enemiesDefeated < enemies.length) {
                         ClearScreen.clear();
                         Enemy enemy = enemies[enemiesDefeated];
-                        System.out.println("A wild " + enemy.getName() + " appeared!");
+                        String text = "A wild " + enemy.getName() + " appeared!";
+                        typeWriter.typeWriterFast(text);
                         new BattleSystem().BattleStart(player, enemy);
                         enemiesDefeated++;
                         player.setEnemiesDefeatedInTown(enemiesDefeated);
                     } else if (boss != null && enemiesDefeated == (enemies != null ? enemies.length : 0)) {
                         ClearScreen.clear();
-                        System.out.println("\nYou've reached the boss battle!");
-                        System.out.println("\nThe boss of " + name + " appears: " + boss.getName() + "!");
+                        typeWriter.typeWriterFast("\nYou've reached the boss battle!");
+                        typeWriter.typeWriterFast("\nThe boss of " + name + " appears: " + boss.getName() + "!");
                         new BattleSystem().BattleStart(player, boss);
                         enemiesDefeated++;
                         player.setEnemiesDefeatedInTown(enemiesDefeated);
-                        System.out.println("You've cleared " + name + "!");
+                        typeWriter.typeWriterFast("You've cleared " + name + "!");
                     } else {
-                        System.out.println("You’ve already cleared all enemies here!");
+                        ClearScreen.clear();
+                        typeWriter.typeWriterFast("You’ve already cleared all enemies here!");
                     }
                     break;
 
@@ -89,26 +95,32 @@ public class Town {
                     if ((boss == null && enemiesDefeated >= 3) || (boss != null && enemiesDefeated >= 3)) {
                         if (nextTown != null) {
                             ClearScreen.clear();
-                            System.out.println("Travelling to " + nextTown.name + "...");
+                            String text = "Preparing to travel to " + nextTown.name;
+                            loadingDots.loadingDotsAnimation(text);
+                            ClearScreen.clear();
+                            text = "You've just arrived in " + nextTown.name;
+                            typeWriter.typeWriterFast(text);
                             if (!player.getUsesMp()) {
                                 player.setStamina(player.getMaxStamina());
-                                System.out.println("\nYour stamina has been fully restored.");
+                                typeWriter.typeWriterFast("\nYour stamina has been fully restored.");
                             } else {
                                 player.setMp(player.getMaxMp());
-                                System.out.println("\nYour MP has been fully restored.");
+                                typeWriter.typeWriterFast("\nYour MP has been fully restored.");
                             }
                             player.setEnemiesDefeatedInTown(0); // Reset for new town
                             nextTown.enterTown(player, townIndex + 1);
                             return;
                         } else {
-                            System.out.println("You've reached the end of your journey!");
+                            ClearScreen.clear();
+                            typeWriter.typeWriterFast("You've reached the end of your journey!");
                             player.setChosenPath(null); // Allow new path selection after completion
                             player.setCurrentTownIndex(0);
                             player.setEnemiesDefeatedInTown(0);
                             return;
                         }
                     } else {
-                        System.out.println("You must defeat all enemies before moving on!");
+                        ClearScreen.clear();
+                        typeWriter.typeWriterFast("You must defeat all enemies before moving on!");
                     }
                     break;
 
@@ -139,7 +151,7 @@ public class Town {
                     break;
 
                 case 5:
-                    System.out.println("Returning to main menu...");
+                    loadingDots.customLoadingDotsAnimation("Returning to main menu", 3, 500, 5000);
                     return;
 
                 default:

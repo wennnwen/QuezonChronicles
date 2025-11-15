@@ -2,7 +2,8 @@ package Main.character.player.classes;
 
 import Main.character.player.Player;
 import Main.character.Character;
-import Main.printAlignmentHub.CenterHub;
+import Main.styles.printAlignmentHub.CenterHub;
+import Main.styles.animationHub.TypeWriter;
 
 public class Bruid extends Player {
 
@@ -36,14 +37,16 @@ public class Bruid extends Player {
 	public void useMoves(int moveNumber, Character target) {
     switch (moveNumber) {
       	case 1:
-			System.out.println("\n" + getName() + " used Banana Strike!");
+			String text = "\n" + getName() + " used Banana Strike!";
+			typeWriter.typeWriterFast(text);
 			target.takeDamage(getAttackPower());
 			setLastActionSucceeded(true);
 			break;
 
 		case 2:
 			if (getMp() >= 10) {
-				System.out.println("\n" + getName() + " used Front Shield!");
+				text = "\n" + getName() + " used Front Shield!";
+				typeWriter.typeWriterFast(text);
 				setMp(getMp() - 10);
 				addTemporaryDefenseBoost((int)(getDefense() * 0.25), 2);
 				setLastActionSucceeded(true);
@@ -55,15 +58,16 @@ public class Bruid extends Player {
 			break;
 
 		case 3:
-			System.out.println("\n" + getName() + " used Healing Grove!");
+			text = "\n" + getName() + " used Healing Grove!";
+			typeWriter.typeWriterFast(text);
 			addMp(25);
-			System.out.println("Mana Restored by 25 points!");
 			setLastActionSucceeded(true);
 			break;
 
 		case 4:
 			if (getMp() >= 15) {
-				System.out.println("\n" + getName() + " used Puso ng Saging!");
+				text = "\n" + getName() + " used Puso ng Saging!";
+				typeWriter.typeWriterFast(text);
 				setMp(getMp() - 15);
 				int damage = getAttackPower() + (int)(getAttackPower() * 0.5);
 				target.takeDamage(damage);
@@ -75,7 +79,7 @@ public class Bruid extends Player {
 			break;
 
 		default:
-			System.out.println("Invalid move number!");
+			typeWriter.typeWriterFast("Invalid move number!");
 			setLastActionSucceeded(false);
 			break;
 		}

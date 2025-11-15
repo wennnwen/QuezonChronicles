@@ -3,7 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
-import Main.printAlignmentHub.CenterHub;
+import Main.styles.printAlignmentHub.CenterHub;
 
 public class WaveFiend extends Enemy {
 
@@ -24,7 +24,7 @@ public class WaveFiend extends Enemy {
    @Override
     public void enemyMove(Player player) {
     String text = getName() + " conjures a towering wave, crashing it down on " + player.getName() + "!";
-    centerHub.printRightText(text);
+    centerHub.printRightTextWithTypeWriter(text);
 
     int attackPower = getAttackPower();
 

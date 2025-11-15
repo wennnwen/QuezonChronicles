@@ -2,7 +2,7 @@ package Main.character.player.classes;
 
 import Main.character.player.Player;
 import Main.character.Character;
-import Main.printAlignmentHub.CenterHub;
+import Main.styles.printAlignmentHub.CenterHub;
 
 public class Thief extends Player{
 
@@ -38,14 +38,16 @@ public class Thief extends Player{
     public void useMoves(int moveNumber, Character target) {
         switch(moveNumber){
             case 1:
-                System.out.println("\n" + getName() + " used Stab!");
+                String text = "\n" + getName() + " used Stab!";
+                typeWriter.typeWriterFast(text);
                 target.takeDamage(getAttackPower());
                 setLastActionSucceeded(true);
                 break;
 
             case 2:
                 if (getStamina() >= 10){
-                    System.out.println("\n" + getName() + " used Critical Edge!");
+                    text = "\n" + getName() + " used Critical Edge!";
+                    typeWriter.typeWriterFast(text);
                     setStamina(getStamina() - 10);
                     target.takeDamage(getAttackPower() * 2);
                     setLastActionSucceeded(true);
@@ -57,7 +59,8 @@ public class Thief extends Player{
 
             case 3:
                 if (getStamina() >= 15){
-                    System.out.println("\n" + getName() + " used Vanish!");
+                    text = "\n" + getName() + " used Vanish!";
+                    typeWriter.typeWriterFast(text);
                     addTemporaryDefenseBoost(100, 2);
                     setStamina(getStamina() - 15);
                     setLastActionSucceeded(true);
@@ -68,14 +71,15 @@ public class Thief extends Player{
                 break;
 
             case 4:
-                System.out.println("\n" + getName() + " used Looter's Instinct!");
+                text = "\n" + getName() + " used Looter's Instinct!";
+                typeWriter.typeWriterFast(text);
                 heal(7);
                 addStamina(7);
                 setLastActionSucceeded(true);
                 break;
 
             default:
-                System.out.println("Invalid move number!");
+                typeWriter.typeWriterFast("Invalid move number!");
                 setLastActionSucceeded(false);
                 break;
         }

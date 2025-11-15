@@ -3,7 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
-import Main.printAlignmentHub.CenterHub;
+import Main.styles.printAlignmentHub.CenterHub;
 
 public class OldTrainSpirit extends Enemy {
 
@@ -23,8 +23,8 @@ public class OldTrainSpirit extends Enemy {
 
     @Override
     public void enemyMove(Player player) {
-        centerHub.printRightText("\nThe Old Train Spirit charges with unstoppable force!");
-        centerHub.printRightText("It uses its signature move: 'Iron Charge'!");
+        centerHub.printRightTextWithTypeWriter("The Old Train Spirit charges with unstoppable force!");
+        centerHub.printRightTextWithTypeWriter("It uses its signature move: 'Iron Charge'!");
 
         // Calculate base damage
         int damage = getAttackPower() + 5; // Extra impact for the charge
@@ -38,6 +38,6 @@ public class OldTrainSpirit extends Enemy {
 
         // Cool flavor feedback
         String text = getName() + " rattles the ground as it passes by!";
-        centerHub.printRightText(text);
+        centerHub.printRightTextWithTypeWriter(text);
     }
 }

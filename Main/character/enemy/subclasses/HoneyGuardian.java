@@ -3,7 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
-import Main.printAlignmentHub.CenterHub;
+import Main.styles.printAlignmentHub.CenterHub;
 
 public class HoneyGuardian extends Enemy {
 
@@ -24,7 +24,7 @@ public class HoneyGuardian extends Enemy {
     @Override
     public void enemyMove(Player player) {
         String text = getName() + " summons a horde of angry bees at " + player.getName() + "!";
-        centerHub.printRightText(text);
+        centerHub.printRightTextWithTypeWriter(text);
 
         int attackPower = getAttackPower();
 
@@ -32,7 +32,7 @@ public class HoneyGuardian extends Enemy {
         double critChance = 0.2; // 20% chance
         if (Math.random() < critChance) {
             attackPower *= 2;
-            centerHub.printRightText("Critical hit!");
+            centerHub.printRightTextWithTypeWriter("Critical hit!");
         }
 
         // Deal damage
@@ -41,8 +41,7 @@ public class HoneyGuardian extends Enemy {
         //poison
         double poisonChance = 0.3;
         if (Math.random() < poisonChance) {
-            text = player.getName() + " is poisoned for 2 turns!";
-            centerHub.printRightText(text);
+            centerHub.printRightTextWithTypeWriter(text);
             player.applyDebuff("Poison", 2);
         }
     }

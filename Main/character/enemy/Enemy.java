@@ -3,11 +3,13 @@ package Main.character.enemy;
 import Main.character.Character;
 import Main.character.player.Player;
 import Main.item.*;
-import Main.printAlignmentHub.CenterHub;
+import Main.styles.printAlignmentHub.CenterHub;
+import Main.styles.animationHub.TypeWriter;
 
 public abstract class Enemy extends Character {
 
     protected CenterHub centerHub = new CenterHub();
+    protected TypeWriter typeWriter = new TypeWriter();
 
     private int expReward;
     private Item[] possibleLoot = new Item[2];
@@ -63,11 +65,21 @@ public abstract class Enemy extends Character {
     public void takeDamage(int amount) {
         int reducedDamage = Math.max(0, amount - getDefense());
         setHp(getHp() - reducedDamage);
-        System.out.println(getName() + " took " + String.valueOf(reducedDamage) + " damage.");
+        String text = getName() + " took " + String.valueOf(reducedDamage) + " damage.";
+        typeWriter.typeWriterFast(text);
         if (getHp() <= 0) {
             setHp(0);
         }
     }
+
+    public void heal(int amount) {
+    String text = getName() + " healed " + amount + " HP.";
+    centerHub.printRightTextWithTypeWriter(text);
+    setHp(getHp() + amount);
+    if (getHp() >= getMaxHp()) {
+      setHp(getMaxHp());
+    }
+  }
 
     //Debuff Methods
   public void applyDebuff(String type, int turns) {
@@ -75,11 +87,12 @@ public abstract class Enemy extends Character {
         if (activeDebuffs[i] == null) {
             activeDebuffs[i] = type;
             debuffTurns[i] = turns;
-            System.out.println(getName() + " is afflicted with " + type + " for " + turns + " turns!");
+            String text = getName() + " is afflicted with " + type + " for " + turns + " turns!";
+            typeWriter.typeWriterFast(text);
             return;
         }
     }
-    System.out.println("Too many debuffs active!");
+    typeWriter.typeWriterFast("Too many debuffs active!");
   }
 
   public void updateDebuffs() {
@@ -89,7 +102,8 @@ public abstract class Enemy extends Character {
             applyDebuffEffect(activeDebuffs[i]);
 
             if (debuffTurns[i] <= 0) {
-                System.out.println(activeDebuffs[i] + " wore off!");
+                String text = " wore off!";
+                typeWriter.typeWriterFast(text);
                 activeDebuffs[i] = null;
             }
         }
@@ -97,32 +111,40 @@ public abstract class Enemy extends Character {
   }
 
   public void applyDebuffEffect(String debuff) {
+        String text;
         switch (debuff.toLowerCase()) {
             case "poison":
-                System.out.println(getName() + " takes 2 poison damage!");
+                text = getName() + " takes 2 poison damage!";
+                typeWriter.typeWriterFast(text);
                 takeDamage(2);
                 break;
             case "burn":
-                System.out.println(getName() + " takes 2 burn damage!");
+                text = getName() + " takes 2 burn damage!";
+                typeWriter.typeWriterFast(text);
                 takeDamage(2);
                 break;
             case "absorb":
-                System.out.println(getName() + " feels weaker! Health had been absored by 2");
+                text = getName() + " feels weaker! Health had been absored by 2";
+                typeWriter.typeWriterFast(text);
                 takeDamage(2);
                 break;
             case "defense down":
-                System.out.println(getName() + " feels weaker! Defense temporarily reduced.");
+                text = getName() + " feels weaker! Defense temporarily reduced.";
+                typeWriter.typeWriterFast(text);
                 setDefense(getDefense() - 1);
                 break;
             case "attack down":
-                System.out.println(getName() + " feels their strength fade!");
+                text = getName() + " feels their strength fade!";
+                typeWriter.typeWriterFast(text);
                 setAttackPower(getAttackPower() - 2);
                 break;
             case "stun":
-                System.out.println(getName() + " is stunned and cannot move!");
+                text = getName() + " is stunned and cannot move!";
+                typeWriter.typeWriterFast(text);
                 break;
             case "confusion":
-                System.out.println(getName() + " is confused by the masks!");
+                text = getName() + " is confused by the masks!";
+                typeWriter.typeWriterFast(text);
                 break;             
         }
     }

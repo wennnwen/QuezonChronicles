@@ -3,7 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
-import Main.printAlignmentHub.CenterHub;
+import Main.styles.printAlignmentHub.CenterHub;
 
 public class LopezWolf extends Enemy{
 
@@ -24,7 +24,7 @@ public class LopezWolf extends Enemy{
     @Override
     public void enemyMove(Player player) {
     String text = getName() + " bites " + player.getName() + " with its strong jaws!";
-    centerHub.printRightText(text);
+    centerHub.printRightTextWithTypeWriter(text);
 
     int baseDamage = getAttackPower();
     if (baseDamage < 0) baseDamage = 0;
@@ -34,7 +34,7 @@ public class LopezWolf extends Enemy{
     double critRoll = Math.random();
     if (critRoll < critChance) {
         baseDamage *= 2;
-        centerHub.printRightText("Critical hit!");
+        centerHub.printRightTextWithTypeWriter("Critical hit!");
     }
 
         player.takeDamage(baseDamage);

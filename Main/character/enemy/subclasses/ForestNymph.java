@@ -3,7 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
-import Main.printAlignmentHub.CenterHub;
+import Main.styles.printAlignmentHub.CenterHub;
 
 public class ForestNymph extends Enemy {
 
@@ -24,7 +24,7 @@ public class ForestNymph extends Enemy {
     @Override
     public void enemyMove(Player player) {
         String text = getName() + " glows with green light as her wounds fade.";
-        centerHub.printRightText(text);
+        centerHub.printRightTextWithTypeWriter(text);
 
         //healherself
         heal(18);

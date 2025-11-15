@@ -2,7 +2,7 @@ package Main.character.player.classes;
 
 import Main.character.player.Player;
 import Main.character.Character;
-import Main.printAlignmentHub.CenterHub;
+import Main.styles.printAlignmentHub.CenterHub;
 
 public class Mage extends Player {
    
@@ -36,14 +36,16 @@ public class Mage extends Player {
    public void useMoves(int moveNumber, Character target) {
       switch(moveNumber) {
          case 1:
-            System.out.println("\n" + getName() + " cast a Fire Ball!");
+            String text = "\n" + getName() + " cast a Fire Ball!";
+            typeWriter.typeWriterFast(text);
             target.takeDamage(getAttackPower());
             setLastActionSucceeded(true);
             break;
 
          case 2:
             if (getMp() >= 10) {
-               System.out.println("\n" + getName() + " cast a LambaShield!");
+               text = "\n" + getName() + " cast a LambaShield!";
+               typeWriter.typeWriterFast(text);
                setMp(getMp() - 10);
                addTemporaryDefenseBoost((int)(getDefense() * 0.30), 2);
                setLastActionSucceeded(true);
@@ -54,7 +56,8 @@ public class Mage extends Player {
             break;
 
          case 3:
-            System.out.println("\n" + getName() + " cast a Mana Surge!");
+            text = "\n" + getName() + " cast a Mana Surge!";
+            typeWriter.typeWriterFast(text);
             addMp(20);
 			   System.out.println("Mana Restored by 20 points!");
             setLastActionSucceeded(true); 
@@ -63,7 +66,8 @@ public class Mage extends Player {
          case 4:
             if (getMp() >= 18) {
                setMp(getMp() - 18);
-               System.out.println("\n" + getName() + " cast a Pinagong Storm!");
+               text = "\n" + getName() + " cast a Pinagong Storm!";
+               typeWriter.typeWriterFast(text);
                int damage = getAttackPower() + (int)(getAttackPower() * 0.5);
 				   target.takeDamage(damage);
                   setLastActionSucceeded(true);
@@ -71,6 +75,11 @@ public class Mage extends Player {
             else {
                setLastActionSucceeded(false);
             }
+            break;
+         
+         default:
+            typeWriter.typeWriterFast("Invalid move number!");
+            setLastActionSucceeded(false);
             break;
       }
    }

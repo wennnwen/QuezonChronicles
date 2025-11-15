@@ -2,7 +2,7 @@ package Main.character.player.classes;
 
 import Main.character.player.Player;
 import Main.character.Character;
-import Main.printAlignmentHub.CenterHub;
+import Main.styles.printAlignmentHub.CenterHub;
 
 public class TagalogMonk extends Player {
 
@@ -38,7 +38,8 @@ public class TagalogMonk extends Player {
    public void useMoves(int moveNumber, Character target) {
       switch(moveNumber) {
          case 1:
-            System.out.println("\n" + getName() + " used Suntok ni Apo!");
+            String text = "\n" + getName() + " used Suntok ni Apo!";
+            typeWriter.typeWriterFast(text);
             target.takeDamage(getAttackPower());
             setLastActionSucceeded(true);
             skillUsedTurn();
@@ -46,7 +47,8 @@ public class TagalogMonk extends Player {
 
          case 2:
                if (getStamina() >= 10) {
-                  System.out.println("\n" + getName() + " used Bugso ng Loob!");
+                  text = "\n" + getName() + " used Bugso ng Loob!";
+                  typeWriter.typeWriterFast(text);
                   setStamina(getStamina() - 10);
                   int boostDamage = getAttackPower() + (int)(getAttackPower() * 0.4);
                   target.takeDamage(boostDamage);
@@ -60,7 +62,8 @@ public class TagalogMonk extends Player {
 
          case 3:
             if (getStamina() >= 15) {
-               System.out.println("\n" + getName() + " used a Karma Strike!");
+               text = "\n" + getName() + " used a Karma Strike!";
+               typeWriter.typeWriterFast(text);
                setStamina(getStamina() - 15);
 			      int boostDamage = getAttackPower() + (int)(getAttackPower() * 0.2);
                target.takeDamage(boostDamage);
@@ -79,13 +82,15 @@ public class TagalogMonk extends Player {
             
          case 4:
             if (skillUsedTurn > 0) {
-               System.out.println("You just used Dasal ng Katahimikan. Cannot use for 2 turns!");
+               typeWriter.typeWriterFast("You just used Dasal ng Katahimikan. Cannot use for 2 turns!");
                setLastActionSucceeded(false);
                break;
             }
             else {
-               System.out.println("\n" + getName() + " used Dasal ng Katahimikan");
-               System.out.println(getName() + "'s has healed and gained stamina!");
+               text = "\n" + getName() + " used Dasal ng Katahimikan!";
+               typeWriter.typeWriterFast(text);
+               text = getName() + "'s has healed and gained stamina!";
+               typeWriter.typeWriterFast(text);
                heal((int)(getHp() * 0.3));
                addStamina(1);
                addTemporaryDefenseBoost((int)(getDefense() * 0.25), 2);
@@ -95,8 +100,8 @@ public class TagalogMonk extends Player {
             }
 
          default:
-                System.out.println("Invalid move number!");
-                break;
+               typeWriter.typeWriterFast("Invalid move number!");
+               break;
       }
    }
 

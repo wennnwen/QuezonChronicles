@@ -3,7 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
-import Main.printAlignmentHub.CenterHub;
+import Main.styles.printAlignmentHub.CenterHub;
 
 public class RealSpecter extends Enemy {
 
@@ -24,7 +24,7 @@ public class RealSpecter extends Enemy {
     @Override
     public void enemyMove(Player player) {
         String text = getName() + " unleashes a blood-curdling shriek that chills " + player.getName() + " to the bone!";
-        centerHub.printRightText(text);
+        centerHub.printRightTextWithTypeWriter(text);
 
         int attackPower = getAttackPower();
 
@@ -32,7 +32,7 @@ public class RealSpecter extends Enemy {
         double critChance = 0.5; //50% chance
         if (Math.random() < critChance) {
         attackPower *= 2;
-        centerHub.printRightText("Critical Hit!");
+        centerHub.printRightTextWithTypeWriter("Critical Hit!");
 }
         // Deal damage
         player.takeDamage(attackPower);

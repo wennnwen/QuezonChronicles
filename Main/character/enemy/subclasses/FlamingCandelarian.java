@@ -3,7 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
-import Main.printAlignmentHub.CenterHub;
+import Main.styles.printAlignmentHub.CenterHub;
 
 public class FlamingCandelarian extends Enemy {
 
@@ -23,7 +23,7 @@ public class FlamingCandelarian extends Enemy {
     @Override
     public void enemyMove(Player player) {
         String text = getName() + " releases a burst of flame from its torch!";
-        centerHub.printRightText(text);
+        centerHub.printRightTextWithTypeWriter(text);
 
         int baseDamage = getAttackPower();
         if (baseDamage < 0) baseDamage = 0;
@@ -31,7 +31,7 @@ public class FlamingCandelarian extends Enemy {
         double critChance = 0.2;
         if (Math.random() < critChance) {
             baseDamage *= 2;
-            centerHub.printRightText("Critical hit!");
+            centerHub.printRightTextWithTypeWriter("Critical hit!");
         }
 
         player.takeDamage(baseDamage);

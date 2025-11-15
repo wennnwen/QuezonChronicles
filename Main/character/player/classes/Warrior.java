@@ -2,7 +2,7 @@ package Main.character.player.classes;
 
 import Main.character.player.Player;
 import Main.character.Character;
-import Main.printAlignmentHub.CenterHub;
+import Main.styles.printAlignmentHub.CenterHub;
 
 public class Warrior extends Player{
 
@@ -37,7 +37,8 @@ public class Warrior extends Player{
     public void useMoves(int moveNumber, Character target) {
         switch(moveNumber){
             case 1:
-                System.out.println("\n" + getName() + " used Slash!");
+                String text = "\n" + getName() + " used Slash!";
+                typeWriter.typeWriterFast(text);
                 target.takeDamage(getAttackPower());
                 setLastActionSucceeded(true);
                 skillUsedTurn();
@@ -45,7 +46,8 @@ public class Warrior extends Player{
 
             case 2:
                 if (getStamina() >= 5){
-                    System.out.println("\n" + getName() + " used Cleave!");
+                    text = "\n" + getName() + " used Cleave!";
+                    typeWriter.typeWriterFast(text);
                     setStamina(getStamina() - 5);
                     target.takeDamage((int) (getAttackPower() * 1.5));
                     skillUsedTurn();
@@ -60,7 +62,8 @@ public class Warrior extends Player{
 
             case 3:
                 if (getStamina() >= 3){
-                    System.out.println("\n" + getName() + " used Shield Bash!");
+                    text = "\n" + getName() + " used Shield Bash!";
+                    typeWriter.typeWriterFast(text);
                     target.takeDamage((int) (getAttackPower() * 0.5));
                     double stunChance = 0.25;
                     if(Math.random() <= stunChance){
@@ -79,12 +82,14 @@ public class Warrior extends Player{
 
             case 4:
                 if (skillUsedTurn > 0) {
-                    System.out.println("\nSecond Wind is on cooldown for " + skillUsedTurn + " more turn(s).");
+                    text = "You just used Second Wind. Cannot use for " + skillUsedTurn + " more turn(s).";
+                    typeWriter.typeWriterFast(text);
                     setLastActionSucceeded(false);
                     break;
                 }
                 else{
-                    System.out.println("\n" + getName() + " used Second Wind!");
+                    text = "\n" + getName() + " used Second Wind!";
+                    typeWriter.typeWriterFast(text);
                     heal(15);
                     addStamina(10);
                     skillUsedTurn = 3;
@@ -93,7 +98,7 @@ public class Warrior extends Player{
                 }
 
             default:
-                System.out.println("Invalid move number!");
+                typeWriter.typeWriterFast("Invalid move number!");
                 break;
         }
     }

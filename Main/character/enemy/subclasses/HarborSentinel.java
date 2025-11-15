@@ -3,7 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
-import Main.printAlignmentHub.CenterHub;
+import Main.styles.printAlignmentHub.CenterHub;
 
 public class HarborSentinel extends Enemy {
 
@@ -24,7 +24,7 @@ public class HarborSentinel extends Enemy {
     @Override
     public void enemyMove(Player player) {
         String text = getName() + " uses Anchor Smash on " + player.getName() + "!";
-        centerHub.printRightText(text);
+        centerHub.printRightTextWithTypeWriter(text);
 
         int attackPower = getAttackPower();
 
@@ -32,7 +32,7 @@ public class HarborSentinel extends Enemy {
         double critChance = 0.15;
         if (Math.random() < critChance) {
             attackPower *= 2;
-            centerHub.printRightText("Critical hit!");
+            centerHub.printRightTextWithTypeWriter("Critical hit!");
         }
 
         // Deal damage

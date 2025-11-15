@@ -40,7 +40,7 @@ public class WorldMap {
 
         static String lopezDescription = "Lopez is a peaceful farming town defined by lush, endless fields. Its people live slow, gentle lives, guided by the rhythm of planting and harvest.\n" + 
                                          "Yet, beneath this simplicity lies a profound silence: ancient farming shrines scattered across the fields have begun to crack, and crops are growing\n" + 
-                                         "in unusual patterns. The townsfolk believe that the Harvest Spirits—beings that once protected Lopez—are leaving warnings hidden in the soil.";
+                                         "in unusual patterns. The townsfolk believe that the Harvest Spirits beings that once protected Lopez are leaving warnings hidden in the soil.";
 
         static String calauagDescription = "Calauag is a historic town now ruled with iron discipline by a powerful warlord known as Bansagan the Steel-Tide. His fortified hall stands\n" + 
                                            "upon an old battleground said to be drenched in the spirits of fallen warriors. While Calauag remains orderly and prosperous, its peace is built\n" + 
@@ -52,7 +52,7 @@ public class WorldMap {
                                            "as common as birdsong. The people have learned to survive in constant rain, guided by weather shamans who interpret the sky. But lately, storms grow\n" + 
                                            "unnaturally strong, hitting in patterns the shamans do not recognize. Something out at sea is shaping the weather… and it’s moving closer.";
 
-        static String realDescription = "Real marks the edge of civilization—a cliffside town that overlooks a vast, unforgiving sea. The area is known for eerie mists, abandoned watchtowers,\n" + 
+        static String realDescription = "Real marks the edge of civilization a cliffside town that overlooks a vast, unforgiving sea. The area is known for eerie mists, abandoned watchtowers,\n" + 
                                         "and remnants of old outposts swallowed by the forest. Locals say that beyond Real lies the end of the known world, where uncharted waters and ancient\n" + 
                                         "entities roam. Few who venture eastward ever return, and those who do speak of colossal shapes beneath the waves and voices that echo from the deep.\n" + 
                                         "Real is a place for the brave… or the desperate.";

@@ -8,8 +8,9 @@ import Main.item.*;
 import Main.game.BattleSystem;
 import Main.worldBuilder.WorldMap;
 import Main.worldBuilder.Town;
-import Main.printAlignmentHub.CenterHub;
-import Main.clearScreen.ClearScreen;
+import Main.styles.printAlignmentHub.CenterHub;
+import Main.styles.clearScreen.ClearScreen;
+import Main.styles.animationHub.TypeWriter;;
 
 public class GameMenu {
 
@@ -17,9 +18,10 @@ public class GameMenu {
     private Enemy enemy;
     private BattleSystem battleSystem = new BattleSystem();
     private CenterHub centerHub = new CenterHub();
+    private TypeWriter typeWriter = new TypeWriter();
+    private String name;
 
     public Scanner input = new Scanner(System.in);
-    private String name;
    
     public void showMainMenu() {
         String text;
@@ -363,19 +365,19 @@ public class GameMenu {
 
         if (choice == 1) {
             ClearScreen.clear();
-            System.out.println("You chose the West Side path!");
+            typeWriter.typeWriterFast("You chose the West Side path!");
             player.setChosenPath("west");
             player.setCurrentTownIndex(0);
             startingTown = WorldMap.buildWestPath();
         } else if (choice == 2) {
             ClearScreen.clear();
-            System.out.println("You chose the East Side path!");
+            typeWriter.typeWriterFast("You chose the East Side path!");
             player.setChosenPath("east");
             player.setCurrentTownIndex(0);
             startingTown = WorldMap.buildEastPath();
         } else {
             ClearScreen.clear();
-            System.out.println("Invalid choice. Defaulting to West Side.");
+            typeWriter.typeWriterFast("Invalid choice. Defaulting to West Side.");
             player.setChosenPath("west");
             player.setCurrentTownIndex(0);
             startingTown = WorldMap.buildWestPath();

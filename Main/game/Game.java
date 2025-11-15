@@ -2,8 +2,8 @@ package Main.game;
 
 import Main.game.GameMenu;
 import java.util.Scanner;
-import Main.printAlignmentHub.CenterHub;
-import Main.clearScreen.ClearScreen;
+import Main.styles.printAlignmentHub.CenterHub;
+import Main.styles.clearScreen.ClearScreen;
 
 public class Game {
     private GameMenu menu;

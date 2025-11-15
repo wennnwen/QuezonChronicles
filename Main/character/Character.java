@@ -1,5 +1,7 @@
 package Main.character;
 
+import Main.styles.animationHub.TypeWriter;
+
 public abstract class Character {
   private String name;
   private int maxHp, hp, stamina, mp, attackPower, defense, speed, maxStamina, maxMp;
@@ -8,21 +10,19 @@ public abstract class Character {
   public String[] activeDebuffs = new String[3];
   public int[] debuffTurns = new int[3];
 
+  private TypeWriter typeWriter = new TypeWriter();
+
   //Stun Attribute
   private boolean isStunned;
 
   public abstract void takeDamage(int amount);
-
-  public void heal(int amount) {
-    System.out.println(name + " healed " + amount + " HP.");
-    hp += amount;
-    if (hp >= maxHp) {
-      hp = maxHp;
-    }
-  } 
+  public abstract void applyDebuff(String type, int turns);
+  public abstract void updateDebuffs();
+  public abstract void applyDebuffEffect(String debuff);
+  public abstract void heal(int amount);
 
   public void addStamina(int amount) {
-    System.out.println(name + " regained " + amount + " Stamina.");
+    typeWriter.typeWriterFast(name + " regained " + amount + " Stamina.");
     stamina += amount;
     if (stamina >= maxStamina) {
       stamina = maxStamina;
@@ -30,7 +30,7 @@ public abstract class Character {
   }
 
   public void addMp(int amount) {
-    System.out.println(name + " regained " + amount + " MP.");
+    typeWriter.typeWriterFast(name + " regained " + amount + " MP.");
     mp += amount;
     if (mp >= maxMp) {
       mp = maxMp;
@@ -130,10 +130,6 @@ public abstract class Character {
   public void setSpeed(int newSpeed) {
     speed = newSpeed;
   }
-
-  public abstract void applyDebuff(String type, int turns);
-  public abstract void updateDebuffs();
-  public abstract void applyDebuffEffect(String debuff);
   
   public void removeDebuff() {
     for (int i = 0; i < activeDebuffs.length; i++) {

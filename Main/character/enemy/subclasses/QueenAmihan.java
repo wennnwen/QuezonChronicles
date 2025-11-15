@@ -3,7 +3,7 @@ package Main.character.enemy.subclasses;
 import Main.item.*;
 import Main.character.player.Player;
 import Main.character.enemy.Enemy;
-import Main.printAlignmentHub.CenterHub;
+import Main.styles.printAlignmentHub.CenterHub;
 
 public class QueenAmihan extends Enemy {
 
@@ -23,15 +23,13 @@ public class QueenAmihan extends Enemy {
 
    @Override
     public void enemyMove(Player player) {
-    String text = getName() + " conjures a towering wave, crashing it down on " + player.getName() + "!";
-    centerHub.printRightText(text);
+        String text = getName() + " conjures a towering wave, crashing it down on " + player.getName() + "!";
+        centerHub.printRightTextWithTypeWriter(text);
 
-    int attackPower = getAttackPower();
-    
-    // Deal damage after applying effects
-    player.takeDamage(attackPower);
-    heal(getAttackPower() / 2);
-    String healText = getName() + " heals for " + (getAttackPower() / 2) + " HP!";
-    centerHub.printRightText(healText);
+        int attackPower = getAttackPower();
+        
+        // Deal damage after applying effects
+        player.takeDamage(attackPower);
+        heal(getAttackPower() / 2);
     }
 }
