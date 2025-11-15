@@ -6,7 +6,7 @@ import Main.printAlignmentHub.CenterHub;
 
 public class Mage extends Player {
    
-   private CenterHub centerHub = new CenterHub();
+   private static CenterHub centerHub = new CenterHub();
 
    public Mage(String name) {
       setName(name);
