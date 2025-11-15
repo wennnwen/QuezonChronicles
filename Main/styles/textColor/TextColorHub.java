@@ -11,11 +11,4 @@ public class TextColorHub {
     public static final String BLUE = "\u001B[34m";
     public static final String ORANGE = "\u001B[93m";
     public static final String PURPLE = "\u001B[35m";
-
-    public static void main(String[] args) {
-        System.out.println(RED + "This is red text" + RESET);
-        System.out.println(GREEN + "This is green text" + RESET);
-        System.out.println(YELLOW + "This is yellow text" + RESET);
-        System.out.println(BLUE + "This is blue text" + RESET);
-    }
 }
