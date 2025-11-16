@@ -1,3 +1,8 @@
+package Main.soundtracks.src;
+
+import javazoom.jl.player.Player;
+import java.io.FileInputStream;
+
 public class MusicPlayer {
 
     public static void playMusicAsync(String filePath) {
