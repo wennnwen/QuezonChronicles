@@ -167,7 +167,7 @@ public abstract class Player extends Character {
 
   public void showInventory() {
     String text;
-    System.out.println("\n=========================================================================Inventory======================================================================\n");
+    System.out.println("\n========================================================================Inventory=====================================================================\n");
     inventorySorter();
     for (int i = 0; i < inventory.length; i++) {
       Item item = inventory[i];
