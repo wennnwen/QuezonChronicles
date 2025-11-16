@@ -17,7 +17,7 @@ public class Game {
     }
    
     public void start() {
-        int choice;
+        int choice = 0;
         String text;
         System.out.println("Game Starting in...");
         do {
@@ -31,8 +31,15 @@ public class Game {
             centerHub.printCenteredText(text);
             System.out.println("=====================================================================================================================================================");
             System.out.print("Enter your choice: ");
-            choice = input.nextInt();
-            input.nextLine();
+            try {
+                choice = input.nextInt();
+                input.nextLine();
+            } catch (Exception e) {
+                input.nextLine();
+                ClearScreen.clear();
+                System.out.println("Invalid input. Please enter a number.");
+                continue;
+            }
             
             switch (choice) {
                 case 1:

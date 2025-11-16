@@ -67,7 +67,16 @@ public class Town {
             centerHub.printCenteredText(textColor.PURPLE + "( 5 ) Exit to main menu" + textColor.RESET);
             System.out.println("=====================================================================================================================================================");
             System.out.print("Enter your Choice: ");
-            int choice = sc.nextInt();
+            int choice;
+            try {
+                choice = sc.nextInt();
+                sc.nextLine();
+            } catch (Exception e) {
+                sc.nextLine();
+                ClearScreen.clear();
+                System.out.println("Invalid input. Please enter a number.");
+                continue;
+            }
 
             switch (choice) {
                 case 1:

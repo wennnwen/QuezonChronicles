@@ -37,16 +37,31 @@ public class GameMenu {
         while (player == null) {
             showClasses();
             inputMessager();
-            int classChoice = input.nextInt();
-            input.nextLine();
+            int classChoice;
+            try {
+                classChoice = input.nextInt();
+                input.nextLine();
+            } catch (Exception e) {
+                input.nextLine();
+                ClearScreen.clear();
+                System.out.println("Invalid input. Please enter a number.");
+                continue;
+            }
 
             switch (classChoice) {
                 case 1:
-                    int confirmChoice1;
+                    int confirmChoice1 = 0;
                     do {
                         confirmationMessager();
-                        confirmChoice1 = input.nextInt();
-                        input.nextLine();
+                        try {
+                            confirmChoice1 = input.nextInt();
+                            input.nextLine();
+                        } catch (Exception e) {
+                            input.nextLine();
+                            ClearScreen.clear();
+                            System.out.println("Invalid input. Please enter a number.");
+                            continue;
+                        }
                         if (confirmChoice1 == 1) {
                             ClearScreen.clear();
                             player = new Bruid(name);
@@ -76,11 +91,18 @@ public class GameMenu {
                     break;
                 
                 case 2:
-                    int confirmChoice2;
+                    int confirmChoice2 = 0;
                     do {
                         confirmationMessager();
-                        confirmChoice2 = input.nextInt();
-                        input.nextLine();
+                        try {
+                            confirmChoice2 = input.nextInt();
+                            input.nextLine();
+                        } catch (Exception e) {
+                            input.nextLine();
+                            ClearScreen.clear();
+                            System.out.println("Invalid input. Please enter a number.");
+                            continue;
+                        }
                         if (confirmChoice2 == 1) {
                             ClearScreen.clear();
                             player = new Mage(name);
@@ -110,11 +132,18 @@ public class GameMenu {
                     break;
                 
                 case 3:
-                    int confirmChoice3;
+                    int confirmChoice3 = 0;
                     do {
                         confirmationMessager();
-                        confirmChoice3 = input.nextInt();
-                        input.nextLine();
+                        try {
+                            confirmChoice3 = input.nextInt();
+                            input.nextLine();
+                        } catch (Exception e) {
+                            input.nextLine();
+                            ClearScreen.clear();
+                            System.out.println("Invalid input. Please enter a number.");
+                            continue;
+                        }
                         if (confirmChoice3 == 1) {
                             ClearScreen.clear();
                             player = new TagalogMonk(name);
@@ -145,11 +174,18 @@ public class GameMenu {
                     break;
                 
                 case 4:
-                    int confirmChoice4;
+                    int confirmChoice4 = 0;
                     do {
                         confirmationMessager();
-                        confirmChoice4 = input.nextInt();
-                        input.nextLine();
+                        try {
+                            confirmChoice4 = input.nextInt();
+                            input.nextLine();
+                        } catch (Exception e) {
+                            input.nextLine();
+                            ClearScreen.clear();
+                            System.out.println("Invalid input. Please enter a number.");
+                            continue;
+                        }
                         if (confirmChoice4 == 1) {
                             ClearScreen.clear();
                             player = new Thief(name);
@@ -180,11 +216,18 @@ public class GameMenu {
                     break;
                 
                 case 5:
-                    int confirmChoice5;
+                    int confirmChoice5 = 0;
                     do {
                         confirmationMessager();
-                        confirmChoice5 = input.nextInt();
-                        input.nextLine();
+                        try {
+                            confirmChoice5 = input.nextInt();
+                            input.nextLine();
+                        } catch (Exception e) {
+                            input.nextLine();
+                            ClearScreen.clear();
+                            System.out.println("Invalid input. Please enter a number.");
+                            continue;
+                        }
                         if (confirmChoice5 == 1) {
                             ClearScreen.clear();
                             player = new Warrior(name);
@@ -234,8 +277,15 @@ public class GameMenu {
             centerHub.printCenteredText(text);
             System.out.println("=====================================================================================================================================================");
             inputMessager();
-            choice = input.nextInt();
-            input.nextLine();
+            try {
+                choice = input.nextInt();
+                input.nextLine();
+            } catch (Exception e) {
+                input.nextLine();
+                ClearScreen.clear();
+                System.out.println("Invalid input. Please enter a number.");
+                continue;
+            }
 
             switch (choice) {
                 case 1:
@@ -364,7 +414,16 @@ public class GameMenu {
         centerHub.printCenteredText(textColor.YELLOW + "Gumaca" + textColor.RESET + " → " + textColor.BLUE + "Lopez (Miniboss)" + textColor.RESET + " → " + textColor.GREEN + "Calauag" + textColor.RESET + " → " + textColor.ORANGE + "Infanta" + textColor.RESET + " → " + textColor.RED + "Real (Boss)" + textColor.RESET);
         System.out.println("\n=====================================================================================================================================================");
         inputMessager();
-        int choice = input.nextInt();
+        int choice;
+        try {
+            choice = input.nextInt();
+            input.nextLine();
+        } catch (Exception e) {
+            input.nextLine();
+            ClearScreen.clear();
+            typeWriter.typeWriterFast("Invalid input. Defaulting to West Side.");
+            choice = 1;
+        }
         Town startingTown;
 
         if (choice == 1) {
