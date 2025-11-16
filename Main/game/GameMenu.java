@@ -259,7 +259,7 @@ public class GameMenu {
 
                 default:
                     ClearScreen.clear();
-                    System.out.print("Invalid input. Try again.");
+                    System.out.println("Invalid input. Try again.");
                     break;
             }
         }

@@ -258,7 +258,7 @@ public class BattleSystem {
             try {
                 return Integer.parseInt(line.trim());
             } catch (NumberFormatException e) {
-                System.out.print("Invalid input. \nPlease enter a number: ");
+                System.out.println("Invalid input. \nPlease enter a number: ");
             }
         }
     }
