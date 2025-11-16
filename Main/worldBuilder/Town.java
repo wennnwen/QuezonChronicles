@@ -81,8 +81,8 @@ public class Town {
                         player.setEnemiesDefeatedInTown(enemiesDefeated);
                     } else if (boss != null && enemiesDefeated == (enemies != null ? enemies.length : 0)) {
                         ClearScreen.clear();
-                        typeWriter.typeWriterFast("\nYou've reached the boss battle!");
-                        typeWriter.typeWriterFast("\nThe boss of " + name + " appears: " + boss.getName() + "!");
+                        typeWriter.typeWriterFast(textColor.RED + "\nYou've reached the boss battle!" + textColor.RESET);
+                        typeWriter.typeWriterFast(textColor.RED + "\nThe boss of " + name + " appears: " + boss.getName() + "!" + textColor.RESET);
                         new BattleSystem().BattleStart(player, boss);
                         enemiesDefeated++;
                         player.setEnemiesDefeatedInTown(enemiesDefeated);

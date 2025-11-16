@@ -91,7 +91,7 @@ public class Thief extends Player{
         String text;
 		System.out.println("===================================================================== " + textColor.PURPLE + "Thief Stats" + textColor.RESET + " ==================================================================");
 		text = "Health: " + String.valueOf(getHp()) + "/" + String.valueOf(getMaxHp());
-    	centerHub.printCenteredText(textColor.RED + text + textColor.RESET);
+    	centerHub.printCenteredText(textColor.GREEN + text + textColor.RESET);
 		text = "Stamina: " + String.valueOf(getStamina()) + "/" + String.valueOf(getMaxStamina());
     	centerHub.printCenteredText(textColor.YELLOW + text + textColor.RESET);
 		text = "Defense: " + String.valueOf(getDefense());

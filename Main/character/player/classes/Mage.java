@@ -90,7 +90,7 @@ public class Mage extends Player {
 		String text;
       System.out.println("===================================================================== " + textColor.BLUE + "Mage Stats" + textColor.RESET + " ===================================================================");
 		text = "Health: " + String.valueOf(getHp()) + "/" + String.valueOf(getMaxHp());
-    	centerHub.printCenteredText(textColor.RED + text + textColor.RESET);
+    	centerHub.printCenteredText(textColor.GREEN + text + textColor.RESET);
 		text = "Mana: " + String.valueOf(getMp()) + "/" + String.valueOf(getMaxMp());
     	centerHub.printCenteredText(textColor.BLUE + text + textColor.RESET);
 		text = "Defense: " + String.valueOf(getDefense());
