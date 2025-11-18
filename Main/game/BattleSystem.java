@@ -201,7 +201,6 @@ public class BattleSystem {
                 }
             }
             else {
-                ClearScreen.clear();
                 System.out.println("Invalid input. \nPlease try again!");
             }
         }
