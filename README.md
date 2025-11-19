@@ -91,7 +91,6 @@ Below are the balance changes I applied to player characters and some major enem
 - Thief: HP 85 | Stamina 60 | Defense 5 | Attack 22 | Speed 14
   - Level up: +6 HP, +3 Stamina, +0 Defense, +2 Attack, +1 Speed
 
-> Note: I updated the `setBaseStats(...)` calls and the per-class `levelStats()` methods to match these numbers in the code.
 
 ### Boss / miniboss examples (rebalanced)
 - Harbor Sentinel (miniboss): HP 140 | Attack 20 | Defense 14 | Speed 6 | Exp 650
@@ -99,7 +98,6 @@ Below are the balance changes I applied to player characters and some major enem
 - Don Mariano (boss): HP 220 | Attack 30 | Defense 14 | Exp 2000
 - Queen Amihan (final boss): HP 240 | Attack 28 | Defense 12 | Speed 20 | Exp 3000
 
-> I intentionally targeted minibosses and named bosses to make them more durable. If you prefer softer progression or more punishing boss fights, I can adjust these numbers (or implement scaling based on player level).
 
 ---
 
