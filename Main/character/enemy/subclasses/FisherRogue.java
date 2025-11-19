@@ -9,13 +9,14 @@ public class FisherRogue extends Enemy {
 
     public FisherRogue() {
         setName("Fisher Rogue");
+        // Mid game enemy - Town 3 (East)
         setMaxHp(80);
         setHp(80);
-        setAttackPower(13); 
-        setDefense(7);
-        setSpeed(14);
+        setAttackPower(16); 
+        setDefense(6);
+        setSpeed(8);
 
-        setExpReward(85);
+        setExpReward(60);
 
         // Possible loot
         setPossibleLoot(new Item[]{new AdobongPusit(), new DriedFishSnack()});

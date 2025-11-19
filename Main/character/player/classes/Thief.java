@@ -11,13 +11,14 @@ public class Thief extends Player{
 
     public Thief(String name){
         setName(name);
-        setMaxHp(80);
-        setHp(80);
+        // Balanced base stats for Thief (high speed & crit, glassy)
+        setMaxHp(85);
+        setHp(85);
         setStamina(60);
         setMaxStamina(60);
         setDefense(5);
-        setAttackPower(25);
-        setSpeed(12);
+        setAttackPower(22);
+        setSpeed(14);
         description =
                 "Swift, sly, and sharp as a blade hidden beneath a cloak, the Thief dances between the lines of law and survival.\n" +
                 "Born from the bustling streets, back alleys, and midnight markets, Thieves are experts in deception, timing, and taking what the world refuses to give.\n\n" +
@@ -26,7 +27,7 @@ public class Thief extends Player{
                 "In a world ruled by power, the Thief survives through diskarte.";
 
         // Capture base stats for proper reset behavior
-        setBaseStats(80, 60, 60, 0, 0, 5, 25, 12);
+        setBaseStats(85, 60, 60, 0, 0, 5, 22, 14);
         setUsesMp(false);
 
         setMoves(new String[] {"1. Stab (Basic + no stamina required)",
@@ -109,13 +110,14 @@ public class Thief extends Player{
    
 	@Override 
 	public void levelStats() {
- 		setMaxHp(getMaxHp() + 5);
-		setHp(getHp() + 5);
-		setStamina(getStamina() + 2);
-        setMaxStamina(getMaxStamina() + 2);
-		setDefense(getDefense() + 1);
-		setAttackPower(getAttackPower() + 1);
-		setSpeed(getSpeed() + 1);
+        // Thief gains small max HP and stamina but grows in speed and critical damage
+        setMaxHp(getMaxHp() + 6);
+        setHp(getHp() + 6);
+        setStamina(getStamina() + 3);
+        setMaxStamina(getMaxStamina() + 3);
+        setDefense(getDefense() + 0);
+        setAttackPower(getAttackPower() + 2);
+        setSpeed(getSpeed() + 1);
 	}
 }
 

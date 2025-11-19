@@ -8,15 +8,16 @@ import Main.styles.textColor.TextColorHub;
 
 public class BakeryGremlin extends Enemy{
 
-    public BakeryGremlin(){
+    public BakeryGremlin() {
         setName("Bakery Gremlin");
+        // Mid game enemy - Town 3
         setMaxHp(80);
         setHp(80);
-        setAttackPower(10);
+        setAttackPower(16);
         setDefense(6);
         setSpeed(8);
 
-        setExpReward(55);
+        setExpReward(60);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Pinagong(), new Budin()});

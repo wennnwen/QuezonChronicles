@@ -9,13 +9,14 @@ public class SumanMimic extends Enemy {
 
     public SumanMimic() {
         setName("Suman Mimic");
-        setMaxHp(80);
-        setHp(80);
-        setAttackPower(6);
-        setDefense(1);
-        setSpeed(7);
+        // Early-mid game enemy - Town 2 (East)
+        setMaxHp(60);
+        setHp(60);
+        setAttackPower(12);
+        setDefense(4);
+        setSpeed(6);
 
-        setExpReward(60);
+        setExpReward(40);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Tinuto(), new PugonCoffee()});

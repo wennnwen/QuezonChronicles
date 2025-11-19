@@ -9,13 +9,14 @@ public class CoconutBrigade extends Enemy {
 
     public CoconutBrigade() {
         setName("Coconut Brigade");
-        setMaxHp(60);
-        setHp(60);
-        setAttackPower(8);
-        setDefense(6);
-        setSpeed(9);
+        // Mid game enemy - Town 3
+        setMaxHp(90);
+        setHp(90);
+        setAttackPower(19);
+        setDefense(7);
+        setSpeed(7);
 
-        setExpReward(60);
+        setExpReward(75);
 
         setPossibleLoot(new Item[]{new Lambanog(), new Pinagong()});
     }

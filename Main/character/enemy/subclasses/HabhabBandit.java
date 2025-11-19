@@ -9,13 +9,14 @@ public class HabhabBandit extends Enemy{
 
     public HabhabBandit() {
         setName("Habhab Bandit");
-        setMaxHp(60);
-        setHp(60);
-        setAttackPower(8);
-        setDefense(2);
-        setSpeed(14);
+        // Early game enemy - Town 1
+        setMaxHp(50);
+        setHp(50);
+        setAttackPower(10);
+        setDefense(3);
+        setSpeed(6);
 
-        setExpReward(25);
+        setExpReward(30);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Habhab(), new LongganisangLucban()});

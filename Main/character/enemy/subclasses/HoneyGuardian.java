@@ -9,13 +9,14 @@ public class HoneyGuardian extends Enemy {
 
     public HoneyGuardian() {
         setName("Honey Guardian");
-        setMaxHp(80);
-        setHp(80);
-        setAttackPower(16); 
-        setDefense(7);
-        setSpeed(11);
+        // Mid-late game enemy - Town 4 (East)
+        setMaxHp(100);
+        setHp(100);
+        setAttackPower(21);
+        setDefense(8);
+        setSpeed(8);
 
-        setExpReward(160);
+        setExpReward(90);
 
         // Possible loot
         setPossibleLoot(new Item[]{new LambanogLecheFlan(), new MountainHoney()});

@@ -9,13 +9,14 @@ public class HarborSentinel extends Enemy {
 
     public HarborSentinel() {
         setName("Harbor Sentinel");
-        setMaxHp(80);
-        setHp(80);
-        setAttackPower(16); 
-        setDefense(12);     
-        setSpeed(2);        
+        // Miniboss - Town 2
+        setMaxHp(140);
+        setHp(140);
+        setAttackPower(20); 
+        setDefense(8);     
+        setSpeed(6);        
 
-        setExpReward(220);
+        setExpReward(150);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Chami(), new CocoJam()});

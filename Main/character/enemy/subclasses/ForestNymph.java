@@ -9,13 +9,14 @@ public class ForestNymph extends Enemy {
 
     public ForestNymph() {
         setName("Forest Nymph");
-        setMaxHp(80);
-        setHp(80);
-        setAttackPower(10); 
+        // Mid-late game enemy - Town 4 (East)
+        setMaxHp(95);
+        setHp(95);
+        setAttackPower(20); 
         setDefense(8);
         setSpeed(10);
 
-        setExpReward(125);
+        setExpReward(85);
 
         // Possible loot
         setPossibleLoot(new Item[]{new LambanogLecheFlan(), new MountainHoney()});

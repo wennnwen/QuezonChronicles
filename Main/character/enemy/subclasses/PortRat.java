@@ -9,13 +9,14 @@ public class PortRat extends Enemy{
 
     public PortRat(){
         setName("Port Rat");
-        setMaxHp(45);
-        setHp(45);
-        setAttackPower(6);
-        setDefense(3);
+        // Early-mid game enemy - Town 2
+        setMaxHp(60);
+        setHp(60);
+        setAttackPower(12);
+        setDefense(4);
         setSpeed(13);
 
-        setExpReward(20);
+        setExpReward(40);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Chami(), new CocoJam()});

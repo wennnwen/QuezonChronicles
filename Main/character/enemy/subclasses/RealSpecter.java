@@ -9,13 +9,14 @@ public class RealSpecter extends Enemy {
 
     public RealSpecter() {
         setName("Real Specter");
-        setMaxHp(50);
-        setHp(50);
-        setAttackPower(5); 
-        setDefense(10);
-        setSpeed(14);
+        // Late game enemy - Town 5 (East)
+        setMaxHp(125);
+        setHp(125);
+        setAttackPower(26); 
+        setDefense(11);
+        setSpeed(12);
 
-        setExpReward(350);
+        setExpReward(120);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Tinuto(), new PugonCoffee()});

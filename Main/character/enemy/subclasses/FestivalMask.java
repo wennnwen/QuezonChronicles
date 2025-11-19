@@ -9,14 +9,15 @@ public class FestivalMask extends Enemy {
 
     public FestivalMask() {
         setName("Festival Mask");
-        setMaxHp(85);
-        setHp(85);
-        setAttackPower(5);
-        setDefense(4);
-        setSpeed(10);
+        // Early game enemy - Town 1 (East)
+        setMaxHp(40);
+        setHp(40);
+        setAttackPower(8);
+        setDefense(2);
+        setSpeed(5);
         setSkillUsedTurn(2);
 
-        setExpReward(50);
+        setExpReward(25);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Tinuto(), new PugonCoffee()});

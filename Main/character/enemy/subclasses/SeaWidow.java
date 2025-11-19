@@ -9,13 +9,14 @@ public class SeaWidow extends Enemy {
 
     public SeaWidow() {
         setName("Sea Widow");
-        setMaxHp(110);
-        setHp(110);
-        setAttackPower(2); 
-        setDefense(3);
-        setSpeed(9);
+        // Mid game enemy - Town 3 (East)
+        setMaxHp(85);
+        setHp(85);
+        setAttackPower(18); 
+        setDefense(6);
+        setSpeed(7);
 
-        setExpReward(110);
+        setExpReward(70);
 
         // Possible loot
         setPossibleLoot(new Item[]{new AdobongPusit(), new DriedFishSnack()});

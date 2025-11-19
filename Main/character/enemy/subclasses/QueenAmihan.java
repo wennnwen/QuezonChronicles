@@ -9,13 +9,14 @@ public class QueenAmihan extends Enemy {
 
     public QueenAmihan() {
         setName("Queen Amihan");
-        setMaxHp(100);
-        setHp(100);
-        setAttackPower(10); 
-        setDefense(6);
-        setSpeed(25);
+        // Final boss - increased health and attack, unique wave heal ability remains
+        setMaxHp(240);
+        setHp(240);
+        setAttackPower(28); 
+        setDefense(12);
+        setSpeed(20);
 
-        setExpReward(1500);
+        setExpReward(3000);
 
         // Possible loot
         setPossibleLoot(new Item[]{new SinigangHipon(), new TropicalBreezeJuice()});

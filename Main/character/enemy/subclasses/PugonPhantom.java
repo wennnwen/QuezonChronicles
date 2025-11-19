@@ -9,13 +9,14 @@ public class PugonPhantom extends Enemy {
 
     public PugonPhantom() {
         setName("Pugon Phantom");
-        setMaxHp(80);
-        setHp(80);
-        setAttackPower(5);
-        setDefense(3);
-        setSpeed(11);
+        // Late game enemy - Town 5
+        setMaxHp(115);
+        setHp(115);
+        setAttackPower(24);
+        setDefense(10);
+        setSpeed(10);
         
-        setExpReward(600);
+        setExpReward(110);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Tinuto(), new PugonCoffee()});

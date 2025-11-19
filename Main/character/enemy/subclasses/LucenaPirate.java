@@ -7,15 +7,16 @@ import Main.styles.printAlignmentHub.CenterHub;
 
 public class LucenaPirate extends Enemy{
 
-    public LucenaPirate(){
+    public LucenaPirate() {
         setName("Lucena Pirate");
-        setMaxHp(80);
-        setHp(80);
-        setAttackPower(10);
+        // Early-mid game enemy - Town 2
+        setMaxHp(70);
+        setHp(70);
+        setAttackPower(14);
         setDefense(5);
-        setSpeed(12);
+        setSpeed(7);
 
-        setExpReward(180);
+        setExpReward(50);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Chami(), new CocoJam()});

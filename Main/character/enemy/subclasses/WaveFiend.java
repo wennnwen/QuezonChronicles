@@ -9,13 +9,14 @@ public class WaveFiend extends Enemy {
 
     public WaveFiend() {
         setName("Wave Fiend");
-        setMaxHp(100);
-        setHp(100);
-        setAttackPower(5); 
-        setDefense(1);
+        // Late game enemy - Town 5 (East)
+        setMaxHp(115);
+        setHp(115);
+        setAttackPower(24); 
+        setDefense(10);
         setSpeed(10);
 
-        setExpReward(650);
+        setExpReward(110);
 
         // Possible loot
         setPossibleLoot(new Item[]{new SinigangHipon(), new TropicalBreezeJuice()});

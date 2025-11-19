@@ -8,14 +8,15 @@ import Main.styles.printAlignmentHub.CenterHub;
 public class KipingGolem extends Enemy {
 
     public KipingGolem() {
-        setName("Kipping Golem");
-        setMaxHp(80);
-        setHp(80);
-        setAttackPower(12);
-        setDefense(6);
-        setSpeed(5);
+        setName("Kiping Golem");
+        // Early game enemy - Town 1 (East)
+        setMaxHp(50);
+        setHp(50);
+        setAttackPower(10);
+        setDefense(3);
+        setSpeed(4);
 
-        setExpReward(80);
+        setExpReward(30);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Tinuto(), new PugonCoffee()});

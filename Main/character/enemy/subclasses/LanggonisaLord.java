@@ -9,13 +9,14 @@ public class LanggonisaLord extends Enemy {
 
     public LanggonisaLord() {
         setName("Langgonisa Lord");
-        setMaxHp(40);
-        setHp(40);
-        setAttackPower(7);
-        setDefense(5);
+        // Early game enemy - Town 1
+        setMaxHp(55);
+        setHp(55);
+        setAttackPower(11);
+        setDefense(4);
         setSpeed(5);
 
-        setExpReward(50);
+        setExpReward(35);
 
         // Possible loot — themed after Lucban’s specialties
         setPossibleLoot(new Item[]{new KipingDelight(), new Habhab()});

@@ -9,13 +9,14 @@ public class BibingkaElemental extends Enemy {
 
     public BibingkaElemental() {
         setName("Bibingka Elemental");
-        setMaxHp(80);
-        setHp(80);
-        setAttackPower(10); 
-        setDefense(5);
+        // Mid-late game enemy - Town 4
+        setMaxHp(95);
+        setHp(95);
+        setAttackPower(20); 
+        setDefense(8);
         setSpeed(8);
 
-        setExpReward(95);
+        setExpReward(85);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Bibingka(), new Panutsa()});

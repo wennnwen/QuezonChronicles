@@ -9,13 +9,14 @@ public class TiaongKnight extends Enemy {
 
     public TiaongKnight() {
         setName("Tiaong Knight");
-        setMaxHp(150);
-        setHp(150);
-        setAttackPower(5); 
-        setDefense(2);
+        // Late game enemy - Town 5
+        setMaxHp(125);
+        setHp(125);
+        setAttackPower(26); 
+        setDefense(11);
         setSpeed(9);
 
-        setExpReward(60);
+        setExpReward(120);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Tinuto(), new PugonCoffee()});

@@ -73,3 +73,33 @@ Tip: Running `javac` this way compiles all project files. If you want to target 
 - Styling utilities: `Main/styles/*` — look at `TypeWriter`, `TextColorHub`, and `CenterHub` for console effects.
 - The `Player` system stores path progress; death resets player using `Player.resetProgress()`.
 - Inventory is static across `Player` instances (currently sized 10).
+
+---
+
+## 🎯 Balancing changes (implemented)
+Below are the balance changes I applied to player characters and some major enemies to make progression clearer and more consistent:
+
+### Player classes (base stats at Level 1)
+- Warrior: HP 140 | Stamina 50 | Defense 12 | Attack 18 | Speed 5
+  - Level up: +10 HP, +5 Stamina, +1 Defense, +2 Attack
+- Mage: HP 70 | MP 120 | Defense 6 | Attack 12 | Speed 18
+  - Level up: +5 HP, +8 MP, +1 Defense, +2 Attack
+- Bruid: HP 100 | MP 80 | Defense 8 | Attack 12 | Speed 6
+  - Level up: +8 HP, +6 MP, +1 Defense, +2 Attack
+- Tagalog Monk: HP 110 | Stamina 50 | Defense 8 | Attack 16 | Speed 8
+  - Level up: +8 HP, +3 Stamina, +1 Defense, +2 Attack
+- Thief: HP 85 | Stamina 60 | Defense 5 | Attack 22 | Speed 14
+  - Level up: +6 HP, +3 Stamina, +0 Defense, +2 Attack, +1 Speed
+
+> Note: I updated the `setBaseStats(...)` calls and the per-class `levelStats()` methods to match these numbers in the code.
+
+### Boss / miniboss examples (rebalanced)
+- Harbor Sentinel (miniboss): HP 140 | Attack 20 | Defense 14 | Speed 6 | Exp 650
+- Old Train Spirit (miniboss): HP 160 | Attack 18 | Defense 10 | Exp 400
+- Don Mariano (boss): HP 220 | Attack 30 | Defense 14 | Exp 2000
+- Queen Amihan (final boss): HP 240 | Attack 28 | Defense 12 | Speed 20 | Exp 3000
+
+> I intentionally targeted minibosses and named bosses to make them more durable. If you prefer softer progression or more punishing boss fights, I can adjust these numbers (or implement scaling based on player level).
+
+---
+

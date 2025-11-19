@@ -7,15 +7,16 @@ import Main.styles.printAlignmentHub.CenterHub;
 
 public class LopezWolf extends Enemy{
 
-    public LopezWolf(){
+    public LopezWolf() {
         setName("Lopez Wolf");
-        setMaxHp(50);
-        setHp(80);
-        setAttackPower(12);
+        // Early-mid game enemy - Town 2 (East)
+        setMaxHp(70);
+        setHp(70);
+        setAttackPower(14);
         setDefense(5);
-        setSpeed(16);
+        setSpeed(10);
 
-        setExpReward(90);
+        setExpReward(50);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Tinuto(), new PugonCoffee()});

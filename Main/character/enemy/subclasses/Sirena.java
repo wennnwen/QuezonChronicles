@@ -9,14 +9,15 @@ public class Sirena extends Enemy {
 
     public Sirena() {
         setName("Gumacan Sirena");
-        setMaxHp(100);
-        setHp(100);
-        setAttackPower(5);
-        setDefense(3);
+        // Early game enemy - Town 1 (East)
+        setMaxHp(55);
+        setHp(55);
+        setAttackPower(11);
+        setDefense(4);
         setSpeed(8);
         setSkillUsedTurn(3);
 
-        setExpReward(60);
+        setExpReward(35);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Tinuto(), new PugonCoffee()});

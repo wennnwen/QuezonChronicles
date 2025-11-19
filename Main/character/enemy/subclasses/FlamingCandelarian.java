@@ -8,14 +8,15 @@ import Main.styles.printAlignmentHub.CenterHub;
 public class FlamingCandelarian extends Enemy {
 
     public FlamingCandelarian() {
-        setName("Flaming Cadelarian");
-        setMaxHp(80);
-        setHp(80);
-        setAttackPower(10);
-        setDefense(7);
-        setSpeed(7);
+        setName("Flaming Candelarian");
+        // Mid-late game enemy - Town 4
+        setMaxHp(105);
+        setHp(105);
+        setAttackPower(22);
+        setDefense(9);
+        setSpeed(10);
 
-        setExpReward(120);
+        setExpReward(95);
 
         setPossibleLoot(new Item[]{new Bibingka(), new Panutsa()});
     }
