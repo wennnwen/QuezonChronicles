@@ -194,6 +194,7 @@ public class BattleSystem {
                         System.out.println("Invalid item choice.");
                     }
                     else {
+                        ClearScreen.clear();
                         inventory[itemIndex].useItem(player);
                         player.removeItem(itemIndex);
                         validInput = true;
