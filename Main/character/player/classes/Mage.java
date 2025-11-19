@@ -9,6 +9,8 @@ public class Mage extends Player {
    
    private static CenterHub centerHub = new CenterHub();
 
+   public static int skillUsedTurn;
+
    public Mage(String name) {
       setName(name);
       // Balanced base stats for Mage (glass cannon / caster)
@@ -41,6 +43,7 @@ public class Mage extends Player {
             String text = "\n" + getName() + " cast a Fire Ball!";
             typeWriter.typeWriterFast(text);
             target.takeDamage(getAttackPower());
+            skillUsedTurn();
             setLastActionSucceeded(true);
             break;
 
@@ -50,6 +53,7 @@ public class Mage extends Player {
                typeWriter.typeWriterFast(text);
                setMp(getMp() - 10);
                addTemporaryDefenseBoost((int)(getDefense() * 0.30), 2);
+               skillUsedTurn();
                setLastActionSucceeded(true);
             }
             else {
@@ -58,12 +62,21 @@ public class Mage extends Player {
             break;
 
          case 3:
-            text = "\n" + getName() + " cast a Mana Surge!";
-            typeWriter.typeWriterFast(text);
-            addMp(20);
-			   System.out.println("Mana Restored by 20 points!");
-            setLastActionSucceeded(true); 
-            break;
+            if(skillUsedTurn > 0){
+               text = "You just used Mana Surge. Cannot use for " + skillUsedTurn + " more turn(s).";
+               typeWriter.typeWriterFast(text);
+               setLastActionSucceeded(false);
+               break;
+            }
+            else{
+               text = "\n" + getName() + " cast a Mana Surge!";
+               typeWriter.typeWriterFast(text);
+               addMp(25);
+               System.out.println("Mana Restored by 25 points!");
+               skillUsedTurn = 2;
+               setLastActionSucceeded(true); 
+               break;
+            }
 
          case 4:
             if (getMp() >= 18) {
@@ -72,7 +85,8 @@ public class Mage extends Player {
                typeWriter.typeWriterFast(text);
                int damage = getAttackPower() + (int)(getAttackPower() * 0.5);
 				   target.takeDamage(damage);
-                  setLastActionSucceeded(true);
+               skillUsedTurn();
+               setLastActionSucceeded(true);
             }
             else {
                setLastActionSucceeded(false);
@@ -118,4 +132,16 @@ public class Mage extends Player {
       setAttackPower(getAttackPower() + 2);
       setSpeed(getSpeed() + 0);
 	}
+
+   public static void skillUsedTurn() {
+      if (skillUsedTurn <= 0) {
+         skillUsedTurn = 0;
+      }
+      else {
+         skillUsedTurn--;
+         if (skillUsedTurn == 0) {
+            System.out.println("Mana Surge is ready!");
+         }
+      }
+   }
 }

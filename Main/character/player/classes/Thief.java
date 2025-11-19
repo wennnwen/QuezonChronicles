@@ -9,6 +9,8 @@ public class Thief extends Player{
 
     private CenterHub centerHub = new CenterHub();
 
+    public static int skillUsedTurn;
+
     public Thief(String name){
         setName(name);
         // Balanced base stats for Thief (high speed & crit, glassy)
@@ -43,6 +45,7 @@ public class Thief extends Player{
                 String text = "\n" + getName() + " used Stab!";
                 typeWriter.typeWriterFast(text);
                 target.takeDamage(getAttackPower());
+                skillUsedTurn();
                 setLastActionSucceeded(true);
                 break;
 
@@ -52,6 +55,7 @@ public class Thief extends Player{
                     typeWriter.typeWriterFast(text);
                     setStamina(getStamina() - 10);
                     target.takeDamage(getAttackPower() * 2);
+                    skillUsedTurn();
                     setLastActionSucceeded(true);
                 }
                 else {
@@ -65,6 +69,7 @@ public class Thief extends Player{
                     typeWriter.typeWriterFast(text);
                     addTemporaryDefenseBoost(100, 2);
                     setStamina(getStamina() - 15);
+                    skillUsedTurn();
                     setLastActionSucceeded(true);
                 }
                 else {
@@ -73,12 +78,21 @@ public class Thief extends Player{
                 break;
 
             case 4:
+                if(skillUsedTurn > 0){
+               text = "You just used Looter's Instinct. Cannot use for " + skillUsedTurn + " more turn(s).";
+               typeWriter.typeWriterFast(text);
+               setLastActionSucceeded(false);
+               break;
+            }
+            else{
                 text = "\n" + getName() + " used Looter's Instinct!";
                 typeWriter.typeWriterFast(text);
-                heal(7);
-                addStamina(7);
+                heal(8);
+                addStamina(15);
+                skillUsedTurn = 2;
                 setLastActionSucceeded(true);
                 break;
+            }
 
             default:
                 typeWriter.typeWriterFast("Invalid move number!");
@@ -119,5 +133,17 @@ public class Thief extends Player{
         setAttackPower(getAttackPower() + 2);
         setSpeed(getSpeed() + 1);
 	}
+
+    public static void skillUsedTurn() {
+    if (skillUsedTurn <= 0) {
+        skillUsedTurn = 0;
+    }
+    else {
+        skillUsedTurn--;
+        if (skillUsedTurn == 0) {
+            System.out.println("Looter's Instinct is ready!");
+        }
+      }
+   }
 }
 

@@ -6,7 +6,11 @@ import Main.styles.printAlignmentHub.CenterHub;
 import Main.styles.animationHub.TypeWriter;
 
 public class Bruid extends Player {
-  
+
+	private static CenterHub centerHub = new CenterHub();
+
+	public static int skillUsedTurn;
+
 	public Bruid(String name) {
 		setName(name);
 		// Balanced base stats for Bruid (support / hybrid)
@@ -22,13 +26,13 @@ public class Bruid extends Player {
 				"Unlike typical druids who revere oaks or vines, the Bruid channels the resilience, flexibility, and masabaw na energy of the banana.\n" +
 				"They are both protectors and pranksters of the wild, often seen communing with their leafy kin while humming folk tunes from the provinces.";
 
-	// Capture base stats for proper reset behavior
-	setBaseStats(100, 0, 0, 80, 80, 8, 12, 6);
-	  setUsesMp(true);
+		// Capture base stats for proper reset behavior
+		setBaseStats(100, 0, 0, 80, 80, 8, 12, 6);
+		setUsesMp(true);
    
   		setMoves(new String[] {"1. Banana Strike (Basic + no mana required)", 
    							"2. Front Shield (Banana tree fronds wrap around the character, reducing incoming damage by 25% for 2 turns. 10 MP)", 
-   							"3. Healing Grove (Restores moderate MP, using the banana tree's life force.)", 
+   							"3. Mana Grove (Restores moderate MP, using the banana tree's life force.)", 
    							"4. Puso ng Saging (The druid summons a giant banana heart that explodes, dealing heavy damage and a 20% chance to stun. 15 MP)"});
 	}
 	
@@ -40,6 +44,7 @@ public class Bruid extends Player {
 			typeWriter.typeWriterFast(text);
 			target.takeDamage(getAttackPower());
 			setLastActionSucceeded(true);
+            skillUsedTurn();
 			break;
 
 		case 2:
@@ -49,6 +54,7 @@ public class Bruid extends Player {
 				setMp(getMp() - 10);
 				addTemporaryDefenseBoost((int)(getDefense() * 0.25), 2);
 				setLastActionSucceeded(true);
+				skillUsedTurn();
 			}
 			else {
 				setLastActionSucceeded(false);
@@ -57,11 +63,21 @@ public class Bruid extends Player {
 			break;
 
 		case 3:
-			text = "\n" + getName() + " used Healing Grove!";
-			typeWriter.typeWriterFast(text);
-			addMp(25);
-			setLastActionSucceeded(true);
-			break;
+			if(skillUsedTurn > 0){
+               text = "You just used Mana Grove. Cannot use for " + skillUsedTurn + " more turn(s).";
+               typeWriter.typeWriterFast(text);
+               setLastActionSucceeded(false);
+               break;
+            }
+            else{
+               text = "\n" + getName() + " cast a Mana Grove!";
+               typeWriter.typeWriterFast(text);
+               addMp(25);
+               System.out.println("Mana Restored by 25 points!");
+               skillUsedTurn = 2;
+               setLastActionSucceeded(true); 
+               break;
+            }
 
 		case 4:
 			if (getMp() >= 15) {
@@ -71,6 +87,7 @@ public class Bruid extends Player {
 				int damage = getAttackPower() + (int)(getAttackPower() * 0.5);
 				target.takeDamage(damage);
 				setLastActionSucceeded(true);
+				skillUsedTurn();
 			}
 			else {
 				setLastActionSucceeded(false);
@@ -116,4 +133,16 @@ public class Bruid extends Player {
 		setAttackPower(getAttackPower() + 2);
 		setSpeed(getSpeed() + 0);
 	}
+
+	public static void skillUsedTurn() {
+      if (skillUsedTurn <= 0) {
+         skillUsedTurn = 0;
+      }
+      else {
+         skillUsedTurn--;
+         if (skillUsedTurn == 0) {
+            System.out.println("Recovering Grove is ready!");
+         }
+      }
+   }
 }

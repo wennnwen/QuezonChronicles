@@ -1,5 +1,10 @@
 Main/worldBuilder/WorldMap.java
 Main/worldBuilder/Town.java
+Main/styles/animationHub/LoadingDots.java
+Main/styles/animationHub/TypeWriter.java
+Main/styles/printAlignmentHub/CenterHub.java
+Main/styles/clearScreen/ClearScreen.java
+Main/styles/textColor/TextColorHub.java
 Main/Main.java
 Main/game/BattleSystem.java
 Main/game/Game.java
@@ -45,6 +50,7 @@ Main/character/enemy/subclasses/FlamingCandelarian.java
 Main/character/enemy/subclasses/ForestNymph.java
 Main/character/enemy/subclasses/HoneyGuardian.java
 Main/character/enemy/subclasses/HarborSentinel.java
+Main/character/enemy/subclasses/Jm.java
 Main/character/enemy/subclasses/CoconutBrigade.java
 Main/character/enemy/subclasses/HabhabBandit.java
 Main/character/enemy/subclasses/FestivalMask.java
