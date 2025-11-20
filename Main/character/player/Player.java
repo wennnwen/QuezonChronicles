@@ -96,6 +96,10 @@ public abstract class Player extends Character {
     return attackMoves;
   }
 
+  public String[] getActiveDebuffs() {
+    return activeDebuffs;
+  }
+
 	//setter
   public void setUsesMp(boolean usesMp) {
     this.usesMp = usesMp;
