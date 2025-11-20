@@ -9,10 +9,11 @@ import Main.styles.textColor.TextColorHub;
 public class Alwynn extends Enemy{
 
     public Alwynn(Player player) {
+        double levelScaler = (double) player.getLevel() / 4;
         setName("All in Alwynn");
-        setMaxHp(85);
-        setHp(85);
-        setAttackPower(10);
+        setMaxHp((int)Math.floor(85.0 * levelScaler));
+        setHp((int)Math.floor(85.0 * levelScaler));
+        setAttackPower((int)Math.floor(10.0 * levelScaler));
         setDefense(6);
         setSpeed(8);
 
@@ -30,7 +31,7 @@ public class Alwynn extends Enemy{
         String confuseText = getName() + " dashes in a chaotic zigzag pattern, confusing " + player.getName() + " before striking multiple times!";
         centerHub.printRightTextWithTypeWriter(confuseText);
 
-        int numberOfHits = 2;
+        int numberOfHits = 3;
         int totalDamage = 0;
 
         // High critical hit chance

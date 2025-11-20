@@ -12,10 +12,11 @@ public class Red extends Enemy{
     private int tickingTimer = 5; // Countdown timer before explosion
 
     public Red(Player player) {
+        double levelScaler = (double) player.getLevel() / 4;
         setName("Bomb Devil Red");
-        setMaxHp(85);
-        setHp(85);
-        setAttackPower(16);
+        setMaxHp((int)Math.floor(85.0 * levelScaler));
+        setHp((int)Math.floor(85.0 * levelScaler));
+        setAttackPower((int)Math.floor(16.0 * levelScaler));
         setDefense(6);
         setSpeed(8);
 

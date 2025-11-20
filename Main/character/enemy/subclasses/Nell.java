@@ -9,10 +9,11 @@ import Main.styles.textColor.TextColorHub;
 public class Nell extends Enemy{
 
     public Nell(Player player) {
+        double levelScaler = (double) player.getLevel() / 4;
         setName("Sariayan Ninja Nell");
-        setMaxHp(85);
-        setHp(85);
-        setAttackPower(5);
+        setMaxHp((int)Math.floor(85.0 * levelScaler));
+        setHp((int)Math.floor(85.0 * levelScaler));
+        setAttackPower((int)Math.floor(5.0 * levelScaler));
         setDefense(3);
         setSpeed(8);
 
