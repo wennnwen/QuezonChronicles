@@ -93,6 +93,7 @@ public class Town {
                             Enemy enemy = new Alwynn();
                             text = "A wild " + enemy.getName() + " appeared!";
                             typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
+typeWriter.typeWriterFast(textColor.GREEN + "Bro followed you all the way from the Atimonan!" + textColor.RESET);
                             new BattleSystem().BattleStart(player, enemy);
                         }
                         else if (bossChance > 0.25 && bossChance <= 0.5) {
