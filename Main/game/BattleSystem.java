@@ -108,6 +108,8 @@ public class BattleSystem {
                     }
                 }
                 else {
+                    ClearScreen.clear();
+                    printCombatStatus(player, enemy);
                     enemyTurn(player, enemy);
                     enemy.updateSkillUsedTurn();
                     enemy.updateDebuffs();
@@ -120,7 +122,6 @@ public class BattleSystem {
         handleVictory(player, enemy);
 
         if (!player.isAlive()) {
-            ClearScreen.clear();
             System.out.println(textColor.RED + "Game over! You have been slained!" + textColor.RESET);
             return;
         }
@@ -203,6 +204,8 @@ public class BattleSystem {
             }
             else {
                 System.out.println("Invalid input. \nPlease try again!");
+                printCombatStatus(player, enemy);
+                System.out.println();
             }
         }
     }

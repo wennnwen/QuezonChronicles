@@ -53,7 +53,6 @@ System.out.println("\n==========================================================
 
         while (true) {
             if (player.getHp() == 0) {
-                System.out.println("You have fallen in battle!");
                 System.out.println("Resetting your progress and returning to the main menu...");
                 // Reset player progress on death
                 player.resetProgress();
