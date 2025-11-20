@@ -40,9 +40,9 @@ public class Town {
 
     public void enterTown(Player player, int townIndex) {
 
-String text = "Chapter " + String. valueOf(player.getCurrentTownIndex + 1);
-centerHub.printCenteredTextWithTypeWriter(text);
-System.out.println();      System.out.println("\n====================================================================== " + textColor.GREEN + name.toUpperCase() + textColor.RESET + " =======================================================================\n");
+String text = "CHAPTER " + String. valueOf(player.getCurrentTownIndex() + 1);
+centerHub.printCenteredTextWithTypeWriter(text);    
+System.out.println("\n====================================================================== " + textColor.GREEN + name.toUpperCase() + textColor.RESET + " =======================================================================\n");
         centerHub.printCenteredTextWithTypeWriter(description);
 
         // Load progress if returning to this town
@@ -86,7 +86,7 @@ System.out.println();      System.out.println("\n===============================
                     if (enemies != null && enemiesDefeated < enemies.length) {
                         ClearScreen.clear();
                         Enemy enemy = enemies[enemiesDefeated];
-                        String text = "A wild " + enemy.getName() + " appeared!";
+                        text = "A wild " + enemy.getName() + " appeared!";
                         typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
                         new BattleSystem().BattleStart(player, enemy);
                         enemiesDefeated++;
@@ -109,7 +109,7 @@ System.out.println();      System.out.println("\n===============================
                     if ((boss == null && enemiesDefeated >= 3) || (boss != null && enemiesDefeated >= 3)) {
                         if (nextTown != null) {
                             ClearScreen.clear();
-                            String text = "Preparing to travel to " + nextTown.name;
+                            text = "Preparing to travel to " + nextTown.name;
                             loadingDots.loadingDotsAnimation(textColor.GREEN + text + textColor.RESET);
                             ClearScreen.clear();
                             text = "You've just arrived in " + nextTown.name;
@@ -137,7 +137,7 @@ if (player.getChosenPath().equals("west")) {
 "yet the land still hums with secrets hidden beyond the horizon.\n" +
 "A path remains unexplored.\n" +
 "A threat remains unseen.\n" +
-"Your adventure is far from finished."
+"Your adventure is far from finished.");
 }
 else {
 	centerHub.printCenteredTextWithTypeWriter("The waves of Real crash softly behind you as you take one last look at the eastern horizon.\n" +
@@ -149,7 +149,7 @@ else {
 "you feel a pull—something unfinished,\n" +
 "a whisper carried by the sea breeze…\n\n" +
 "Your journey isn’t over.\n" +
-"Not yet."
+"Not yet.");
 } 
 
                             player.setChosenPath(null); // Allow new path selection after completion
