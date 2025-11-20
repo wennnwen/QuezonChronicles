@@ -19,7 +19,7 @@ public class Red extends Enemy{
         setDefense(6);
         setSpeed(8);
 
-        setExpReward(60);
+        setExpReward(500);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Lambanog(), new PugonCoffee()});

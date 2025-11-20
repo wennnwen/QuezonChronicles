@@ -12,11 +12,11 @@ public class Eduard extends Enemy{
         setName("Aladdin of Mindoro, Eduard");
         setMaxHp(85);
         setHp(85);
-        setAttackPower(16);
+        setAttackPower(9);
         setDefense(6);
         setSpeed(8);
 
-        setExpReward(60);
+        setExpReward(330);
 
         // Possible loot
         setPossibleLoot(new Item[]{new MountainHoney(), new Turon()});

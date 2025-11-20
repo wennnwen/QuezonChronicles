@@ -12,11 +12,11 @@ public class Alwynn extends Enemy{
         setName("All in Alwynn");
         setMaxHp(85);
         setHp(85);
-        setAttackPower(16);
+        setAttackPower(10);
         setDefense(6);
         setSpeed(8);
 
-        setExpReward(60);
+        setExpReward(350);
 
         // Possible loot
         setPossibleLoot(new Item[]{new Chami(), new CocoJam()});
@@ -30,7 +30,7 @@ public class Alwynn extends Enemy{
         String confuseText = getName() + " dashes in a chaotic zigzag pattern, confusing " + player.getName() + " before striking multiple times!";
         centerHub.printRightTextWithTypeWriter(confuseText);
 
-        int numberOfHits = 3;
+        int numberOfHits = 2;
         int totalDamage = 0;
 
         // High critical hit chance

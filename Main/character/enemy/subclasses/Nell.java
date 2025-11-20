@@ -12,11 +12,11 @@ public class Nell extends Enemy{
         setName("Sariayan Ninja Nell");
         setMaxHp(85);
         setHp(85);
-        setAttackPower(16);
-        setDefense(6);
+        setAttackPower(5);
+        setDefense(3);
         setSpeed(8);
 
-        setExpReward(60);
+        setExpReward(450);
 
         // Possible loot
         setPossibleLoot(new Item[]{new BananaChips(), new DriedFishSnack()});

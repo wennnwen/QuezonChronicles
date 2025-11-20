@@ -13,7 +13,7 @@ public class Jm extends Enemy {
         setName("Super Sariayan Jm");
         setMaxHp(280);
         setHp(280);
-        setAttackPower(28);
+        setAttackPower(12);
         setDefense(12);
         setSpeed(15);
 
