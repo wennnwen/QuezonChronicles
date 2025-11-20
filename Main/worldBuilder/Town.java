@@ -99,7 +99,7 @@ typeWriter.typeWriterFast(textColor.GREEN + "Bro followed you all the way from t
                         else if (bossChance > 0.25 && bossChance <= 0.5) {
                             Enemy enemy = new Eduard();
                             text = "A wild " + enemy.getName() + " appeared!";
-                            typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
+                            typeWriter.typeWriterFast(textColor.ORANGE + text + textColor.RESET);
                             new BattleSystem().BattleStart(player, enemy);
                         }
                         else if (bossChance > 0.5 && bossChance <= 0.75) {
