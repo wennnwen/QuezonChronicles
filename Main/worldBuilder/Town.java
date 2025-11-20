@@ -41,7 +41,8 @@ public class Town {
     public void enterTown(Player player, int townIndex) {
 
 String text = "Chapter " + String. valueOf(player.getCurrentTownIndex + 1);
-       System.out.println("\n====================================================================== " + textColor.GREEN + name.toUpperCase() + textColor.RESET + " =======================================================================\n");
+centerHub.printCenteredTextWithTypeWriter(text);
+System.out.println();      System.out.println("\n====================================================================== " + textColor.GREEN + name.toUpperCase() + textColor.RESET + " =======================================================================\n");
         centerHub.printCenteredTextWithTypeWriter(description);
 
         // Load progress if returning to this town
