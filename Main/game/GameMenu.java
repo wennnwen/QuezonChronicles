@@ -21,6 +21,8 @@ public class GameMenu {
     private CenterHub centerHub = new CenterHub();
     private TypeWriter typeWriter = new TypeWriter();
     private TextColorHub textColor = new TextColorHub();
+    private ClearScreen clearScreen = new ClearScreen();
+    private WorldMap worldMap = new WorldMap();
     private String name;
 
     public Scanner input = new Scanner(System.in);
@@ -317,6 +319,7 @@ public class GameMenu {
                     break;
 
                 case 4:
+                    clearScreen.clear();
                     System.out.println("Exiting the Game...");
                     break;
 
@@ -384,7 +387,7 @@ public class GameMenu {
             System.out.println("=====================================================================================================================================================");
             
             Town resumeTown = player.getChosenPath().equals("west") ? 
-                WorldMap.buildWestPath() : WorldMap.buildEastPath();
+                worldMap.buildWestPath() : worldMap.buildEastPath();
             
             // Navigate to the current town
             Town currentTown = resumeTown;
@@ -431,19 +434,19 @@ public class GameMenu {
             typeWriter.typeWriterFast(textColor.RED + "You chose the West Side path!" + textColor.RESET);
             player.setChosenPath("west");
             player.setCurrentTownIndex(0);
-            startingTown = WorldMap.buildWestPath();
+            startingTown = worldMap.buildWestPath();
         } else if (choice == 2) {
             ClearScreen.clear();
             typeWriter.typeWriterFast(textColor.BLUE + "You chose the East Side path!" + textColor.RESET);
             player.setChosenPath("east");
             player.setCurrentTownIndex(0);
-            startingTown = WorldMap.buildEastPath();
+            startingTown = worldMap.buildEastPath();
         } else {
             ClearScreen.clear();
             typeWriter.typeWriterFast("Invalid choice. Defaulting to West Side.");
             player.setChosenPath("west");
             player.setCurrentTownIndex(0);
-            startingTown = WorldMap.buildWestPath();
+            startingTown = worldMap.buildWestPath();
         }
 
         startingTown.enterTown(player, 0);

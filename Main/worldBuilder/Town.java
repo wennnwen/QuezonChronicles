@@ -22,6 +22,7 @@ public class Town {
     private TypeWriter typeWriter = new TypeWriter();
     private LoadingDots loadingDots = new LoadingDots();
     private TextColorHub textColor = new TextColorHub();
+    private ClearScreen clearScreen = new ClearScreen();
 
     public Town(String name, String description, Enemy[] enemies, Enemy boss) {
         this.name = name;
@@ -40,7 +41,7 @@ public class Town {
 
     public void enterTown(Player player, int townIndex) {
 
-String text = "CHAPTER " + String. valueOf(player.getCurrentTownIndex() + 1);
+String text = "CHAPTER " + String.valueOf(townIndex + 1);
 centerHub.printCenteredTextWithTypeWriter(text);    
 System.out.println("\n====================================================================== " + textColor.GREEN + name.toUpperCase() + textColor.RESET + " =======================================================================\n");
         centerHub.printCenteredTextWithTypeWriter(description);
@@ -191,6 +192,7 @@ else {
                 case 5:
                     loadingDots.customLoadingDotsAnimation("Returning to main menu", 3, 500, 5000);
                     System.out.println();
+                    clearScreen.clear();
                     return;
 
                 default:

@@ -5,6 +5,8 @@ import Main.character.enemy.subclasses.*;
 import Main.styles.textColor.TextColorHub;
 
 public class WorldMap {
+       
+        public WorldMap() { }
 
         private static TextColorHub textColor = new TextColorHub();
 
