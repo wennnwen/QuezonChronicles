@@ -127,30 +127,30 @@ System.out.println("\n==========================================================
                         } else {
                             ClearScreen.clear();
                             typeWriter.typeWriterFast("You've reached the end of your journey!\n");
-centerHub.printCenteredTextWithTypeWriter("Epilogue");
-System.out.println("\n===================================================================================================================================================");
-if (player.getChosenPath().equals("west")) {
-	centerHub.printCenteredTextWithTypeWriter("The farmland winds of Tiaong brush against your shoulders as you return from your final battle.\n" +
-"You crossed the western roads fields, forests, and bustling towns—\n" +
-"leaving behind stories that the locals will pass down for years.\n" +
-"Tiaong stands safer because of you,\n" +
-"yet the land still hums with secrets hidden beyond the horizon.\n" +
-"A path remains unexplored.\n" +
-"A threat remains unseen.\n" +
-"Your adventure is far from finished.");
-}
-else {
-	centerHub.printCenteredTextWithTypeWriter("The waves of Real crash softly behind you as you take one last look at the eastern horizon.\n" +
-"You faced the storms, the cliffs, and the wild edges of Quezon’s coast—\n" +
-"and through every trial, you stood firm.\n\n" +
-"The people of Real will remember the traveler who walked in from Atimonan\n" +
-"and left as a protector of the east.\n\n" +
-"Yet even as peace settles over the shoreline,\n" +
-"you feel a pull—something unfinished,\n" +
-"a whisper carried by the sea breeze…\n\n" +
-"Your journey isn’t over.\n" +
-"Not yet.");
-} 
+                            centerHub.printCenteredTextWithTypeWriter("Epilogue");
+                            System.out.println("\n===================================================================================================================================================");
+                            if (player.getChosenPath().equals("west")) {
+                                centerHub.printCenteredTextWithTypeWriter("The farmland winds of Tiaong brush against your shoulders as you return from your final battle.\n" +
+                            "You crossed the western roads fields, forests, and bustling towns—\n" +
+                            "leaving behind stories that the locals will pass down for years.\n" +
+                            "Tiaong stands safer because of you,\n" +
+                            "yet the land still hums with secrets hidden beyond the horizon.\n" +
+                            "A path remains unexplored.\n" +
+                            "A threat remains unseen.\n" +
+                            "Your adventure is far from finished.");
+                            }
+                            else {
+                                centerHub.printCenteredTextWithTypeWriter("The waves of Real crash softly behind you as you take one last look at the eastern horizon.\n" +
+                            "You faced the storms, the cliffs, and the wild edges of Quezon’s coast—\n" +
+                            "and through every trial, you stood firm.\n\n" +
+                            "The people of Real will remember the traveler who walked in from Atimonan\n" +
+                            "and left as a protector of the east.\n\n" +
+                            "Yet even as peace settles over the shoreline,\n" +
+                            "you feel a pull—something unfinished,\n" +
+                            "a whisper carried by the sea breeze…\n\n" +
+                            "Your journey isn’t over.\n" +
+                            "Not yet.");
+                            } 
 
                             player.setChosenPath(null); // Allow new path selection after completion
                             player.setCurrentTownIndex(0);
