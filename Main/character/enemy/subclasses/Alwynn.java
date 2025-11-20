@@ -8,7 +8,7 @@ import Main.styles.textColor.TextColorHub;
 
 public class Alwynn extends Enemy{
 
-    public Alwynn() {
+    public Alwynn(Player player) {
         setName("All in Alwynn");
         setMaxHp(85);
         setHp(85);

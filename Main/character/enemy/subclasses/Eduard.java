@@ -8,11 +8,12 @@ import Main.styles.textColor.TextColorHub;
 
 public class Eduard extends Enemy{
 
-    public Eduard() {
+    public Eduard(Player player) {
+        int LevelScaler = player.getLevel() / 4;
         setName("Aladdin of Mindoro, Eduard");
-        setMaxHp(85);
-        setHp(85);
-        setAttackPower(9);
+        setMaxHp(85 * levelScaler);
+        setHp(85 * levelScaler);
+        setAttackPower(9 * levelScaler);
         setDefense(6);
         setSpeed(8);
 

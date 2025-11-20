@@ -90,25 +90,25 @@ public class Town {
                         ClearScreen.clear();
                         double bossChance = Math.random();
                         if (bossChance <= 0.25) {
-                            Enemy enemy = new Alwynn();
+                            Enemy enemy = new Alwynn(player);
                             text = "A wild " + enemy.getName() + " appeared!";
                             typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
                             new BattleSystem().BattleStart(player, enemy);
                         }
                         else if (bossChance > 0.25 && bossChance <= 0.5) {
-                            Enemy enemy = new Eduard();
+                            Enemy enemy = new Eduard(player);
                             text = "A wild " + enemy.getName() + " appeared!";
                             typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
                             new BattleSystem().BattleStart(player, enemy);
                         }
                         else if (bossChance > 0.5 && bossChance <= 0.75) {
-                            Enemy enemy = new Nell();
+                            Enemy enemy = new Nell(player);
                             text = "A wild " + enemy.getName() + " appeared!";
                             typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
                             new BattleSystem().BattleStart(player, enemy);
                         }
                         else if (bossChance > 0.75) {
-                            Enemy enemy = new Red();
+                            Enemy enemy = new Red(player);
                             text = "A wild " + enemy.getName() + " appeared!";
                             typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
                             new BattleSystem().BattleStart(player, enemy);

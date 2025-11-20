@@ -11,7 +11,7 @@ public class Red extends Enemy{
     //PLAYERS MUST KILL THIS ENEMY BEFORE THE TIMER HITS 0 for balance have a lot of health
     private int tickingTimer = 5; // Countdown timer before explosion
 
-    public Red() {
+    public Red(Player player) {
         setName("Bomb Devil Red");
         setMaxHp(85);
         setHp(85);

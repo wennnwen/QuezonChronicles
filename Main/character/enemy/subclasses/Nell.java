@@ -8,7 +8,7 @@ import Main.styles.textColor.TextColorHub;
 
 public class Nell extends Enemy{
 
-    public Nell() {
+    public Nell(Player player) {
         setName("Sariayan Ninja Nell");
         setMaxHp(85);
         setHp(85);
