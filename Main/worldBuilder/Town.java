@@ -105,10 +105,11 @@ typeWriter.typeWriterFast(textColor.GREEN + "Bro followed you all the way from t
                         else if (bossChance > 0.5 && bossChance <= 0.75) {
                             Enemy enemy = new Nell();
                             text = "A wild " + enemy.getName() + " appeared!";
-                            typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
+                            typeWriter.typeWriterFast(textColor.CYAN + text + textColor.RESET);
+typeWriter.typeWriterFast(textColor.CYAN + "You didn’t see him coming—he’s from Sariaya, after all." + textColor.RESET);
                             new BattleSystem().BattleStart(player, enemy);
                         }
-                        else if (bossChance > 0.75) {
+                        else if (bossChance > 0.75 && bossChance <= 1) {
                             Enemy enemy = new Red();
                             text = "A wild " + enemy.getName() + " appeared!";
                             typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
