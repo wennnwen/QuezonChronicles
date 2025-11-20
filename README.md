@@ -304,6 +304,10 @@ Level: 2
 
 ### Development
 Developed as a comprehensive Java educational project demonstrating OOP principles, design patterns, and game architecture.
+1. Alwynn Bitog
+2. John Red bols
+3. Nhel alladin
+4. Nil jano
 ---
 
 ## 📞 Support & Contribution
