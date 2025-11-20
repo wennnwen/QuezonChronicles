@@ -39,7 +39,9 @@ public class Town {
     }
 
     public void enterTown(Player player, int townIndex) {
-        System.out.println("\n====================================================================== " + textColor.GREEN + name.toUpperCase() + textColor.RESET + " =======================================================================\n");
+
+String text = "Chapter " + player.
+       System.out.println("\n====================================================================== " + textColor.GREEN + name.toUpperCase() + textColor.RESET + " =======================================================================\n");
         centerHub.printCenteredTextWithTypeWriter(description);
 
         // Load progress if returning to this town
