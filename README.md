@@ -345,8 +345,8 @@ Place holder for now
 |----------|----------|----------|
 | <img src="images/wyn.jpg" width="120">| Aguho, Alwynn L. | Lead Developer 1    |
 |<img src="images/red.jpg" width="120">| Jamilano, John Red S. | Lead Developer 2    |
-|<img src="images/nhel.jpg" width="120">| Cortuna, Nhel Edward B. |  Row 3     |
-|<img src="images/nell.jpg" width="120">| Mapalad, Nell John Cedrick J. | Row 4 |
+|<img src="images/nhel.jpg" width="120">| Cortuna, Nhel Edward B. |  UI Designer / Tester    |
+|<img src="images/nell.jpg" width="120">| Mapalad, Nell John Cedrick J. | UI Designer / Tester |
 
 ---
 
