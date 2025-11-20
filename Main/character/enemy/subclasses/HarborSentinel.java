@@ -12,8 +12,8 @@ public class HarborSentinel extends Enemy {
         // Miniboss - Town 2
         setMaxHp(140);
         setHp(140);
-        setAttackPower(20); 
-        setDefense(8);     
+        setAttackPower(20);
+        setDefense(8);
         setSpeed(6);        
 
         setExpReward(150);

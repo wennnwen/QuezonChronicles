@@ -10,9 +10,9 @@ public class Eduard extends Enemy{
 
     public Eduard() {
         setName("Aladdin of Mindoro, Eduard");
-        setMaxHp(80);
-        setHp(80);
-        setAttackPower(4);
+        setMaxHp(85);
+        setHp(85);
+        setAttackPower(16);
         setDefense(6);
         setSpeed(8);
 

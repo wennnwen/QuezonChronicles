@@ -12,9 +12,9 @@ public class HeritageWraith extends Enemy{
         // Mid game enemy - Town 3
         setMaxHp(85);
         setHp(85);
-        setAttackPower(18);
+        setAttackPower(16);
         setDefense(6);
-        setSpeed(9);
+        setSpeed(8);
 
         setExpReward(70);
 

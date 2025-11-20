@@ -10,9 +10,9 @@ public class Alwynn extends Enemy{
 
     public Alwynn() {
         setName("All in Alwynn");
-        setMaxHp(80);
-        setHp(80);
-        setAttackPower(4);
+        setMaxHp(85);
+        setHp(85);
+        setAttackPower(16);
         setDefense(6);
         setSpeed(8);
 

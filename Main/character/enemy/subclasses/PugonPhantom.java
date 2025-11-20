@@ -10,9 +10,9 @@ public class PugonPhantom extends Enemy {
     public PugonPhantom() {
         setName("Pugon Phantom");
         // Late game enemy - Town 5
-        setMaxHp(115);
-        setHp(115);
-        setAttackPower(24);
+        setMaxHp(120);
+        setHp(120);
+        setAttackPower(25);
         setDefense(10);
         setSpeed(10);
         

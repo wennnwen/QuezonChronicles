@@ -10,10 +10,10 @@ public class DonMariano extends Enemy {
     public DonMariano() {
         setName("Don Mariano");
         // Increased boss durability and loot value
-        setMaxHp(220);
-        setHp(220);
-        setAttackPower(30);
-        setDefense(14);
+        setMaxHp(240);
+        setHp(240);
+        setAttackPower(28);
+        setDefense(12);
         setSpeed(6);
         setSkillUsedTurn(2);
 

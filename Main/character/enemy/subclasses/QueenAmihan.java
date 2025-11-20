@@ -12,7 +12,7 @@ public class QueenAmihan extends Enemy {
         // Final boss - increased health and attack, unique wave heal ability remains
         setMaxHp(240);
         setHp(240);
-        setAttackPower(28); 
+        setAttackPower(28);
         setDefense(12);
         setSpeed(20);
 

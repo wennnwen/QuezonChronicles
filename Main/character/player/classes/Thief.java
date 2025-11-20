@@ -19,7 +19,7 @@ public class Thief extends Player{
         setStamina(60);
         setMaxStamina(60);
         setDefense(5);
-        setAttackPower(22);
+        setAttackPower(18);
         setSpeed(14);
         description =
                 "Swift, sly, and sharp as a blade hidden beneath a cloak, the Thief dances between the lines of law and survival.\n" +
@@ -29,7 +29,7 @@ public class Thief extends Player{
                 "In a world ruled by power, the Thief survives through diskarte.";
 
         // Capture base stats for proper reset behavior
-        setBaseStats(85, 60, 60, 0, 0, 5, 22, 14);
+        setBaseStats(85, 60, 60, 0, 0, 5, 18, 14);
         setUsesMp(false);
 
         setMoves(new String[] {"1. Stab (Basic + no stamina required)",
@@ -125,12 +125,12 @@ public class Thief extends Player{
 	@Override 
 	public void levelStats() {
         // Thief gains small max HP and stamina but grows in speed and critical damage
-        setMaxHp(getMaxHp() + 6);
-        setHp(getHp() + 6);
-        setStamina(getStamina() + 3);
-        setMaxStamina(getMaxStamina() + 3);
-        setDefense(getDefense() + 0);
-        setAttackPower(getAttackPower() + 2);
+        setMaxHp(getMaxHp() + 7);
+        setHp(getHp() + 7);
+        setStamina(getStamina() + 4);
+        setMaxStamina(getMaxStamina() + 4);
+        setDefense(getDefense() + 1);
+        setAttackPower(getAttackPower() + 3);
         setSpeed(getSpeed() + 1);
 	}
 

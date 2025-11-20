@@ -10,11 +10,11 @@ public class InfantaShade extends Enemy {
     public InfantaShade() {
         setName("Infanta Shade");
         // Mid-late game enemy - Town 4 (East)
-        setMaxHp(105);
-        setHp(105);
-        setAttackPower(22);
-        setDefense(9);
-        setSpeed(11);
+        setMaxHp(100);
+        setHp(100);
+        setAttackPower(21);
+        setDefense(8);
+        setSpeed(9);
 
         setExpReward(95);
 

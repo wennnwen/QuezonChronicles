@@ -19,7 +19,7 @@ public class Bruid extends Player {
 		setMp(80);
 		setMaxMp(80);
 		setDefense(8);
-		setAttackPower(12);
+		setAttackPower(14);
 		setSpeed(6);
 		description = 
 				"Half forest guardian, half Bisakol wonder, the Bruid is a nature-touched warrior who draws strength from the sacred punò ng saging (banana tree).\n" +
@@ -27,7 +27,7 @@ public class Bruid extends Player {
 				"They are both protectors and pranksters of the wild, often seen communing with their leafy kin while humming folk tunes from the provinces.";
 
 		// Capture base stats for proper reset behavior
-		setBaseStats(100, 0, 0, 80, 80, 8, 12, 6);
+		setBaseStats(100, 0, 0, 80, 80, 8, 14, 6);
 		setUsesMp(true);
    
   		setMoves(new String[] {"1. Banana Strike (Basic + no mana required)", 
@@ -125,11 +125,11 @@ public class Bruid extends Player {
 	@Override 
 	public void levelStats() {
 		// Bruid grows moderately in HP & MP and increases defense and attack steadily
-		setMaxHp(getMaxHp() + 8);
-		setHp(getHp() + 8);
-		setMp(getMp() + 6);
-		setMaxMp(getMaxMp() + 6);
-		setDefense(getDefense() + 1);
+		setMaxHp(getMaxHp() + 9);
+		setHp(getHp() + 9);
+		setMp(getMp() + 7);
+		setMaxMp(getMaxMp() + 7);
+		setDefense(getDefense() + 2);
 		setAttackPower(getAttackPower() + 2);
 		setSpeed(getSpeed() + 0);
 	}

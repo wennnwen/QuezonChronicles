@@ -12,11 +12,11 @@ public class TanimGuardian extends Enemy {
     public TanimGuardian() {
         setName("Tanim Guardian");
         // Early game enemy - Town 1
-        setMaxHp(40);
-        setHp(40);
+        setMaxHp(45);
+        setHp(45);
         setAttackPower(8);
         setDefense(2);
-        setSpeed(4);
+        setSpeed(5);
 
         setExpReward(25);
 

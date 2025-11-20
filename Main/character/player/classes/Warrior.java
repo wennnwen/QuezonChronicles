@@ -19,14 +19,14 @@ public class Warrior extends Player{
         setStamina(50);
         setMaxStamina(50);
         setDefense(12);
-        setAttackPower(18);
+        setAttackPower(16);
         setSpeed(5);
         description =
                 "Forged in battle and tempered by hardship, the Warrior stands as the steadfast heart of every fight. Born from the rugged hills and wide plains,\n" +
                 "Warriors embody the courage of those who fight not for glory, but for karangalan (honor) and kapwa (others).";
 
         // Capture base stats for proper reset behavior
-        setBaseStats(140, 50, 50, 0, 0, 12, 18, 5);
+        setBaseStats(140, 50, 50, 0, 0, 12, 16, 5);
         setUsesMp(false);
 
         setMoves(new String[] {"1. Slash(Basic + no stamina required.)",
@@ -129,11 +129,11 @@ public class Warrior extends Player{
 	@Override 
 	public void levelStats() {
         // Warrior grows in HP and stamina quickly, modest increases in damage and defense
-        setMaxHp(getMaxHp() + 10);
-        setHp(getHp() + 10);
+        setMaxHp(getMaxHp() + 12);
+        setHp(getHp() + 12);
         setStamina(getStamina() + 5);
         setMaxStamina(getMaxStamina() + 5);
-        setDefense(getDefense() + 1);
+        setDefense(getDefense() + 2);
         setAttackPower(getAttackPower() + 2);
         setSpeed(getSpeed() + 0);
 	}

@@ -12,8 +12,8 @@ public class OldTrainSpirit extends Enemy {
         // Tougher miniboss with stun and charge
         setMaxHp(160);
         setHp(160);
-        setAttackPower(18);
-        setDefense(10);
+        setAttackPower(28);
+        setDefense(11);
         setSpeed(5);
 
         setExpReward(400);
