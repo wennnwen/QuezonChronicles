@@ -1,19 +1,25 @@
+<div align="center">
+
 # Quezon Chronicles
 
-**A Filipino-Inspired Console RPG Adventure**
+**A Quezon Province-Inspired Console RPG Adventure**  
 
-A turn-based, text-based RPG that brings Philippine culture, mythology, and folklore to life. Players embark on an epic journey through Quezon Province, encountering mythical creatures, legendary figures, and enchanted landscapes while discovering the rich heritage of the Philippine archipelago.
+<b>IT-2108:</b><br>
+Aguho, Alwynn<br>
+Jamilano, John Red S.<br>
+Cortuna, Nhel Edward<br>
+Mapalad, Nell John Cedrick J.<br>
+</div>
 
 ---
-
 ## 📖 Overview
 
 **Quezon Chronicles** is a comprehensive Java-based RPG featuring:
 - **5 playable character classes** with unique combat mechanics (Warrior, Bruid, Mage, Tagalog Monk, Thief)
 - **Turn-based combat system** with resource management (Stamina/MP) and status effects
 - **Two branching story paths** through Quezon Province (West: Lucban→Lucena→Tiaong | East: Gumaca→Lopez→Real)
-- **31+ unique enemy types** inspired by Filipino folklore and local culture
-- **23 Filipino-themed consumable items** for healing, buffs, and debuff removal
+- **31+ unique enemy types** inspired by Quezon's folklore and local culture
+- **23 Quezon-themed consumable items** for healing, buffs, and debuff removal
 - **Progressive difficulty** with minibosses and final boss encounters per path
 - **Character leveling system** with stat growth and experience rewards
 
@@ -304,10 +310,18 @@ Level: 2
 
 ### Development
 Developed as a comprehensive Java educational project demonstrating OOP principles, design patterns, and game architecture.
-1. Alwynn Bitog
-2. John Red bols
-3. Nhel alladin
-4. Nil jano
+### Acknowledgement
+Place holder for now
+
+### Information Table
+
+| Pic | Name | Role |
+|----------|----------|----------|
+| pic 1    | Aguho, Alwynn L. [![Logo](images/logo.png)]([https://github.com/username/project](https://github.com/wenwen-nini))| Lead Developer 1    |
+| pic 2    | Jamilano, John Red S.   | Lead Developer 2    |
+| pic 3    | Cortuna, Nhel Edward|  Row 3     |
+| pic 4 | Mapalad, Nell John Cedrick J. | Row 4 |
+
 ---
 
 ## 📞 Support & Contribution
