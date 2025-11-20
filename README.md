@@ -1,77 +1,359 @@
-# QuezonChronicles
-A console-based, text RPG inspired by Filipino culture and folklore. Players create a character and choose a path across the province—fighting local monsters, collecting items, and upgrading skills as they progress.
+<div align="center">
+
+# Quezon Chronicles
+
+**A Quezon Province-Inspired Console RPG Adventure**  
+
+<b>IT-2108:</b><br>
+Aguho, Alwynn<br>
+Jamilano, John Red S.<br>
+Cortuna, Nhel Edward<br>
+Mapalad, Nell John Cedrick J.<br>
+</div>
+
+---
+<p align="center">
+  <a href="#-overview">
+    <img src="https://img.shields.io/badge/📖_Overview-6b4f29?style=for-the-badge">
+  </a>
+  <a href="#-key-features">
+    <img src="https://img.shields.io/badge/⭐_Features-8c6931?style=for-the-badge">
+  </a>
+  <a href="#-gameplay-guide">
+    <img src="https://img.shields.io/badge/🎮_Gameplay_Guide-b8863b?style=for-the-badge">
+  </a>
+  <a href="#-program-structure">
+    <img src="https://img.shields.io/badge/🏗️_Program_Structure-d4a15f?style=for-the-badge">
+  </a>
+  <a href="#-how-to-run">
+    <img src="https://img.shields.io/badge/🚀_How_to_Run-e3b679?style=for-the-badge">
+  </a>
+  <a href="#-sample-output">
+    <img src="https://img.shields.io/badge/📜_Sample_Output-efcb9f?style=for-the-badge">
+  </a>
+  <a href="#-author--acknowledgement">
+    <img src="https://img.shields.io/badge/👤_Author_Acknowledgement-f7e4c5?style=for-the-badge">
+  </a>
+</p>
+
+
+---
+## 📖 Overview
+
+**Quezon Chronicles** is a comprehensive Java-based RPG featuring:
+- **5 playable character classes** with unique combat mechanics (Warrior, Bruid, Mage, Tagalog Monk, Thief)
+- **Turn-based combat system** with resource management (Stamina/MP) and status effects
+- **Two branching story paths** through Quezon Province (West: Lucban→Lucena→Tiaong | East: Gumaca→Lopez→Real)
+- **31+ unique enemy types** inspired by Quezon's folklore and local culture
+- **23 Quezon-themed consumable items** for healing, buffs, and debuff removal
+- **Progressive difficulty** with minibosses and final boss encounters per path
+- **Character leveling system** with stat growth and experience rewards
 
 ---
 
-## ⚔️ Features
-- Choose from five playable classes: Bruid, Mage, Tagalog Monk, Thief, and Warrior.
-- Turn-based combat system with stamina/MP mechanics, status effects (poison, burn, stun, etc.), and skill cooldowns.
-- Two branching main paths: West Side (Lucban -> Lucena -> ... -> Tiaong) and East Side (Gumaca -> Lopez -> ... -> Real).
-- Town exploration with enemies, minibosses, boss fights, and lootable items (Filipino-themed consumables).
-- Simple save-like progression when moving between towns (path & progress tracking).
+## 🎯 Key Features
+
+### Character Classes
+| Class | HP | Resource | Attack | Defense | Speed | Playstyle |
+|-------|----|----|--------|---------|-------|----------|
+| **Warrior** | x | x Stamina | x | x | x | x, x |
+| **Bruid** | x | x Stamina | x | x | x | x |
+| **Mage** | x | x MP | x | x | x | x, x |
+| **Tagalog Monk** | x | MP | x | x | x | x |
+| **Thief** | x | x Stamina | x | x | x | x, x |
+
+### Combat Mechanics
+- **Initiative System**: Turn order based on Speed stat
+- **Resource Management**: Stamina (physical classes) or MP (magical classes)
+- **Status Effects**: Poison, burn, stun, confusion with multi-turn duration
+- **Skill Cooldowns**: Ultimate abilities require cooldown management
+- **Critical Strikes**: 10-25% chance for double damage
+- **Loot Drops**: 40% probability of item drops from defeated enemies
+
+### World Exploration
+**West Path Towns**: Lucban, Lucena, Sariaya, Candelaria, Tiaong
+- Minibosses: Harbor Sentinel, Don Mariano (final boss)
+
+**East Path Towns**: Gumaca, Lopez, Calauag, Infanta, Real
+- Minibosses: Multiple regional minibosses
+- Final Boss: Queen Amihan (240 HP, 28 Attack)
+
+### Inventory System
+- **Capacity**: 10 items maximum
+- **23 Items Available**: Bibingka, Lambanog, Turon, PugonCoffee, SinigangHipon, Habhab, KipingDelight, CocoJam, BananaChips, Chami, DriedFishSnack, LongganisangLucban, LopezCocoaDrink, MountainHoney, Panutsa, Pinagong, SumanIbos, Tinuto, TropicalBreezeJuice, LambanogLecheFlan, AdobongPusit, Budin
+- **Effects**: HP restoration, MP restoration, debuff removal, status effect cures
 
 ---
 
-## 🧭 Project structure (important files)
-- `Main/Main.java` — Entry point: instantiates `Game` and calls `start()`.
-- `Main/game/Game.java` — Top-level menu and launcher for starting the game or viewing About.
-- `Main/game/GameMenu.java` — Character creation, main menu, and path choice.
-- `Main/game/BattleSystem.java` — Implements the turn-based combat loop.
-- `Main/worldBuilder/WorldMap.java` — Builds the West and East paths and towns.
-- `Main/worldBuilder/Town.java` — Town exploration, enemies, and travel between towns.
-- `Main/character/Character.java` — Base class for `Player` and `Enemy`.
-- `Main/character/player/Player.java` — Base player class; contains inventory, moves, leveling, and progress tracking.
-- `Main/character/player/classes/*` — Five player classes implementing class-specific behavior.
-- `Main/character/enemy/Enemy.java` — Base enemy with drop and debuff logic; many enemy subclasses under `subclasses/`.
-- `Main/item/*.java` — Consumable items used in battles and exploration.
-- `Main/styles/` — Utilities for typewriter effects, text color, clearing screen, and print alignment.
+## 🏗️ OOP Concepts Applied
+
+### 1. **Inheritance**
+- `Character` (abstract) → `Player` (abstract) → 5 concrete classes (Warrior, Bruid, Mage, TagalogMonk, Thief)
+- `Character` (abstract) → `Enemy` (abstract) → 31 concrete enemy subclasses
+- `Item` (abstract) → 23 concrete item subclasses
+
+### 2. **Polymorphism**
+- Abstract methods implemented uniquely per class: `useMoves()`, `enemyMove()`, `useItem()`
+- Method overriding for class-specific combat abilities and stat progression
+- Battle system calls methods on abstract types, runtime resolution selects concrete implementation
+
+### 3. **Encapsulation**
+- Private stats (HP, MP, Stamina, Attack, Defense, Speed) with public getter/setter methods
+- Protected access for inherited classes to extend functionality
+- Static inventory management in Player class
+- Internal debuff tracking with private arrays and methods
+
+### 4. **Abstraction**
+- Abstract classes hide implementation while defining interface contracts
+- Battle system operates through Character interface, not concrete types
+- Styling utilities abstracted into separate packages (animationHub, textColor, printAlignmentHub, clearScreen)
+- Complex combat logic hidden behind simple method calls
+
+### 5. **Composition**
+- Character contains arrays of active debuffs and debuff durations
+- Player contains inventory (Item array), move descriptions, path tracking data
+- Battle system combines Player, Enemy, and Item interactions
+- Town contains array of enemies for encounters
 
 ---
 
-## ▶️ How to compile & run
+## 📁 Program Structure
 
-Prereqs: JDK 11+ (Java 11 or later) installed.
+```
+Main/
+├── Main.java                          # Application entry point
+├── game/
+│   ├── Game.java                      # Main menu, title animation, game flow
+│   ├── GameMenu.java                  # Character creation, path selection
+│   └── BattleSystem.java              # Turn-based combat loop engine
+├── worldBuilder/
+│   ├── WorldMap.java                  # Builds West & East paths with towns
+│   └── Town.java                      # Town logic, enemy encounters, progression
+├── character/
+│   ├── Character.java                 # Abstract base class (stats, debuffs)
+│   ├── player/
+│   │   ├── Player.java                # Abstract player class (inventory, leveling)
+│   │   └── classes/                   # 5 concrete player classes
+│   │       ├── Warrior.java           # Tank class with stamina
+│   │       ├── Bruid.java             # Balanced fighter
+│   │       ├── Mage.java              # Glass cannon with MP
+│   │       ├── TagalogMonk.java       # Support/hybrid class
+│   │       └── Thief.java             # High-damage, high-speed assassin
+│   └── enemy/
+│       ├── Enemy.java                 # Abstract enemy class (loot, XP)
+│       └── subclasses/                # 31 concrete enemy types
+│           ├── TanimGuardian.java
+│           ├── HabhabBandit.java
+│           ├── LucenaPirate.java
+│           ├── PortRat.java
+│           ├── HarborSentinel.java    # Miniboss
+│           ├── BakeryGremlin.java
+│           ├── HeritageWraith.java
+│           ├── DonMariano.java        # West path final boss
+│           ├── QueenAmihan.java       # East path final boss
+│           └── [21 more...]
+├── item/
+│   ├── Item.java                      # Abstract item base class
+│   └── [23 concrete items]
+│       ├── Bibingka.java              # +25 HP, remove debuffs
+│       ├── Lambanog.java              # Spirit drink
+│       ├── PugonCoffee.java           # Coffee item
+│       └── [20 more...]
+└── styles/
+    ├── animationHub/
+    │   ├── TypeWriter.java            # Typewriter text animation
+    │   └── LoadingDots.java           # Loading animation
+    ├── textColor/
+    │   └── TextColorHub.java          # ANSI color codes (RED, GREEN, YELLOW, etc.)
+    ├── printAlignmentHub/
+    │   └── CenterHub.java             # Text centering & right alignment
+    └── clearScreen/
+        └── ClearScreen.java           # Cross-platform terminal clearing
+```
 
-Clone (if necessary) then from project root run:
+---
+
+## 🚀 How to Run
+
+### Prerequisites
+- **Java Development Kit (JDK) 11 or later**
+- **Bash shell** for executing build commands
+- ~50MB disk space for compiled bytecode
+
+### Compilation
 
 ```bash
-# create sources list and compile to 'out' directory
-find Main -name "*.java" > sources.txt
-javac -d out @sources.txt
+# Navigate to project root
+cd /workspaces/QuezonChronicles
 
-# run the entrypoint
+# Generate sources list
+find Main -name "*.java" > sources.txt
+
+# Compile all files to 'out' directory
+javac -d out @sources.txt
+```
+
+### Execution
+
+```bash
+# Run the game
 java -cp out Main.Main
 ```
 
-Tip: Running `javac` this way compiles all project files. If you want to target a single package change, re-run `find` before compiling again.
+### Quick Start (One Command)
+```bash
+cd /workspaces/QuezonChronicles && find Main -name "*.java" > sources.txt && javac -d out @sources.txt && java -cp out Main.Main
+```
+
+### Rebuild After Modifications
+```bash
+find Main -name "*.java" > sources.txt && javac -d out @sources.txt
+```
 
 ---
 
-## 🎮 Gameplay quick-start & controls
-- On start, you can Create Character or view About. Create a name and choose a class.
-- Player classes affect HP, MP/Stamina usage, attacks, and unique skills.
-- Combat: choose attack moves (1–4), or use items (5). Player and enemy turn order depends on speed.
-- Action requirements: some moves need stamina/MP and some have cooldowns.
-- Towns: explore to fight enemies and bosses; defeat enemies in town to progress to the next town.
+## 🎮 Gameplay Guide
+
+### Starting the Game
+1. Run `java -cp out Main.Main`
+2. View title animation with ASCII art
+3. Choose: (1) Start, (2) About, (3) Exit
+
+### Character Creation
+1. Enter your character name
+2. Select class (1-5)
+3. Read class description and abilities
+4. Choose path (West or East)
+
+### Combat System
+**During Battle**:
+```
+( 1 ) Move 1 - Basic attack (usually free)
+( 2 ) Move 2 - Special ability (costs resource)
+( 3 ) Move 3 - Utility move (may cost resource)
+( 4 ) Move 4 - Ultimate ability (cooldown after use)
+( 5 ) Use Item - Consume from inventory
+```
+
+**Combat Flow**:
+- Initiative determined by Speed stat
+- Player and enemy alternate turns
+- Status effects trigger each turn
+- Battle ends when one side reaches 0 HP
+- Victorious player gains XP and receives loot
+
+### Town Progression
+- Enter town and encounter enemies
+- Defeat required number of enemies (varies per town)
+- Progress to next town upon completion
+- Some towns have minibosses blocking final progression
+- Defeat final boss to complete that path
+
+### Leveling System
+- Each enemy defeat grants experience
+- Experience accumulates toward next level
+- Level up triggers stat increase based on class
+  - Warrior: +10 HP, +5 Stamina, +1 Defense, +2 Attack
+  - Mage: Enhanced MP and spell power
+  - Thief: +Attack, +Speed emphasis
 
 ---
 
-## 📦 Items & Enemies
-- Items are under `Main/item` and include Filipino-themed consumables (e.g., `Bibingka`, `Lambanog`, `PugonCoffee`) — they typically heal HP/MP or provide buffs.
-- Enemies and bosses are under `Main/character/enemy/subclasses/` with varied behaviors and drops.
+## 📊 Example Combat Scenario
+
+```
+Warrior enters Lucena Town
+    └─ Encounters: Port Rat, Lucena Pirate (miniboss)
+
+Round 1: Warrior vs Port Rat
+    Warrior Speed (5) < Port Rat Speed (8)
+    → Port Rat attacks first!
+    
+    Port Rat: "Port Rat scurries at you!"
+    Warrior takes 8 damage (reduced by defense)
+    
+    Warrior: "Warrior used Slash!"
+    Port Rat takes 18 damage
+    
+    Port Rat defeated! +50 XP, +1 Chami (item drop)
+    
+Round 2: Warrior vs Lucena Pirate (miniboss)
+    [Extended battle with special moves, MP/Stamina management...]
+    Lucena Pirate defeated! +100 XP, +1 Coconut Brigade loot
+    
+Lucena progression: 2/2 enemies defeated
+→ Advance to Sariaya
+```
 
 ---
 
-## 🛠️ Extending the game
-- Add new enemy subclasses by implementing `Enemy` and adding them in `WorldMap` for towns.
-- Create new items in `Main/item` extending `Item`, then add them to enemy loot tables.
-- Add map or town variations by updating `WorldMap.buildWestPath()` or `WorldMap.buildEastPath()`.
+## 🎬 Sample Output
+
+### Main Menu
+```
+Game Starting in...
+
+[ASCII ART TITLE]
+
+=====================================================================================
+            ( 1 ) Start
+            ( 2 ) About the Game
+            ( 3 ) Exit
+=====================================================================================
+Enter your choice: 
+```
+
+### Battle UI
+```
+==== Warrior vs Lucena Pirate ====
+Health: 140/140        vs        Health: 85/85
+Stamina: 50/50
+=====================
+Player goes first!
+
+Warrior used Slash!
+Lucena Pirate took 18 damage.
+
+[ Menu options appear... ]
+```
+
+### Character Stats
+```
+====== Warrior Stats ======
+Health: 140/140
+Stamina: 50/50
+Defense: 12
+Attack Power: 18
+Speed: 5
+Experience: 150/100
+Level: 2
+===========================
+```
 
 ---
 
-## ♻️ Misc & Developer notes
-- Styling utilities: `Main/styles/*` — look at `TypeWriter`, `TextColorHub`, and `CenterHub` for console effects.
-- The `Player` system stores path progress; death resets player using `Player.resetProgress()`.
-- Inventory is static across `Player` instances (currently sized 10).
+## 👤 Author & Acknowledgement
+
+### Development
+Developed as a comprehensive Java educational project demonstrating OOP principles, design patterns, and game architecture.
+### Acknowledgement
+Place holder for now
+
+### Information Table
+
+| | Name | Role |
+|----------|----------|----------|
+| <img src="images/wyn.jpg" width="120">| Aguho, Alwynn L. | Lead Developer 1    |
+|<img src="images/red.jpg" width="120">| Jamilano, John Red S. | Lead Developer 2    |
+|<img src="images/nhel.jpg" width="120">| Cortuna, Nhel Edward B. |  UI Designer / Tester    |
+|<img src="images/nell.jpg" width="120">| Mapalad, Nell John Cedrick J. | UI Designer / Tester |
 
 ---
+
+## 📞 Support & Contribution
+
+For bug reports, feature requests, or contributions, refer to the project repository on GitHub. 
+
+---
+
+**Enjoy your adventure through Quezon Chronicles!** 🏛️⚔️✨
