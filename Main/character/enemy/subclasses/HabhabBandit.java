@@ -10,11 +10,11 @@ public class HabhabBandit extends Enemy{
     public HabhabBandit() {
         setName("Habhab Bandit");
         // Early game enemy - Town 1
-        setMaxHp(50);
-        setHp(50);
-        setAttackPower(10);
-        setDefense(3);
-        setSpeed(6);
+        setMaxHp(45);
+        setHp(45);
+        setAttackPower(8);
+        setDefense(2);
+        setSpeed(5);
 
         setExpReward(30);
 

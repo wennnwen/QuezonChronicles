@@ -11,8 +11,8 @@ public class BakeryGremlin extends Enemy{
     public BakeryGremlin() {
         setName("Bakery Gremlin");
         // Mid game enemy - Town 3
-        setMaxHp(80);
-        setHp(80);
+        setMaxHp(85);
+        setHp(85);
         setAttackPower(16);
         setDefense(6);
         setSpeed(8);

@@ -10,11 +10,11 @@ public class Sirena extends Enemy {
     public Sirena() {
         setName("Gumacan Sirena");
         // Early game enemy - Town 1 (East)
-        setMaxHp(55);
-        setHp(55);
-        setAttackPower(11);
-        setDefense(4);
-        setSpeed(8);
+        setMaxHp(45);
+        setHp(45);
+        setAttackPower(8);
+        setDefense(2);
+        setSpeed(5);
         setSkillUsedTurn(3);
 
         setExpReward(35);

@@ -10,10 +10,10 @@ public class LanggonisaLord extends Enemy {
     public LanggonisaLord() {
         setName("Langgonisa Lord");
         // Early game enemy - Town 1
-        setMaxHp(55);
-        setHp(55);
-        setAttackPower(11);
-        setDefense(4);
+        setMaxHp(45);
+        setHp(45);
+        setAttackPower(8);
+        setDefense(2);
         setSpeed(5);
 
         setExpReward(35);

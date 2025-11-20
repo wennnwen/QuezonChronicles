@@ -19,7 +19,7 @@ public class TagalogMonk extends Player {
       setStamina(50);
       setMaxStamina(50);
       setDefense(8);
-      setAttackPower(16);
+      setAttackPower(18);
       setSpeed(8);
       description =
                "Steeped in the ancient traditions of the Tagalog highlands and lowlands, the Tagalog Monk embodies harmony between body, spirit, and the land.\n" +
@@ -27,7 +27,7 @@ public class TagalogMonk extends Player {
                "from the mountains of the North to the plains of the heart of Luzon.";
 
       // Capture base stats for proper reset behavior
-      setBaseStats(110, 50, 50, 0, 0, 8, 16, 8);
+      setBaseStats(110, 50, 50, 0, 0, 8, 18, 8);
       setUsesMp(false);
    
   		setMoves(new String[] {"1. Suntok ni Apo (basic + no stamina required)", 
@@ -131,12 +131,12 @@ public class TagalogMonk extends Player {
 	@Override
    public void levelStats() {
       // Monk grows in HP and stamina and gains attack steadily
-      setMaxHp(getMaxHp() + 8);
-      setHp(getHp() + 8);
-      setStamina(getStamina() + 3);
-         setMaxStamina(getMaxStamina() + 3);
+      setMaxHp(getMaxHp() + 10);
+      setHp(getHp() + 10);
+      setStamina(getStamina() + 4);
+         setMaxStamina(getMaxStamina() + 4);
       setDefense(getDefense() + 1);
-      setAttackPower(getAttackPower() + 2);
+      setAttackPower(getAttackPower() + 3);
       setSpeed(getSpeed() + 0);
 	}
 

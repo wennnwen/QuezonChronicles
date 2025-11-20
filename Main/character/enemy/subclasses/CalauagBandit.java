@@ -10,11 +10,11 @@ public class CalauagBandit extends Enemy {
     public CalauagBandit() {
         setName("Calauag Bandit");
         // Mid game enemy - Town 3 (East)
-        setMaxHp(90);
-        setHp(90);
-        setAttackPower(19); 
-        setDefense(7);
-        setSpeed(9);
+        setMaxHp(85);
+        setHp(85);
+        setAttackPower(16);
+        setDefense(6);
+        setSpeed(8);
 
         setExpReward(75);
 

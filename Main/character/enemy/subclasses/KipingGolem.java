@@ -10,11 +10,11 @@ public class KipingGolem extends Enemy {
     public KipingGolem() {
         setName("Kiping Golem");
         // Early game enemy - Town 1 (East)
-        setMaxHp(50);
-        setHp(50);
-        setAttackPower(10);
-        setDefense(3);
-        setSpeed(4);
+        setMaxHp(45);
+        setHp(45);
+        setAttackPower(8);
+        setDefense(2);
+        setSpeed(5);
 
         setExpReward(30);
 

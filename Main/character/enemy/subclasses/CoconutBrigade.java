@@ -10,11 +10,11 @@ public class CoconutBrigade extends Enemy {
     public CoconutBrigade() {
         setName("Coconut Brigade");
         // Mid game enemy - Town 3
-        setMaxHp(90);
-        setHp(90);
-        setAttackPower(19);
-        setDefense(7);
-        setSpeed(7);
+        setMaxHp(85);
+        setHp(85);
+        setAttackPower(16);
+        setDefense(6);
+        setSpeed(8);
 
         setExpReward(75);
 

@@ -14,7 +14,7 @@ public class LopezWolf extends Enemy{
         setHp(70);
         setAttackPower(14);
         setDefense(5);
-        setSpeed(10);
+        setSpeed(8);
 
         setExpReward(50);
 

@@ -10,9 +10,9 @@ public class Nell extends Enemy{
 
     public Nell() {
         setName("Sariayan Ninja Nell");
-        setMaxHp(80);
-        setHp(80);
-        setAttackPower(14);
+        setMaxHp(85);
+        setHp(85);
+        setAttackPower(16);
         setDefense(6);
         setSpeed(8);
 

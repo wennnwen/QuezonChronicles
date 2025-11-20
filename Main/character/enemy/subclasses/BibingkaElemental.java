@@ -10,11 +10,11 @@ public class BibingkaElemental extends Enemy {
     public BibingkaElemental() {
         setName("Bibingka Elemental");
         // Mid-late game enemy - Town 4
-        setMaxHp(95);
-        setHp(95);
-        setAttackPower(20); 
+        setMaxHp(100);
+        setHp(100);
+        setAttackPower(21);
         setDefense(8);
-        setSpeed(8);
+        setSpeed(9);
 
         setExpReward(85);
 

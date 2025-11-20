@@ -14,7 +14,7 @@ public class HoneyGuardian extends Enemy {
         setHp(100);
         setAttackPower(21);
         setDefense(8);
-        setSpeed(8);
+        setSpeed(9);
 
         setExpReward(90);
 

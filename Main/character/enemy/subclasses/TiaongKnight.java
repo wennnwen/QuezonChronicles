@@ -10,11 +10,11 @@ public class TiaongKnight extends Enemy {
     public TiaongKnight() {
         setName("Tiaong Knight");
         // Late game enemy - Town 5
-        setMaxHp(125);
-        setHp(125);
-        setAttackPower(26); 
-        setDefense(11);
-        setSpeed(9);
+        setMaxHp(120);
+        setHp(120);
+        setAttackPower(25);
+        setDefense(10);
+        setSpeed(10);
 
         setExpReward(120);
 

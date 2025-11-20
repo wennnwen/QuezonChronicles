@@ -10,11 +10,11 @@ public class FlamingCandelarian extends Enemy {
     public FlamingCandelarian() {
         setName("Flaming Candelarian");
         // Mid-late game enemy - Town 4
-        setMaxHp(105);
-        setHp(105);
-        setAttackPower(22);
-        setDefense(9);
-        setSpeed(10);
+        setMaxHp(100);
+        setHp(100);
+        setAttackPower(21);
+        setDefense(8);
+        setSpeed(9);
 
         setExpReward(95);
 

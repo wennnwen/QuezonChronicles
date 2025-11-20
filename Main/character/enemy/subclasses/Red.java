@@ -13,8 +13,8 @@ public class Red extends Enemy{
 
     public Red() {
         setName("Bomb Devil Red");
-        setMaxHp(100);
-        setHp(100);
+        setMaxHp(85);
+        setHp(85);
         setAttackPower(16);
         setDefense(6);
         setSpeed(8);
