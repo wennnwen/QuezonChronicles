@@ -13,28 +13,29 @@ Mapalad, Nell John Cedrick J.<br>
 
 ---
 <p align="center">
-  <a href="#overview">
+  <a href="#-overview">
     <img src="https://img.shields.io/badge/📖_Overview-6b4f29?style=for-the-badge">
   </a>
-  <a href="#features">
+  <a href="#-key-features">
     <img src="https://img.shields.io/badge/⭐_Features-8c6931?style=for-the-badge">
   </a>
-  <a href="#gameplay-guide">
+  <a href="#-gameplay-guide">
     <img src="https://img.shields.io/badge/🎮_Gameplay_Guide-b8863b?style=for-the-badge">
   </a>
-  <a href="#program-structure">
+  <a href="#-program-structure">
     <img src="https://img.shields.io/badge/🏗️_Program_Structure-d4a15f?style=for-the-badge">
   </a>
-  <a href="#how-to-run">
+  <a href="#-how-to-run">
     <img src="https://img.shields.io/badge/🚀_How_to_Run-e3b679?style=for-the-badge">
   </a>
-  <a href="#sample-output">
+  <a href="#-sample-output">
     <img src="https://img.shields.io/badge/📜_Sample_Output-efcb9f?style=for-the-badge">
   </a>
-  <a href="#author--acknowledgement">
+  <a href="#-author--acknowledgement">
     <img src="https://img.shields.io/badge/👤_Author_Acknowledgement-f7e4c5?style=for-the-badge">
   </a>
 </p>
+
 
 ---
 ## 📖 Overview
