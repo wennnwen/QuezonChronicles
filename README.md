@@ -24,11 +24,11 @@ A turn-based, text-based RPG that brings Philippine culture, mythology, and folk
 ### Character Classes
 | Class | HP | Resource | Attack | Defense | Speed | Playstyle |
 |-------|----|----|--------|---------|-------|----------|
-| **Warrior** | 140 | 50 Stamina | 18 | 12 | 5 | Tank, high durability |
-| **Bruid** | Balanced | Stamina | Balanced | Balanced | Balanced | All-rounder |
-| **Mage** | 70 | 120 MP | 12 | 6 | 18 | Glass cannon, high damage |
-| **Tagalog Monk** | Moderate | MP | Moderate | Moderate | Variable | Support/hybrid |
-| **Thief** | 85 | 60 Stamina | 22 | 5 | 14 | High critical, high speed |
+| **Warrior** | x | x Stamina | x | x | x | x, x |
+| **Bruid** | x | x Stamina | x | x | x | x |
+| **Mage** | x | x MP | x | x | x | x, x |
+| **Tagalog Monk** | x | MP | x | x | x | x |
+| **Thief** | x | x Stamina | x | x | x | x, x |
 
 ### Combat Mechanics
 - **Initiative System**: Turn order based on Speed stat
