@@ -454,6 +454,7 @@ public class GameMenu {
 
     public void spawnPointMessager() {
 
+<<<<<<< HEAD
         centerHub.printCenteredText("                   :::::::::  :::::::::   ::::::::  :::        ::::::::   ::::::::  :::    ::: ::::::::::               "); 
         centerHub.printCenteredText("                   :+:    :+: :+:    :+: :+:    :+: :+:       :+:    :+: :+:    :+: :+:    :+: :+:                      ");        
         centerHub.printCenteredText("                   +:+    +:+ +:+    +:+ +:+    +:+ +:+       +:+    +:+ +:+        +:+    +:+ +:+                      ");        
@@ -464,6 +465,17 @@ public class GameMenu {
         System.out.println();
 System.out.println();   
 System.out.println("====================================================================== " + textColor.GREEN + "ATIMONAN" + textColor.RESET + " ===================================================================\n");
+=======
+        centerHub.printCenteredText(":::::::::  :::::::::   ::::::::  :::        ::::::::   ::::::::  :::    ::: ::::::::::"); 
+        centerHub.printCenteredText(":+:    :+: :+:    :+: :+:    :+: :+:       :+:    :+: :+:    :+: :+:    :+: :+:       ");        
+        centerHub.printCenteredText("+:+    +:+ +:+    +:+ +:+    +:+ +:+       +:+    +:+ +:+        +:+    +:+ +:+       ");        
+        centerHub.printCenteredText("+#++:++#+  +#++:++#:  +#+    +:+ +#+       +#+    +:+ +#+        +#+    +:+ +#++:++#  ");   
+        centerHub.printCenteredText("+#+        +#+    +#+ +#+    +#+ +#+       +#+    +#+ +#+   +#+# +#+    +#+ +#+       ");        
+        centerHub.printCenteredText("#+#        #+#    #+# #+#    #+# #+#       #+#    #+# #+#    #+# #+#    #+# #+#       ");        
+        centerHub.printCenteredText("###        ###    ###  ########  ########## ########   ########   ########  ##########");
+        System.out.println();
+        System.out.println("====================================================================== " + textColor.GREEN + "ATIMONAN" + textColor.RESET + " ===================================================================\n");
+>>>>>>> cced58476c6a7d0e5a8b742d2d2fda20ab0c6c77
         String text = "Atimonan rests peacefully between the rising cliffs of the Sierra mountain pass and the gentle waves of the eastern gulf, serving as a calm\n" + 
                       "refuge for travelers beginning their journey. The town is known for its quiet coastal mornings, where fishermen cast their nets at dawn\n" + 
                       "and the scent of fresh sea wind drifts across its humble wooden piers. Though modest in size, Atimonan holds a warm and welcoming\n" + 
