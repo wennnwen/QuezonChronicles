@@ -40,7 +40,7 @@ public class Town {
 
     public void enterTown(Player player, int townIndex) {
 
-String text = "Chapter " + player.
+String text = "Chapter " + String. valueOf(player.getCurrentTownIndex + 1);
        System.out.println("\n====================================================================== " + textColor.GREEN + name.toUpperCase() + textColor.RESET + " =======================================================================\n");
         centerHub.printCenteredTextWithTypeWriter(description);
 
