@@ -113,7 +113,8 @@ typeWriter.typeWriterFast(textColor.CYAN + "You didn’t see him coming—he’s
                         else if (bossChance > 0.75 && bossChance <= 1) {
                             Enemy enemy = new Red();
                             text = "A wild " + enemy.getName() + " appeared!";
-                            typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
+                            typeWriter.typeWriterFast(textColor.RED + text + textColor.RESET);
+typeWriter.typeWriterFast(textColor.RED + "A rumble echoes... sparks ignite..."+ textColor.RESET);
                             new BattleSystem().BattleStart(player, enemy);
                         }
                         else {
