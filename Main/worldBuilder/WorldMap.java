@@ -7,9 +7,7 @@ import Main.styles.textColor.TextColorHub;
 public class WorldMap {
        
         public WorldMap() { }
-
-        private static TextColorHub textColor = new TextColorHub();
-
+        
         static String lucbanDescription = "Lucban is renowned across the land for its Pahiyas Festival, a vibrant celebration where homes are covered in\n" + 
                                           "woven leaves, fruits, and radiant harvest ornaments. The locals believe the festival honors the Spirit of Abundance,\n" + 
                                           "a guardian who blesses their crops every year. But recently, elders whisper of subtle changes during the festival—decorations\n" + 

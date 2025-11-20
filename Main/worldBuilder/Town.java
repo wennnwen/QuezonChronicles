@@ -16,7 +16,6 @@ import Main.character.enemy.subclasses.*;
 public class Town {
     private String name;
     private String description;
-    private Enemy enemy;
     private Enemy[] enemies;
     private Enemy boss;
     private Town nextTown;
@@ -78,7 +77,7 @@ public class Town {
                 sc.nextLine();
             } catch (Exception e) {
                 sc.nextLine();
-                ClearScreen.clear();
+                clearScreen.clear();
                 System.out.println("Invalid input. Please enter a number.");
                 continue;
             }
@@ -87,30 +86,35 @@ public class Town {
                 case 1:
                     double chances = Math.random();
                     if (chances <= 1 && enemiesDefeated < (enemies != null ? enemies.length : 0)) { //FOR SPECIAL ENEMY SPAWN
-                        ClearScreen.clear();
+                        clearScreen.clear();
                         double bossChance = Math.random();
                         if (bossChance <= 0.25) {
                             Enemy enemy = new Alwynn(player);
                             text = "A wild " + enemy.getName() + " appeared!";
                             typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
+                            typeWriter.typeWriterFast(textColor.GREEN + "Bro followed you all the way from the Atimonan!" + textColor.RESET);
                             new BattleSystem().BattleStart(player, enemy);
                         }
                         else if (bossChance > 0.25 && bossChance <= 0.5) {
                             Enemy enemy = new Eduard(player);
                             text = "A wild " + enemy.getName() + " appeared!";
-                            typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
+                            typeWriter.typeWriterFast(textColor.ORANGE + text + textColor.RESET);
+                            typeWriter.typeWriterFast(textColor.ORANGE + "Careful—he might try to bargain, charm, or steal your loot." + textColor.RESET);
                             new BattleSystem().BattleStart(player, enemy);
                         }
                         else if (bossChance > 0.5 && bossChance <= 0.75) {
                             Enemy enemy = new Nell(player);
                             text = "A wild " + enemy.getName() + " appeared!";
-                            typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
+                            typeWriter.typeWriterFast(textColor.CYAN + text + textColor.RESET);
+                            typeWriter.typeWriterFast(textColor.CYAN + "You didn’t see him coming—he’s from Sariaya, after all." + textColor.RESET);
                             new BattleSystem().BattleStart(player, enemy);
                         }
-                        else if (bossChance > 0.75) {
+
+                        else if (bossChance > 0.75 && bossChance <= 1) {
                             Enemy enemy = new Red(player);
                             text = "A wild " + enemy.getName() + " appeared!";
-                            typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
+                            typeWriter.typeWriterFast(textColor.RED + text + textColor.RESET);
+                            typeWriter.typeWriterFast(textColor.RED + "A rumble echoes... sparks ignite..."+ textColor.RESET);
                             new BattleSystem().BattleStart(player, enemy);
                         }
                         else {
@@ -120,7 +124,7 @@ public class Town {
                     
                     else {
                         if (enemies != null && enemiesDefeated < enemies.length) {
-                            ClearScreen.clear();
+                            clearScreen.clear();
                             Enemy enemy = enemies[enemiesDefeated];
                             text = "A wild " + enemy.getName() + " appeared!";
                             typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
@@ -128,7 +132,7 @@ public class Town {
                             enemiesDefeated++;
                             player.setEnemiesDefeatedInTown(enemiesDefeated);
                         } else if (boss != null && enemiesDefeated == (enemies != null ? enemies.length : 0)) {
-                            ClearScreen.clear();
+                            clearScreen.clear();
                             typeWriter.typeWriterFast(textColor.RED + "\nYou've reached the boss battle!" + textColor.RESET);
                             typeWriter.typeWriterFast(textColor.RED + "\nThe boss of " + name + " appears: " + boss.getName() + "!" + textColor.RESET);
                             new BattleSystem().BattleStart(player, boss);
@@ -136,7 +140,7 @@ public class Town {
                             player.setEnemiesDefeatedInTown(enemiesDefeated);
                             typeWriter.typeWriterFast("You've cleared " + name + "!");
                         } else {
-                            ClearScreen.clear();
+                            clearScreen.clear();
                             typeWriter.typeWriterFast("You’ve already cleared all enemies here!");
                         }
                         break;
@@ -146,10 +150,10 @@ public class Town {
                 case 2:
                     if ((boss == null && enemiesDefeated >= 3) || (boss != null && enemiesDefeated >= 3)) {
                         if (nextTown != null) {
-                            ClearScreen.clear();
+                            clearScreen.clear();
                             text = "Preparing to travel to " + nextTown.name;
                             loadingDots.loadingDotsAnimation(textColor.GREEN + text + textColor.RESET);
-                            ClearScreen.clear();
+                            clearScreen.clear();
                             text = "You've just arrived in " + nextTown.name;
                             typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
                             if (!player.getUsesMp()) {
@@ -163,7 +167,7 @@ public class Town {
                             nextTown.enterTown(player, townIndex + 1);
                             return;
                         } else {
-                            ClearScreen.clear();
+                            clearScreen.clear();
                             typeWriter.typeWriterFast("You've reached the end of your journey!\n");
                             epilogueMessager();
                             System.out.println("\n===================================================================================================================================================");
@@ -203,18 +207,18 @@ public class Town {
                             return;
                         }
                     } else {
-                        ClearScreen.clear();
+                        clearScreen.clear();
                         typeWriter.typeWriterFast(textColor.RED + "You must defeat all enemies before moving on!" + textColor.RESET);
                     }
                     break;
 
                 case 3:
-                    ClearScreen.clear();
+                    clearScreen.clear();
                     player.showStats();
                     break;
 
                 case 4: 
-                    ClearScreen.clear();
+                    clearScreen.clear();
                     Item[] inventory = player.getInventory();
                     boolean isEmpty = true;
                     if (inventory != null && inventory.length > 0) {
@@ -241,7 +245,7 @@ public class Town {
                     return;
 
                 default:
-                    ClearScreen.clear();
+                    clearScreen.clear();
                     System.out.println("Invalid choice. Try again.");
             }
         }

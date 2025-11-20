@@ -14,8 +14,9 @@ public class BattleSystem {
     public Scanner input = new Scanner(System.in);
 
     private CenterHub centerHub = new CenterHub();
-    private static TypeWriter typeWriter = new TypeWriter();
-    private static TextColorHub textColor = new TextColorHub();
+    private TypeWriter typeWriter = new TypeWriter();
+    private TextColorHub textColor = new TextColorHub();
+    private ClearScreen clearScreen = new ClearScreen();
 
     // Safe integer reader: reads a line and parses an int, re-prompts on invalid input
 
@@ -108,7 +109,7 @@ public class BattleSystem {
                     }
                 }
                 else {
-                    ClearScreen.clear();
+                    clearScreen.clear();
                     printCombatStatus(player, enemy);
                     enemyTurn(player, enemy);
                     enemy.updateSkillUsedTurn();
@@ -138,7 +139,7 @@ public class BattleSystem {
             System.out.println("=====================================================================================================================================================");
             System.out.print("Enter your choice: ");
             int choice = readInt();
-            ClearScreen.clear();
+            clearScreen.clear();
             if (choice >= 1 && choice <= 4) {
                 // Reset the last-action flag, attempt the move, and only end input loop
                 // if the move actually succeeded (had enough stamina/mp and wasn't on cooldown).
@@ -187,15 +188,15 @@ public class BattleSystem {
                     int itemIndex = readInt() - 1;
                     // Validate index and presence of item
                     if (itemIndex == -1) {
-                        ClearScreen.clear();
+                        clearScreen.clear();
                         System.out.println("Item use cancelled.");
                     }
                     else if (itemIndex < -1 || itemIndex >= inventory.length || inventory[itemIndex] == null) {
-                        ClearScreen.clear();
+                        clearScreen.clear();
                         System.out.println("Invalid item choice.");
                     }
                     else {
-                        ClearScreen.clear();
+                        clearScreen.clear();
                         inventory[itemIndex].useItem(player);
                         player.removeItem(itemIndex);
                         validInput = true;
@@ -221,10 +222,10 @@ public class BattleSystem {
         }
     }
 
-    public static void handleVictory(Player player, Enemy enemy) {
+    public void handleVictory(Player player, Enemy enemy) {
         // If enemy is dead and player is alive -> normal victory
         if (!enemy.isAlive() && player.isAlive()) {
-            ClearScreen.clear();
+            clearScreen.clear();
             String text = "You defeated " + enemy.getName() + "!";
             typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET); 
             player.addExp(enemy.getExpReward());
