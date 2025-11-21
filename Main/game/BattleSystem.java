@@ -120,6 +120,15 @@ public class BattleSystem {
             }
         }
 
+        if (!enemy.isAlive() && !player.isAlive()) {
+            System.out.println("Both you and " + enemy.getName() + " have fallen!");
+            Item loot = enemy.dropLoot();
+            if (loot != null) {
+                System.out.println("The " + enemy.getName() + " dropped " + loot.getName() + ", but you couldn't pick it up.");
+            }
+            return;
+        }
+
         handleVictory(player, enemy);
 
         if (!player.isAlive()) {
@@ -223,6 +232,15 @@ public class BattleSystem {
     }
 
     public void handleVictory(Player player, Enemy enemy) {
+        // If both enemy and player died
+        if (!enemy.isAlive() && !player.isAlive()) {
+            System.out.println("Both you and " + enemy.getName() + " have fallen!");
+            Item loot = enemy.dropLoot();
+            if (loot != null) {
+                System.out.println("The " + enemy.getName() + " dropped " + loot.getName() + ", but you couldn't pick it up.");
+            }
+            return;
+        }
         // If enemy is dead and player is alive -> normal victory
         if (!enemy.isAlive() && player.isAlive()) {
             clearScreen.clear();
@@ -240,17 +258,6 @@ public class BattleSystem {
             } else {
                 text = "No loot dropped from " + enemy.getName() + ".";
                 typeWriter.typeWriterFast(textColor.YELLOW + text + textColor.RESET);
-            }
-            return;
-        }
-
-
-        // If both have fallen in the same round
-        if (!enemy.isAlive() && !player.isAlive()) {
-            System.out.println("Both you and " + enemy.getName() + " have fallen!");
-            Item loot = enemy.dropLoot();
-            if (loot != null) {
-                System.out.println("The " + enemy.getName() + " dropped " + loot.getName() + ", but you couldn't pick it up.");
             }
             return;
         }
