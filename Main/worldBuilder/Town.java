@@ -89,7 +89,7 @@ public class Town {
                         clearScreen.clear();
                         double bossChance = Math.random();
                         if (bossChance <= 0.25) {
-                            Enemy enemy = new Alwynn(player);
+                            Enemy enemy = new Alwynn();
                             text = "A wild " + enemy.getName() + " appeared!";
                             typeWriter.typeWriterFast(textColor.GREEN + text + textColor.RESET);
                             typeWriter.typeWriterFast(textColor.GREEN + "Bro followed you all the way from the Atimonan!" + textColor.RESET);

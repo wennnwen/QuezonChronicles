@@ -126,12 +126,16 @@ public class BattleSystem {
             if (loot != null) {
                 System.out.println("The " + enemy.getName() + " dropped " + loot.getName() + ", but you couldn't pick it up.");
             }
+            // Reset player's progress when they die
+            player.resetProgress();
             return;
         }
 
         handleVictory(player, enemy);
 
         if (!player.isAlive()) {
+            // Reset player progress on death and notify
+            player.resetProgress();
             System.out.println(textColor.RED + "Game over! You have been slained!" + textColor.RESET);
             return;
         }
@@ -226,8 +230,14 @@ public class BattleSystem {
         centerHub.printRightTextWithTypeWriter(textColor.RED + text + textColor.RESET);
         enemy.enemyMove(player);
 
-        if (!(enemy.isAlive())) {
-            player.addExp(enemy.getExpReward());
+        // If the enemy died as a result of its own action (e.g. suicide/explosion),
+        // only award experience if the player survived the action. If both died,
+        // do not award XP here — the post-battle resolution will handle messages
+        // and resetting the player's progress.
+        if (!enemy.isAlive()) {
+            if (player.isAlive()) {
+                player.addExp(enemy.getExpReward());
+            }
         }
     }
 
